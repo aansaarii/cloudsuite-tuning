@@ -15,10 +15,9 @@ OPERATIONSFILE=$OUTPUTFOLDER/operations.txt
 DISPLAYFILE=$OUTPUTFOLDER/display.txt
 BENCHMARKFILE=$OUTPUTFOLDER/benchmark.txt
 
-touch $UTILFILE
-touch $OPERATIONSFILE
-touch $BENCHMARKFILE
-
+rm $UTILFILE && touch $UTILFILE
+rm $OPERATIONSFILE && touch $OPERATIONSFILE
+rm $BENCHMARKFILE && touch $BENCHMARKFILE
 
 docker rm -f $CLIENT_CONTAINER
 docker rm -f $SERVER_CONTAINER
@@ -62,7 +61,7 @@ docker exec -it CLIENT_CONTAINER "/ycsb/bin/ycsb load cassandra-cql -p hosts=$SE
 while read OPERATIONS; do
     echo "NUM OPERATIONS = $OPERATIONS"
     echo $OPERATIONS>>$OPERATIONSFILE
-    echo "-">>$UTILFILE
+    echo "@">>$UTILFILE
     mpstat -P 0-7 1 >> $UTILFILE &
     (docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -p operationcount=$OPERATIONS")>>$BENCHMARKFILE
     pkill mpstat
