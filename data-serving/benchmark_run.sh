@@ -3,11 +3,11 @@ if [ "$#" -ne 2 ]; then
     echo "usage: Command RECORDS OPERATIONS_FILE"
     exit 1
 fi
-THREADS=10
+THREADS=64
 THREADS_LOAD=10
 TARGET=100000
-CLIENT_CPUS=0-3
-SERVER_CPUS=4-7
+CLIENT_CPUS=32-47
+SERVER_CPUS=16-19
 SERVER_MEMORY=10g
 CLIENT_CONTAINER=cassandra-client
 SERVER_CONTAINER=cassandra-server
@@ -21,6 +21,7 @@ DISPLAYFILE=$OUTPUTFOLDER/display.txt
 BENCHMARKFILE=$OUTPUTFOLDER/benchmark.txt
 BENCHMARKFILE2=$OUTPUTFOLDER/benchmark2.txt
 ENVIRONMENTFILE=$OUTPUTFOLDER/env.txt
+MULTIPLIER=10
 rm $UTILFILE && touch $UTILFILE
 rm $OPERATIONSFILE && touch $OPERATIONSFILE
 rm $BENCHMARKFILE && touch $BENCHMARKFILE
@@ -108,14 +109,14 @@ then
 fi
 
 #read -p "AFTER LOAD"
-mpstat -P all 1 &
+mpstat -P ALL 1 &
 echo "WARMING UP"
 
 docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target $TARGET -threads $THREADS -p operationcount=10000"
 pkill mpstat
 
 while read OPERATIONS; do
-    TARGET="$((OPERATIONS * 10))"
+    TARGET="$((OPERATIONS * MULTIPLIER))"
     echo "NUM OPERATIONS = $OPERATIONS"
     echo "TARGET = $TARGET"
     echo $OPERATIONS>>$OPERATIONSFILE
@@ -133,7 +134,7 @@ while read OPERATIONS; do
     # 	sleep 5
     # done
     #docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target 1000 -threads $THREADS -p operationcount=$TARGET"
-    mpstat -P all 1 >> $UTILFILE &
+    mpstat -P ALL 1 >> $UTILFILE &
     (docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target $OPERATIONS -threads $THREADS -p operationcount=$TARGET")>>$BENCHMARKFILE &
     pid1=$!
 #    (docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target $TARGET -threads $THREADS -p operationcount=$OPERATIONS")>>$BENCHMARKFILE2 &
