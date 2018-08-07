@@ -33,7 +33,7 @@ then
 fi
 
 docker network rm serving_network
-docker system prune -f
+
 
 docker network create serving_network
 if [ "$LOAD" = true ]
