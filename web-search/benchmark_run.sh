@@ -3,19 +3,19 @@ if [ "$#" -ne 1 ]; then
     echo "usage: Command OPERATIONS_FILE"
     exit 1
 fi
-CLIENT_CPUS=0-15
-SERVER_CPUS=16-23
-SERVER_MEMORY=20g
-SOLR_MEM=14g
+CLIENT_CPUS=0-3 #CPU cores to run the client on
+SERVER_CPUS=4-7 #CPU cores to run the server on
+SERVER_MEMORY=20g #Memory available to the server docker container
+SOLR_MEM=14g #Memory available to SOLR
 RAMPTIME=60
 STEADYTIME=30
 STOPTIME=30
 CLIENT_CONTAINER=web_search_client
 SERVER_CONTAINER=web_search_server
-CLIENT_IMAGE=web_search_client
-SERVER_IMAGE=web_search_server
-NETWORK=web_search_network
-INDEX_CONTAINER=index
+CLIENT_IMAGE=web_search_client #Name of web-server client image
+SERVER_IMAGE=web_search_server #Name of web-search server image
+NETWORK=web_search_network 
+INDEX_CONTAINER=index #Name of the web_search_index container which containes the index
 OPERATIONS_FILE=$1
 LOAD=true
 OUTPUTFOLDER=output
@@ -25,7 +25,6 @@ DISPLAYFILE=$OUTPUTFOLDER/display.txt
 BENCHMARKFILE=$OUTPUTFOLDER/benchmark.txt
 ENVIRONMENTFILE=$OUTPUTFOLDER/env.txt
 PERFFILE=$OUTPUTFOLDER/perf.txt
-MULTIPLIER=100
 rm $PERFFILE
 rm $UTILFILE && touch $UTILFILE
 rm $OPERATIONSFILE && touch $OPERATIONSFILE
