@@ -4,7 +4,7 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 CLIENT_CPUS=0-15
-SERVER_CPUS=16-31
+SERVER_CPUS=16-23
 SERVER_MEMORY=20g
 SOLR_MEM=14g
 RAMPTIME=60
@@ -24,7 +24,9 @@ OPERATIONSFILE=$OUTPUTFOLDER/operations.txt
 DISPLAYFILE=$OUTPUTFOLDER/display.txt
 BENCHMARKFILE=$OUTPUTFOLDER/benchmark.txt
 ENVIRONMENTFILE=$OUTPUTFOLDER/env.txt
+PERFFILE=$OUTPUTFOLDER/perf.txt
 MULTIPLIER=100
+rm $PERFFILE
 rm $UTILFILE && touch $UTILFILE
 rm $OPERATIONSFILE && touch $OPERATIONSFILE
 rm $BENCHMARKFILE && touch $BENCHMARKFILE
@@ -74,6 +76,7 @@ while read OPERATIONS; do
     while true; do
 	if docker logs $CLIENT_CONTAINER 2>&1 >/dev/null | grep -q 'Ramp up completed'; then
 	    mpstat -P ALL 1 >> $UTILFILE &
+	    perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS sleep infinity 2>>$PERFFILE & 
 	    echo "Ramp up completed. Logging CPU Util"
 	    break;
 	fi
@@ -84,6 +87,7 @@ while read OPERATIONS; do
     while true; do
 	if docker logs $CLIENT_CONTAINER 2>&1 >/dev/null | grep -q 'Steady state completed'; then
 	    pkill mpstat
+	    pkill -fx "sleep infinity"
 	    echo "Steady State completed. Stopped Logging CPU Util"
 	    break;
 	fi
