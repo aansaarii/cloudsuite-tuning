@@ -3,13 +3,13 @@ if [ "$#" -ne 1 ]; then
     echo "usage: Command OPERATIONS_FILE"
     exit 1
 fi
-CLIENT_CPUS=0-3 #CPU cores to run the client on
-SERVER_CPUS=4-7 #CPU cores to run the server on
+CLIENT_CPUS=0,2,4,6,8,10,12,14,16,18,20,22 #CPU cores to run the client on
+SERVER_CPUS=1,3,5,7,9,11,13,15 #CPU cores to run the server on
 SERVER_MEMORY=20g #Memory available to the server docker container
 SOLR_MEM=14g #Memory available to SOLR
-RAMPTIME=60
-STEADYTIME=30
-STOPTIME=30
+RAMPTIME=20
+STEADYTIME=20
+STOPTIME=10
 CLIENT_CONTAINER=web_search_client
 SERVER_CONTAINER=web_search_server
 CLIENT_IMAGE=web_search_client #Name of web-server client image
@@ -48,8 +48,8 @@ fi
 
 
 while true; do
-    if docker logs $SERVER_CONTAINER | grep -q 'Index Node IP Address: 172'; then
-	SERVER_IP=`docker logs $SERVER_CONTAINER | grep 'Index Node IP Address: 172' | sed 's/.*\:\s//'`
+    if docker logs $SERVER_CONTAINER | grep -q 'Index Node IP Address:'; then
+	SERVER_IP=`docker logs $SERVER_CONTAINER | grep 'Index Node IP Address:' | sed 's/.*\:\s//'`
 	echo "Index is ready. Server IP is $SERVER_IP "
 	break;
     fi
@@ -75,7 +75,8 @@ while read OPERATIONS; do
     while true; do
 	if docker logs $CLIENT_CONTAINER 2>&1 >/dev/null | grep -q 'Ramp up completed'; then
 	    mpstat -P ALL 1 >> $UTILFILE &
-	    perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS sleep infinity 2>>$PERFFILE & 
+	    
+	    sudo perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS sleep infinity 2>>$PERFFILE & 
 	    echo "Ramp up completed. Logging CPU Util"
 	    break;
 	fi
@@ -86,7 +87,7 @@ while read OPERATIONS; do
     while true; do
 	if docker logs $CLIENT_CONTAINER 2>&1 >/dev/null | grep -q 'Steady state completed'; then
 	    pkill mpstat
-	    pkill -fx "sleep infinity"
+	    sudo perf stat pkill -fx "sleep infinity"
 	    echo "Steady State completed. Stopped Logging CPU Util"
 	    break;
 	fi
