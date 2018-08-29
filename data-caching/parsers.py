@@ -61,7 +61,7 @@ def parse_data_caching(log_file_names):
                     profiles[current_rps]['rps'].append(float(load_stat[1]))
 
         # form the graph data to plot
-        def mean_and_error_last_numbers(numbers, count=5, offset=0):
+        def mean_and_error_last_numbers(numbers, count=20, offset=0):
             selected_numbers = []
             for index in range(count):
                 number = numbers[len(numbers) - 1 - index - offset]
