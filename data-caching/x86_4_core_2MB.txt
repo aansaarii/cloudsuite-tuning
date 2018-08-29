@@ -1,0 +1,5 @@
+cpu_set: 24,26,28,30
+memory_size: 2048
+server_cpu_count: 4
+client_cpu_count: 4
+rps: 17000

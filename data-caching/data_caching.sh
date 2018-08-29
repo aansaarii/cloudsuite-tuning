@@ -32,10 +32,11 @@ echo Warmed up!
 for i in `seq $START_LOAD $LOAD_STEP $END_LOAD | shuf`; do
 	echo rps: $i >> $OUTPUT_FILE;
 	docker exec -i $CLIENT_NAME bash -c "cd /usr/src/memcached/memcached_client/; \
+		pkill -9 loader; \
 		./loader -a ../twitter_dataset/twitter_dataset_30x -s docker_servers.txt -g 0.8 -T 1 -c 200 -w $CLIENT_THREADS -e -r $i" &>> $OUTPUT_FILE &
-    EXEC_TO_KILL=$!
 	sleep $SLEEP_TIME;
-	docker exec $CLIENT_NAME bash -c "pkill loader"
-	kill -9 $EXEC_TO_KILL
     ssh $SERVER_ADDRESS $MPSTAT_COMMAND >> $OUTPUT_FILE
 done;
+
+sleep 10
+
