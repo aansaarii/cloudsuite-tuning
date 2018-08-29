@@ -17,12 +17,12 @@ echo client_cpu_count: $CLIENT_THREADS >> $OUTPUT_FILE
 
 ssh $SERVER_ADDRESS docker stop $SERVER_NAME || true
 ssh $SERVER_ADDRESS docker rm $SERVER_NAME || true
-ssh $SERVER_ADDRESS docker run -d --cpuset-cpus $SERVER_CPU_SET  --name $SERVER_NAME -p $SERVER_PORT:$SERVER_PORT -d $SERVER_IMAGE -t $SERVER_THREADS -m $SERVER_MEMORY -n $KEY_LENGTH
+ssh $SERVER_ADDRESS docker run -d --cpuset-cpus $SERVER_CPU_SET  --name $SERVER_NAME -p $SERVER_PORT:11211 -d $SERVER_IMAGE -t $SERVER_THREADS -m $SERVER_MEMORY -n $KEY_LENGTH
 
 docker stop $CLIENT_NAME || true
 docker rm $CLIENT_NAME || true
 docker run --cpuset-cpus $CLIENT_CPU_SET -d --network=host --name $CLIENT_NAME $CLIENT_IMAGE bash -c 'cd /usr/src/memcached/memcached_client/; \
-    echo '$SERVER_ADDRESS', 11211 > docker_servers.txt; \
+    echo '$SERVER_ADDRESS', '$SERVER_PORT' > docker_servers.txt; \
     ./loader -a ../twitter_dataset/twitter_dataset_unscaled -o ../twitter_dataset/twitter_dataset_30x -s docker_servers.txt -w '$CLIENT_THREADS' -S '$SCALE_FACTOR' -D '$SERVER_MEMORY' -j -T 1; \
     while true; do sleep 100; done;'
 
