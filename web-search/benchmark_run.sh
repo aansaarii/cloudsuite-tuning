@@ -68,8 +68,8 @@ while read OPERATIONS; do
 
     docker rm -f $CLIENT_CONTAINER
    
-    echo "docker run --net=$NETWORK --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $RAMPTIME $STEADYTIME $STOPTIME"
-    docker run --net=$NETWORK --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $RAMPTIME $STEADYTIME $STOPTIME >> $BENCHMARKFILE &
+    echo "docker run --net=$NETWORK --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $RAMPTIME $STOPTIME $STEADYTIME"
+    docker run --net=$NETWORK --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $RAMPTIME $STOPTIME $STEADYTIME >> $BENCHMARKFILE &
     pid1=$!
     echo "Done Running"
     while true; do
