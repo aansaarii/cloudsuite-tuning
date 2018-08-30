@@ -11032,3 +11032,66 @@ Average:      22   13.76    0.00   48.97    0.00    0.00   22.18    0.00    0.00
 Average:      23   19.30    0.00   55.30    0.00    0.00   24.90    0.00    0.00    0.00    0.50
 rps: 237500
 bash: line 1:   874 Killed                  ./loader -a ../twitter_dataset/twitter_dataset_30x -s docker_servers.txt -g 0.8 -T 5 -c 200 -w 4 -e -r 159000
+stats_time = 5
+Configuration:
+
+nProcessors on system: 24
+nWorkers: 4
+runtime: -1
+Get fraction: 0.800000
+Naggle's algorithm: False
+
+
+host: localhost
+address: 127.0.0.1
+Loading key value file...created uniform distribution 1000
+rps 237500 cpus 4
+meanInterarrival 16
+num_worker_connections 50
+num_worker_connections 50
+Creating worker on tid 2312353536
+starting receive base loop
+num_worker_connections 50
+Creating worker on tid 2303960832
+starting receive base loop
+num_worker_connections 50
+Created 200 connections total
+Creating worker on tid 2214590208
+Creating worker on tid 2295568128
+starting receive base loop
+starting receive base loop
+Stats:
+-------------------------
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+1535625719.624184,       0.0,      219322,     175468,      43854,     163611,      11857,  27.758361,  39.900000,  42.400000,  50.200000,   8.391437,   0.000000,  61.099999, 768.496609
+Outstanding requests per worker:
+1011 1019 988 1070 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  129896.7,      649484,     519684,     129800,     484298,      35386,  38.402287,  49.500000,  57.700000,  72.100000,  12.375147,  20.964000, 240.727007, 767.665096
+Outstanding requests per worker:
+1388 1399 1350 1391 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  129313.5,      646568,     517157,     129411,     481699,      35458,  47.957697,  64.500000,  71.600000,  83.100000,  11.573044,  28.334999, 104.318000, 767.300203
+Outstanding requests per worker:
+1665 1696 1667 1691 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  137228.7,      686144,     549121,     137023,     509829,      39292,  51.559206,  66.000000,  72.300000,  87.400000,  10.515378,  33.482999, 104.419000, 765.400839
+Outstanding requests per worker:
+1855 1856 1877 1848 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  154092.8,      770465,     616583,     153882,     574100,      42483,  50.320875,  62.500000,  68.400000,  80.800000,   8.262359,  39.705999,  96.890002, 767.761424
+Outstanding requests per worker:
+1991 1967 1960 1966 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  152987.8,      764940,     611882,     153058,     570054,      41828,  53.511042,  67.900000,  72.300000,  80.300000,   9.388969,  40.242001, 120.387003, 768.441216
+Outstanding requests per worker:
+2133 2126 2144 2136 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  156112.4,      780563,     624681,     155882,     582313,      42368,  55.824892,  68.900000,  74.500000,  89.000000,   9.060494,  41.795999, 115.576997, 768.945655
+Outstanding requests per worker:
+2205 2229 2234 2229 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  149907.7,      749539,     599567,     149972,     557513,      42054,  61.186492,  74.200000,  79.700000,  89.300000,   9.345286,  47.368001, 104.203001, 766.109476
+Outstanding requests per worker:
+2318 2370 2350 2349 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,  Linux 3.10.0-514.el7.x86_64 (n140.parsacluster.epfl.ch) 	08/30/2018 	_x86_64_	(24 CPU)
