@@ -19,3 +19,6 @@ seq 10 10 1000 > load.txt
 
 # Plotting
 Refer to the notebook dataReadAndPlot.ipynb. 
+
+
+**Note**: The script might not work if the output files are not in the correct format. This can happen if the script is run on different machines and the perf/mpstat output is in a different format. The functions readCPUUtil() and readPerf() in the notebook might require some minor adjustments in that case. 
