@@ -31,7 +31,7 @@ The same number can be repeated multiple times in the text file. At the plotting
 - SERVER_IMAGE
 - NETWORK
 - INDEX_CONTAINER
-- OUTPUTFOLDER
+- OUTPUTFOLDER **Note:** This folder must exists. Also if it already contains output from a previous run, they will be replaced. 
 
 2. For getting the output from perf and mpstat, we run the commands when the steady state starts and stop them when the steady state ends (which is checked every 1 second). 
 The following lines start the monitoring:
