@@ -15565,4 +15565,4 @@ Outstanding requests per worker:
   5.000005,  162965.4,      814828,     651821,     163007,     608466,      43355,  51.287501,  59.900000,  62.900000,  72.600000,   5.942867,  42.390998,  85.579000, 769.981616
 Outstanding requests per worker:
 2122 2108 2152 2148 
-  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th, 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th, Linux 3.10.0-514.el7.x86_64 (n140.parsacluster.epfl.ch) 	08/30/2018 	_x86_64_	(24 CPU)
