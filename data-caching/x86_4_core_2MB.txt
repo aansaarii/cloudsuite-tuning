@@ -2537,4 +2537,1788 @@ Outstanding requests per worker:
   5.000005,   91927.7,      459639,     367584,      92055,     342605,      24979,   7.431496,  12.100000,  13.700000,  17.500000,   3.614843,   0.077000,  33.105999, 768.636714
 Outstanding requests per worker:
 219 175 232 215 
-  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92018.9,      460095,     367700,      92395,     343026,      24674,   7.126665,  12.100000,  13.700000,  16.600000,   3.736835,   0.079000,  25.808999, 770.580604
+Outstanding requests per worker:
+172 282 350 274 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92282.9,      461415,     369211,      92204,     344636,      24575,   7.170339,  12.300000,  14.300000,  18.700000,   3.852167,   0.077000,  24.998000, 770.271048
+Outstanding requests per worker:
+121 98 124 126 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91827.9,      459140,     367256,      91884,     342398,      24858,   7.344258,  12.800000,  15.400000,  21.800000,   4.280438,   0.074000,  28.999001, 769.302307
+Outstanding requests per worker:
+214 168 242 223 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91959.5,      459798,     367522,      92276,     343051,      24471,   8.668830,  14.800000,  17.400000,  21.900000,   4.614883,   0.079000,  39.388001, 770.120616
+Outstanding requests per worker:
+101 52 88 63 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91634.5,      458173,     366571,      91602,     342184,      24387,   8.581214,  15.000000,  18.500000,  24.700000,   4.920400,   0.090000,  35.790998, 770.304465
+Outstanding requests per worker:
+280 156 140 297 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92122.9,      460615,     368443,      92172,     343699,      24744,   7.839778,  14.100000,  16.300000,  20.100000,   4.463125,   0.071000,  27.429000, 769.893291
+Outstanding requests per worker:
+310 317 115 82 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91759.1,      458796,     367106,      91690,     342587,      24519,   8.174317,  13.400000,  15.300000,  19.400000,   3.974048,   0.071000,  26.859000, 769.756313
+Outstanding requests per worker:
+308 248 329 292 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92357.1,      461786,     369469,      92317,     344777,      24692,  10.531041,  22.100000,  29.500000,  38.600000,   7.698221,   0.073000,  49.929000, 770.004912
+Outstanding requests per worker:
+146 174 139 113 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91967.3,      459837,     367986,      91851,     343579,      24407,   7.572048,  13.100000,  15.900000,  22.100000,   4.325254,   0.072000,  35.797998, 770.425372
+Outstanding requests per worker:
+137 223 220 140 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91865.3,      459327,     367295,      92032,     342509,      24786,   7.768666,  13.300000,  15.200000,  19.600000,   4.132544,   0.068000,  31.840999, 769.741360
+Outstanding requests per worker:
+238 212 191 178 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92165.5,      460828,     369221,      91607,     344327,      24894,   7.615471,  12.600000,  14.400000,  18.600000,   3.800442,   0.082000,  27.526001, 769.918426
+Outstanding requests per worker:
+316 278 309 226 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92071.1,      460356,     368504,      91852,     343710,      24794,   8.438748,  15.400000,  18.800000,  24.400000,   5.078363,   0.083000,  41.735001, 769.081958
+Outstanding requests per worker:
+192 160 182 227 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92047.3,      460237,     368084,      92153,     343637,      24447,   7.755238,  12.800000,  14.400000,  17.600000,   3.741575,   0.080000,  23.092000, 770.420700
+Outstanding requests per worker:
+170 208 230 227 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92050.1,      460251,     368528,      91723,     343829,      24699,   7.353835,  12.000000,  13.800000,  17.100000,   3.546196,   0.076000,  24.147000, 770.102226
+Outstanding requests per worker:
+132 127 112 122 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91937.3,      459687,     367712,      91975,     343174,      24538,   7.934724,  13.500000,  14.900000,  17.700000,   3.980938,   0.087000,  25.474999, 769.932599
+Outstanding requests per worker:
+284 229 139 288 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91758.7,      458794,     367042,      91752,     342419,      24623,   8.811601,  14.600000,  17.200000,  23.300000,   4.452091,   0.081000,  34.171999, 769.600961
+Outstanding requests per worker:
+308 380 278 315 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92555.5,      462778,     370345,      92433,     345530,      24815,   8.191964,  13.600000,  15.300000,  19.700000,   4.097864,   0.078000,  28.320000, 770.080868
+Outstanding requests per worker:
+49 136 209 152 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91989.1,      459946,     367450,      92496,     342770,      24680,   8.020561,  13.700000,  15.600000,  19.200000,   4.070467,   0.084000,  29.821999, 770.437436
+Outstanding requests per worker:
+135 111 101 87 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91772.1,      458861,     367205,      91656,     342945,      24260,   7.955331,  13.700000,  15.800000,  19.500000,   4.212201,   0.080000,  32.501001, 770.050318
+Outstanding requests per worker:
+254 324 309 296 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92154.5,      460773,     368415,      92358,     343740,      24675,   8.567376,  14.500000,  16.900000,  21.700000,   4.497682,   0.077000,  31.980000, 770.016023
+Outstanding requests per worker:
+161 59 161 64 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91980.5,      459903,     367878,      92025,     343295,      24583,   8.731776,  15.600000,  18.500000,  24.300000,   5.006731,   0.078000,  36.920000, 770.673982
+Outstanding requests per worker:
+226 206 188 164 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92117.7,      460589,     368586,      92003,     344330,      24256,   8.723687,  15.400000,  19.200000,  24.900000,   5.131958,   0.068000,  32.193001, 770.969605
+Outstanding requests per worker:
+286 232 224 237 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92124.3,      460622,     368471,      92151,     344028,      24443,   7.031815,  11.500000,  13.200000,  16.300000,   3.440519,   0.082000,  22.740999, 770.757691
+Outstanding requests per worker:
+214 245 279 210 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92259.7,      461299,     368976,      92323,     344339,      24637,   7.599172,  13.100000,  16.000000,  20.900000,   4.307497,   0.081000,  36.208998, 769.454301
+Outstanding requests per worker:
+70 77 103 109 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91822.7,      459114,     367217,      91897,     342787,      24430,   7.273226,  11.700000,  13.700000,  17.600000,   3.524927,   0.085000,  25.915001, 770.310416
+Outstanding requests per worker:
+158 212 169 104 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91915.5,      459578,     367481,      92097,     343009,      24472,   8.119614,  14.100000,  16.500000,  21.600000,   4.537759,   0.079000,  36.642000, 770.121448
+Outstanding requests per worker:
+147 143 159 144 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92184.7,      460924,     368584,      92340,     344153,      24431,   6.669932,  11.200000,  12.600000,  16.200000,   3.439908,   0.080000,  23.120999, 770.103613
+Outstanding requests per worker:
+56 44 65 119 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92192.9,      460965,     368652,      92313,     344202,      24450,   7.983457,  13.600000,  16.200000,  20.800000,   4.361369,   0.086000,  32.035001, 769.576365
+Outstanding requests per worker:
+198 264 264 234 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91892.1,      459461,     367466,      91995,     342855,      24611,   7.717231,  12.900000,  14.600000,  18.500000,   4.047239,   0.089000,  26.032999, 770.984850
+Outstanding requests per worker:
+185 226 233 133 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92035.1,      460176,     367946,      92230,     343378,      24568,   7.862120,  13.300000,  15.100000,  19.900000,   4.046940,   0.068000,  27.853001, 769.703451
+Outstanding requests per worker:
+155 175 185 166 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92003.9,      460020,     368408,      91612,     343731,      24677,   7.815667,  13.400000,  15.800000,  21.400000,   4.246999,   0.071000,  29.224001, 770.147057
+Outstanding requests per worker:
+24 86 60 34 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92052.3,      460262,     368378,      91884,     343652,      24726,   6.789048,  11.700000,  13.400000,  17.000000,   3.681898,   0.082000,  30.711999, 769.447915
+Outstanding requests per worker:
+13 40 180 165 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92286.1,      461431,     369134,      92297,     344469,      24665,   8.266972,  14.500000,  17.200000,  22.700000,   4.626384,   0.080000,  39.834999, 770.618596
+Outstanding requests per worker:
+34 45 41 36 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91693.3,      458467,     366635,      91832,     342246,      24389,   7.789603,  13.500000,  15.500000,  20.800000,   4.353222,   0.076000,  27.609000, 769.604558
+Outstanding requests per worker:
+356 240 237 303 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92138.1,      460691,     368637,      92054,     344166,      24471,   7.437416,  12.500000,  14.600000,  19.800000,   3.892795,   0.081000,  31.883001, 770.555926
+Outstanding requests per worker:
+162 335 201 274 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92074.5,      460373,     368179,      92194,     343525,      24654,   7.368466,  12.100000,  13.900000,  17.600000,   3.584449,   0.089000,  27.837001, 770.019314
+Outstanding requests per worker:
+210 226 289 160 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92066.3,      460332,     368078,      92254,     343562,      24516,   7.307911,  12.000000,  13.700000,  17.600000,   3.624741,   0.084000,  22.605000, 769.615530
+Outstanding requests per worker:
+157 180 182 114 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92044.7,      460224,     368123,      92101,     343776,      24347,   7.041390,  11.600000,  13.400000,  17.100000,   3.534134,   0.072000,  22.464000, 770.135202
+Outstanding requests per worker:
+104 138 162 164 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91911.1,      459556,     367564,      91992,     342862,      24702,   7.870292,  13.100000,  15.100000,  19.100000,   4.010812,   0.071000,  28.178001, 769.666104
+Outstanding requests per worker:
+109 80 107 68 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91803.9,      459020,     367484,      91536,     343282,      24202,   7.590564,  13.000000,  15.000000,  19.900000,   4.198221,   0.076000,  29.854000, 771.902537
+Outstanding requests per worker:
+296 225 230 252 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92123.1,      460616,     368760,      91856,     343932,   Linux 3.10.0-514.el7.x86_64 (n140.parsacluster.epfl.ch) 	08/30/2018 	_x86_64_	(24 CPU)
+   24828,   7.638326,  12.600000,  14.200000,  19.500000,   3.817116,   0.077000,  25.637999, 769.290278
+Outstanding requests per worker:
+86 237 238 164 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92248.9,      461245,     368809,      92436,     344122,      24687,   7.467856,  12.900000,  15.500000,  20.700000,   4.263445,   0.069000,  29.157000, 770.005333
+Outstanding requests per worker:
+64 46 78 69 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91907.5,      459538,     367673,      91865,     343101,      24572,   7.189887,  12.100000,  13.900000,  18.800000,   3.861703,   0.088000,  33.071000, 769.438123
+Outstanding requests per worker:
+122 143 107 146 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91670.3,      458352,     367210,      91142,     342504,      24706,   8.418733,  14.500000,  16.600000,  21.600000,   4.569721,   0.090000,  33.137001, 768.868424
+Outstanding requests per worker:
+155 158 155 144 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92019.1,      460096,     368157,      91939,     343504,      24653,   7.561501,  12.900000,  14.600000,  18.300000,   3.865560,   0.077000,  25.878999, 770.465570
+Outstanding requests per worker:
+136 172 127 138 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92058.3,      460292,     368397,      91895,     343830,      24567,   7.469156,  12.900000,  15.700000,  20.900000,   4.188001,   0.079000,  33.597998, 769.762286
+Outstanding requests per worker:
+157 150 225 139 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92012.3,      460062,     368581,      91481,     343824,      24757,   8.769300,  14.600000,  16.500000,  21.100000,   4.407731,   0.078000,  29.035000, 769.758799
+Outstanding requests per worker:
+222 100 185 224 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91843.3,      459217,     367636,      91581,     342900,      24736,   8.665848,  15.300000,  17.800000,  23.500000,   4.864102,   0.087000,  36.651000, 768.989155
+Outstanding requests per worker:
+188 200 152 213 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91660.9,      458305,     367007,      91298,     342477,      24530,   7.484657,  12.600000,  15.000000,  20.200000,   4.035983,   0.074000,  31.295002, 770.471947
+Outstanding requests per worker:
+388 372 143 392 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   92130.1,      460651,     368864,      91787,     344427,      24437,   8.292518,  13.500000,  15.600000,  20.700000,   4.174089,   0.085000,  30.084999, 771.511939
+Outstanding requests per worker:
+202 145 58 92 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   91821.3,      459107,     368066,      91041,     343172,      24894,   8.092821,  
+03:44:43 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+03:45:03 PM  all   17.94    0.00   41.47    0.00    0.00   19.92    0.00    0.00    0.00   20.67
+03:45:03 PM    0   12.70    0.00   40.54    0.00    0.00   30.02    0.00    0.00    0.00   16.74
+03:45:03 PM    1   30.69    0.00   44.84    0.00    0.00   10.52    0.00    0.00    0.00   13.94
+03:45:03 PM    2   11.98    0.00   39.84    0.00    0.00   30.41    0.00    0.00    0.00   17.77
+03:45:03 PM    3   31.82    0.00   44.60    0.00    0.00   10.13    0.00    0.00    0.00   13.44
+03:45:03 PM    4   12.47    0.00   38.70    0.00    0.00   28.07    0.00    0.00    0.00   20.76
+03:45:03 PM    5   21.68    0.00   43.16    0.00    0.00   16.61    0.00    0.00    0.00   18.55
+03:45:03 PM    6   12.44    0.00   39.81    0.00    0.00   28.29    0.00    0.00    0.00   19.47
+03:45:03 PM    7   20.71    0.00   43.72    0.00    0.00   16.30    0.00    0.00    0.00   19.27
+03:45:03 PM    8   14.69    0.00   41.26    0.00    0.00   17.23    0.00    0.00    0.00   26.83
+03:45:03 PM    9   16.61    0.00   44.56    0.00    0.00   20.29    0.00    0.00    0.00   18.55
+03:45:03 PM   10   14.56    0.00   40.47    0.00    0.00   17.77    0.00    0.00    0.00   27.20
+03:45:03 PM   11   16.60    0.00   45.03    0.00    0.00   20.44    0.00    0.00    0.00   17.93
+03:45:03 PM   12   12.11    0.00   34.09    0.00    0.00   14.01    0.00    0.00    0.00   39.78
+03:45:03 PM   13   31.86    0.00   44.41    0.00    0.00    9.30    0.00    0.00    0.00   14.43
+03:45:03 PM   14   11.89    0.00   38.42    0.00    0.00   32.04    0.00    0.00    0.00   17.65
+03:45:03 PM   15   31.42    0.00   44.67    0.00    0.00    9.29    0.00    0.00    0.00   14.62
+03:45:03 PM   16   12.05    0.00   38.30    0.00    0.00   30.67    0.00    0.00    0.00   18.97
+03:45:03 PM   17   21.36    0.00   42.57    0.00    0.00   15.43    0.00    0.00    0.00   20.64
+03:45:03 PM   18   11.86    0.00   39.34    0.00    0.00   31.25    0.00    0.00    0.00   17.56
+03:45:03 PM   19   20.76    0.00   41.72    0.00    0.00   16.05    0.00    0.00    0.00   21.47
+03:45:03 PM   20   13.64    0.00   38.02    0.00    0.00   16.91    0.00    0.00    0.00   31.43
+03:45:03 PM   21   16.47    0.00   44.18    0.00    0.00   20.42    0.00    0.00    0.00   18.93
+03:45:03 PM   22   13.32    0.00   38.84    0.00    0.00   16.56    0.00    0.00    0.00   31.28
+03:45:03 PM   23   16.45    0.00   44.23    0.00    0.00   20.02    0.00    0.00    0.00   19.31
+
+03:45:03 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+03:45:23 PM  all   17.90    0.00   41.37    0.01    0.00   19.97    0.00    0.00    0.00   20.75
+03:45:23 PM    0   12.90    0.00   40.79    0.00    0.00   29.81    0.00    0.00    0.00   16.49
+03:45:23 PM    1   31.00    0.00   45.17    0.00    0.00   10.03    0.00    0.00    0.00   13.81
+03:45:23 PM    2   12.18    0.00   39.05    0.00    0.00   30.73    0.00    0.00    0.00   18.04
+03:45:23 PM    3   30.92    0.00   44.08    0.00    0.00   10.36    0.00    0.00    0.00   14.64
+03:45:23 PM    4   11.83    0.00   39.21    0.00    0.00   30.39    0.00    0.00    0.00   18.56
+03:45:23 PM    5   21.33    0.00   43.38    0.05    0.00   16.51    0.00    0.00    0.00   18.72
+03:45:23 PM    6   12.45    0.00   39.24    0.00    0.00   27.97    0.00    0.00    0.00   20.34
+03:45:23 PM    7   21.08    0.00   43.19    0.00    0.00   16.45    0.00    0.00    0.00   19.28
+03:45:23 PM    8   14.52    0.00   40.90    0.00    0.00   17.78    0.00    0.00    0.00   26.80
+03:45:23 PM    9   16.60    0.00   44.83    0.00    0.00   20.34    0.00    0.00    0.00   18.24
+03:45:23 PM   10   14.84    0.00   40.37    0.00    0.00   17.59    0.00    0.00    0.00   27.19
+03:45:23 PM   11   16.62    0.00   44.75    0.00    0.00   19.70    0.00    0.00    0.00   18.93
+03:45:23 PM   12   12.45    0.00   33.16    0.00    0.00   14.10    0.00    0.00    0.00   40.29
+03:45:23 PM   13   31.93    0.00   44.65    0.00    0.00    9.17    0.00    0.00    0.00   14.24
+03:45:23 PM   14   11.55    0.00   38.14    0.00    0.00   31.80    0.00    0.00    0.00   18.51
+03:45:23 PM   15   31.31    0.00   44.20    0.00    0.00    9.73    0.00    0.00    0.00   14.77
+03:45:23 PM   16   11.42    0.00   39.19    0.00    0.00   31.19    0.00    0.00    0.00   18.20
+03:45:23 PM   17   20.80    0.00   42.84    0.00    0.00   15.61    0.00    0.00    0.00   20.75
+03:45:23 PM   18   12.05    0.00   38.66    0.00    0.00   30.29    0.00    0.00    0.00   19.00
+03:45:23 PM   19   21.08    0.00   42.52    0.00    0.00   15.47    0.00    0.00    0.00   20.93
+03:45:23 PM   20   13.47    0.00   38.29    0.16    0.00   16.79    0.00    0.00    0.00   31.30
+03:45:23 PM   21   16.42    0.00   44.14    0.00    0.00   20.56    0.00    0.00    0.00   18.87
+03:45:23 PM   22   13.77    0.00   37.97    0.00    0.00   16.57    0.00    0.00    0.00   31.69
+03:45:23 PM   23   16.44    0.00   43.83    0.00    0.00   20.53    0.00    0.00    0.00   19.20
+
+Average:     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+Average:     all   17.92    0.00   41.42    0.00    0.00   19.95    0.00    0.00    0.00   20.71
+Average:       0   12.80    0.00   40.66    0.00    0.00   29.91    0.00    0.00    0.00   16.62
+Average:       1   30.85    0.00   45.00    0.00    0.00   10.27    0.00    0.00    0.00   13.88
+Average:       2   12.08    0.00   39.45    0.00    0.00   30.57    0.00    0.00    0.00   17.90
+Average:       3   31.37    0.00   44.34    0.00    0.00   10.24    0.00    0.00    0.00   14.04
+Average:       4   12.15    0.00   38.96    0.00    0.00   29.23    0.00    0.00    0.00   19.66
+Average:       5   21.51    0.00   43.27    0.03    0.00   16.56    0.00    0.00    0.00   18.64
+Average:       6   12.44    0.00   39.52    0.00    0.00   28.13    0.00    0.00    0.00   19.90
+Average:       7   20.89    0.00   43.45    0.00    0.00   16.38    0.00    0.00    0.00   19.28
+Average:       8   14.60    0.00   41.08    0.00    0.00   17.51    0.00    0.00    0.00   26.82
+Average:       9   16.60    0.00   44.69    0.00    0.00   20.31    0.00    0.00    0.00   18.39
+Average:      10   14.70    0.00   40.42    0.00    0.00   17.68    0.00    0.00    0.00   27.20
+Average:      11   16.61    0.00   44.89    0.00    0.00   20.07    0.00    0.00    0.00   18.43
+Average:      12   12.28    0.00   33.63    0.00    0.00   14.06    0.00    0.00    0.00   40.04
+Average:      13   31.90    0.00   44.53    0.00    0.00    9.24    0.00    0.00    0.00   14.34
+Average:      14   11.72    0.00   38.28    0.00    0.00   31.92    0.00    0.00    0.00   18.08
+Average:      15   31.37    0.00   44.43    0.00    0.00    9.51    0.00    0.00    0.00   14.69
+Average:      16   11.74    0.00   38.75    0.00    0.00   30.93    0.00    0.00    0.00   18.58
+Average:      17   21.08    0.00   42.70    0.00    0.00   15.52    0.00    0.00    0.00   20.70
+Average:      18   11.96    0.00   39.00    0.00    0.00   30.77    0.00    0.00    0.00   18.28
+Average:      19   20.92    0.00   42.12    0.00    0.00   15.76    0.00    0.00    0.00   21.20
+Average:      20   13.56    0.00   38.15    0.08    0.00   16.85    0.00    0.00    0.00   31.36
+Average:      21   16.44    0.00   44.16    0.00    0.00   20.49    0.00    0.00    0.00   18.90
+Average:      22   13.54    0.00   38.41    0.00    0.00   16.57    0.00    0.00    0.00   31.48
+Average:      23   16.44    0.00   44.03    0.00    0.00   20.28    0.00    0.00    0.00   19.25
+rps: 22500
+bash: line 1:   143 Killed                  ./loader -a ../twitter_dataset/twitter_dataset_30x -s docker_servers.txt -g 0.8 -T 5 -c 200 -w 4 -e -r 90000
+stats_time = 5
+Configuration:
+
+nProcessors on system: 24
+nWorkers: 4
+runtime: -1
+Get fraction: 0.800000
+Naggle's algorithm: False
+
+
+host: localhost
+address: 127.0.0.1
+Loading key value file...created uniform distribution 1000
+rps 22500 cpus 4
+meanInterarrival 177
+num_worker_connections 50
+num_worker_connections 50
+num_worker_connections 50
+Creating worker on tid 3359274752
+num_worker_connections 50
+Creating worker on tid 3350882048
+starting receive base loop
+starting receive base loop
+Created 200 connections total
+Creating worker on tid 3367667456
+starting receive base loop
+Creating worker on tid 3342489344
+starting receive base loop
+Stats:
+-------------------------
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+1535638277.636742,       0.0,       45198,      36232,       8966,      33713,       2519,   1.818051,   4.700000,   5.700000,   8.000000,   1.961118,   0.000000,  11.682000, 766.200265
+Outstanding requests per worker:
+0 2 0 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22740.0,      113700,      90948,      22752,      84908,       6040,   1.898598,   4.800000,   5.700000,   7.800000,   2.005908,   0.066000,  20.311000, 768.337962
+Outstanding requests per worker:
+0 1 1 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22648.8,      113244,      90512,      22732,      84362,       6150,   0.606382,   2.000000,   3.300000,   5.000000,   1.145568,   0.064000,  16.372001, 767.712723
+Outstanding requests per worker:
+3 6 4 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22628.6,      113143,      90573,      22570,      84506,       6067,   0.936146,   3.300000,   4.300000,   6.500000,   1.524328,   0.066000,  18.624000, 770.328321
+Outstanding requests per worker:
+0 2 1 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22661.4,      113307,      90816,      22491,      84892,       5924,   1.775006,   4.800000,   5.800000,   8.100000,   2.024622,   0.065000,  20.106999, 772.032814
+Outstanding requests per worker:
+9 25 0 11 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22651.6,      113258,      90490,      22768,      84462,       6028,   1.932771,   4.900000,   5.900000,   8.400000,   2.062353,   0.066000,  16.564000, 769.563775
+Outstanding requests per worker:
+23 18 20 15 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22624.8,      113124,      90487,      22637,      84441,       6046,   1.939482,   5.000000,   6.000000,   8.200000,   2.039159,   0.059000,  13.778000, 769.377402
+Outstanding requests per worker:
+1 0 1 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22653.6,      113268,      90605,      22663,      84543,       6062,   1.945146,   4.800000,   5.700000,   7.900000,   2.892867,   0.066000, 136.126995, 770.416246
+Outstanding requests per worker:
+2 1 4 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22655.6,      113278,      90631,      22647,      84653,       5978,   1.863063,   4.700000,   5.700000,   8.000000,   1.964324,   0.066000,  17.074000, 772.276947
+Outstanding requests per worker:
+13 21 41 26 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22704.4,      113522,      90873,      22649,      84784,       6089,   1.924196,   4.900000,   5.800000,   7.900000,   1.982885,   0.066000,  20.086000, 770.497684
+Outstanding requests per worker:
+4 2 22 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22648.4,      113242,      90499,      22743,      84295,       6204,   1.968531,   5.000000,   6.100000,   8.200000,   2.044193,   0.061000,  13.468000, 768.274312
+Outstanding requests per worker:
+28 17 21 17 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22698.6,      113493,      90874,      22619,      84903,       5971,   1.886507,   4.800000,   5.700000,   7.900000,   1.965793,   0.064000,  13.271000, 769.757642
+Outstanding requests per worker:
+1 26 0 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22698.6,      113493,      90886,      22607,      84896,       5990,   1.915493,   4.900000,   5.900000,   8.100000,   2.002254,   0.061000,  14.936000, 770.495379
+Outstanding requests per worker:
+15 18 26 37 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22606.4,      113032,      90305,      22727,      84226,       6079,   1.937046,   4.900000,   5.800000,   8.200000,   2.034745,   0.066000,  18.114001, 769.299098
+Outstanding requests per worker:
+26 22 45 19 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22738.4,      113692,      90965,      22727,      84966,       5999,   1.861937,   4.700000,   5.600000,   7.800000,   1.917302,   0.063000,  11.774000, 769.361974
+Outstanding requests per worker:
+2 24 2 23 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22706.2,      113531,      90905,      22626,      84788,       6117,   1.895389,   4.800000,   5.600000,   7.800000,   1.947260,   0.065000,  15.198000, 769.266861
+Outstanding requests per worker:
+2 1 0 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22626.2,      113131,      90483,      22648,      84500,       5983,   1.817440,   4.800000,   5.700000,   8.200000,   1.969312,   0.065000,  18.893000, 768.982450
+Outstanding requests per worker:
+10 6 11 8 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22728.0,      113640,      91015,      22625,      85048,       5967,   1.925287,   4.800000,   5.800000,   7.800000,   1.961773,   0.059000,  17.695000, 770.914586
+Outstanding requests per worker:
+14 16 11 24 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22678.4,      113392,      90601,      22791,      84491,       6110,   1.815506,   4.700000,   5.600000,   7.800000,   1.921602,   0.065000,  16.346000, 770.545524
+Outstanding requests per worker:
+3 3 2 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22541.8,      112709,      90218,      22491,      84113,       6105,   1.883311,   4.800000,   5.700000,   7.600000,   1.934081,   0.065000,  15.346000, 767.800062
+Outstanding requests per worker:
+20 21 19 35 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22709.0,      113545,      90783,      22762,      84687,       6096,   1.800756,   4.700000,   5.600000,   7.700000,   1.916927,   0.066000,  16.054001, 770.250080
+Outstanding requests per worker:
+2 0 1 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22783.2,      113916,      91117,      22799,      85086,       6031,   1.923163,   4.900000,   5.800000,   8.000000,   1.974519,   0.064000,  15.356000, 768.900853
+Outstanding requests per worker:
+4 1 2 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22591.0,      112955,      90320,      22635,      84382,       5938,   1.757255,   4.700000,   5.600000,   7.900000,   1.934783,   0.065000,  15.120000, 770.282573
+Outstanding requests per worker:
+42 19 13 24 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22670.0,      113350,      90934,      22416,      84828,       6106,   1.921167,   4.900000,   5.900000,   8.200000,   2.046423,   0.061000,  17.008999, 770.091132
+Outstanding requests per worker:
+20 23 13 18 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22810.4,      114052,      91470,      22582,      85339,       6131,   1.815744,   4.700000,   5.700000,   8.000000,   1.942803,   0.069000,  13.334000, 769.365726
+Outstanding requests per worker:
+14 9 7 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22648.0,      113240,      90776,      22464,      84643,       6133,   1.895306,   4.900000,   5.800000,   7.900000,   1.969820,   0.063000,  13.760000, 770.353651
+Outstanding requests per worker:
+9 9 10 6 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22754.2,      113771,      90945,      22826,      85061,       5884,   1.854696,   4.800000,   5.700000,   7.800000,   1.945466,   0.063000,  14.543000, 771.095794
+Outstanding requests per worker:
+13 3 10 7 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22572.8,      112864,      90103,      22761,      83983,       6120,   1.828239,   4.800000,   5.800000,   8.200000,   1.982767,   0.068000,  14.576000, 769.538029
+Outstanding requests per worker:
+6 20 5 4 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22673.4,      113367,      90462,      22905,      84362,       6100,   1.852249,   4.800000,   5.700000,   7.900000,   1.967702,   0.064000,  14.372000, 769.138964
+Outstanding requests per worker:
+17 15 11 14 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22729.6,      113648,      91049,      22599,      84791,       6258,   1.862547,   4.800000,   5.700000,   7.900000,   1.957986,   0.065000,  14.281000, 768.036222
+Outstanding requests per worker:
+3 2 1 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22846.6,      114233,      91414,      22819,      85281,       6133,   1.825980,   4.800000,   5.800000,   8.100000,   1.979663,   0.060000,  15.191000, 768.507734
+Outstanding requests per worker:
+1 2 1 6 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22746.8,      113734,      90940,      22794,      84798,       6142,   1.764259,   4.700000,   5.600000,   7.700000,   1.916226,   0.065000,  14.501000, 771.059039
+Outstanding requests per worker:
+0 0 2 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22689.8,      113449,      90630,      22819,      84522,       6108,   1.868915,   4.800000,   5.700000,   7.600000,   1.928788,   0.063000,  15.511000, 770.405076
+Outstanding requests per worker:
+1 2 24 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22771.8,      113859,      90977,      22882,      84823,       6154,   1.878211,   4.900000,   5.900000,   8.000000,   2.009003,   0.063000,  14.718000, 768.006980
+Outstanding requests per worker:
+12 13 15 15 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22626.6,      113133,      90487,      22646,      84259,       6228,   1.841559,   4.800000,   5.700000,   7.900000,   1.959376,   0.060000,  22.266001, 768.413529
+Outstanding requests per worker:
+1 3 0 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22580.8,      112904,      90277,      22627,      84390,       5887,   1.907368,   4.900000,   5.800000,   7.900000,   1.983326,   0.061000,  14.216000, 770.668299
+Outstanding requests per worker:
+16 3 15 6 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22753.6,      113768,      90843,      22925,      84762,       6081,   1.838478,   4.800000,   5.800000,   8.400000,   2.025701,   0.066000,  15.328000, 770.278227
+Outstanding requests per worker:
+23 26 33 24 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22781.6,      113908,      91054,      22854,      85028,       6026,   1.819109,   4.700000,   5.600000,   7.700000,   1.941579,   0.062000,  18.684000, 770.575889
+Outstanding requests per worker:
+2 37 26 19 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22684.6,      113423,      90852,      22571,      84906,       5946,   1.891160,   4.900000,   5.800000,   8.000000,   1.995953,   0.063000,  15.244000, 772.364890
+Outstanding requests per worker:
+6 3 24 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22642.0,      113210,      90525,      22685,      84444,       6081,   1.937980,   5.000000,   6.100000,   8.400000,   2.066060,   0.064000,  14.170000, 770.363667
+Outstanding requests per worker:
+6 14 19 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22578.8,      112894,      90539,      22355,      84489,       6050,   1.910563,   5.000000,   6.000000,   8.100000,   2.038475,   0.060000,  13.820000, 771.463944
+Outstanding requests per worker:
+5 15 10 11 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22693.8,      113469,      90868,      22601,      84911,       5957,   1.923774,   4.900000,   5.900000,   8.200000,   2.052368,   0.060000,  16.325001, 771.527325
+Outstanding requests per worker:
+19 12 40 13 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22603.6,      113018,      90455,      22563,      84494,       5961,   1.924411,   5.000000,   5.900000,   8.000000,   2.008027,   0.062000,  13.138000, 770.115859
+Outstanding requests per worker:
+26 34 30 29 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22668.2,      113341,      90474,      22867,      84500,       5974,   1.817621,   4.800000,   5.800000,   8.100000,   1.988632,   0.066000,  15.869999, 772.777815
+Outstanding requests per worker:
+3 4 1 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22634.4,      113172,      90404,      22768,      84373,       6031,   1.970813,   5.000000,   6.000000,   8.400000,   2.069311,   0.063000,  22.665000, 769.560130
+Outstanding requests per worker:
+23 17 34 38 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22682.2,      113411,      90623,      22788,      84631,       5992,   1.893675,   4.800000,   5.800000,   8.200000,   2.025260,   0.060000,  17.866001, 770.304150
+Outstanding requests per worker:
+22 19 36 27 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22846.2,      114231,      91163,      23068,      84946,       6217,   1.892642,   4.900000,   5.800000,   7.800000,   1.968555,   0.062000,  13.909000, 767.902055
+Outstanding requests per worker:
+16 21 20 10 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22587.8,      112939,      90147,      22792,      84299,       5848,   1.802828,   4.700000,   5.600000,   7.900000,   1.944581,   0.062000,  18.750001, 771.009662
+Outstanding requests per worker:
+0 0 46 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22559.8,      112799,      90194,      22605,      84268,       5926,   1.934044,   4.900000,   5.900000,   8.100000,   2.032909,   0.068000,  18.034000, 770.842007
+Outstanding requests per worker:
+19 18 24 9 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      Linux 3.10.0-514.el7.x86_64 (n140.parsacluster.epfl.ch) 	08/30/2018 	_x86_64_	(24 CPU)
+90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22702.8,      113514,      90853,      22661,      84767,       6086,   1.947471,   4.900000,   5.800000,   8.100000,   2.001813,   0.061000,  13.251000, 768.935181
+Outstanding requests per worker:
+23 15 29 28 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22563.4,      112817,      90204,      22613,      84183,       6021,   1.904579,   4.900000,   5.800000,   8.200000,   1.998373,   0.062000,  13.391000, 769.420547
+Outstanding requests per worker:
+17 21 27 28 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22704.4,      113522,      90835,      22687,      84810,       6025,   1.959319,   4.900000,   5.700000,   8.000000,   2.001692,   0.064000,  21.443000, 770.934387
+Outstanding requests per worker:
+16 5 9 12 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22659.0,      113295,      90564,      22731,      84470,       6094,   1.982725,   5.000000,   5.900000,   8.000000,   2.028692,   0.066000,  17.074000, 771.369816
+Outstanding requests per worker:
+5 7 29 7 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22746.8,      113734,      91149,      22585,      85041,       6108,   1.971474,   5.000000,   6.000000,   8.200000,   2.046016,   0.058000,  14.436000, 769.226135
+Outstanding requests per worker:
+20 20 16 13 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22717.0,      113585,      90920,      22665,      84766,       6154,   1.971263,   4.900000,   6.000000,   8.400000,   2.067243,   0.066000,  14.208000, 770.053718
+Outstanding requests per worker:
+18 12 19 13 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22646.4,      113232,      90816,      22416,      84655,       6161,   1.900206,   4.900000,   5.700000,   8.100000,   2.009607,   0.065000,  17.548000, 768.875077
+Outstanding requests per worker:
+9 5 6 4 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22718.0,      113590,      90788,      22802,      84535,       6253,   2.070162,   5.100000,   6.000000,   8.200000,   2.069344,   0.066000,  18.878000, 768.127660
+Outstanding requests per worker:
+30 17 40 25 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22682.0,      113410,      90792,      22618,      84686,       6106,   2.076569,   5.100000,   6.100000,   8.500000,   2.093030,   0.062000,  17.077999, 771.034012
+Outstanding requests per worker:
+1 22 19 14 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   22639.0,      113195,      90700,      22495,      84471,       6229,   1.871850,   4.800000,   5.600000,   7.700000,   1.940137,   0.063000,  15.884999, 767.972988
+Outstanding requests per worker:
+1 1 1 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avg
+03:50:23 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+03:50:43 PM  all   16.97    0.00   39.57    0.00    0.00   18.31    0.00    0.00    0.00   25.15
+03:50:43 PM    0   12.34    0.00   44.88    0.00    0.00   42.78    0.00    0.00    0.00    0.00
+03:50:43 PM    1   15.88    0.00   41.37    0.00    0.00   17.20    0.00    0.00    0.00   25.54
+03:50:43 PM    2   12.45    0.00   45.40    0.00    0.00   42.15    0.00    0.00    0.00    0.00
+03:50:43 PM    3   15.36    0.00   41.16    0.00    0.00   17.99    0.00    0.00    0.00   25.49
+03:50:43 PM    4   12.11    0.00   33.60    0.00    0.00   15.64    0.00    0.00    0.00   38.65
+03:50:43 PM    5   16.83    0.00   46.53    0.00    0.00   20.74    0.00    0.00    0.00   15.90
+03:50:43 PM    6   11.90    0.00   33.50    0.00    0.00   15.96    0.00    0.00    0.00   38.64
+03:50:43 PM    7   17.09    0.00   46.00    0.00    0.00   21.25    0.00    0.00    0.00   15.66
+03:50:43 PM    8   12.11    0.00   35.53    0.00    0.00   14.12    0.00    0.00    0.00   38.24
+03:50:43 PM    9   33.62    0.00   44.80    0.00    0.00    8.05    0.00    0.00    0.00   13.53
+03:50:43 PM   10   12.53    0.00   35.14    0.00    0.00   13.77    0.00    0.00    0.00   38.56
+03:50:43 PM   11   34.58    0.00   44.74    0.00    0.00    8.17    0.00    0.00    0.00   12.51
+03:50:43 PM   12    8.66    0.00   23.21    0.00    0.00    8.40    0.00    0.00    0.00   59.73
+03:50:43 PM   13   15.15    0.00   39.12    0.00    0.00   17.16    0.00    0.00    0.00   28.56
+03:50:43 PM   14   12.75    0.00   44.85    0.00    0.00   42.40    0.00    0.00    0.00    0.00
+03:50:43 PM   15   14.68    0.00   40.33    0.00    0.00   16.89    0.00    0.00    0.00   28.11
+03:50:43 PM   16   10.13    0.00   30.65    0.00    0.00   14.53    0.00    0.00    0.00   44.69
+03:50:43 PM   17   16.72    0.00   46.73    0.00    0.00   21.11    0.00    0.00    0.00   15.44
+03:50:43 PM   18   10.19    0.00   29.54    0.00    0.00   15.45    0.00    0.00    0.00   44.82
+03:50:43 PM   19   16.61    0.00   46.08    0.00    0.00   20.50    0.00    0.00    0.00   16.81
+03:50:43 PM   20   11.82    0.00   31.14    0.00    0.00   12.90    0.00    0.00    0.00   44.14
+03:50:43 PM   21   33.84    0.00   45.51    0.00    0.00    8.05    0.00    0.00    0.00   12.59
+03:50:43 PM   22   11.57    0.00   31.70    0.00    0.00   12.59    0.00    0.00    0.00   44.13
+03:50:43 PM   23   35.50    0.00   44.15    0.00    0.00    7.88    0.00    0.00    0.00   12.46
+
+03:50:43 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+03:51:03 PM  all   17.01    0.00   39.40    0.00    0.00   18.26    0.00    0.00    0.00   25.33
+03:51:03 PM    0   12.00    0.00   45.15    0.00    0.00   42.85    0.00    0.00    0.00    0.00
+03:51:03 PM    1   15.49    0.00   41.67    0.00    0.00   18.14    0.00    0.00    0.00   24.70
+03:51:03 PM    2   12.41    0.00   45.07    0.00    0.00   42.52    0.00    0.00    0.00    0.00
+03:51:03 PM    3   15.62    0.00   42.43    0.00    0.00   16.93    0.00    0.00    0.00   25.03
+03:51:03 PM    4   12.15    0.00   33.59    0.00    0.00   16.04    0.00    0.00    0.00   38.23
+03:51:03 PM    5   17.31    0.00   45.65    0.00    0.00   20.61    0.00    0.00    0.00   16.43
+03:51:03 PM    6   12.13    0.00   33.39    0.00    0.00   15.61    0.00    0.00    0.00   38.88
+03:51:03 PM    7   16.89    0.00   45.47    0.00    0.00   20.60    0.00    0.00    0.00   17.04
+03:51:03 PM    8   12.79    0.00   35.35    0.00    0.00   13.38    0.00    0.00    0.00   38.48
+03:51:03 PM    9   34.53    0.00   44.26    0.00    0.00    8.50    0.00    0.00    0.00   12.70
+03:51:03 PM   10   12.34    0.00   34.97    0.05    0.00   14.12    0.00    0.00    0.00   38.52
+03:51:03 PM   11   34.49    0.00   44.86    0.00    0.00    8.38    0.00    0.00    0.00   12.26
+03:51:03 PM   12    8.84    0.00   22.87    0.00    0.00    8.57    0.00    0.00    0.00   59.72
+03:51:03 PM   13   14.35    0.00   40.36    0.00    0.00   17.18    0.00    0.00    0.00   28.11
+03:51:03 PM   14   13.10    0.00   44.95    0.00    0.00   41.95    0.00    0.00    0.00    0.00
+03:51:03 PM   15   14.26    0.00   39.73    0.00    0.00   16.43    0.00    0.00    0.00   29.58
+03:51:03 PM   16   10.43    0.00   29.18    0.00    0.00   15.16    0.00    0.00    0.00   45.22
+03:51:03 PM   17   16.85    0.00   45.54    0.00    0.00   21.11    0.00    0.00    0.00   16.50
+03:51:03 PM   18   10.30    0.00   29.07    0.00    0.00   15.40    0.00    0.00    0.00   45.23
+03:51:03 PM   19   16.91    0.00   44.95    0.00    0.00   21.01    0.00    0.00    0.00   17.12
+03:51:03 PM   20   11.41    0.00   31.48    0.00    0.00   12.39    0.00    0.00    0.00   44.73
+03:51:03 PM   21   35.00    0.00   44.83    0.00    0.00    7.59    0.00    0.00    0.00   12.58
+03:51:03 PM   22   11.23    0.00   32.01    0.00    0.00   12.26    0.00    0.00    0.00   44.49
+03:51:03 PM   23   34.54    0.00   44.96    0.00    0.00    7.58    0.00    0.00    0.00   12.92
+
+Average:     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+Average:     all   16.99    0.00   39.49    0.00    0.00   18.28    0.00    0.00    0.00   25.24
+Average:       0   12.17    0.00   45.01    0.00    0.00   42.81    0.00    0.00    0.00    0.00
+Average:       1   15.69    0.00   41.52    0.00    0.00   17.67    0.00    0.00    0.00   25.12
+Average:       2   12.43    0.00   45.24    0.00    0.00   42.34    0.00    0.00    0.00    0.00
+Average:       3   15.49    0.00   41.80    0.00    0.00   17.46    0.00    0.00    0.00   25.26
+Average:       4   12.13    0.00   33.60    0.00    0.00   15.84    0.00    0.00    0.00   38.44
+Average:       5   17.07    0.00   46.09    0.00    0.00   20.67    0.00    0.00    0.00   16.17
+Average:       6   12.02    0.00   33.44    0.00    0.00   15.79    0.00    0.00    0.00   38.76
+Average:       7   16.99    0.00   45.73    0.00    0.00   20.93    0.00    0.00    0.00   16.35
+Average:       8   12.45    0.00   35.44    0.00    0.00   13.75    0.00    0.00    0.00   38.36
+Average:       9   34.08    0.00   44.53    0.00    0.00    8.28    0.00    0.00    0.00   13.12
+Average:      10   12.43    0.00   35.05    0.03    0.00   13.95    0.00    0.00    0.00   38.54
+Average:      11   34.53    0.00   44.80    0.00    0.00    8.28    0.00    0.00    0.00   12.39
+Average:      12    8.75    0.00   23.04    0.00    0.00    8.48    0.00    0.00    0.00   59.73
+Average:      13   14.75    0.00   39.74    0.00    0.00   17.17    0.00    0.00    0.00   28.34
+Average:      14   12.93    0.00   44.90    0.00    0.00   42.18    0.00    0.00    0.00    0.00
+Average:      15   14.47    0.00   40.03    0.00    0.00   16.66    0.00    0.00    0.00   28.84
+Average:      16   10.28    0.00   29.92    0.00    0.00   14.85    0.00    0.00    0.00   44.96
+Average:      17   16.79    0.00   46.14    0.00    0.00   21.11    0.00    0.00    0.00   15.97
+Average:      18   10.25    0.00   29.30    0.00    0.00   15.42    0.00    0.00    0.00   45.03
+Average:      19   16.76    0.00   45.52    0.00    0.00   20.76    0.00    0.00    0.00   16.97
+Average:      20   11.62    0.00   31.31    0.00    0.00   12.64    0.00    0.00    0.00   44.44
+Average:      21   34.42    0.00   45.17    0.00    0.00    7.82    0.00    0.00    0.00   12.59
+Average:      22   11.40    0.00   31.86    0.00    0.00   12.43    0.00    0.00    0.00   44.31
+Average:      23   35.02    0.00   44.56    0.00    0.00    7.73    0.00    0.00    0.00   12.69
+rps: 177000
+bash: line 1:   161 Killed                  ./loader -a ../twitter_dataset/twitter_dataset_30x -s docker_servers.txt -g 0.8 -T 5 -c 200 -w 4 -e -r 22500
+stats_time = 5
+Configuration:
+
+nProcessors on system: 24
+nWorkers: 4
+runtime: -1
+Get fraction: 0.800000
+Naggle's algorithm: False
+
+
+host: localhost
+address: 127.0.0.1
+Loading key value file...created uniform distribution 1000
+rps 177000 cpus 4
+meanInterarrival 22
+num_worker_connections 50
+num_worker_connections 50
+Creating worker on tid 447686400
+num_worker_connections 50
+Creating worker on tid 439293696
+starting receive base loop
+num_worker_connections 50
+Creating worker on tid 430900992
+starting receive base loop
+starting receive base loop
+Created 200 connections total
+Creating worker on tid 422508288
+starting receive base loop
+Stats:
+-------------------------
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+1535638615.637080,       0.0,      281405,     225322,      56083,     210255,      15067,  18.416761,  26.100000,  30.000000,  38.900000,   6.125510,   0.000000,  58.086999, 770.315832
+Outstanding requests per worker:
+812 854 834 837 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  128147.5,      640738,     513151,     127587,     478875,      34276,  38.003985,  51.800000,  56.600000,  68.400000,  10.002301,  17.271999,  82.422003, 770.523801
+Outstanding requests per worker:
+1469 1505 1485 1459 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  148933.9,      744670,     596294,     148376,     556716,      39578,  42.669109,  53.500000,  58.400000,  70.500000,   7.659751,  30.704999,  94.543003, 770.218339
+Outstanding requests per worker:
+1670 1663 1641 1670 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  150421.2,      752107,     601911,     150196,     561992,      39919,  45.331605,  59.500000,  64.100000,  78.600000,   9.228472,  32.756999, 102.554999, 770.065048
+Outstanding requests per worker:
+1856 1859 1805 1836 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  145968.1,      729841,     584307,     145534,     545053,      39254,  52.301993,  64.500000,  72.100000,  88.400000,   9.639311,  37.110999, 112.930000, 769.364346
+Outstanding requests per worker:
+2017 2015 1957 1968 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  141613.5,      708068,     566501,     141567,     528654,      37847,  57.363174,  68.400000,  72.200000,  89.800000,   8.822930,  43.285001, 113.750003, 770.200914
+Outstanding requests per worker:
+2083 2084 2039 2034 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  138368.1,      691841,     553751,     138090,     516618,      37133,  60.920264,  74.900000,  87.200000, 102.500000,  11.433154,  41.255001, 115.598001, 770.085259
+Outstanding requests per worker:
+2142 2174 2105 2119 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  140129.7,      700649,     561035,     139614,     523828,      37207,  61.769963,  74.600000,  80.600000,  98.800000,  10.109914,  45.201000, 120.981999, 770.573463
+Outstanding requests per worker:
+2197 2218 2165 2171 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  140890.7,      704454,     563771,     140683,     526350,      37421,  63.087551,  74.500000,  82.400000, 102.400000,  10.316017,  42.270999, 129.414007, 770.193880
+Outstanding requests per worker:
+2257 2271 2225 2239 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  141039.3,      705197,     564344,     140853,     526735,      37609,  64.667725,  75.500000,  82.400000,  96.700000,   9.146540,  49.313001, 131.105006, 770.274313
+Outstanding requests per worker:
+2307 2327 2284 2288 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  141129.7,      705649,     565173,     140476,     526978,      38195,  66.354870,  77.800000,  84.200000,  99.500000,   9.497303,  49.100000, 126.500994, 770.169435
+Outstanding requests per worker:
+2377 2394 2369 2357 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  144246.9,      721235,     577331,     143904,     538660,      38671,  66.309323,  77.200000,  81.100000,  93.600000,   8.381290,  50.145999, 115.451999, 770.166253
+Outstanding requests per worker:
+2401 2429 2411 2406 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  142574.5,      712873,     571169,     141704,     532670,      38499,  68.186303,  80.300000,  86.700000, 112.500000,  10.921596,  52.074000, 134.746000, 769.686711
+Outstanding requests per worker:
+2446 2457 2455 2448 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  142732.7,      713664,     571492,     142172,     533252,      38240,  69.014805,  80.100000,  85.900000,  99.900000,   9.106672,  50.528999, 126.256004, 770.362114
+Outstanding requests per worker:
+2486 2479 2488 2474 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  141802.7,      709014,     568069,     140945,     529944,      38125,  70.410302,  85.100000,  96.200000, 118.800000,  11.971307,  52.623998, 131.944999, 769.539420
+Outstanding requests per worker:
+2502 2526 2533 2504 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  144290.3,      721452,     577449,     144003,     538651,      38798,  70.513025,  81.800000,  87.300000,  99.500000,   8.978281,  53.601999, 117.041998, 769.561670
+Outstanding requests per worker:
+2546 2575 2576 2554 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  142537.5,      712688,     570157,     142531,     531930,      38227,  72.980003,  85.300000,  90.800000, 106.700000,   9.765222,  51.957000, 128.549993, 770.068906
+Outstanding requests per worker:
+2626 2636 2644 2646 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  142051.3,      710257,     568078,     142179,     530069,      38009,  74.837254,  89.200000,  97.000000, 114.400000,  11.184871,  56.341998, 135.977998, 770.290235
+Outstanding requests per worker:
+2666 2659 2663 2676 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  139384.5,      696923,     557758,     139165,     520446,      37312,  77.308077,  94.800000, 102.100000, 120.800000,  12.777656,  56.410000, 161.666006, 769.693349
+Outstanding requests per worker:
+2723 2715 2720 2748 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  141874.5,      709373,     567697,     141676,     529814,      37883,  77.674634,  94.900000, 103.200000, 123.800000,  12.710489,  55.925999, 145.476997, 769.988825
+Outstanding requests per worker:
+2771 2748 2771 2783 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  144192.3,      720962,     577181,     143781,     538718,      38463,  77.248039,  89.400000,  93.200000, 102.200000,   8.643423,  60.385000, 114.671998, 769.880407
+Outstanding requests per worker:
+2810 2798 2824 2824 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  144428.5,      722143,     577766,     144377,     539022,      38744,  78.410148,  89.900000,  95.700000, 108.100000,   9.236435,  57.665002, 128.645003, 769.829114
+Outstanding requests per worker:
+2842 2836 2853 2867 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  140912.7,      704564,     563952,     140612,     526529,      37423,  81.851488,  99.400000, 105.400000, 129.400000,  12.901098,  62.309999, 150.464997, 770.150429
+Outstanding requests per worker:
+2917 2905 2921 2917 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  143543.1,      717716,     574285,     143431,     536004,      38281,  82.033524,  97.000000, 103.700000, 121.900000,  11.258703,  59.684001, 151.628003, 770.035145
+Outstanding requests per worker:
+2965 2946 2970 2956 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  145994.9,      729975,     584052,     145923,     544634,      39418,  81.617890,  94.000000, 100.300000, 114.700000,   9.962118,  64.315997, 151.051000, 769.190526
+Outstanding requests per worker:
+2996 2992 3008 2988 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  145347.7,      726739,     581209,     145530,     542308,      38901,  82.821657,  95.900000, 106.200000, 125.700000,  11.776496,  61.046999, 150.738999, 770.285553
+Outstanding requests per worker:
+3018 3027 3029 3016 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  143763.1,      718816,     574438,     144378,     535998,      38440,  84.380954,  97.300000, 106.700000, 121.000000,  11.150703,  64.172998, 154.969007, 769.603818
+Outstanding requests per worker:
+3063 3088 3075 3059 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  141762.9,      708815,     566828,     141987,     528948,      37880,  87.524919, 105.400000, 111.800000, 127.700000,  12.483557,  63.079000, 150.729999, 770.011769
+Outstanding requests per worker:
+3127 3123 3133 3102 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  146362.7,      731814,     585072,     146742,     545861,      39211,  85.668061,  97.500000, 103.400000, 122.900000,  10.333615,  66.587001, 163.803995, 769.562300
+Outstanding requests per worker:
+3147 3157 3158 3118 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  144765.7,      723829,     578929,     144900,     540489,      38440,  87.317281, 100.800000, 108.400000, 125.700000,  10.881526,  69.853999, 138.297006, 770.428804
+Outstanding requests per worker:
+3192 3179 3185 3137 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  147182.3,      735912,     589184,     146728,     549768,      39416,  86.839064,  99.300000, 105.900000, 129.600000,  10.436961,  68.512000, 151.559994, 769.589135
+Outstanding requests per worker:
+3231 3218 3215 3157 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  146122.9,      730615,     584642,     145973,     545537,      39105,  88.257987, 102.500000, 108.500000, 134.500000,  11.793447,  69.922000, 165.447995, 770.076943
+Outstanding requests per worker:
+3259 3257 3243 3184 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  146947.5,      734738,     588058,     146680,     548761,      39297,  88.616885, 102.500000, 109.400000, 122.400000,  10.775945,  69.885001, 158.267006, 769.913031
+Outstanding requests per worker:
+3283 3297 3276 3212 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  146200.1,      731001,     584782,     146219,     545526,      39256,  89.873713, 103.400000, 110.800000, 137.000000,  11.644522,  67.642003, 161.442995, 769.755365
+Outstanding requests per worker:
+3309 3327 3302 3246 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  146829.9,      734150,     587760,     146390,     548125,      39635,  89.918043, 101.800000, 108.700000, 139.500000,  11.675062,  70.744000, 159.593001, 769.553003
+Outstanding requests per worker:
+3337 3336 3314 3258 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  143541.1,      717706,     574224,     143482,     535800,      38424,  93.099444, 110.900000, 124.000000, 147.800000,  15.021015,  70.201002, 170.286998, 769.781082
+Outstanding requests per worker:
+3393 3395 3370 3312 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  149569.1,      747846,     597965,     149881,     558040,      39925,  90.432526, 106.200000, 113.900000, 136.300000,  12.754546,  73.321998, 170.699000, 769.813892
+Outstanding requests per worker:
+3415 3409 3376 3324 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  147534.7,      737674,     590720,     146954,     551479,      39241,  91.938496, 106.100000, 113.300000, 126.600000,  11.369729,  72.238997, 156.211004, 770.406049
+Outstanding requests per worker:
+3439 3423 3387 3345 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  146983.9,      734920,     587771,     147149,     548845,      38926,  93.082364, 108.900000, 116.500000, 132.700000,  12.212935,  69.922999, 157.563999, 770.985314
+Outstanding requests per worker:
+3477 3448 3425 3383 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  144050.9,      720255,     576130,     144125,     537200,      38930,  95.970530, 113.900000, 121.300000, 140.000000,  12.990965,  69.229998, 160.986006, 769.446984
+Outstanding requests per worker:
+3553 3515 3469 3447 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  147634.3,      738172,     590388,     147784,     551018,      39370,  95.342593, 110.700000, 119.900000, 148.800000,  13.306156,  74.684002, 189.880997, 770.321753
+Outstanding requests per worker:
+3578 3557 3495 3486 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  145986.9,      729935,     583961,     145974,     545004,      38957,  96.814044, 111.700000, 126.700000, 156.100000,  14.262262,  76.467000, 182.407007, 770.262050
+Outstanding requests per worker:
+3594 3580 3523 3514 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  146292.5,      731463,     585642,     145821,     546491,      39151,  97.672596, 113.700000, 121.300000, 137.500000,  11.794714,  76.013997, 149.119005, 770.091863
+Outstanding requests per worker:
+3615 3614 3540 3540 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  148696.5,      743483,     594491,     148992,     555140,      39351,  96.582891, 109.400000, 115.200000, 130.300000,  10.181109,  76.828003, 141.231999, 770.061400
+Outstanding requests per worker:
+3641 3635 3581 3556 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  146885.3,      734427,     587348,     147079,     548121,      39227,  97.741897, 110.500000, 118.900000, 148.600000,  12.515513,  77.794001, 193.213999, 769.811277
+Outstanding requests per worker:
+3651 3647 3601 3581 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  146569.9,      732850,     585760,     147090,     546710,      39050, 100.090847, 119.500000, 128.600000, 145.400000,  14.334130,  76.930001, 192.993000, 769.780782
+Outstanding requests per worker:
+3704 3681 3653 3626 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  146482.3,      732412,     586015,     146397,     546600,      39415, 100.363299, 115.600000, 126.300000, 137.700000,  11.912856,  80.288999, 157.591000, 770.623762
+Outstanding requests per worker:
+3744 3715 3683 3679 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  148265.3,      741327,     592555,     148772,     553374,      39181, 100.064906, 115.800000, 126.900000, 149.500000,  13.407048,  78.970999, 179.948002, 770.091192
+Outstanding requests per worker:
+3749 3724 3689 3685 
+  timeDiff,     rps,        reLinux 3.10.0-514.el7.x86_64 (n140.parsacluster.epfl.ch) 	08/30/2018 	_x86_64_	(24 CPU)
+quests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  149311.7,      746559,     596940,     149619,     557239,      39701,  99.302076, 112.600000, 118.600000, 145.000000,  12.074757,  71.477003, 184.550002, 769.792291
+Outstanding requests per worker:
+3759 3733 3701 3698 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  142326.3,      711632,     569084,     142548,     530949,      38135, 105.254862, 127.500000, 141.300000, 170.900000,  17.718415,  76.371998, 191.010997, 769.804693
+Outstanding requests per worker:
+3791 3763 3734 3719 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  149133.3,      745667,     596523,     149144,     556862,      39661, 100.747282, 113.400000, 121.200000, 138.100000,  11.432820,  82.924001, 183.629006, 770.392005
+Outstanding requests per worker:
+3795 3765 3742 3723 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  150526.0,      752631,     602543,     150088,     562623,      39920, 100.114264, 112.500000, 118.100000, 133.800000,   9.968459,  79.331003, 160.541996, 770.574575
+Outstanding requests per worker:
+3811 3789 3758 3737 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  145412.1,      727061,     582387,     144674,     542624,      39763, 104.311236, 122.900000, 132.000000, 156.200000,  13.727452,  80.591001, 181.611001, 768.892456
+Outstanding requests per worker:
+3847 3817 3797 3771 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  149287.9,      746440,     597675,     148765,     556989,      40686, 102.492485, 118.500000, 129.700000, 156.900000,  13.511319,  77.845998, 181.410000, 769.548094
+Outstanding requests per worker:
+3862 3839 3827 3792 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  148044.3,      740222,     592240,     147982,     551482,      40758, 103.575490, 118.500000, 128.900000, 156.500000,  13.522513,  83.984002, 188.637003, 768.855866
+Outstanding requests per worker:
+3872 3855 3848 3811 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  149187.5,      745938,     596355,     149583,     555527,      40828, 103.184785, 116.300000, 123.500000, 146.000000,  11.544592,  83.028004, 187.930003, 767.637654
+Outstanding requests per worker:
+3887 3860 3854 3823 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  146690.3,      733452,     586609,     146843,     547089,      39520, 105.311875, 120.900000, 129.000000, 150.500000,  12.908093,  82.443997, 191.339001, 769.082973
+Outstanding requests per worker:
+3908 3898 3878 3857 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  147499.7,      737499,     590840,     146659,     551163,      39677, 105.874072, 122.400000, 133.800000, 148.700000,  12.835443,  85.307002, 158.581004, 769.509331
+Outstanding requests per worker:
+3932 3932 3910 3881 
+  time
+03:56:03 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+03:56:23 PM  all   15.99    0.00   50.86    0.00    0.00   27.80    0.00    0.00    0.00    5.35
+03:56:23 PM    0   14.20    0.00   46.70    0.00    0.00   39.10    0.00    0.00    0.00    0.00
+03:56:23 PM    1   17.20    0.00   51.69    0.00    0.00   23.13    0.00    0.00    0.00    7.98
+03:56:23 PM    2   13.79    0.00   47.88    0.00    0.00   38.28    0.00    0.00    0.00    0.05
+03:56:23 PM    3   17.25    0.00   51.64    0.00    0.00   23.54    0.00    0.00    0.00    7.57
+03:56:23 PM    4   13.64    0.00   47.32    0.00    0.00   34.09    0.00    0.00    0.00    4.95
+03:56:23 PM    5   18.63    0.00   53.22    0.00    0.00   24.82    0.00    0.00    0.00    3.32
+03:56:23 PM    6   13.64    0.00   46.54    0.00    0.00   35.32    0.00    0.00    0.00    4.50
+03:56:23 PM    7   19.02    0.00   53.35    0.00    0.00   24.11    0.00    0.00    0.00    3.52
+03:56:23 PM    8   13.44    0.00   53.41    0.00    0.00   24.22    0.00    0.00    0.00    8.93
+03:56:23 PM    9   19.67    0.00   53.90    0.00    0.00   25.43    0.00    0.00    0.00    1.00
+03:56:23 PM   10   13.60    0.00   52.98    0.00    0.00   24.18    0.00    0.00    0.00    9.24
+03:56:23 PM   11   19.06    0.00   54.63    0.00    0.00   25.31    0.00    0.00    0.00    1.00
+03:56:23 PM   12   12.69    0.00   45.65    0.00    0.00   20.62    0.00    0.00    0.00   21.04
+03:56:23 PM   13   17.68    0.00   50.28    0.00    0.00   23.48    0.00    0.00    0.00    8.56
+03:56:23 PM   14   13.96    0.00   47.50    0.00    0.00   38.54    0.00    0.00    0.00    0.00
+03:56:23 PM   15   17.13    0.00   51.15    0.00    0.00   23.10    0.00    0.00    0.00    8.62
+03:56:23 PM   16   12.88    0.00   47.02    0.00    0.00   35.25    0.00    0.00    0.00    4.85
+03:56:23 PM   17   19.06    0.00   52.97    0.00    0.00   24.30    0.00    0.00    0.00    3.67
+03:56:23 PM   18   12.90    0.00   46.23    0.00    0.00   36.12    0.00    0.00    0.00    4.75
+03:56:23 PM   19   18.82    0.00   53.70    0.00    0.00   24.56    0.00    0.00    0.00    2.92
+03:56:23 PM   20   12.96    0.00   52.51    0.00    0.00   23.87    0.00    0.00    0.00   10.66
+03:56:23 PM   21   19.37    0.00   54.05    0.00    0.00   25.58    0.00    0.00    0.00    1.00
+03:56:23 PM   22   13.82    0.00   51.75    0.00    0.00   23.90    0.00    0.00    0.00   10.53
+03:56:23 PM   23   18.97    0.00   54.60    0.00    0.00   25.43    0.00    0.00    0.00    1.00
+
+03:56:23 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+03:56:43 PM  all   16.18    0.00   50.66    0.00    0.00   27.71    0.00    0.00    0.00    5.45
+03:56:43 PM    0   14.40    0.00   46.95    0.00    0.00   38.65    0.00    0.00    0.00    0.00
+03:56:43 PM    1   17.11    0.00   51.53    0.00    0.00   23.95    0.00    0.00    0.00    7.41
+03:56:43 PM    2   14.15    0.00   47.45    0.00    0.00   38.35    0.00    0.00    0.00    0.05
+03:56:43 PM    3   17.20    0.00   51.20    0.00    0.00   23.81    0.00    0.00    0.00    7.78
+03:56:43 PM    4   13.84    0.00   46.73    0.00    0.00   34.16    0.00    0.00    0.00    5.27
+03:56:43 PM    5   18.93    0.00   53.52    0.00    0.00   24.42    0.00    0.00    0.00    3.12
+03:56:43 PM    6   13.68    0.00   46.61    0.00    0.00   34.75    0.00    0.00    0.00    4.96
+03:56:43 PM    7   18.91    0.00   53.20    0.00    0.00   24.21    0.00    0.00    0.00    3.68
+03:56:43 PM    8   13.70    0.00   52.63    0.00    0.00   24.41    0.00    0.00    0.00    9.27
+03:56:43 PM    9   19.73    0.00   53.68    0.00    0.00   25.69    0.00    0.00    0.00    0.90
+03:56:43 PM   10   13.61    0.00   52.90    0.00    0.00   24.14    0.00    0.00    0.00    9.35
+03:56:43 PM   11   19.19    0.00   54.66    0.00    0.00   25.30    0.00    0.00    0.00    0.85
+03:56:43 PM   12   13.38    0.00   45.18    0.00    0.00   20.12    0.00    0.00    0.00   21.32
+03:56:43 PM   13   16.68    0.00   51.20    0.00    0.00   22.97    0.00    0.00    0.00    9.16
+03:56:43 PM   14   14.64    0.00   47.45    0.00    0.00   37.86    0.00    0.00    0.00    0.05
+03:56:43 PM   15   17.05    0.00   50.74    0.00    0.00   23.45    0.00    0.00    0.00    8.76
+03:56:43 PM   16   13.81    0.00   45.88    0.00    0.00   35.66    0.00    0.00    0.00    4.65
+03:56:43 PM   17   19.52    0.00   53.02    0.00    0.00   24.30    0.00    0.00    0.00    3.17
+03:56:43 PM   18   13.22    0.00   46.47    0.00    0.00   35.47    0.00    0.00    0.00    4.84
+03:56:43 PM   19   19.83    0.00   52.74    0.00    0.00   23.96    0.00    0.00    0.00    3.47
+03:56:43 PM   20   13.82    0.00   51.59    0.00    0.00   23.64    0.00    0.00    0.00   10.95
+03:56:43 PM   21   19.00    0.00   54.19    0.00    0.00   25.46    0.00    0.00    0.00    1.35
+03:56:43 PM   22   13.43    0.00   52.14    0.00    0.00   23.67    0.00    0.00    0.00   10.76
+03:56:43 PM   23   19.19    0.00   54.21    0.00    0.00   25.75    0.00    0.00    0.00    0.85
+
+Average:     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+Average:     all   16.08    0.00   50.76    0.00    0.00   27.75    0.00    0.00    0.00    5.40
+Average:       0   14.30    0.00   46.83    0.00    0.00   38.88    0.00    0.00    0.00    0.00
+Average:       1   17.15    0.00   51.61    0.00    0.00   23.54    0.00    0.00    0.00    7.69
+Average:       2   13.97    0.00   47.66    0.00    0.00   38.32    0.00    0.00    0.00    0.05
+Average:       3   17.23    0.00   51.42    0.00    0.00   23.68    0.00    0.00    0.00    7.68
+Average:       4   13.74    0.00   47.03    0.00    0.00   34.13    0.00    0.00    0.00    5.11
+Average:       5   18.78    0.00   53.37    0.00    0.00   24.62    0.00    0.00    0.00    3.22
+Average:       6   13.66    0.00   46.57    0.00    0.00   35.04    0.00    0.00    0.00    4.73
+Average:       7   18.97    0.00   53.27    0.00    0.00   24.16    0.00    0.00    0.00    3.60
+Average:       8   13.57    0.00   53.02    0.00    0.00   24.31    0.00    0.00    0.00    9.10
+Average:       9   19.70    0.00   53.79    0.00    0.00   25.56    0.00    0.00    0.00    0.95
+Average:      10   13.61    0.00   52.94    0.00    0.00   24.16    0.00    0.00    0.00    9.29
+Average:      11   19.12    0.00   54.64    0.00    0.00   25.31    0.00    0.00    0.00    0.93
+Average:      12   13.04    0.00   45.41    0.00    0.00   20.37    0.00    0.00    0.00   21.18
+Average:      13   17.18    0.00   50.74    0.00    0.00   23.22    0.00    0.00    0.00    8.86
+Average:      14   14.30    0.00   47.48    0.00    0.00   38.20    0.00    0.00    0.00    0.03
+Average:      15   17.09    0.00   50.95    0.00    0.00   23.28    0.00    0.00    0.00    8.69
+Average:      16   13.34    0.00   46.45    0.00    0.00   35.46    0.00    0.00    0.00    4.75
+Average:      17   19.29    0.00   52.99    0.00    0.00   24.30    0.00    0.00    0.00    3.42
+Average:      18   13.06    0.00   46.35    0.00    0.00   35.79    0.00    0.00    0.00    4.80
+Average:      19   19.33    0.00   53.22    0.00    0.00   24.26    0.00    0.00    0.00    3.20
+Average:      20   13.39    0.00   52.05    0.00    0.00   23.76    0.00    0.00    0.00   10.80
+Average:      21   19.18    0.00   54.12    0.00    0.00   25.52    0.00    0.00    0.00    1.18
+Average:      22   13.63    0.00   51.94    0.00    0.00   23.79    0.00    0.00    0.00   10.65
+Average:      23   19.08    0.00   54.41    0.00    0.00   25.59    0.00    0.00    0.00    0.93
+rps: 14500
+bash: line 1:   177 Killed                  ./loader -a ../twitter_dataset/twitter_dataset_30x -s docker_servers.txt -g 0.8 -T 5 -c 200 -w 4 -e -r 177000
+stats_time = 5
+Configuration:
+
+nProcessors on system: 24
+nWorkers: 4
+runtime: -1
+Get fraction: 0.800000
+Naggle's algorithm: False
+
+
+host: localhost
+address: 127.0.0.1
+Loading key value file...created uniform distribution 1000
+rps 14500 cpus 4
+meanInterarrival 275
+num_worker_connections 50
+num_worker_connections 50
+Creating worker on tid 3143067392
+starting receive base loop
+num_worker_connections 50
+num_worker_connections 50
+Creating worker on tid 3134674688
+Created 200 connections total
+starting receive base loop
+Creating worker on tid 3117889280
+Creating worker on tid 3126281984
+starting receive base loop
+starting receive base loop
+Stats:
+-------------------------
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+1535638953.637418,       0.0,       28962,      23187,       5775,      21664,       1523,   0.358448,   0.549100,   1.800000,   4.200000,   0.835891,   0.000000,  20.601001, 771.711778
+Outstanding requests per worker:
+0 1 0 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14534.2,       72671,      58054,      14617,      54149,       3905,   1.466945,   4.500000,   5.600000,   8.400000,   2.033469,   0.069000,  18.359000, 769.902195
+Outstanding requests per worker:
+26 22 19 30 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14614.6,       73073,      58555,      14518,      54495,       4060,   1.618855,   4.400000,   5.400000,   7.900000,   1.914133,   0.065000,  18.954000, 765.580975
+Outstanding requests per worker:
+0 1 2 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14598.4,       72992,      58386,      14606,      54402,       3984,   0.473752,   1.200000,   2.600000,   4.800000,   1.055289,   0.064000,  17.552000, 770.333179
+Outstanding requests per worker:
+2 0 0 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14612.0,       73060,      58423,      14637,      54474,       3949,   0.712026,   2.500000,   3.800000,   6.400000,   1.441787,   0.067000,  24.860000, 768.501361
+Outstanding requests per worker:
+14 14 8 16 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14559.2,       72796,      58128,      14668,      54106,       4022,   1.421829,   4.200000,   5.100000,   7.900000,   1.872383,   0.064000,  17.287999, 767.398035
+Outstanding requests per worker:
+3 4 4 5 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14509.2,       72546,      58074,      14472,      54101,       3973,   1.883605,   4.700000,   5.700000,   8.300000,   2.013112,   0.066000,  18.180000, 768.659142
+Outstanding requests per worker:
+1 12 1 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14547.0,       72735,      58223,      14512,      54204,       4019,   1.846788,   4.600000,   5.500000,   7.700000,   1.920305,   0.068000,  15.133000, 766.435842
+Outstanding requests per worker:
+0 3 1 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14580.4,       72902,      58371,      14531,      54380,       3991,   1.871742,   4.700000,   5.800000,   8.400000,   2.046092,   0.067000,  16.705001, 765.599613
+Outstanding requests per worker:
+7 8 16 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14466.4,       72332,      57939,      14393,      53589,       4350,   1.912579,   4.800000,   5.700000,   8.100000,   2.013942,   0.068000,  18.824000, 763.376810
+Outstanding requests per worker:
+17 18 6 18 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14566.8,       72834,      58283,      14551,      54258,       4025,   1.908248,   4.700000,   5.800000,   8.200000,   2.002950,   0.060000,  17.177001, 767.245200
+Outstanding requests per worker:
+0 0 0 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14615.8,       73079,      58497,      14582,      54451,       4046,   1.806824,   4.500000,   5.400000,   7.900000,   1.916983,   0.062000,  14.340000, 768.378447
+Outstanding requests per worker:
+4 15 6 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14504.8,       72524,      58060,      14464,      54132,       3928,   1.893411,   4.700000,   5.600000,   8.100000,   2.193203,   0.066000, 120.465003, 770.568119
+Outstanding requests per worker:
+15 10 3 4 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14597.0,       72985,      58309,      14676,      54442,       3867,   1.880534,   4.600000,   5.600000,   8.000000,   1.974681,   0.067000,  20.716000, 772.821486
+Outstanding requests per worker:
+16 1 1 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14616.8,       73084,      58519,      14565,      54554,       3965,   1.796608,   4.500000,   5.400000,   7.700000,   1.911905,   0.067000,  16.856000, 768.739145
+Outstanding requests per worker:
+11 42 2 21 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14697.4,       73487,      58711,      14776,      54777,       3934,   1.955259,   4.700000,   5.700000,   8.000000,   1.973147,   0.064000,  17.333999, 769.554973
+Outstanding requests per worker:
+18 7 11 20 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14588.2,       72941,      58306,      14635,      54010,       4296,   1.932307,   4.800000,   5.800000,   8.200000,   2.037081,   0.067000,  15.615000, 763.620228
+Outstanding requests per worker:
+10 2 8 5 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14600.6,       73003,      58311,      14692,      54317,       3994,   1.775228,   4.500000,   5.500000,   7.900000,   1.912546,   0.063000,  14.227000, 768.106927
+Outstanding requests per worker:
+0 9 4 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14568.6,       72843,      58231,      14612,      54206,       4025,   1.826029,   4.600000,   5.600000,   8.000000,   1.968266,   0.060000,  16.714999, 770.638749
+Outstanding requests per worker:
+9 2 9 8 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14637.4,       73187,      58491,      14696,      54536,       3955,   1.954286,   4.700000,   5.700000,   8.200000,   2.011866,   0.065000,  17.797999, 768.874357
+Outstanding requests per worker:
+3 9 5 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14605.0,       73025,      58296,      14729,      54354,       3942,   1.956617,   4.800000,   5.900000,   8.400000,   2.056318,   0.067000,  18.019000, 769.952467
+Outstanding requests per worker:
+10 19 18 16 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14565.6,       72828,      58104,      14724,      54123,       3981,   1.830168,   4.600000,   5.500000,   7.900000,   1.940312,   0.065000,  15.727000, 767.640868
+Outstanding requests per worker:
+4 3 2 6 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14562.4,       72812,      58186,      14626,      54225,       3961,   1.945359,   4.800000,   5.800000,   8.600000,   2.069491,   0.064000,  16.768999, 768.419946
+Outstanding requests per worker:
+17 18 14 15 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14582.4,       72912,      58212,      14700,      54274,       3938,   1.904966,   4.700000,   5.800000,   8.800000,   2.075988,   0.068000,  18.219000, 766.946008
+Outstanding requests per worker:
+22 1 0 4 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14536.4,       72682,      57788,      14894,      53813,       3975,   1.928277,   4.700000,   5.700000,   7.900000,   1.984049,   0.065000,  17.953999, 765.874905
+Outstanding requests per worker:
+5 3 2 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14577.2,       72886,      58010,      14876,      54002,       4008,   1.835405,   4.500000,   5.400000,   8.100000,   1.946847,   0.065000,  17.395001, 768.373436
+Outstanding requests per worker:
+2 1 5 5 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14650.6,       73253,      58537,      14716,      54627,       3910,   1.806552,   4.500000,   5.400000,   8.000000,   1.939457,   0.065000,  16.059000, 770.116268
+Outstanding requests per worker:
+5 2 6 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14503.2,       72516,      58006,      14510,      54125,       3881,   1.808788,   4.600000,   5.400000,   7.900000,   1.925245,   0.068000,  17.043000, 769.827483
+Outstanding requests per worker:
+2 0 6 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14670.8,       73354,      58698,      14656,      54719,       3979,   1.970395,   4.700000,   5.600000,   7.800000,   1.938372,   0.066000,  13.906000, 771.294780
+Outstanding requests per worker:
+4 10 4 5 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14537.6,       72688,      58197,      14491,      54173,       4024,   1.871290,   4.600000,   5.700000,   8.200000,   1.979668,   0.068000,  15.254000, 766.946647
+Outstanding requests per worker:
+0 0 0 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14605.4,       73027,      58378,      14649,      54275,       4103,   1.877042,   4.700000,   5.700000,   8.100000,   2.003086,   0.059000,  17.235000, 768.498852
+Outstanding requests per worker:
+14 15 39 8 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14619.4,       73097,      58616,      14481,      54608,       4008,   1.831303,   4.500000,   5.500000,   8.000000,   1.967762,   0.064000,  21.969000, 768.478129
+Outstanding requests per worker:
+0 0 1 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14603.0,       73015,      58334,      14681,      54369,       3965,   1.943426,   4.700000,   5.900000,   8.900000,   2.090800,   0.064000,  18.262999, 766.895327
+Outstanding requests per worker:
+0 0 3 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14628.0,       73140,      58511,      14629,      54561,       3950,   1.880381,   4.600000,   5.600000,   7.900000,   1.961012,   0.065000,  14.219000, 769.699783
+Outstanding requests per worker:
+12 6 9 10 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14641.2,       73206,      58470,      14736,      54524,       3946,   1.894943,   4.600000,   5.600000,   8.200000,   1.987357,   0.069000,  15.509000, 770.232632
+Outstanding requests per worker:
+12 18 14 15 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14565.8,       72829,      58131,      14698,      54197,       3934,   1.907582,   4.700000,   5.600000,   7.900000,   1.939837,   0.063000,  12.987000, 770.499923
+Outstanding requests per worker:
+2 5 1 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14545.6,       72728,      58316,      14412,      54317,       3999,   1.952522,   4.800000,   5.700000,   8.100000,   2.019551,   0.065000,  20.486999, 768.560361
+Outstanding requests per worker:
+21 2 5 19 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14636.0,       73180,      58525,      14655,      54594,       3931,   2.830456,   6.800000,   8.800000,  14.300000,   3.105235,   0.070000,  26.544999, 770.966732
+Outstanding requests per worker:
+34 41 12 23 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14728.8,       73644,      58908,      14736,      54881,       4027,   2.944911,   6.700000,   8.400000,  11.600000,   2.892195,   0.063000,  30.859999, 767.849681
+Outstanding requests per worker:
+12 12 10 8 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14556.6,       72783,      58316,      14467,      54327,       3989,   1.911976,   4.700000,   5.600000,   7.900000,   1.940839,   0.065000,  15.586000, 767.833956
+Outstanding requests per worker:
+1 1 0 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14548.0,       72740,      58235,      14505,      54252,       3983,   1.909663,   4.700000,   5.500000,   8.100000,   1.944788,   0.063000,  14.738000, 768.810904
+Outstanding requests per worker:
+24 17 6 11 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14529.0,       72645,      58151,      14494,      54263,       3888,   1.941057,   4.700000,   5.700000,   8.300000,   2.009305,   0.062000,  19.428000, 769.352083
+Outstanding requests per worker:
+4 5 3 7 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14580.8,       72904,      58323,      14581,      54355,       3968,   1.990193,   4.900000,   6.000000,   8.100000,   2.035463,   0.067000,  13.746000, 770.380999
+Outstanding requests per worker:
+14 13 11 36 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14537.0,       72685,      58157,      14528,      54294,       3863,   1.820287,   4.500000,   5.400000,   7.900000,   1.917597,   0.066000,  19.414000, 770.596042
+Outstanding requests per worker:
+20 4 8 15 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14488.4,       72442,      57783,      14659,      53868,       3915,   1.906627,   4.800000,   5.900000,   8.200000,   2.025049,   0.067000,  16.496001, 770.498088
+Outstanding requests per worker:
+18 11 2 10 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14574.2,       72871,      58430,      14441,      54433,       3997,   1.966369,   4.800000,   5.900000,   8.500000,   2.047302,   0.066000,  14.884000, 770.171812
+Outstanding requests per worker:
+1 3 4 4 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14563.2,       72816,      58112,      14704,      54235,       3877,   1.772157,   4.600000,   5.600000,   8.100000,   1.969998,   0.063000,  19.687001, 770.200079
+Outstanding requests per worker:
+0 4 1 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14514.8,       72574,      58216,      14358,      54320,       3896,   1.845395,   4.600000,   5.700000,   8.300000,   2.006084,   0.069000,  18.851001, 769.881201
+Outstanding requests per worker:
+13 48 16 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14604.8,       73024,      58391,      14633,      54461,       3930,   1.839164,   4.600000,   5.500000,   8.000000,   1.929968,   0.066000,  16.298000, 770.026168
+Outstanding requests per worker:
+1 0 16 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th, Linux 3.10.0-514.el7.x86_64 (n140.parsacluster.epfl.ch) 	08/30/2018 	_x86_64_	(24 CPU)
+      std,       min,        max,    avgGetSize
+  5.000005,   14544.4,       72722,      58282,      14440,      54276,       4006,   1.875123,   4.700000,   5.800000,   8.300000,   2.053738,   0.066000,  20.011000, 767.825092
+Outstanding requests per worker:
+0 0 7 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14601.0,       73005,      58368,      14637,      54455,       3913,   1.875739,   4.600000,   5.500000,   7.900000,   1.931806,   0.065000,  14.586000, 769.657038
+Outstanding requests per worker:
+0 0 0 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14586.2,       72931,      58225,      14706,      54321,       3904,   1.840630,   4.600000,   5.600000,   8.200000,   1.962176,   0.063000,  17.666001, 769.187737
+Outstanding requests per worker:
+4 19 7 5 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14614.0,       73070,      58507,      14563,      54524,       3983,   1.828166,   4.600000,   5.500000,   8.000000,   1.960778,   0.067000,  15.768999, 768.903242
+Outstanding requests per worker:
+14 10 11 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14620.6,       73103,      58516,      14587,      54623,       3893,   1.880759,   4.700000,   5.800000,   8.100000,   1.996876,   0.065000,  13.811000, 770.178379
+Outstanding requests per worker:
+1 2 6 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14413.6,       72068,      57493,      14575,      53604,       3889,   1.918261,   4.700000,   5.700000,   8.300000,   2.019087,   0.066000,  16.266000, 766.971684
+Outstanding requests per worker:
+1 0 2 9 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14590.4,       72952,      58454,      14498,      54567,       3887,   1.832597,   4.600000,   5.600000,   8.100000,   1.975920,   0.066000,  17.957000, 769.369213
+Outstanding requests per worker:
+4 11 4 5 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14553.6,       72768,      58291,      14477,      54404,       3887,   1.815435,   4.600000,   5.600000,   8.100000,   1.988904,   0.068000,  16.381999, 769.975914
+Outstanding requests per worker:
+0 0 0 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14647.4,       73237,      58569,      14668,      54610,       3959,   1.879293,   4.700000,   5.900000,   8.500000,   2.037608,   0.068000,  18.431000, 768.996397
+Outstanding requests per worker:
+10 5 16 6 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14588.2,       72941,      58377,      14564,      54407,       3970,   1.884096,   4.700000,   5.600000,   8.000000,   1.965679,   0.062000,  14.770000, 767.752574
+Outstanding requests per worker:
+1 0 0 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   14557.6,       72788,      
+04:01:43 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+04:02:03 PM  all   19.63    0.00   37.63    0.00    0.00   15.31    0.00    0.00    0.00   27.42
+04:02:03 PM    0   11.83    0.00   36.93    0.00    0.00   30.06    0.00    0.00    0.00   21.18
+04:02:03 PM    1   28.16    0.00   42.74    0.00    0.00   10.32    0.00    0.00    0.00   18.78
+04:02:03 PM    2   13.04    0.00   44.58    0.00    0.00   42.38    0.00    0.00    0.00    0.00
+04:02:03 PM    3   29.24    0.00   42.82    0.00    0.00    9.80    0.00    0.00    0.00   18.14
+04:02:03 PM    4   10.83    0.00   29.37    0.00    0.00   13.44    0.00    0.00    0.00   46.36
+04:02:03 PM    5   16.96    0.00   45.15    0.00    0.00   21.65    0.00    0.00    0.00   16.24
+04:02:03 PM    6   10.76    0.00   29.51    0.00    0.00   12.96    0.00    0.00    0.00   46.77
+04:02:03 PM    7   16.56    0.00   44.39    0.00    0.00   20.46    0.00    0.00    0.00   18.59
+04:02:03 PM    8   10.97    0.00   30.15    0.00    0.00   12.57    0.00    0.00    0.00   46.31
+04:02:03 PM    9   39.31    0.00   43.24    0.00    0.00    5.87    0.00    0.00    0.00   11.59
+04:02:03 PM   10   11.03    0.00   31.00    0.00    0.00   11.69    0.00    0.00    0.00   46.28
+04:02:03 PM   11   38.05    0.00   43.44    0.00    0.00    5.69    0.00    0.00    0.00   12.82
+04:02:03 PM   12    8.52    0.00   22.96    0.00    0.00    8.69    0.00    0.00    0.00   59.83
+04:02:03 PM   13   28.83    0.00   41.16    0.00    0.00    9.80    0.00    0.00    0.00   20.22
+04:02:03 PM   14   12.51    0.00   44.69    0.00    0.00   42.79    0.00    0.00    0.00    0.00
+04:02:03 PM   15   29.83    0.00   42.04    0.00    0.00    9.33    0.00    0.00    0.00   18.80
+04:02:03 PM   16    9.05    0.00   25.00    0.00    0.00   12.31    0.00    0.00    0.00   53.64
+04:02:03 PM   17   16.29    0.00   44.90    0.00    0.00   21.19    0.00    0.00    0.00   17.63
+04:02:03 PM   18    9.19    0.00   25.37    0.00    0.00   11.83    0.00    0.00    0.00   53.60
+04:02:03 PM   19   16.66    0.00   44.56    0.00    0.00   20.32    0.00    0.00    0.00   18.46
+04:02:03 PM   20    9.82    0.00   27.17    0.00    0.00   10.64    0.00    0.00    0.00   52.37
+04:02:03 PM   21   38.98    0.00   44.53    0.00    0.00    5.24    0.00    0.00    0.00   11.25
+04:02:03 PM   22   10.09    0.00   27.63    0.00    0.00   10.09    0.00    0.00    0.00   52.19
+04:02:03 PM   23   38.93    0.00   43.67    0.00    0.00    5.26    0.00    0.00    0.00   12.14
+
+04:02:03 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+04:02:23 PM  all   19.56    0.00   37.83    0.00    0.00   15.34    0.00    0.00    0.00   27.27
+04:02:23 PM    0   11.52    0.00   36.63    0.00    0.00   30.97    0.00    0.00    0.00   20.88
+04:02:23 PM    1   28.65    0.00   42.76    0.00    0.00   10.43    0.00    0.00    0.00   18.16
+04:02:23 PM    2   12.54    0.00   44.93    0.00    0.00   42.43    0.00    0.00    0.00    0.10
+04:02:23 PM    3   29.03    0.00   42.61    0.00    0.00    9.83    0.00    0.00    0.00   18.52
+04:02:23 PM    4   11.17    0.00   29.68    0.00    0.00   13.05    0.00    0.00    0.00   46.10
+04:02:23 PM    5   16.58    0.00   45.75    0.00    0.00   20.88    0.00    0.00    0.00   16.79
+04:02:23 PM    6   11.25    0.00   29.31    0.00    0.00   12.96    0.00    0.00    0.00   46.48
+04:02:23 PM    7   16.53    0.00   45.66    0.00    0.00   21.33    0.00    0.00    0.00   16.48
+04:02:23 PM    8   11.22    0.00   30.58    0.00    0.00   12.05    0.00    0.00    0.00   46.15
+04:02:23 PM    9   38.10    0.00   43.57    0.00    0.00    5.79    0.00    0.00    0.00   12.54
+04:02:23 PM   10   10.79    0.00   30.49    0.00    0.00   12.55    0.00    0.00    0.00   46.18
+04:02:23 PM   11   39.16    0.00   43.55    0.00    0.00    5.41    0.00    0.00    0.00   11.88
+04:02:23 PM   12    8.28    0.00   23.00    0.00    0.00    9.05    0.00    0.00    0.00   59.67
+04:02:23 PM   13   28.95    0.00   41.69    0.00    0.00    9.53    0.00    0.00    0.00   19.83
+04:02:23 PM   14   12.84    0.00   45.28    0.00    0.00   41.88    0.00    0.00    0.00    0.00
+04:02:23 PM   15   28.82    0.00   42.41    0.00    0.00    9.68    0.00    0.00    0.00   19.09
+04:02:23 PM   16    8.95    0.00   25.35    0.00    0.00   12.01    0.00    0.00    0.00   53.70
+04:02:23 PM   17   16.49    0.00   45.62    0.00    0.00   20.88    0.00    0.00    0.00   17.01
+04:02:23 PM   18    8.98    0.00   25.65    0.00    0.00   12.08    0.00    0.00    0.00   53.30
+04:02:23 PM   19   16.50    0.00   45.01    0.00    0.00   20.69    0.00    0.00    0.00   17.80
+04:02:23 PM   20    9.76    0.00   27.10    0.00    0.00   10.64    0.00    0.00    0.00   52.50
+04:02:23 PM   21   38.56    0.00   43.59    0.00    0.00    5.44    0.00    0.00    0.00   12.41
+04:02:23 PM   22    9.74    0.00   27.17    0.00    0.00   10.67    0.00    0.00    0.00   52.42
+04:02:23 PM   23   38.77    0.00   43.86    0.00    0.00    5.25    0.00    0.00    0.00   12.12
+
+Average:     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+Average:     all   19.59    0.00   37.73    0.00    0.00   15.33    0.00    0.00    0.00   27.35
+Average:       0   11.68    0.00   36.78    0.00    0.00   30.52    0.00    0.00    0.00   21.03
+Average:       1   28.40    0.00   42.75    0.00    0.00   10.38    0.00    0.00    0.00   18.47
+Average:       2   12.79    0.00   44.75    0.00    0.00   42.40    0.00    0.00    0.00    0.05
+Average:       3   29.14    0.00   42.72    0.00    0.00    9.82    0.00    0.00    0.00   18.33
+Average:       4   11.00    0.00   29.53    0.00    0.00   13.24    0.00    0.00    0.00   46.23
+Average:       5   16.77    0.00   45.45    0.00    0.00   21.27    0.00    0.00    0.00   16.51
+Average:       6   11.00    0.00   29.41    0.00    0.00   12.96    0.00    0.00    0.00   46.63
+Average:       7   16.55    0.00   45.03    0.00    0.00   20.90    0.00    0.00    0.00   17.53
+Average:       8   11.10    0.00   30.37    0.00    0.00   12.31    0.00    0.00    0.00   46.23
+Average:       9   38.70    0.00   43.40    0.00    0.00    5.83    0.00    0.00    0.00   12.07
+Average:      10   10.91    0.00   30.74    0.00    0.00   12.12    0.00    0.00    0.00   46.23
+Average:      11   38.61    0.00   43.49    0.00    0.00    5.55    0.00    0.00    0.00   12.35
+Average:      12    8.40    0.00   22.98    0.00    0.00    8.87    0.00    0.00    0.00   59.75
+Average:      13   28.89    0.00   41.42    0.00    0.00    9.66    0.00    0.00    0.00   20.03
+Average:      14   12.68    0.00   44.99    0.00    0.00   42.34    0.00    0.00    0.00    0.00
+Average:      15   29.33    0.00   42.22    0.00    0.00    9.50    0.00    0.00    0.00   18.95
+Average:      16    9.00    0.00   25.17    0.00    0.00   12.16    0.00    0.00    0.00   53.67
+Average:      17   16.39    0.00   45.26    0.00    0.00   21.03    0.00    0.00    0.00   17.32
+Average:      18    9.08    0.00   25.51    0.00    0.00   11.95    0.00    0.00    0.00   53.45
+Average:      19   16.58    0.00   44.78    0.00    0.00   20.51    0.00    0.00    0.00   18.13
+Average:      20    9.79    0.00   27.13    0.00    0.00   10.64    0.00    0.00    0.00   52.43
+Average:      21   38.77    0.00   44.06    0.00    0.00    5.34    0.00    0.00    0.00   11.83
+Average:      22    9.91    0.00   27.40    0.00    0.00   10.38    0.00    0.00    0.00   52.31
+Average:      23   38.85    0.00   43.77    0.00    0.00    5.25    0.00    0.00    0.00   12.13
+rps: 32000
+bash: line 1:   194 Killed                  ./loader -a ../twitter_dataset/twitter_dataset_30x -s docker_servers.txt -g 0.8 -T 5 -c 200 -w 4 -e -r 14500
+stats_time = 5
+Configuration:
+
+nProcessors on system: 24
+nWorkers: 4
+runtime: -1
+Get fraction: 0.800000
+Naggle's algorithm: False
+
+
+host: localhost
+address: 127.0.0.1
+Loading key value file...created uniform distribution 1000
+rps 32000 cpus 4
+meanInterarrival 125
+num_worker_connections 50
+num_worker_connections 50
+Creating worker on tid 107030272
+starting receive base loop
+num_worker_connections 50
+Creating worker on tid 98637568
+starting receive base loop
+num_worker_connections 50
+Created 200 connections total
+Creating worker on tid 81852160
+Creating worker on tid 90244864
+starting receive base loop
+starting receive base loop
+Stats:
+-------------------------
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+1535639296.637761,       0.0,       64570,      51626,      12944,      48177,       3449,   1.888721,   5.200000,   6.100000,   8.000000,   2.078899,   0.000000,  12.585000, 769.004688
+Outstanding requests per worker:
+11 19 11 12 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32137.0,      160685,     128467,      32218,     119983,       8484,   2.665294,   6.000000,   7.000000,   9.200000,   2.271582,   0.062000,  16.743001, 769.906015
+Outstanding requests per worker:
+11 14 8 11 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   31981.6,      159908,     127953,      31955,     119331,       8622,   1.459660,   4.500000,   5.700000,   8.100000,   1.960136,   0.061000,  14.610000, 770.034614
+Outstanding requests per worker:
+27 10 13 12 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32114.6,      160573,     128419,      32154,     119829,       8590,   1.214009,   3.900000,   4.800000,   6.500000,   1.621286,   0.061000,  14.529000, 767.784720
+Outstanding requests per worker:
+48 39 38 39 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32018.2,      160091,     128253,      31838,     119746,       8507,   1.932195,   5.100000,   6.200000,   8.400000,   2.093912,   0.066000,  12.871000, 770.651026
+Outstanding requests per worker:
+10 11 30 52 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32073.4,      160367,     128393,      31974,     119794,       8599,   2.353792,   5.700000,   6.700000,   9.100000,   2.247037,   0.061000,  15.062000, 770.249655
+Outstanding requests per worker:
+44 16 9 33 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32123.4,      160617,     128554,      32063,     120054,       8500,   2.349044,   5.600000,   6.700000,   9.200000,   2.236351,   0.062000,  16.783001, 771.590647
+Outstanding requests per worker:
+9 5 9 8 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32122.0,      160610,     128586,      32024,     119957,       8629,   2.282290,   5.500000,   6.400000,   8.400000,   2.140395,   0.065000,  17.181000, 770.701484
+Outstanding requests per worker:
+52 43 28 51 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32313.2,      161566,     128776,      32790,     120037,       8739,   2.258483,   5.500000,   6.500000,   8.700000,   2.179958,   0.056000,  14.586000, 768.517030
+Outstanding requests per worker:
+18 4 29 37 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32107.4,      160537,     128658,      31879,     120030,       8628,   2.350628,   5.700000,   6.800000,   8.900000,   2.228944,   0.065000,  14.473000, 770.939809
+Outstanding requests per worker:
+4 10 7 14 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32203.2,      161016,     128805,      32211,     120157,       8648,   2.334418,   5.600000,   6.500000,   8.800000,   2.172611,   0.062000,  13.242000, 769.535600
+Outstanding requests per worker:
+4 10 7 4 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   31976.8,      159884,     127632,      32252,     119187,       8445,   2.296025,   5.600000,   6.700000,   8.900000,   2.202855,   0.068000,  15.175000, 770.184311
+Outstanding requests per worker:
+72 84 55 61 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32313.0,      161565,     129514,      32051,     120761,       8753,   2.299756,   5.500000,   6.500000,   8.800000,   2.160977,   0.065000,  13.447000, 769.143730
+Outstanding requests per worker:
+16 15 19 6 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32219.0,      161095,     129103,      31992,     120362,       8741,   2.387119,   5.700000,   6.700000,   8.900000,   2.256270,   0.061000, 123.095997, 770.143815
+Outstanding requests per worker:
+2 3 1 1 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32187.0,      160935,     129003,      31932,     120271,       8732,   2.372876,   5.700000,   6.700000,   8.700000,   2.219845,   0.061000,  14.088000, 769.326116
+Outstanding requests per worker:
+3 1 1 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32118.6,      160593,     128676,      31917,     120020,       8656,   2.397027,   5.700000,   6.800000,   8.900000,   2.266131,   0.065000,  15.329000, 769.820790
+Outstanding requests per worker:
+1 2 2 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32002.0,      160010,     128062,      31948,     119624,       8438,   2.371392,   5.600000,   6.600000,   8.800000,   2.196596,   0.061000,  16.209999, 770.452500
+Outstanding requests per worker:
+30 14 4 15 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32244.6,      161223,     129168,      32055,     120446,       8722,   2.223067,   5.400000,   6.500000,   8.800000,   2.150497,   0.060000,  15.853001, 768.303682
+Outstanding requests per worker:
+27 35 51 80 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32262.0,      161310,     129261,      32049,     120435,       8826,   2.401646,   5.700000,   6.800000,   9.200000,   2.274581,   0.064000,  16.524000, 769.340335
+Outstanding requests per worker:
+65 26 36 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   31990.8,      159954,     128053,      31901,     119385,       8668,   2.275129,   5.500000,   6.500000,   8.500000,   2.154880,   0.067000,  17.165000, 769.112532
+Outstanding requests per worker:
+0 0 3 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32108.6,      160543,     128741,      31802,     120158,       8583,   2.357231,   5.500000,   6.600000,   8.800000,   2.197641,   0.069000,  17.867001, 772.458618
+Outstanding requests per worker:
+6 5 12 5 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32125.4,      160627,     128645,      31982,     119986,       8659,   2.331622,   5.500000,   6.600000,   9.300000,   2.271561,   0.065000,  25.188999, 770.085522
+Outstanding requests per worker:
+6 25 22 33 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32172.6,      160863,     128783,      32080,     120180,       8603,   2.486127,   5.900000,   7.100000,   9.900000,   2.366935,   0.063000,  17.169001, 771.171342
+Outstanding requests per worker:
+14 13 13 39 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32084.2,      160421,     128262,      32159,     119438,       8824,   2.282243,   5.500000,   6.500000,   8.500000,   2.138432,   0.064000,  14.180000, 766.888860
+Outstanding requests per worker:
+12 7 18 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32153.2,      160766,     128352,      32414,     119627,       8725,   2.359627,   5.700000,   6.600000,   9.000000,   2.244530,   0.066000,  17.467000, 770.218438
+Outstanding requests per worker:
+12 4 22 25 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32142.2,      160711,     128521,      32190,     119887,       8634,   2.324628,   5.700000,   6.700000,   8.900000,   2.242364,   0.061000,  14.268000, 770.286249
+Outstanding requests per worker:
+0 1 0 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32165.2,      160826,     128656,      32170,     119977,       8679,   2.285953,   5.500000,   6.500000,   8.500000,   2.145765,   0.063000,  12.436000, 769.828457
+Outstanding requests per worker:
+18 16 7 14 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32039.0,      160195,     128182,      32013,     119614,       8568,   2.256255,   5.400000,   6.400000,   8.900000,   2.154771,   0.066000,  14.800000, 768.523669
+Outstanding requests per worker:
+14 40 36 50 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32094.0,      160470,     128458,      32012,     119834,       8624,   2.324488,   5.500000,   6.600000,   8.800000,   2.187059,   0.062000,  15.215000, 770.977565
+Outstanding requests per worker:
+2 8 5 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32169.0,      160845,     128926,      31919,     120303,       8623,   2.233553,   5.300000,   6.300000,   8.900000,   2.127725,   0.060000,  15.085000, 769.182958
+Outstanding requests per worker:
+1 2 0 7 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32147.0,      160735,     128427,      32308,     119665,       8762,   2.236064,   5.400000,   6.400000,   8.500000,   2.127906,   0.067000,  13.805000, 769.617884
+Outstanding requests per worker:
+0 7 9 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32217.8,      161089,     128731,      32358,     120151,       8580,   2.352219,   5.500000,   6.500000,   8.400000,   2.132768,   0.067000,  13.913000, 770.584335
+Outstanding requests per worker:
+0 0 0 0 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32184.4,      160922,     128656,      32266,     120024,       8632,   2.145213,   5.200000,   6.300000,   8.400000,   2.083959,   0.069000,  11.633000, 770.464580
+Outstanding requests per worker:
+3 3 0 3 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32042.6,      160213,     128083,      32130,     119434,       8649,   2.009489,   5.100000,   6.100000,   8.200000,   2.041956,   0.062000,  14.243000, 769.857327
+Outstanding requests per worker:
+41 18 33 48 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32078.6,      160393,     128454,      31939,     119917,       8537,   2.341966,   5.700000,   6.900000,   9.000000,   2.275593,   0.065000,  15.336000, 769.942049
+Outstanding requests per worker:
+28 40 32 48 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32075.4,      160377,     128385,      31992,     119929,       8456,   2.426237,   5.700000,   6.700000,   9.000000,   2.220019,   0.065000,  14.613000, 771.027807
+Outstanding requests per worker:
+12 3 20 4 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32248.4,      161242,     128890,      32352,     120085,       8805,   2.320740,   5.600000,   6.600000,   8.600000,   2.177801,   0.066000,  13.671000, 769.103375
+Outstanding requests per worker:
+2 4 0 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32058.2,      160291,     128211,      32080,     119426,       8785,   2.326942,   5.500000,   6.400000,   8.800000,   2.172112,   0.066000,  13.851000, 768.250150
+Outstanding requests per worker:
+43 33 56 34 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32177.8,      160889,     128817,      32072,     120309,       8508,   2.335877,   5.500000,   6.500000,   8.700000,   2.192964,   0.063000,  15.699999, 771.320261
+Outstanding requests per worker:
+3 5 35 17 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32146.6,      160733,     128530,      32203,     119805,       8725,   2.439881,   5.700000,   6.700000,   9.400000,   2.280510,   0.065000,  26.061000, 768.684237
+Outstanding requests per worker:
+1 0 1 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32101.4,      160507,     128584,      31923,     120046,       8538,   2.162933,   5.300000,   6.300000,   8.500000,   2.093145,   0.062000,  14.470000, 769.425162
+Outstanding requests per worker:
+37 15 41 18 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   31938.8,      159694,     127852,      31842,     119282,       8570,   2.222365,   5.400000,   6.500000,   8.600000,   2.161625,   0.065000,  14.449000, 770.023183
+Outstanding requests per worker:
+15 25 22 46 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32093.4,      160467,     128428,      32039,     119812,       8616,   2.179731,   5.400000,   6.400000,   8.800000,   2.140230,   0.066000,  14.774000, 769.754625
+Outstanding requests per worker:
+52 17 24 53 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32284.4,      161422,     129221,      32201,     120518,       8703,   2.217795,   5.400000,   6.500000,   8.900000,   2.187921,   0.064000,  14.989000, 768.749739
+Outstanding requests per worker:
+55 52 41 34 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32165.0,      160825,     128386,      32439,     119864,       8522,   2.182404,   5.300000,   6.400000,   8.800000,   2.142686,   0.066000,  14.497000, 768.972552
+Outstanding requests per worker:
+4 7 14 21 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32023.4,      160117,     127914,      32203,     119077,       8837,   2.199892,   5.300000,   6.300000,   8.500000,   2.103215,   0.066000,  14.887000, 768.212119
+Outstanding requests per worker:
+54 38 19 15 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32162.6,      160813,     128521,      32292,     119815,       8706,   2.395149,   5.700000,   6.800000,   9.400000,   2.272217,   0.059000,  13.587000, 768.462391
+Outstanding requests per worker:
+69 75 56 44 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32182.4,      160912,     128861,      32051,     120155,       8706,   2.194770,   5.400000,   6.300000,   8.600000,   2.114588,   0.064000,  13.064000, 769.294216
+Outstanding requests per worker:
+20 18 27 19 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32129.4,      160647,     128476,      32171,     119895,       8581,   2.362185,   5.700000,   6.800000,   8.700000,   2.236848,   0.065000,  15.067000, 770.788902
+Outstanding requests per worker:
+13 8 3 12 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   aLinux 3.10.0-514.el7.x86_64 (n140.parsacluster.epfl.ch) 	08/30/2018 	_x86_64_	(24 CPU)
+vg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32172.6,      160863,     128771,      32092,     120069,       8702,   2.218876,   5.300000,   6.300000,   8.200000,   2.068298,   0.067000,  14.271000, 770.134533
+Outstanding requests per worker:
+12 10 24 34 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32260.0,      161300,     129171,      32129,     120428,       8743,   2.324253,   5.500000,   6.600000,   8.800000,   2.192681,   0.068000,  15.298000, 768.517090
+Outstanding requests per worker:
+3 3 8 5 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32159.0,      160795,     128537,      32258,     119725,       8812,   2.178561,   5.300000,   6.300000,   8.300000,   2.087855,   0.065000,  13.868000, 767.924255
+Outstanding requests per worker:
+58 31 52 29 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32094.8,      160474,     128356,      32118,     119781,       8575,   2.290738,   5.600000,   6.700000,   8.700000,   2.217415,   0.063000,  21.207999, 769.922076
+Outstanding requests per worker:
+1 10 15 2 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32166.8,      160834,     128926,      31908,     120184,       8742,   2.295926,   5.500000,   6.400000,   8.300000,   2.124134,   0.065000,  14.934000, 770.245575
+Outstanding requests per worker:
+2 8 4 7 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32162.6,      160813,     128796,      32017,     120140,       8656,   2.205089,   5.400000,   6.500000,   8.500000,   2.159991,   0.062000,  16.152000, 769.088893
+Outstanding requests per worker:
+5 13 15 10 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32213.4,      161067,     129009,      32058,     120382,       8627,   2.235246,   5.600000,   6.800000,   8.800000,   2.242176,   0.062000,  18.350000, 769.653226
+Outstanding requests per worker:
+10 20 10 10 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32098.2,      160491,     128380,      32111,     119893,       8487,   2.308646,   5.500000,   6.500000,   8.800000,   2.169168,   0.066000,  15.128000, 769.714722
+Outstanding requests per worker:
+36 40 33 31 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32178.8,      160894,     128607,      32287,     120000,       8607,   2.303832,   5.600000,   6.600000,   8.600000,   2.192377,   0.067000,  14.290000, 769.822910
+Outstanding requests per worker:
+9 9 7 10 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,   32049.4,      160247,     128080,      32167,     119558,       8522,   2.219028,   5.400000,   6.400000,   8.300000,   2.121709,   0.064000,  14.020000, 770.674820
+Outstanding requests per worker:
+30 43 19 29 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,      
+04:07:24 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+04:07:44 PM  all   16.72    0.00   40.88    0.00    0.00   19.60    0.00    0.00    0.00   22.81
+04:07:44 PM    0   13.25    0.00   45.70    0.00    0.00   41.05    0.00    0.00    0.00    0.00
+04:07:44 PM    1   16.36    0.00   42.92    0.00    0.00   18.25    0.00    0.00    0.00   22.46
+04:07:44 PM    2   12.50    0.00   45.15    0.00    0.00   42.30    0.00    0.00    0.00    0.05
+04:07:44 PM    3   15.73    0.00   44.03    0.00    0.00   18.10    0.00    0.00    0.00   22.15
+04:07:44 PM    4   12.92    0.00   36.35    0.00    0.00   18.18    0.00    0.00    0.00   32.55
+04:07:44 PM    5   17.29    0.00   46.79    0.00    0.00   21.86    0.00    0.00    0.00   14.06
+04:07:44 PM    6   12.35    0.00   36.26    0.00    0.00   18.50    0.00    0.00    0.00   32.89
+04:07:44 PM    7   17.26    0.00   47.20    0.00    0.00   20.44    0.00    0.00    0.00   15.10
+04:07:44 PM    8   13.84    0.00   37.23    0.00    0.00   15.24    0.00    0.00    0.00   33.69
+04:07:44 PM    9   28.82    0.00   44.92    0.00    0.00   11.69    0.00    0.00    0.00   14.56
+04:07:44 PM   10   13.63    0.00   37.20    0.00    0.00   15.39    0.00    0.00    0.00   33.78
+04:07:44 PM   11   30.33    0.00   44.91    0.00    0.00   11.10    0.00    0.00    0.00   13.66
+04:07:44 PM   12    9.28    0.00   25.57    0.00    0.00    9.81    0.00    0.00    0.00   55.33
+04:07:44 PM   13   15.04    0.00   41.20    0.00    0.00   18.12    0.00    0.00    0.00   25.64
+04:07:44 PM   14   13.10    0.00   44.80    0.00    0.00   42.10    0.00    0.00    0.00    0.00
+04:07:44 PM   15   15.26    0.00   41.64    0.00    0.00   17.62    0.00    0.00    0.00   25.49
+04:07:44 PM   16   11.42    0.00   32.47    0.00    0.00   18.12    0.00    0.00    0.00   37.99
+04:07:44 PM   17   17.42    0.00   46.57    0.00    0.00   21.00    0.00    0.00    0.00   15.01
+04:07:44 PM   18   11.26    0.00   32.12    0.00    0.00   18.39    0.00    0.00    0.00   38.23
+04:07:44 PM   19   17.56    0.00   46.70    0.00    0.00   20.63    0.00    0.00    0.00   15.10
+04:07:44 PM   20   12.39    0.00   34.58    0.00    0.00   13.78    0.00    0.00    0.00   39.25
+04:07:44 PM   21   30.08    0.00   44.94    0.00    0.00   10.78    0.00    0.00    0.00   14.20
+04:07:44 PM   22   12.35    0.00   34.22    0.00    0.00   13.90    0.00    0.00    0.00   39.52
+04:07:44 PM   23   30.24    0.00   45.03    0.00    0.00   10.81    0.00    0.00    0.00   13.92
+
+04:07:44 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+04:08:04 PM  all   16.69    0.00   40.91    0.00    0.00   19.63    0.00    0.00    0.00   22.78
+04:08:04 PM    0   13.65    0.00   45.25    0.00    0.00   41.10    0.00    0.00    0.00    0.00
+04:08:04 PM    1   16.42    0.00   43.18    0.00    0.00   18.26    0.00    0.00    0.00   22.14
+04:08:04 PM    2   13.25    0.00   45.00    0.00    0.00   41.75    0.00    0.00    0.00    0.00
+04:08:04 PM    3   15.47    0.00   42.56    0.00    0.00   18.73    0.00    0.00    0.00   23.25
+04:08:04 PM    4   12.85    0.00   36.30    0.00    0.00   18.42    0.00    0.00    0.00   32.44
+04:08:04 PM    5   17.19    0.00   47.26    0.00    0.00   21.48    0.00    0.00    0.00   14.07
+04:08:04 PM    6   12.90    0.00   35.89    0.00    0.00   18.32    0.00    0.00    0.00   32.89
+04:08:04 PM    7   17.05    0.00   47.10    0.00    0.00   21.11    0.00    0.00    0.00   14.74
+04:08:04 PM    8   14.18    0.00   37.29    0.00    0.00   15.03    0.00    0.00    0.00   33.49
+04:08:04 PM    9   29.41    0.00   45.48    0.00    0.00   11.04    0.00    0.00    0.00   14.07
+04:08:04 PM   10   13.37    0.00   37.76    0.00    0.00   15.15    0.00    0.00    0.00   33.73
+04:08:04 PM   11   30.18    0.00   44.96    0.00    0.00   11.36    0.00    0.00    0.00   13.50
+04:08:04 PM   12    9.05    0.00   24.87    0.00    0.00    9.27    0.00    0.00    0.00   56.82
+04:08:04 PM   13   15.46    0.00   41.72    0.00    0.00   17.91    0.00    0.00    0.00   24.91
+04:08:04 PM   14   12.56    0.00   45.42    0.00    0.00   42.02    0.00    0.00    0.00    0.00
+04:08:04 PM   15   15.15    0.00   41.61    0.00    0.00   17.46    0.00    0.00    0.00   25.78
+04:08:04 PM   16   11.11    0.00   32.51    0.00    0.00   18.95    0.00    0.00    0.00   37.43
+04:08:04 PM   17   17.14    0.00   47.19    0.00    0.00   21.34    0.00    0.00    0.00   14.33
+04:08:04 PM   18   11.12    0.00   32.65    0.00    0.00   18.31    0.00    0.00    0.00   37.92
+04:08:04 PM   19   17.15    0.00   45.69    0.00    0.00   21.30    0.00    0.00    0.00   15.86
+04:08:04 PM   20   12.63    0.00   34.30    0.00    0.00   13.71    0.00    0.00    0.00   39.35
+04:08:04 PM   21   29.12    0.00   44.93    0.00    0.00   10.95    0.00    0.00    0.00   14.99
+04:08:04 PM   22   12.24    0.00   34.59    0.00    0.00   14.02    0.00    0.00    0.00   39.15
+04:08:04 PM   23   30.15    0.00   45.38    0.00    0.00   10.68    0.00    0.00    0.00   13.80
+
+Average:     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+Average:     all   16.70    0.00   40.89    0.00    0.00   19.61    0.00    0.00    0.00   22.79
+Average:       0   13.45    0.00   45.48    0.00    0.00   41.08    0.00    0.00    0.00    0.00
+Average:       1   16.39    0.00   43.05    0.00    0.00   18.26    0.00    0.00    0.00   22.30
+Average:       2   12.88    0.00   45.07    0.00    0.00   42.02    0.00    0.00    0.00    0.03
+Average:       3   15.60    0.00   43.29    0.00    0.00   18.41    0.00    0.00    0.00   22.70
+Average:       4   12.89    0.00   36.32    0.00    0.00   18.30    0.00    0.00    0.00   32.49
+Average:       5   17.24    0.00   47.03    0.00    0.00   21.67    0.00    0.00    0.00   14.06
+Average:       6   12.62    0.00   36.08    0.00    0.00   18.41    0.00    0.00    0.00   32.89
+Average:       7   17.15    0.00   47.15    0.00    0.00   20.78    0.00    0.00    0.00   14.92
+Average:       8   14.01    0.00   37.26    0.00    0.00   15.14    0.00    0.00    0.00   33.59
+Average:       9   29.12    0.00   45.20    0.00    0.00   11.36    0.00    0.00    0.00   14.32
+Average:      10   13.50    0.00   37.48    0.00    0.00   15.27    0.00    0.00    0.00   33.75
+Average:      11   30.26    0.00   44.94    0.00    0.00   11.23    0.00    0.00    0.00   13.58
+Average:      12    9.17    0.00   25.22    0.00    0.00    9.54    0.00    0.00    0.00   56.07
+Average:      13   15.25    0.00   41.46    0.00    0.00   18.02    0.00    0.00    0.00   25.27
+Average:      14   12.83    0.00   45.11    0.00    0.00   42.06    0.00    0.00    0.00    0.00
+Average:      15   15.20    0.00   41.62    0.00    0.00   17.54    0.00    0.00    0.00   25.63
+Average:      16   11.26    0.00   32.49    0.00    0.00   18.54    0.00    0.00    0.00   37.71
+Average:      17   17.28    0.00   46.88    0.00    0.00   21.17    0.00    0.00    0.00   14.67
+Average:      18   11.19    0.00   32.39    0.00    0.00   18.35    0.00    0.00    0.00   38.07
+Average:      19   17.35    0.00   46.19    0.00    0.00   20.97    0.00    0.00    0.00   15.48
+Average:      20   12.51    0.00   34.44    0.00    0.00   13.74    0.00    0.00    0.00   39.30
+Average:      21   29.60    0.00   44.94    0.00    0.00   10.86    0.00    0.00    0.00   14.60
+Average:      22   12.30    0.00   34.41    0.00    0.00   13.96    0.00    0.00    0.00   39.34
+Average:      23   30.19    0.00   45.20    0.00    0.00   10.75    0.00    0.00    0.00   13.86
+rps: 247500
+bash: line 1:   210 Killed                  ./loader -a ../twitter_dataset/twitter_dataset_30x -s docker_servers.txt -g 0.8 -T 5 -c 200 -w 4 -e -r 32000
+stats_time = 5
+Configuration:
+
+nProcessors on system: 24
+nWorkers: 4
+runtime: -1
+Get fraction: 0.800000
+Naggle's algorithm: False
+
+
+host: localhost
+address: 127.0.0.1
+Loading key value file...created uniform distribution 1000
+rps 247500 cpus 4
+meanInterarrival 16
+num_worker_connections 50
+num_worker_connections 50
+Creating worker on tid 1941681920
+num_worker_connections 50
+Creating worker on tid 1933289216
+starting receive base loop
+starting receive base loop
+num_worker_connections 50
+Creating worker on tid 1924896512
+starting receive base loop
+Created 200 connections total
+Creating worker on tid 1916503808
+starting receive base loop
+Stats:
+-------------------------
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+1535639634.638099,       0.0,      266528,     212990,      53538,     198473,      14517,  22.048029,  34.000000,  39.500000,  47.800000,   8.746330,   0.000000,  61.758999, 768.909512
+Outstanding requests per worker:
+1004 1006 1019 1001 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  132412.1,      662061,     530184,     131877,     494376,      35808,  37.142789,  49.900000,  56.300000,  66.900000,   9.394758,  21.414001,  86.411998, 769.213069
+Outstanding requests per worker:
+1406 1460 1466 1406 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  135408.1,      677041,     542183,     134858,     505978,      36205,  47.338894,  62.400000,  67.200000,  78.900000,  10.161260,  30.954000,  96.087001, 770.108659
+Outstanding requests per worker:
+1697 1773 1715 1686 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  148055.3,      740277,     592793,     147484,     552637,      40156,  48.667561,  63.300000,  68.100000,  82.500000,  10.392192,  34.763999, 118.986003, 768.924883
+Outstanding requests per worker:
+1904 1935 1921 1877 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  154679.4,      773398,     618846,     154552,     576966,      41880,  50.656375,  61.800000,  68.800000,  80.600000,   8.309840,  40.031001,  99.624000, 770.235564
+Outstanding requests per worker:
+1977 2021 2035 1983 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  142209.9,      711050,     568792,     142258,     530699,      38093,  57.989807,  70.100000,  76.300000,  93.600000,   9.515596,  42.307001, 112.306997, 769.674457
+Outstanding requests per worker:
+2078 2128 2153 2072 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  141727.3,      708637,     567254,     141383,     529036,      38218,  61.367135,  75.200000,  81.400000,  94.600000,  10.170206,  42.539001, 120.956004, 770.000287
+Outstanding requests per worker:
+2194 2258 2286 2188 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  142130.7,      710654,     568132,     142522,     530287,      37845,  64.336895,  76.800000,  84.000000,  95.900000,  10.129618,  46.291001, 117.694996, 769.935195
+Outstanding requests per worker:
+2314 2359 2402 2342 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  144364.9,      721825,     577680,     144145,     539281,      38399,  67.114796,  79.900000,  86.200000, 106.700000,  10.635656,  47.912002, 141.271994, 770.108709
+Outstanding requests per worker:
+2428 2483 2511 2468 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  139017.5,      695088,     556439,     138649,     519527,      36912,  72.477301,  87.500000,  94.800000, 111.300000,  11.386434,  50.912000, 153.510004, 770.017869
+Outstanding requests per worker:
+2533 2587 2613 2584 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  144109.5,      720548,     575757,     144791,     536873,      38884,  72.761009,  84.400000,  93.900000, 118.800000,  10.929214,  53.895999, 135.971993, 769.092716
+Outstanding requests per worker:
+2606 2677 2690 2667 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  139037.5,      695188,     556269,     138919,     519053,      37216,  77.991673,  94.400000, 102.300000, 120.800000,  12.703481,  54.435998, 145.491004, 770.069213
+Outstanding requests per worker:
+2702 2789 2784 2787 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  147447.1,      737236,     590231,     147005,     550527,      39704,  75.990112,  89.200000,  95.600000, 113.500000,  10.397163,  59.209000, 135.793999, 769.750437
+Outstanding requests per worker:
+2781 2844 2846 2828 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  148531.1,      742656,     593891,     148765,     554482,      39409,  76.782113,  91.000000,  99.700000, 120.600000,  11.035226,  57.388999, 140.879005, 770.612981
+Outstanding requests per worker:
+2809 2876 2894 2884 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  143521.1,      717606,     574304,     143302,     535531,      38773,  80.936745,  97.400000, 106.300000, 128.500000,  12.890603,  60.127001, 148.549005, 768.914831
+Outstanding requests per worker:
+2902 2923 2974 2940 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  144909.9,      724550,     579828,     144722,     541249,      38579,  81.545455,  97.600000, 103.600000, 120.600000,  11.726784,  60.911000, 142.584994, 770.276627
+Outstanding requests per worker:
+2977 2989 3015 3014 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  145904.9,      729525,     583683,     145842,     544741,      38942,  83.022877,  96.700000, 103.100000, 111.600000,   9.858350,  64.312004, 124.330997, 770.298165
+Outstanding requests per worker:
+3043 3055 3070 3055 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat,      90th,      95th,        99th,       std,       min,        max,    avgGetSize
+  5.000005,  145425.3,      727127,     581405,     145722,     542720,      38685,  84.634516,  98.800000, 106.000000, 129.000000,  11.681800,  65.107003, 166.207001, 770.410506
+Outstanding requests per worker:
+3103 3098 3129 3132 
+  timeDiff,     rps,        requests,     gets,       sets,      hits,       misses,   avg_lat
