@@ -1,5 +1,6 @@
 import re
 import statistics
+import math
 
 
 def parse_data_caching(log_file_names):
@@ -60,13 +61,21 @@ def parse_data_caching(log_file_names):
                     profiles[current_rps]['99th'].append(float(load_stat[10]))
                     profiles[current_rps]['rps'].append(float(load_stat[1]))
 
+        if current_rps is not None:
+            if len(profiles[current_rps]['cpu_util'].keys()) == 0:
+                del profiles[current_rps]
+
         # form the graph data to plot
-        def mean_and_error_last_numbers(numbers, count=20, offset=0):
+        def mean_and_error_last_numbers(numbers, count=20, offset=0, normalize_by_mean_as_real_count=True):
             selected_numbers = []
             for index in range(count):
                 number = numbers[len(numbers) - 1 - index - offset]
                 selected_numbers.append(number)
-            return statistics.mean(selected_numbers), statistics.stdev(selected_numbers)
+            mean = statistics.mean(selected_numbers)
+            return (
+                mean,
+                statistics.stdev(selected_numbers) * (math.sqrt(count / mean) if normalize_by_mean_as_real_count else 1)
+            )
 
         def merge_cpu_set_stat(all_utilizations, cpu_set):
             result_utilizations = []
@@ -91,8 +100,10 @@ def parse_data_caching(log_file_names):
         for rps in profiles.keys():
             utilization, utilization_error = mean_and_error_last_numbers(
                 merge_cpu_set_stat(profiles[rps]['cpu_util'], cpu_set),
-                2
+                2,
+                normalize_by_mean_as_real_count=False
             )
+            
             utilizations.append(utilization)
             utilization_errors.append(utilization_error)
 
@@ -129,12 +140,12 @@ def parse_data_caching(log_file_names):
                             'error': tail_latency_95th_errors,
                             'label': '95th Latency (ms)',
                         },
-                        # {
-                        #     'type': 'errorbar',
-                        #     'data': tail_latencies_99th,
-                        #     'error': tail_latency_99th_errors,
-                        #     'label': '99th Latency (ms)',
-                        # },
+                        {
+                            'type': 'errorbar',
+                            'data': tail_latencies_99th,
+                            'error': tail_latency_99th_errors,
+                            'label': '99th Latency (ms)',
+                        },
                     ],
                     'right_limit': 90,
                     'right_label': 'Latency (ms)'
