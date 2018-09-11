@@ -62,6 +62,8 @@ def plot_graphs(graph_data, output_file_name):
                                 'data': utilizations,
                                 'error': utilization_errors,
                                 'label': 'Server CPU Utilization',
+                                'trend_line': True,
+                                'trend_line_format': 'r--',
                             }
                         ],
                         'left_label': 'Server CPU Utilization (%)',
@@ -71,19 +73,23 @@ def plot_graphs(graph_data, output_file_name):
                                 'data': tail_latencies_95th,
                                 'error': tail_latency_95th_errors,
                                 'label': '95th Latency (ms)',
+                                'trend_line': False,
                             },
                             {
                                 'type': 'errorbar',
                                 'data': tail_latencies_99th,
                                 'error': tail_latency_99th_errors,
                                 'label': '99th Latency (ms)',
+                                'trend_line': False,
                             },
                         ],
                         'right_label': 'Latency (ms)'
                     }
                 }
             ],
-        'dimensions': (1, 1)
+        'dimensions': (1, 1),
+        'figure_size': (24, 20),
+        'sup_title': 'Data Caching With Different Cores and Memory',
     }
     """
     rc('font', size=24)
@@ -139,12 +145,42 @@ def plot_graphs(graph_data, output_file_name):
     pyplot.savefig(output_file_name)
 
 
+def write_data(graph_data, output_file_name):
+    """
+    This function plots the parsed graph from logs.
+    :param output_file_name: this parameter is the path to output image file
+    :param graph_data: the data should be in a format like what is mentioned in the plot_graphs function
+    """
+    columns = []
+    for single_graph_data in graph_data['graphs']:
+        columns.append(['x_data'] + single_graph_data['x'])
+        for single_left_graph in single_graph_data['y']['left']:
+            columns.append([single_left_graph['label']] + single_left_graph['data'])
+        if len(single_graph_data['y']['right']) > 0:
+            for single_right_graph in single_graph_data['y']['right']:
+                columns.append([single_right_graph['label']] + single_right_graph['data'])
+
+    maximum_height = 0
+    for column in columns:
+        if maximum_height < len(column):
+            maximum_height = len(column)
+    for column in columns:
+        while len(column) < maximum_height:
+            column.append('')
+
+    file = open(output_file_name, 'w')
+    for i in range(maximum_height):
+        file.write(','.join([str(column[i]) for column in columns]) + '\n')
+
+
 if len(sys.argv) < 3:
-    print('Usage: python plotter.py [benchmark] [output_file_name] [file_names...]', file=sys.stderr)
+    print('Usage: python plotter.py [parser] [output_name] [file_names...]', file=sys.stderr)
     exit(1)
 
 try:
     parse = getattr(parsers, 'parse_' + sys.argv[1])
-    plot_graphs(parse(sys.argv[3:]), sys.argv[2])
+    graph_data = parse(sys.argv[3:])
+    plot_graphs(graph_data, sys.argv[2] + '.png')
+    write_data(graph_data, sys.argv[2] + '.csv')
 except AttributeError:
-    print('Undefined benchmark "{}".'.format(sys.argv[1]), file=sys.stderr)
+    print('Undefined parser "{}".'.format(sys.argv[1]), file=sys.stderr)
