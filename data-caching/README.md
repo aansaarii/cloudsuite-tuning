@@ -1,6 +1,6 @@
 # Plotting Performance Graphs
 
-*  Create some configuration script like `x86_4_core_2MB.cfg` namely `my_config.cfg`,
+*  Create some configuration script like `x86_1_core_2MB.cfg` namely `my_config.cfg`,
 *  Make sure server machine is available to run commands using `ssh [server address] [command]`,
 *  Make sure the server has `sysstat` installed. Our script uses `mpstat` to log the CPU utilization,
 *  Run `./data_caching.sh my_config.cfg` and wait for it to finish the experiment,
