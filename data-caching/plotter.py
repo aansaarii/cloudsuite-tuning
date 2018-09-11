@@ -1,7 +1,47 @@
 import sys
 
 from matplotlib import pyplot, rc
+import numpy
 import parsers
+
+
+def plot_single_side_graph(x_data, single_graph_data, plotter, ylim=None):
+    plots = []
+    if single_graph_data['type'] == 'plot':
+        plots.extend(plotter.plot(
+            x_data, single_graph_data['data'], single_graph_data['format'],
+            label=single_graph_data['label']
+        ))
+    elif single_graph_data['type'] == 'errorbar':
+        plots.append(plotter.errorbar(
+            x_data, single_graph_data['data'], single_graph_data['error'],
+            linestyle='None', marker='.', capsize=3, label=single_graph_data['label']
+        ))
+
+    limited_x_data = []
+    limited_y_data = []
+    if ylim is not None:
+        for i in range(len(x_data)):
+            if not single_graph_data['data'][i] > ylim:
+                limited_x_data.append(x_data[i])
+                limited_y_data.append(single_graph_data['data'][i])
+    else:
+        limited_x_data = x_data
+        limited_y_data = single_graph_data['data']
+
+    if single_graph_data['trend_line']:
+        z = numpy.polyfit(limited_x_data, limited_y_data, 2)
+        p = numpy.poly1d(z)
+        x_data = sorted(x_data)
+        plots.extend(plotter.plot(
+            x_data,
+            p(x_data),
+            single_graph_data['trend_line_format'],
+            label=single_graph_data['label'] + ' trend'),
+        )
+
+    plotter.tick_params('y')
+    return plots
 
 
 def plot_graphs(graph_data, output_file_name):
@@ -47,7 +87,7 @@ def plot_graphs(graph_data, output_file_name):
     }
     """
     rc('font', size=24)
-    pyplot.figure(figsize=(20, 30))
+    pyplot.figure(figsize=graph_data['figure_size'])
 
     graph_counter = 1
     last_sub_plot = None
@@ -66,45 +106,36 @@ def plot_graphs(graph_data, output_file_name):
         plots = []
 
         for single_left_graph in single_graph_data['y']['left']:
-            if single_left_graph['type'] == 'plot':
-                plots.extend(left_plot.plot(
-                    single_graph_data['x'], single_left_graph['data'], single_left_graph['format'],
-                    label=single_left_graph['label']
-                ))
-            elif single_left_graph['type'] == 'errorbar':
-                plots.append(left_plot.errorbar(
-                    single_graph_data['x'], single_left_graph['data'], single_left_graph['error'],
-                    linestyle='None', marker='.', capsize=3, label=single_left_graph['label']
-                ))
-
-            left_plot.tick_params('y')
+            plots.extend(plot_single_side_graph(
+                single_graph_data['x'],
+                single_left_graph, left_plot,
+                ylim=single_graph_data['y']['left_limit']
+            ))
 
         left_plot.set_ylabel(single_graph_data['y']['left_label'])
         left_plot.set_xlabel(single_graph_data['x_label'])
 
-        right_plot = left_plot.twinx()
-        if single_graph_data['y']['right_limit'] is not None:
-            right_plot.set_ylim(bottom=0, top=single_graph_data['y']['right_limit'])
-        for single_right_graph in single_graph_data['y']['right']:
-            if single_right_graph['type'] == 'plot':
-                plots.extend(right_plot.plot(
-                    single_graph_data['x'], single_right_graph['data'], single_right_graph['format'],
-                    label=single_right_graph['label']
-                ))
-            elif single_right_graph['type'] == 'errorbar':
-                plots.append(right_plot.errorbar(
-                    single_graph_data['x'], single_right_graph['data'], single_right_graph['error'],
-                    linestyle='None', marker='.', capsize=3, label=single_right_graph['label']
+        if len(single_graph_data['y']['right']) > 0:
+            right_plot = left_plot.twinx()
+            if single_graph_data['y']['right_limit'] is not None:
+                right_plot.set_ylim(bottom=0, top=single_graph_data['y']['right_limit'])
+            for single_right_graph in single_graph_data['y']['right']:
+                plots.extend(plot_single_side_graph(
+                    single_graph_data['x'],
+                    single_right_graph,
+                    right_plot,
+                    ylim=single_graph_data['y']['right_limit']
                 ))
 
-            right_plot.tick_params('y')
+            right_plot.set_ylabel(single_graph_data['y']['right_label'])
 
-        right_plot.set_ylabel(single_graph_data['y']['right_label'])
         left_plot.legend(plots, [plot.get_label() for plot in plots], loc=0)
 
         graph_counter += 1
 
+    pyplot.suptitle(graph_data['sup_title'])
     pyplot.tight_layout()
+    pyplot.subplots_adjust(top=0.92)
     pyplot.savefig(output_file_name)
 
 
@@ -117,4 +148,3 @@ try:
     plot_graphs(parse(sys.argv[3:]), sys.argv[2])
 except AttributeError:
     print('Undefined benchmark "{}".'.format(sys.argv[1]), file=sys.stderr)
-
