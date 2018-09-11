@@ -15,9 +15,9 @@ echo memory_size: $SERVER_MEMORY >> $OUTPUT_FILE
 echo server_cpu_count: $SERVER_THREADS >> $OUTPUT_FILE
 echo client_cpu_count: $CLIENT_THREADS >> $OUTPUT_FILE
 
-ssh $SERVER_ADDRESS docker stop $SERVER_NAME
-ssh $SERVER_ADDRESS docker rm $SERVER_NAME
-ssh $SERVER_ADDRESS docker run -d --cpuset-cpus $SERVER_CPU_SET  --name $SERVER_NAME -p $SERVER_PORT:11211 -d $SERVER_IMAGE -t $SERVER_THREADS -m $SERVER_MEMORY -n $KEY_LENGTH
+#ssh $SERVER_SSH_USER@$SERVER_ADDRESS -p $SERVER_SSH_PORT docker stop $SERVER_NAME
+#ssh $SERVER_SSH_USER@$SERVER_ADDRESS -p $SERVER_SSH_PORT docker rm $SERVER_NAME
+#ssh $SERVER_SSH_USER@$SERVER_ADDRESS -p $SERVER_SSH_PORT docker run -d --cpuset-cpus $SERVER_CPU_SET --network host  --name $SERVER_NAME -d $SERVER_IMAGE -t $SERVER_THREADS -m $SERVER_MEMORY -n $KEY_LENGTH
 
 docker stop $CLIENT_NAME
 docker rm $CLIENT_NAME
@@ -37,7 +37,7 @@ for i in `seq $START_LOAD $LOAD_STEP $END_LOAD | shuf`; do
 		./loader -a ../twitter_dataset/twitter_dataset_30x -s docker_servers.txt -g 0.8 -T 5 -c 200 -w $CLIENT_THREADS -e -r $i" &>> $OUTPUT_FILE &
 	echo Sleeping to make sure it is stable...
 	sleep $SLEEP_TIME;
-	ssh $SERVER_ADDRESS $MPSTAT_COMMAND >> $OUTPUT_FILE
+	ssh $SERVER_SSH_USER@$SERVER_ADDRESS -p $SERVER_SSH_PORT $MPSTAT_COMMAND >> $OUTPUT_FILE
 	echo Done mpstat
 done;
 

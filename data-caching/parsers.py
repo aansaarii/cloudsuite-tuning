@@ -6,7 +6,9 @@ import math
 def parse_data_caching(log_file_names):
     graph_data = {
         'graphs': [],
-        'dimensions': (len(log_file_names), 1)
+        'figure_size': (24, 20),
+        'dimensions': (3, len(log_file_names)),
+        'sup_title': 'Data Caching (memcached) with 1 Core and 2048 MB'
     }
 
     memory_size = 2
@@ -17,6 +19,7 @@ def parse_data_caching(log_file_names):
         profiles = {}
         current_rps = None
         cpu_set = []
+        suffix = ''
 
         for line in log_file:
             line = line.replace('\n', '')
@@ -33,12 +36,15 @@ def parse_data_caching(log_file_names):
             if line.startswith('cpu_set: '):
                 cpu_set = [int(cpu_index_string) for cpu_index_string in line.split()[1].split(',')]
 
+            if line.startswith('suffix: '):
+                suffix = line.split()[1]
+
             if line.startswith('memory_size: '):
                 memory_size = int(line.split()[1])
 
             if current_rps is not None:
                 match = re.match(
-                    r"^\d\d:\d\d:\d\d[ \t]+[PMA]+[ \t]+([\d\.]+)[ \t]+([\d\.]+)[ \t]+([\d\.]+)[ \t]+([\d\.]+)[ \t]+"
+                    r"^\d\d:\d\d:\d\d[ \t]+[PMA]*[ \t]+([\d\.]+)[ \t]+([\d\.]+)[ \t]+([\d\.]+)[ \t]+([\d\.]+)[ \t]+"
                     r"([\d\.]+)[ \t]+([\d\.])+[ \t]+([\d\.]+)[ \t]+([\d\.]+)[ \t]+([\d\.]+)[ \t]+([\d\.]+)[ \t]+"
                     r"([\d\.]+)$",
                     line
@@ -86,7 +92,8 @@ def parse_data_caching(log_file_names):
                 result_utilizations.append(statistics.mean(cpu_set_utilizations))
             return result_utilizations
 
-        x_data = [mean_and_error_last_numbers(profiles[key]['rps'])[0] for key in profiles.keys()]
+        x_data = list(profiles.keys())
+        throughput = [mean_and_error_last_numbers(profiles[key]['rps'])[0] for key in profiles.keys()]
 
         utilizations = []
         utilization_errors = []
@@ -103,7 +110,7 @@ def parse_data_caching(log_file_names):
                 2,
                 normalize_by_mean_as_real_count=False
             )
-            
+
             utilizations.append(utilization)
             utilization_errors.append(utilization_error)
 
@@ -119,8 +126,45 @@ def parse_data_caching(log_file_names):
         graph_data['graphs'].append(
             {
                 'x': x_data,
-                'x_label': 'Request per Second',
-                'title': 'Data Caching (memcached) with {} Core(s) and {} MB of memory'.format(len(cpu_set), memory_size),
+                'x_label': 'Target RPS',
+                'title': '',
+                'y': {
+                    'left': [
+                        {
+                            # 'type': 'errorbar',
+                            'type': 'plot',
+                            'format': 'r.',
+                            'data': tail_latencies_95th,
+                            'error': tail_latency_95th_errors,
+                            'label': '95th Latency (ms)',
+                            'trend_line': True,
+                            'trend_line_format': 'r--',
+                        },
+                    ],
+                    'left_label': 'Latency (ms)',
+                    'left_limit': 100,
+                    'right': [
+
+                        # {
+                        #     'type': 'errorbar',
+                        #     'data': tail_latencies_99th,
+                        #     'error': tail_latency_99th_errors,
+                        #     'label': '99th Latency (ms)',
+                        # },
+                    ],
+                    'right_limit': 100,
+                    'right_label': ''
+                }
+            }
+        )
+        # noinspection PyTypeChecker
+        graph_data['graphs'].append(
+            {
+                'x': x_data,
+                'x_label': 'Target RPS',
+                'title': '{}'.format(
+                    suffix
+                ),
                 'y': {
                     'left': [
                         {
@@ -129,28 +173,53 @@ def parse_data_caching(log_file_names):
                             'data': utilizations,
                             'error': utilization_errors,
                             'label': 'Server CPU Utilization (%)',
+                            'trend_line': False,
                         }
                     ],
                     'left_label': 'Server CPU Utilization (%)',
-                    'left_limit': None,
+                    'left_limit': 100,
                     'right': [
-                        {
-                            'type': 'errorbar',
-                            'data': tail_latencies_95th,
-                            'error': tail_latency_95th_errors,
-                            'label': '95th Latency (ms)',
-                        },
-                        {
-                            'type': 'errorbar',
-                            'data': tail_latencies_99th,
-                            'error': tail_latency_99th_errors,
-                            'label': '99th Latency (ms)',
-                        },
                     ],
-                    'right_limit': 90,
-                    'right_label': 'Latency (ms)'
+                    'right_limit': 100,
+                    'right_label': ''
+                }
+            }
+        )
+        
+        # noinspection PyTypeChecker
+        graph_data['graphs'].append(
+            {
+                'x': x_data,
+                'x_label': 'Target RPS',
+                'title': '',
+                'y': {
+                    'left': [
+                        {
+                            'type': 'plot',
+                            'format': 'b.',
+                            'data': throughput,
+                            'error': None,
+                            'label': 'Actual RPS',
+                            'trend_line': False,
+                        }
+                    ],
+                    'left_label': 'Throughput (RPS)',
+                    'left_limit': 90000,
+                    'right': [
+                    ],
+                    'right_limit': 100,
+                    'right_label': ''
                 }
             }
         )
 
+    graph_data['graphs'] = [
+        graph_data['graphs'][1],
+        graph_data['graphs'][4],
+        graph_data['graphs'][0],
+        graph_data['graphs'][3],
+        graph_data['graphs'][2],
+        graph_data['graphs'][5]
+    ]
+    
     return graph_data
