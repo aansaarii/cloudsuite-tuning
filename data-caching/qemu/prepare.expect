@@ -1,0 +1,42 @@
+#!/usr/bin/expect
+
+set timeout 300
+
+#exp_internal 1
+
+spawn ./run_instance.sh
+
+expect "*cloudsuite3-blank login:*"
+
+send "cloudsuite\r"
+
+expect "*Password:*"
+
+send "cloudsuite\r"
+
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "sudo bash -c 'echo Defaults:cloudsuite      !authenticate >> /etc/sudoers'\r"
+
+expect "*password for cloudsuite:*"
+
+send "cloudsuite\r"
+
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "sudo apt-get update; sudo apt-get install -y sysstat\r"
+
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "docker pull cloudsuite/data-caching:client-aarch64\r"
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "docker pull cloudsuite/data-caching:server-aarch64\r"
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "sudo sed -i 's/timeout .*/timeout 15/g' /etc/dhcp/dhclient.conf\r"
+
+
+send "sudo shutdown now\r"
+
+expect eof

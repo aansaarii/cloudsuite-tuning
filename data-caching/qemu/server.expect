@@ -1,0 +1,28 @@
+#!/usr/bin/expect
+
+set timeout 10000
+
+#exp_internal 1
+
+spawn telnet localhost 5555
+
+expect "*cloudsuite3-blank login:*"
+
+send "cloudsuite\r"
+
+expect "*Password:*"
+
+send "cloudsuite\r"
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "sudo ifconfig eth0 10.10.10.10/24\r"
+
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "docker rm -f dc-server\r"
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "docker run --name dc-server --net host -d cloudsuite/data-caching:server-aarch64\r"
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+close
