@@ -2,7 +2,7 @@
 
 set -e
 
-QFLEX_DIR=$1
+export QFLEX_DIR=$1
 PREPARE=$2
 
 INITIAL_DIRECTORY=`pwd`
@@ -14,12 +14,9 @@ if $PREPARE; then
 	bzip2 -dk ubuntu-16.04-lts-blank.qcow2.bz2
 	cd $INITIAL_DIRECTORY
 
-	cd $QFLEX_DIR/scripts
-	expect prepare.expect
-	cd $INITIAL_DIRECTORY
+	expect prepare.expect $QFLEX_DIR
 fi
 
-cd $QFLEX_DIR/scripts/mrun
 echo 'Running mrun ...'
 sudo ip link delete tap-inet-ns || true
 sudo ip link delete tap-0 || true
@@ -27,12 +24,13 @@ sudo ip link delete tap-1 || true
 sudo ip link delete tap-0-ns || true
 sudo ip link delete tap-1-ns || true
 sudo bash -c "echo 0 > /proc/sys/net/bridge/bridge-nf-call-iptables"
-while true; do echo ''; sleep 1; done | sudo ./mrun -r qemu-setup-sample-file.xml -qmp -ns /home/aasgari/Documents/qflex/3rdparty/ns3 &
+while true; do echo ''; sleep 1; done | sudo $QFLEX_DIR/scripts/mrun/mrun -r qemu-setup-sample-file.xml -qmp -ns $QFLEX_DIR/3rdparty/ns3 &
 MRUN_PID=$!
 sleep 20
-cd $INITIAL_DIRECTORY
 
 expect server.expect
+
+sleep 20
 expect client.expect
 
 sudo bash -c "echo 'kill' >> /proc/$MRUN_PID/fd/0"

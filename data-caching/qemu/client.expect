@@ -24,7 +24,28 @@ expect "*cloudsuite@cloudsuite3-blank:~$*"
 send "docker rm -f dc-client\r"
 expect "*cloudsuite@cloudsuite3-blank:~$*"
 
-send "docker run -i --name dc-client --net host cloudsuite/data-caching:client-aarch64 bash -c 'cd /usr/src/memcached/memcached_client/; echo 10.10.10.10, 11211 > docker_servers.txt; ./loader -a ../twitter_dataset/twitter_dataset_unscaled -o ../twitter_dataset/twitter_dataset_30x -s docker_servers.txt -w 4 -S 3 -D 4096 -j -T 1;./loader -a ../twitter_dataset/twitter_dataset_30x -s docker_servers.txt -g 0.8 -T 1 -c 200 -w 8 -e -r 1500;'\r"
-expect "*cloudsuite@cloudsuite3-blank:~$*"
+send "cd cloudsuite-tuning-master/data-caching/\r"
+expect "*cloudsuite@cloudsuite3-blank:~*"
+
+send "ssh-keygen\r"
+expect "*Enter file in which to save the key*"
+send "\r"
+expect "*Enter passphrase*"
+send "\r"
+expect "*Enter same passphrase again*"
+send "\r"
+expect "*cloudsuite@cloudsuite3-blank:~*"
+send "ssh-copy-id 10.10.10.10\r"
+expect "*yes*"
+send "yes\r"
+expect "*assword*"
+send "cloudsuite\r"
+expect "*cloudsuite@cloudsuite3-blank:~*"
+
+send "./data_caching.sh qemu_aarch64_1_core_4GB.cfg\r"
+expect "*cloudsuite@cloudsuite3-blank:~*"
+
+send "cat qemu_aarch64_1_core_4GB.txt\r"
+expect "*cloudsuite@cloudsuite3-blank:~*"
 
 close
