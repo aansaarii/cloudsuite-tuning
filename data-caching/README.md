@@ -17,3 +17,10 @@ To add another parser you can follow the manner used for the parser functions in
  python plotter.py [name of the parser function without the parser_ prefix] [output name] [data file names]
  ```
 So you can use your customized or newly written parser to plot graphs. The only thing to consider is to keep the structure of the parser output like the current parsers.
+
+You can change the `qemu_aarch64_1_core_4GB.cfg` file which is downloaded from master to the Qemu base image to change the plotting configurations. 
+
+You can always take a snapshot sending `savevm-ext [snapshot-name]` to mrun process standard input. You can do it by something like this:
+```
+sudo bash -c 'echo savevm-ext [snapshot-name] > /proc/[mrun pid]/fd/0'
+```
