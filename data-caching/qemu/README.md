@@ -14,3 +14,5 @@ To run this scripts you can use the following command:
 `test-cloud-dc-qemu.sh [qflex directory] [to prepare or not: true/false]`
 
 the prepare option tells the script to whether delete the disc image, extract it from scratch and create data caching or just use the docker installed ubuntu.
+
+I was trying to put some ubuntu disk image and some snapshot for data caching in the last day but I failed to do that. But I tried the above procedure and it was working. 
