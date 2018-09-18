@@ -10,7 +10,7 @@ def plot_single_side_graph(x_data, single_graph_data, plotter, ylim=None):
     if single_graph_data['type'] == 'plot':
         plots.extend(plotter.plot(
             x_data, single_graph_data['data'], single_graph_data['format'],
-            label=single_graph_data['label']
+            label=single_graph_data['label'], markersize=15
         ))
     elif single_graph_data['type'] == 'errorbar':
         plots.append(plotter.errorbar(

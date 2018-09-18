@@ -3,7 +3,7 @@ import statistics
 import math
 
 
-def mean_and_error_last_numbers(numbers, count=20, offset=0, normalize_by_mean_as_real_count=True):
+def mean_and_error_last_numbers(numbers, count=10, offset=0, normalize_by_mean_as_real_count=True):
     selected_numbers = []
     for index in range(count):
         number = numbers[len(numbers) - 1 - index - offset]
@@ -89,8 +89,8 @@ def parse_data_caching(log_file_names):
                     profiles[current_rps]['99th'].append(float(load_stat[10]))
                     profiles[current_rps]['rps'].append(float(load_stat[1]))
 
-        if current_rps is not None:
-            if len(profiles[current_rps]['cpu_util'].keys()) == 0:
+        for current_rps in list(profiles.keys()):
+            if len(profiles[current_rps]['cpu_util'].keys()) == 0 or len(profiles[current_rps]['99th']) == 0:
                 del profiles[current_rps]
 
         # form the graph data to plot
@@ -154,7 +154,7 @@ def parse_data_caching(log_file_names):
                             'trend_line': False,
                         },
                     ],
-                    'right_limit': 90,
+                    'right_limit': None,
                     'right_label': 'Latency (ms)'
                 }
             }
@@ -166,13 +166,13 @@ def parse_data_caching(log_file_names):
 def parse_data_caching_detailed(log_file_names):
     graph_data = {
         'graphs': [],
-        'figure_size': (24, 20),
+        'figure_size': (12 * len(log_file_names), 20),
         'dimensions': (3, len(log_file_names)),
         'sup_title': 'Detailed Data Caching Graph'
     }
 
-    if len(log_file_names) != 2:
-        print("This kind of graph can be only done with 2 input files.")
+    if len(log_file_names) > 2:
+        print("This kind of graph can be only done with 1 or 2 input files.")
         exit(1)
 
     for log_file_name in log_file_names:
@@ -226,8 +226,8 @@ def parse_data_caching_detailed(log_file_names):
                     profiles[current_rps]['99th'].append(float(load_stat[10]))
                     profiles[current_rps]['rps'].append(float(load_stat[1]))
 
-        if current_rps is not None:
-            if len(profiles[current_rps]['cpu_util'].keys()) == 0:
+        for current_rps in list(profiles.keys()):
+            if len(profiles[current_rps]['cpu_util'].keys()) == 0 or len(profiles[current_rps]['99th']) == 0:
                 del profiles[current_rps]
 
         # form the graph data to plot
@@ -310,7 +310,7 @@ def parse_data_caching_detailed(log_file_names):
                         },
                     ],
                     'left_label': 'Latency (ms)',
-                    'left_limit': 100,
+                    'left_limit': 10000,
                     'right': [
 
                         # {
@@ -320,7 +320,7 @@ def parse_data_caching_detailed(log_file_names):
                         #     'label': '99th Latency (ms)',
                         # },
                     ],
-                    'right_limit': 100,
+                    'right_limit': None,
                     'right_label': ''
                 }
             }
@@ -344,7 +344,7 @@ def parse_data_caching_detailed(log_file_names):
                         }
                     ],
                     'left_label': 'Throughput (RPS)',
-                    'left_limit': 90000,
+                    'left_limit': None,
                     'right': [
                     ],
                     'right_limit': 100,
@@ -352,14 +352,176 @@ def parse_data_caching_detailed(log_file_names):
                 }
             }
         )
-
-    graph_data['graphs'] = [
-        graph_data['graphs'][0],
-        graph_data['graphs'][3],
-        graph_data['graphs'][1],
-        graph_data['graphs'][4],
-        graph_data['graphs'][2],
-        graph_data['graphs'][5]
-    ]
+    if len(graph_data['graphs']) == 2:
+        graph_data['graphs'] = [
+            graph_data['graphs'][0],
+            graph_data['graphs'][3],
+            graph_data['graphs'][1],
+            graph_data['graphs'][4],
+            graph_data['graphs'][2],
+            graph_data['graphs'][5]
+        ]
     
+    return graph_data
+
+
+def parse_csv(csv_file_names):
+    graph_data = {
+        'graphs': [],
+        'figure_size': (15 * len(csv_file_names), 50),
+        'dimensions': (4, len(csv_file_names)),
+        'sup_title': 'Data Caching'
+    }
+
+    if len(csv_file_names) > 2:
+        print("This kind of graph can be only done with 1 or 2 input files.")
+        exit(1)
+
+    csv_data = []
+    for csv_file_name in csv_file_names:
+        log_file = open(csv_file_name)
+        csv_data.append([])
+        for line in log_file:
+            line = line.replace('\n', '')
+            csv_data[len(csv_data) - 1].append(line.split(','))
+
+
+    labels = ['ARM', 'x86']
+    counter = 0
+    for single_file_csv_data in csv_data:
+
+        x_data = []
+        for i in range(1, len(single_file_csv_data )):
+            row = single_file_csv_data[i]
+            x_data.append(float(row[0]))
+
+        graph_data['graphs'].append(
+            {
+                'x': x_data,
+                'x_label': 'Target RPS',
+                'title': labels[counter],
+                'y': {
+                    'left': [
+                        {
+                            'type': 'plot',
+                            'format': '-',
+                            'data': [float(single_file_csv_data[j][i]) for j in range(1, len(single_file_csv_data))],
+                            'error': None,
+                            'label': single_file_csv_data[0][i],
+                            'trend_line': False,
+                            'trend_line_format': '--',
+                        } for i in range(2, 5)
+                    ],
+                    'left_label': 'Latency (ms)',
+                    'left_limit': 800,
+                    'right': [
+                    ],
+                    'right_limit': None,
+                    'right_label': ''
+                }
+            }
+        )
+
+        counter += 1
+
+    for single_file_csv_data in csv_data:
+
+        x_data = []
+        for i in range(1, len(single_file_csv_data)):
+            row = single_file_csv_data[i]
+            x_data.append(float(row[0]))
+        graph_data['graphs'].append(
+            {
+                'x': x_data,
+                'x_label': 'Target RPS',
+                'title': '',
+                'y': {
+                    'left': [
+                        {
+                            'type': 'plot',
+                            'format': '.',
+                            'data': [float(single_file_csv_data[j][i]) for j in range(1, len(single_file_csv_data))],
+                            'error': None,
+                            'label': single_file_csv_data[0][i],
+                            'trend_line': False,
+                            'trend_line_format': '--',
+                        } for i in range(5, 6)
+                    ],
+                    'left_label': 'CPU Utilization',
+                    'left_limit': None,
+                    'right': [
+                    ],
+                    'right_limit': None,
+                    'right_label': ''
+                }
+            }
+        )
+
+
+    for single_file_csv_data in csv_data:
+
+        x_data = []
+        for i in range(1, len(single_file_csv_data)):
+            row = single_file_csv_data[i]
+            x_data.append(float(row[0]))
+        graph_data['graphs'].append(
+            {
+                'x': x_data,
+                'x_label': 'Target RPS',
+                'title': '',
+                'y': {
+                    'left': [
+                        {
+                            'type': 'plot',
+                            'format': '.',
+                            'data': [float(single_file_csv_data[j][i]) for j in
+                                     range(1, len(single_file_csv_data))],
+                            'error': None,
+                            'label': single_file_csv_data[0][i],
+                            'trend_line': False,
+                            'trend_line_format': '--',
+                        } for i in range(1, 2)
+                    ],
+                    'left_label': 'Throughput (RPS)',
+                    'left_limit': 100000,
+                    'right': [
+                    ],
+                    'right_limit': None,
+                    'right_label': ''
+                }
+            }
+        )
+
+    for single_file_csv_data in csv_data:
+
+        x_data = []
+        for i in range(1, len(single_file_csv_data)):
+            row = single_file_csv_data[i]
+            x_data.append(float(row[0]))
+        graph_data['graphs'].append(
+            {
+                'x': x_data,
+                'x_label': 'Target RPS',
+                'title': '',
+                'y': {
+                    'left': [
+                        {
+                            'type': 'plot',
+                            'format': '.',
+                            'data': [float(single_file_csv_data[j][i]) for j in range(1, len(single_file_csv_data))],
+                            'error': None,
+                            'label': single_file_csv_data[0][i],
+                            'trend_line': False,
+                            'trend_line_format': '--',
+                        } for i in range(6, 8)
+                    ],
+                    'left_label': 'IPC',
+                    'left_limit': 0.6,
+                    'right': [
+                    ],
+                    'right_limit': None,
+                    'right_label': ''
+                }
+            }
+        )
     return graph_data
