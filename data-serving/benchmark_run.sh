@@ -1,3 +1,8 @@
+#!/bin/bash 
+
+RED='\033[0;31m'
+NC='\033[0m'
+
 if [ "$#" -ne 2 ]; then
     echo "Illegal number of parameters"
     echo "usage: Command RECORDS OPERATIONS_FILE"
@@ -13,7 +18,7 @@ CLIENT_CONTAINER=cassandra-client
 SERVER_CONTAINER=cassandra-server
 RECORDS=$1
 OPERATIONS_FILE=$2
-LOAD=false
+LOAD=true 
 OUTPUTFOLDER=output
 UTILFILE=$OUTPUTFOLDER/util.txt
 OPERATIONSFILE=$OUTPUTFOLDER/operations.txt
@@ -22,12 +27,16 @@ BENCHMARKFILE=$OUTPUTFOLDER/benchmark.txt
 BENCHMARKFILE2=$OUTPUTFOLDER/benchmark2.txt
 ENVIRONMENTFILE=$OUTPUTFOLDER/env.txt
 MULTIPLIER=100
-rm $UTILFILE && touch $UTILFILE
-rm $OPERATIONSFILE && touch $OPERATIONSFILE
-rm $BENCHMARKFILE && touch $BENCHMARKFILE
-rm $BENCHMARKFILE2 && touch $BENCHMARKFILE2
+
+rm -f $UTILFILE && touch $UTILFILE
+rm -f $OPERATIONSFILE && touch $OPERATIONSFILE
+rm -f $BENCHMARKFILE && touch $BENCHMARKFILE
+rm -f $BENCHMARKFILE2 && touch $BENCHMARKFILE2
+rm -f $ENVRONMENTFILE && touch $ENVRONMENTFILE
 set > $ENVIRONMENTFILE
+
 docker rm -f $CLIENT_CONTAINER
+
 if [ "$LOAD" = true ]
 then    
     docker rm -f $SERVER_CONTAINER
@@ -46,7 +55,7 @@ fi
 while [ 1 ]; do
     docker logs $SERVER_CONTAINER | grep 'Created default superuser role' &> /dev/null
     if [ $? == 0 ]; then
-	echo "Done"
+	echo -e "${RED}Done creating server ${NC}"
 	break;
     fi
     docker logs $SERVER_CONTAINER
@@ -54,14 +63,13 @@ while [ 1 ]; do
     sleep 5
 done
 
-docker run --rm -it -d --cpuset-cpus=$CLIENT_CPUS --name $CLIENT_CONTAINER --net serving_network client "cassandra-server"
-
+docker run -it -d --cpuset-cpus=$CLIENT_CPUS --name $CLIENT_CONTAINER --net serving_network client "cassandra-server" 
 
 
 while [ 1 ]; do
     docker logs $CLIENT_CONTAINER | grep 'Keyspace usertable was created' &> /dev/null
     if [ $? == 0 ]; then
-	echo "Done"
+	echo -e "${RED}Done inserting the keyspace usertable${NC}"
 	break;
     fi
     docker logs $CLIENT_CONTAINER
@@ -73,19 +81,7 @@ echo $SERVER_CONTAINER
 
 #read -p "BEFORE LOAD"
 
-
-while [ 1 ]; do
-    docker logs $SERVER_CONTAINER | grep 'Created default superuser role' &> /dev/null
-    if [ $? == 0 ]; then
-	echo "Done"
-	break;
-    fi
-    docker logs $SERVER_CONTAINER
-    echo "Sleeping"
-    sleep 5
-done
-echo $RECORDS
-echo $SERVER_CONTAINER
+echo -e "${RED}Total record count $RECORDS ${NC}"
 
 #read -p "BEFORE LOAD"
 if [ "$LOAD" = true ]
@@ -94,11 +90,11 @@ then
 fi
 
 #read -p "AFTER LOAD"
-mpstat -P ALL 1 &
-echo "WARMING UP"
+# mpstat -P ALL 1 &
+echo -e "${RED}WARMING UP ${NC}"
 
 docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target $TARGET -threads $THREADS -p operationcount=10000 -p recordcount=$RECORDS"
-pkill mpstat
+# pkill mpstat
 
 while read OPERATIONS; do
     TARGET="$((OPERATIONS * MULTIPLIER))"
@@ -124,6 +120,6 @@ while read OPERATIONS; do
     pid1=$!
 #    (docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target $TARGET -threads $THREADS -p operationcount=$OPERATIONS")>>$BENCHMARKFILE2 &
  #   pid2=$!
-    wait $pid1 $pid2
+    wait $pid1 
     pkill mpstat
-done < $OPERATIONS_FILE
+done < $OPERATIONS_FILE 
