@@ -6,21 +6,21 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-CLIENT_CPUS=0-31
-SERVER_CPUS=32-63
+CLIENT_CPUS=0-27
+SERVER_CPUS=28-55
 
 # CLIENT_CPUS=0,2,4,6,8,10,12,14,16,18,20,22 #CPU cores to run the client on
 # SERVER_CPUS=1,3,5,7,9,11,13,15 #CPU cores to run the server on
 
-SERVER_MEMORY=20g #Memory available to the server docker container
+SERVER_MEMORY=25g #Memory available to the server docker container
 SOLR_MEM=19g #Memory available to SOLR
 RAMPTIME=20
 STEADYTIME=20
 STOPTIME=10
 CLIENT_CONTAINER=web_search_client
 SERVER_CONTAINER=web_search_server
-CLIENT_IMAGE=web-search-client #Name of web-server client image
-SERVER_IMAGE=web-search-server-test #Name of web-search server image
+CLIENT_IMAGE=zilutian/web-search-client #Name of web-server client image
+SERVER_IMAGE=zilutian/web-search-server #Name of web-search server image
 NETWORK=search_network 
 INDEX_CONTAINER=index #Name of the web_search_index container which containes the index
 OPERATIONS_FILE=$1
@@ -54,7 +54,7 @@ docker network create $NETWORK
 
 if [ "$LOAD" = true ]
 then
-    docker run -d --name $SERVER_CONTAINER -v:/home/wiki_vol:/home/solr/wiki_dump --cpuset-cpus=$SERVER_CPUS --net $NETWORK --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 generate
+    docker run -d --name $SERVER_CONTAINER -v:/home/user.3684/wiki_vol:/home/solr/wiki_dump --cpuset-cpus=$SERVER_CPUS --net $NETWORK --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 generate
 fi
 
 
@@ -86,7 +86,6 @@ while read OPERATIONS; do
     echo "Done Running"
     while true; do
 	if docker logs $CLIENT_CONTAINER 2>&1 >/dev/null | grep -q 'Ramp up completed'; then
-	    pidstat -p 5217 -p 5229 -p 5216 -p 15306 -u 1 > $OVERHEADFILE & 
 	    mpstat -P ALL 1 >> $UTILFILE &
 	    
 	    sudo perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS sleep infinity 2>>$PERFFILE & 
@@ -99,7 +98,6 @@ while read OPERATIONS; do
 
     while true; do
 	if docker logs $CLIENT_CONTAINER 2>&1 >/dev/null | grep -q 'Steady state completed'; then
-	    pkill pidstat 
 	    pkill mpstat
 	    sudo perf stat pkill -fx "sleep infinity"
 	    echo "Steady State completed. Stopped Logging CPU Util"
