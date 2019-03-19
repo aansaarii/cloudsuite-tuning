@@ -14,7 +14,7 @@ fi
 LOG=$1
 metrics=(metric avg p90th p99th totalOps)
 
-if [ ! -d $LOG ]; then 
+if [ ! -d ${LOG} ]; then 
   echo "Specified log folder doesn't exist"
   exit 
 fi 
@@ -24,11 +24,13 @@ fi
 # Sample output: <avg>0.023</avg>
 
 for metric in ${metrics[@]}; do 
-  grep ${metric} ${LOG}/benchmark.txt | grep -o '>[0-9.]*<' | grep -o [0-9.]* > ${LOG}/ben_${metric}.txt
+  grep ${metric} ${LOG}/benchmark.txt | grep -o '>.*<' | grep -o [0-9.]* > ${LOG}/ben_${metric}.txt
 done
 
 # Throughput vals are repeated twice in ben_metric.txt   
 awk 'NR % 2 ==0' ${LOG}/ben_metric.txt > ${LOG}/ben_throughput.txt
+
+grep CPUS ${LOG}/env.txt | grep -o [0-9,-]* > ${LOG}/env_cpus.txt
 
 if [[ $2 = 'clean' ]]; then 
   rm $LOG/ben_*.txt
