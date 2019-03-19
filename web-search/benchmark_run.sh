@@ -1,35 +1,48 @@
+#!/bin/bash 
+
 if [ "$#" -ne 1 ]; then
     echo "Illegal number of parameters"
     echo "usage: Command OPERATIONS_FILE"
     exit 1
 fi
-CLIENT_CPUS=0,2,4,6,8,10,12,14,16,18,20,22 #CPU cores to run the client on
-SERVER_CPUS=1,3,5,7,9,11,13,15 #CPU cores to run the server on
+
+CLIENT_CPUS=0-31
+SERVER_CPUS=32-63
+
+# CLIENT_CPUS=0,2,4,6,8,10,12,14,16,18,20,22 #CPU cores to run the client on
+# SERVER_CPUS=1,3,5,7,9,11,13,15 #CPU cores to run the server on
+
 SERVER_MEMORY=20g #Memory available to the server docker container
-SOLR_MEM=14g #Memory available to SOLR
+SOLR_MEM=19g #Memory available to SOLR
 RAMPTIME=20
 STEADYTIME=20
 STOPTIME=10
 CLIENT_CONTAINER=web_search_client
 SERVER_CONTAINER=web_search_server
-CLIENT_IMAGE=web_search_client #Name of web-server client image
-SERVER_IMAGE=web_search_server #Name of web-search server image
-NETWORK=web_search_network 
+CLIENT_IMAGE=web-search-client #Name of web-server client image
+SERVER_IMAGE=web-search-server-test #Name of web-search server image
+NETWORK=search_network 
 INDEX_CONTAINER=index #Name of the web_search_index container which containes the index
 OPERATIONS_FILE=$1
+
 LOAD=true
 OUTPUTFOLDER=output
 UTILFILE=$OUTPUTFOLDER/util.txt
 OPERATIONSFILE=$OUTPUTFOLDER/operations.txt
-DISPLAYFILE=$OUTPUTFOLDER/display.txt
 BENCHMARKFILE=$OUTPUTFOLDER/benchmark.txt
 ENVIRONMENTFILE=$OUTPUTFOLDER/env.txt
 PERFFILE=$OUTPUTFOLDER/perf.txt
-rm $PERFFILE
-rm $UTILFILE && touch $UTILFILE
-rm $OPERATIONSFILE && touch $OPERATIONSFILE
-rm $BENCHMARKFILE && touch $BENCHMARKFILE
+
+rm -rf $OUTPUTFOLDER
+mkdir $OUTPUTFOLDER
+
+touch $UTILFILE
+touch $OPERATIONSFILE
+touch $BENCHMARKFILE
+touch $PERFFILE 
+
 set > $ENVIRONMENTFILE
+
 docker rm -f $CLIENT_CONTAINER
 if [ "$LOAD" = true ]
 then    
@@ -37,12 +50,11 @@ then
 fi
 
 docker network rm $NETWORK
-
-
 docker network create $NETWORK
+
 if [ "$LOAD" = true ]
 then
-    docker run -d --name $SERVER_CONTAINER --volumes-from=index --cpuset-cpus=$SERVER_CPUS --net $NETWORK --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1
+    docker run -d --name $SERVER_CONTAINER -v:/home/wiki_vol:/home/solr/wiki_dump --cpuset-cpus=$SERVER_CPUS --net $NETWORK --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 generate
 fi
 
 
@@ -69,11 +81,12 @@ while read OPERATIONS; do
     docker rm -f $CLIENT_CONTAINER
    
     echo "docker run --net=$NETWORK --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $RAMPTIME $STOPTIME $STEADYTIME"
-    docker run --net=$NETWORK --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $RAMPTIME $STOPTIME $STEADYTIME >> $BENCHMARKFILE &
+    docker run --net=$NETWORK -e JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64 --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $RAMPTIME $STOPTIME $STEADYTIME >> $BENCHMARKFILE &
     pid1=$!
     echo "Done Running"
     while true; do
 	if docker logs $CLIENT_CONTAINER 2>&1 >/dev/null | grep -q 'Ramp up completed'; then
+	    pidstat -p 5217 -p 5229 -p 5216 -p 15306 -u 1 > $OVERHEADFILE & 
 	    mpstat -P ALL 1 >> $UTILFILE &
 	    
 	    sudo perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS sleep infinity 2>>$PERFFILE & 
@@ -86,6 +99,7 @@ while read OPERATIONS; do
 
     while true; do
 	if docker logs $CLIENT_CONTAINER 2>&1 >/dev/null | grep -q 'Steady state completed'; then
+	    pkill pidstat 
 	    pkill mpstat
 	    sudo perf stat pkill -fx "sleep infinity"
 	    echo "Steady State completed. Stopped Logging CPU Util"
