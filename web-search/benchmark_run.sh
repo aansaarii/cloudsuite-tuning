@@ -14,9 +14,9 @@ SERVER_CPUS=32-63
 
 SERVER_MEMORY=20g #Memory available to the server docker container
 SOLR_MEM=19g #Memory available to SOLR
-RAMPTIME=20
-STEADYTIME=20
-STOPTIME=10
+RAMPTIME=25
+STEADYTIME=25
+STOPTIME=15
 CLIENT_CONTAINER=web_search_client
 SERVER_CONTAINER=web_search_server
 CLIENT_IMAGE=web-search-client #Name of web-server client image
@@ -44,81 +44,82 @@ touch $PERFFILE
 set > $ENVIRONMENTFILE
 
 docker rm -f $CLIENT_CONTAINER
-if [ "$LOAD" = true ]
-then    
-    docker rm -f $SERVER_CONTAINER
+if [[ "$LOAD" = true ]]; then 
+	docker rm -f $SERVER_CONTAINER
+	docker network rm $NETWORK
+	docker network create $NETWORK
+    docker run -d --name $SERVER_CONTAINER -v:/home/wiki_vol:/home/solr/wiki_dump --cpuset-cpus=$SERVER_CPUS --net $NETWORK --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 generate 
 fi
 
-docker network rm $NETWORK
-docker network create $NETWORK
+# check the logs to determine the stage 
+function detect_stage () {
+	case "$2" in
+	index) MATCH="Index Node IP Address:"
+		;;  
+	ramp-up) MATCH="Ramp up completed" 
+		;;
+	steady-state) MATCH="Steady state completed" 
+		;; 
+	detail) MATCH="Detail finished"
+		;; 
+	esac 
+    
+	case "$1" in 
+	server)
+		while true; do 
+		# hard-code since it is the only one for server 
+			if docker logs $SERVER_CONTAINER | grep "$MATCH"; then 
+				SERVER_IP=`docker logs $SERVER_CONTAINER | grep "$MATCH" | sed 's/.*\:\s//'`
+				echo "Index node IP $SERVER_IP" 
+				return 
+			fi
+			echo "Server Index is not ready "
+			sleep 5   
+		done
+		;; 
+	client) 
+        while true; do
+            if docker logs $CLIENT_CONTAINER 2>&1 > /dev/null | grep -q "$MATCH"; then
+                echo "$MATCH"
+                return 
+            fi
+			echo "$2 stage not completed"
+			sleep 5 
+        done
+        ;; 
+	esac 
+}
 
-if [ "$LOAD" = true ]
-then
-    docker run -d --name $SERVER_CONTAINER -v:/home/wiki_vol:/home/solr/wiki_dump --cpuset-cpus=$SERVER_CPUS --net $NETWORK --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 generate
-fi
+# Check if the index node is ready and get the IP
+detect_stage server index  
 
+server_proc=`ps aux | grep solr-7.7.1 |tr ' ' '\n' | sed -n "3 p"`
+echo "docker prepares client container: ramp-up $RAMPTIME stop $STOPTIME steady state $STEADYTIME"
 
-
-while true; do
-    if docker logs $SERVER_CONTAINER | grep -q 'Index Node IP Address:'; then
-	SERVER_IP=`docker logs $SERVER_CONTAINER | grep 'Index Node IP Address:' | sed 's/.*\:\s//'`
-	echo "Index is ready. Server IP is $SERVER_IP "
-	break;
-    fi
-    echo "Index is not ready ... "
-    sleep 5
-done
-
-
+# Read in thread counts from the operations file 
 while read OPERATIONS; do
     THREADS=$OPERATIONS
    
     echo "NUM OPERATIONS = $OPERATIONS"
-   
     echo $OPERATIONS>>$OPERATIONSFILE
     echo "@">>$UTILFILE
 
     docker rm -f $CLIENT_CONTAINER
-   
-    echo "docker run --net=$NETWORK --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $RAMPTIME $STOPTIME $STEADYTIME"
-    docker run --net=$NETWORK -e JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64 --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $RAMPTIME $STOPTIME $STEADYTIME >> $BENCHMARKFILE &
-    pid1=$!
-    echo "Done Running"
-    while true; do
-	if docker logs $CLIENT_CONTAINER 2>&1 >/dev/null | grep -q 'Ramp up completed'; then
-	    pidstat -p 5217 -p 5229 -p 5216 -p 15306 -u 1 > $OVERHEADFILE & 
-	    mpstat -P ALL 1 >> $UTILFILE &
-	    
-	    sudo perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS sleep infinity 2>>$PERFFILE & 
-	    echo "Ramp up completed. Logging CPU Util"
-	    break;
-	fi
-	echo "Ramp up not finished ... "
-	sleep 1
-    done
-
-    while true; do
-	if docker logs $CLIENT_CONTAINER 2>&1 >/dev/null | grep -q 'Steady state completed'; then
-	    pkill pidstat 
-	    pkill mpstat
-	    sudo perf stat pkill -fx "sleep infinity"
-	    echo "Steady State completed. Stopped Logging CPU Util"
-	    break;
-	fi
-	echo "Steady state not finished ... "
-	sleep 1
-    done
-
-    while true; do
-	if docker logs $CLIENT_CONTAINER 2>&1 >/dev/null | grep -q 'Detail finished'; then
-	    echo "Benchmark completed completed."
-	    break;
-	fi
-	echo "Benchmark not finished ... "
-	sleep 1
-    done
-    wait $pid1
-   
-
     
+    echo "docker starts client container $THREADS threads"
+    docker run --net=$NETWORK -e JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64 --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $RAMPTIME $STOPTIME $STEADYTIME >> $BENCHMARKFILE &
+    
+	client_proc=$!
+  
+	detect_stage client ramp-up  
+	mpstat -P ALL 1 >> $UTILFILE & 
+	perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS -p $server_proc sleep infinity 2>>$PERFFILE &
+	# perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS sleep infinity 2>>$PERFFILE &	
+	detect_stage client steady-state 
+	pkill mpstat
+    pkill -fx "sleep infinity"
+	detect_stage client detail 
+
+    wait $client_proc
+   
 done < $OPERATIONS_FILE
