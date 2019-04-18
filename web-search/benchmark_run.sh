@@ -1,6 +1,10 @@
-#!/bin/bash +x
+#!/bin/bash 
 
-trap read debug 
+#set -x 
+#trap read debug 
+
+GENERATE_INDEX=false
+START_SERVER=true
 
 if [ "$#" -ne 1 ]; then
     echo "Illegal number of parameters"
@@ -11,18 +15,22 @@ fi
 source cpu_assign.sh 
 source config.sh 
 
-if [ "$LOAD" = true ]
+if [ "$GENERATE_INDEX" = true ]
 then
     docker rm -f $SERVER_CONTAINER
     docker network rm $NETWORK
     docker network create $NETWORK
-    docker run -d --name $SERVER_CONTAINER -v $LOCAL_INDEX_VOL:$SOLR_HOME/wiki_dump -p 8983:8983 -p 7974:7974 -p 8984:8984 --cpuset-cpus=$SERVER_CPUS --net $NETWORK --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 generate
+    docker run -d --name $SERVER_CONTAINER -v $LOCAL_INDEX_VOL:/home/solr -p 8983:8983 --cpuset-cpus=$SERVER_CPUS --net $NETWORK --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 generate
+fi 
+
+if [ "$START_SERVER" = true ] 
+then  
+    docker rm -f $SERVER_CONTAINER
+    docker network rm $NETWORK
+    docker network create $NETWORK
+    docker run -d --name $SERVER_CONTAINER -v $LOCAL_INDEX_VOL:/home/solr -p 8983:8983 --cpuset-cpus=$SERVER_CPUS --net $NETWORK --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 
 fi
 
-#zt Debug, only launch the server instance 
-return 
-
-#CLIENT_CPUS=0,2,4,6,8,10,12,14,16,18,20,22 #CPU cores to run the client on
 #SERVER_CPUS=1,3,5,7,9,11,13,15 #CPU cores to run the server on
 
 # check the logs to determine the stage
@@ -69,8 +77,8 @@ function detect_stage () {
 # Check if the index node is ready and get the IP
 detect_stage server index
 
-# USR=polkitd
-USR=systemd
+USR=polkitd
+# USR=systemd
 
 server_proc=`ps aux | grep solr-7.7.1 | grep $USR |tr ' ' '\n' | grep '[^[:blank:]]' | sed -n "2 p"`
 
@@ -102,8 +110,8 @@ while read OPERATIONS; do
     echo "Measurement starts $(date +"%T")"
     mpstat -P ALL 1 >> $UTILFILE &
     # perf record -F 99 -e instructions:u,instructions:k,cycles --call-graph dwarf -p $server_proc sleep $STEADYTIME
-    # sudo perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS -p $server_proc sleep infinity 2>>$PERFFILE &
-    sudo perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS sleep infinity 2>>$PERFFILE &
+    perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS -p $server_proc sleep infinity 2>>$PERFFILE &
+    # sudo perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS sleep infinity 2>>$PERFFILE &
 
     detect_stage client steady-state &
     wait $!
