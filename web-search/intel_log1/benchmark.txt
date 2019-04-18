@@ -1,0 +1,2460 @@
+Starting Faban Server
+Please point your browser to http://d79d631903eb:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= d79d631903eb:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:29:04 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:30:14 GMT 2019</endTime>
+        <metric unit="ops/sec">4.800</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">4.800</metric>
+        <startTime>Thu Apr 18 09:29:04 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:30:14 GMT 2019</endTime>
+        <totalOps unit="operations">96</totalOps>
+        <users>10</users>
+        <rtXtps>8.3961</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>96</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.038</avg>
+                <max>0.118</max>
+                <sd>0.029</sd>
+                <p90th>0.080</p90th>
+                <passed>true</passed>
+                <p99th>0.105</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.953</targetedAvg>
+                <actualAvg>1.953</actualAvg>
+                <min>0.097</min>
+                <max>9.999</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://d1c479c73c2a:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= d1c479c73c2a:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:30:36 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:31:46 GMT 2019</endTime>
+        <metric unit="ops/sec">20.500</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">20.500</metric>
+        <startTime>Thu Apr 18 09:30:36 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:31:46 GMT 2019</endTime>
+        <totalOps unit="operations">410</totalOps>
+        <users>40</users>
+        <rtXtps>33.1217</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>410</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.034</avg>
+                <max>0.194</max>
+                <sd>0.033</sd>
+                <p90th>0.078</p90th>
+                <passed>true</passed>
+                <p99th>0.125</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.791</targetedAvg>
+                <actualAvg>1.790</actualAvg>
+                <min>0.008</min>
+                <max>9.999</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://15ef1c985371:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 15ef1c985371:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:32:08 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:33:18 GMT 2019</endTime>
+        <metric unit="ops/sec">36.100</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">36.100</metric>
+        <startTime>Thu Apr 18 09:32:08 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:33:18 GMT 2019</endTime>
+        <totalOps unit="operations">722</totalOps>
+        <users>70</users>
+        <rtXtps>56.3496</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>722</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.033</avg>
+                <max>0.188</max>
+                <sd>0.032</sd>
+                <p90th>0.078</p90th>
+                <passed>true</passed>
+                <p99th>0.138</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.729</targetedAvg>
+                <actualAvg>1.729</actualAvg>
+                <min>0.021</min>
+                <max>9.999</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://6095ba1e0541:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 6095ba1e0541:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:33:42 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:34:52 GMT 2019</endTime>
+        <metric unit="ops/sec">51.150</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">51.150</metric>
+        <startTime>Thu Apr 18 09:33:42 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:34:52 GMT 2019</endTime>
+        <totalOps unit="operations">1023</totalOps>
+        <users>100</users>
+        <rtXtps>80.6771</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>1023</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.032</avg>
+                <max>0.175</max>
+                <sd>0.031</sd>
+                <p90th>0.078</p90th>
+                <passed>true</passed>
+                <p99th>0.130</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.745</targetedAvg>
+                <actualAvg>1.744</actualAvg>
+                <min>0.004</min>
+                <max>9.999</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://e387db6bb684:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= e387db6bb684:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:35:15 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:36:25 GMT 2019</endTime>
+        <metric unit="ops/sec">64.300</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">64.300</metric>
+        <startTime>Thu Apr 18 09:35:15 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:36:25 GMT 2019</endTime>
+        <totalOps unit="operations">1286</totalOps>
+        <users>130</users>
+        <rtXtps>102.0311</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>1286</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.030</avg>
+                <max>0.238</max>
+                <sd>0.031</sd>
+                <p90th>0.073</p90th>
+                <passed>true</passed>
+                <p99th>0.143</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.761</targetedAvg>
+                <actualAvg>1.761</actualAvg>
+                <min>0.011</min>
+                <max>9.999</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://bc5d591cecb8:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 5 seconds
+Print= bc5d591cecb8:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:36:49 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:37:59 GMT 2019</endTime>
+        <metric unit="ops/sec">80.050</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">80.050</metric>
+        <startTime>Thu Apr 18 09:36:49 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:37:59 GMT 2019</endTime>
+        <totalOps unit="operations">1601</totalOps>
+        <users>160</users>
+        <rtXtps>129.0203</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>1601</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.032</avg>
+                <max>0.229</max>
+                <sd>0.034</sd>
+                <p90th>0.080</p90th>
+                <passed>true</passed>
+                <p99th>0.153</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.790</targetedAvg>
+                <actualAvg>1.789</actualAvg>
+                <min>0.002</min>
+                <max>10.000</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://8f9e7a230433:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 8f9e7a230433:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:38:25 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:39:35 GMT 2019</endTime>
+        <metric unit="ops/sec">98.050</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">98.050</metric>
+        <startTime>Thu Apr 18 09:38:25 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:39:35 GMT 2019</endTime>
+        <totalOps unit="operations">1961</totalOps>
+        <users>190</users>
+        <rtXtps>155.5614</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>1961</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.032</avg>
+                <max>0.223</max>
+                <sd>0.033</sd>
+                <p90th>0.080</p90th>
+                <passed>true</passed>
+                <p99th>0.143</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.755</targetedAvg>
+                <actualAvg>1.754</actualAvg>
+                <min>0.005</min>
+                <max>9.998</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://e0487b17d146:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= e0487b17d146:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:40:00 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:41:10 GMT 2019</endTime>
+        <metric unit="ops/sec">108.650</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">108.650</metric>
+        <startTime>Thu Apr 18 09:40:00 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:41:10 GMT 2019</endTime>
+        <totalOps unit="operations">2173</totalOps>
+        <users>220</users>
+        <rtXtps>175.3892</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>2173</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.031</avg>
+                <max>0.213</max>
+                <sd>0.033</sd>
+                <p90th>0.078</p90th>
+                <passed>true</passed>
+                <p99th>0.150</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.796</targetedAvg>
+                <actualAvg>1.794</actualAvg>
+                <min>0.002</min>
+                <max>9.998</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://816bcbfff642:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 5 seconds
+Print= 816bcbfff642:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:41:37 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:42:47 GMT 2019</endTime>
+        <metric unit="ops/sec">124.750</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">124.750</metric>
+        <startTime>Thu Apr 18 09:41:37 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:42:47 GMT 2019</endTime>
+        <totalOps unit="operations">2495</totalOps>
+        <users>250</users>
+        <rtXtps>201.2779</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>2495</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.031</avg>
+                <max>0.257</max>
+                <sd>0.033</sd>
+                <p90th>0.078</p90th>
+                <passed>true</passed>
+                <p99th>0.140</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.793</targetedAvg>
+                <actualAvg>1.791</actualAvg>
+                <min>0.002</min>
+                <max>9.997</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://877578efaa84:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 877578efaa84:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:43:10 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:44:20 GMT 2019</endTime>
+        <metric unit="ops/sec">144.650</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">144.650</metric>
+        <startTime>Thu Apr 18 09:43:10 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:44:20 GMT 2019</endTime>
+        <totalOps unit="operations">2893</totalOps>
+        <users>280</users>
+        <rtXtps>230.0047</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>2893</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.030</avg>
+                <max>0.221</max>
+                <sd>0.033</sd>
+                <p90th>0.075</p90th>
+                <passed>true</passed>
+                <p99th>0.145</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.761</targetedAvg>
+                <actualAvg>1.758</actualAvg>
+                <min>0.003</min>
+                <max>9.997</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://2b0218f26757:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 2b0218f26757:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:44:47 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:45:57 GMT 2019</endTime>
+        <metric unit="ops/sec">154.350</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">154.350</metric>
+        <startTime>Thu Apr 18 09:44:47 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:45:57 GMT 2019</endTime>
+        <totalOps unit="operations">3087</totalOps>
+        <users>310</users>
+        <rtXtps>250.7729</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>3087</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.031</avg>
+                <max>0.230</max>
+                <sd>0.032</sd>
+                <p90th>0.078</p90th>
+                <passed>true</passed>
+                <p99th>0.138</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.808</targetedAvg>
+                <actualAvg>1.803</actualAvg>
+                <min>0.001</min>
+                <max>9.996</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://e3730a0c39d8:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= e3730a0c39d8:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:46:23 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:47:33 GMT 2019</endTime>
+        <metric unit="ops/sec">173.250</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">173.250</metric>
+        <startTime>Thu Apr 18 09:46:23 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:47:33 GMT 2019</endTime>
+        <totalOps unit="operations">3465</totalOps>
+        <users>340</users>
+        <rtXtps>275.9454</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>3465</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.031</avg>
+                <max>0.241</max>
+                <sd>0.034</sd>
+                <p90th>0.078</p90th>
+                <passed>true</passed>
+                <p99th>0.158</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.765</targetedAvg>
+                <actualAvg>1.761</actualAvg>
+                <min>0.004</min>
+                <max>9.996</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://3e8787a86bd7:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 3e8787a86bd7:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:47:58 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:49:08 GMT 2019</endTime>
+        <metric unit="ops/sec">184.350</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">184.350</metric>
+        <startTime>Thu Apr 18 09:47:58 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:49:08 GMT 2019</endTime>
+        <totalOps unit="operations">3687</totalOps>
+        <users>370</users>
+        <rtXtps>296.6127</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>3687</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.030</avg>
+                <max>0.307</max>
+                <sd>0.033</sd>
+                <p90th>0.078</p90th>
+                <passed>true</passed>
+                <p99th>0.138</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.792</targetedAvg>
+                <actualAvg>1.786</actualAvg>
+                <min>0.003</min>
+                <max>9.995</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://7e25cb6011eb:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 7e25cb6011eb:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:49:36 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:50:46 GMT 2019</endTime>
+        <metric unit="ops/sec">205.650</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">205.650</metric>
+        <startTime>Thu Apr 18 09:49:36 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:50:46 GMT 2019</endTime>
+        <totalOps unit="operations">4113</totalOps>
+        <users>400</users>
+        <rtXtps>325.2667</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>4113</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.032</avg>
+                <max>0.332</max>
+                <sd>0.036</sd>
+                <p90th>0.078</p90th>
+                <passed>true</passed>
+                <p99th>0.163</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.757</targetedAvg>
+                <actualAvg>1.750</actualAvg>
+                <min>0.002</min>
+                <max>9.993</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://76a63b5c32d9:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 76a63b5c32d9:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:51:13 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:52:23 GMT 2019</endTime>
+        <metric unit="ops/sec">216.600</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">216.600</metric>
+        <startTime>Thu Apr 18 09:51:13 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:52:23 GMT 2019</endTime>
+        <totalOps unit="operations">4332</totalOps>
+        <users>430</users>
+        <rtXtps>346.5539</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>4332</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.033</avg>
+                <max>0.375</max>
+                <sd>0.038</sd>
+                <p90th>0.083</p90th>
+                <passed>true</passed>
+                <p99th>0.173</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.784</targetedAvg>
+                <actualAvg>1.774</actualAvg>
+                <min>0.002</min>
+                <max>9.990</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://eb69ce524b3e:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= eb69ce524b3e:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:52:48 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:53:59 GMT 2019</endTime>
+        <metric unit="ops/sec">232.150</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">232.150</metric>
+        <startTime>Thu Apr 18 09:52:48 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:53:59 GMT 2019</endTime>
+        <totalOps unit="operations">4643</totalOps>
+        <users>460</users>
+        <rtXtps>376.8748</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>4643</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.036</avg>
+                <max>0.389</max>
+                <sd>0.041</sd>
+                <p90th>0.088</p90th>
+                <passed>true</passed>
+                <p99th>0.188</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.805</targetedAvg>
+                <actualAvg>1.798</actualAvg>
+                <min>0.003</min>
+                <max>9.992</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://b75728e4be63:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 5 seconds
+Print= b75728e4be63:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:54:24 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:55:34 GMT 2019</endTime>
+        <metric unit="ops/sec">257.250</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">257.250</metric>
+        <startTime>Thu Apr 18 09:54:24 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:55:34 GMT 2019</endTime>
+        <totalOps unit="operations">5145</totalOps>
+        <users>490</users>
+        <rtXtps>411.0123</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>5145</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.052</avg>
+                <max>1.216</max>
+                <sd>0.085</sd>
+                <p90th>0.115</p90th>
+                <passed>true</passed>
+                <p99th>0.473</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.769</targetedAvg>
+                <actualAvg>1.763</actualAvg>
+                <min>0.001</min>
+                <max>9.992</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://18ccc9ac52fb:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 18ccc9ac52fb:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:56:01 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:57:11 GMT 2019</endTime>
+        <metric unit="ops/sec">267.300</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">267.300</metric>
+        <startTime>Thu Apr 18 09:56:01 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:57:11 GMT 2019</endTime>
+        <totalOps unit="operations">5346</totalOps>
+        <users>520</users>
+        <rtXtps>438.1767</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>5346</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.058</avg>
+                <max>1.191</max>
+                <sd>0.103</sd>
+                <p90th>0.130</p90th>
+                <passed>true</passed>
+                <p99th>0.550</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.827</targetedAvg>
+                <actualAvg>1.813</actualAvg>
+                <min>0.002</min>
+                <max>9.982</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://7fe4d746eb96:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 7fe4d746eb96:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:57:37 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:58:47 GMT 2019</endTime>
+        <metric unit="ops/sec">256.550</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">256.550</metric>
+        <startTime>Thu Apr 18 09:57:37 GMT 2019</startTime>
+        <endTime>Thu Apr 18 09:58:47 GMT 2019</endTime>
+        <totalOps unit="operations">5131</totalOps>
+        <users>550</users>
+        <rtXtps>407.6488</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>5131</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.089</avg>
+                <max>1.550</max>
+                <sd>0.153</sd>
+                <p90th>0.228</p90th>
+                <passed>true</passed>
+                <p99th>0.775</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.780</targetedAvg>
+                <actualAvg>1.774</actualAvg>
+                <min>0.001</min>
+                <max>9.988</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://53b15ec4c4b8:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 53b15ec4c4b8:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 09:59:14 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:00:24 GMT 2019</endTime>
+        <metric unit="ops/sec">296.100</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">296.100</metric>
+        <startTime>Thu Apr 18 09:59:14 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:00:24 GMT 2019</endTime>
+        <totalOps unit="operations">5922</totalOps>
+        <users>580</users>
+        <rtXtps>482.3500</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>5922</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.069</avg>
+                <max>1.056</max>
+                <sd>0.106</sd>
+                <p90th>0.170</p90th>
+                <passed>true</passed>
+                <p99th>0.553</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.805</targetedAvg>
+                <actualAvg>1.798</actualAvg>
+                <min>0.001</min>
+                <max>9.988</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://43bd73ace56f:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 43bd73ace56f:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 10:00:50 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:02:00 GMT 2019</endTime>
+        <metric unit="ops/sec">252.100</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">252.100</metric>
+        <startTime>Thu Apr 18 10:00:50 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:02:00 GMT 2019</endTime>
+        <totalOps unit="operations">5042</totalOps>
+        <users>610</users>
+        <rtXtps>387.3158</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>5042</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.148</avg>
+                <max>3.642</max>
+                <sd>0.254</sd>
+                <p90th>0.425</p90th>
+                <passed>true</passed>
+                <p99th>1.225</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.723</targetedAvg>
+                <actualAvg>1.731</actualAvg>
+                <min>0.001</min>
+                <max>9.986</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://2a1211d24f75:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 2a1211d24f75:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 10:02:28 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:03:39 GMT 2019</endTime>
+        <metric unit="ops/sec">30.650</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">30.650</metric>
+        <startTime>Thu Apr 18 10:02:28 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:03:39 GMT 2019</endTime>
+        <totalOps unit="operations">613</totalOps>
+        <users>640</users>
+        <rtXtps>21.8119</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>613</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.058</avg>
+                <max>1.448</max>
+                <sd>0.131</sd>
+                <p90th>0.118</p90th>
+                <passed>true</passed>
+                <p99th>0.483</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.222</targetedAvg>
+                <actualAvg>1.232</actualAvg>
+                <min>0.014</min>
+                <max>7.844</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://27b831551ae2:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 27b831551ae2:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 10:04:05 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:05:15 GMT 2019</endTime>
+        <metric unit="ops/sec">255.900</metric>
+        <passed>false</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">255.900</metric>
+        <startTime>Thu Apr 18 10:04:05 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:05:15 GMT 2019</endTime>
+        <totalOps unit="operations">5118</totalOps>
+        <users>670</users>
+        <rtXtps>407.7239</rtXtps>
+        <passed>false</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>5118</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.368</avg>
+                <max>4.237</max>
+                <sd>0.466</sd>
+                <p90th>1.025</p90th>
+                <passed>false</passed>
+                <p99th>2.000</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.709</targetedAvg>
+                <actualAvg>1.778</actualAvg>
+                <min>0.002</min>
+                <max>9.984</max>
+                <passed>false</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://bd01cf8b29f3:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= bd01cf8b29f3:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 10:05:44 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:06:54 GMT 2019</endTime>
+        <metric unit="ops/sec">30.100</metric>
+        <passed>false</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">30.100</metric>
+        <startTime>Thu Apr 18 10:05:44 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:06:54 GMT 2019</endTime>
+        <totalOps unit="operations">602</totalOps>
+        <users>700</users>
+        <rtXtps>29.4431</rtXtps>
+        <passed>false</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>602</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.083</avg>
+                <max>1.592</max>
+                <sd>0.242</sd>
+                <p90th>0.138</p90th>
+                <passed>true</passed>
+                <p99th>1.425</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.486</targetedAvg>
+                <actualAvg>1.518</actualAvg>
+                <min>0.008</min>
+                <max>8.330</max>
+                <passed>false</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://5d3019989a18:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 5 seconds
+Print= 5d3019989a18:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 10:07:20 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:08:31 GMT 2019</endTime>
+        <metric unit="ops/sec">139.550</metric>
+        <passed>false</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">139.550</metric>
+        <startTime>Thu Apr 18 10:07:20 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:08:31 GMT 2019</endTime>
+        <totalOps unit="operations">2791</totalOps>
+        <users>730</users>
+        <rtXtps>185.0824</rtXtps>
+        <passed>false</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>2791</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.407</avg>
+                <max>4.334</max>
+                <sd>0.576</sd>
+                <p90th>1.225</p90th>
+                <passed>false</passed>
+                <p99th>2.450</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.478</targetedAvg>
+                <actualAvg>1.571</actualAvg>
+                <min>0.001</min>
+                <max>9.972</max>
+                <passed>false</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://7d2ce12435b4:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 7d2ce12435b4:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 10:08:57 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:10:08 GMT 2019</endTime>
+        <metric unit="ops/sec">151.600</metric>
+        <passed>false</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">151.600</metric>
+        <startTime>Thu Apr 18 10:08:57 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:10:08 GMT 2019</endTime>
+        <totalOps unit="operations">3032</totalOps>
+        <users>760</users>
+        <rtXtps>224.5929</rtXtps>
+        <passed>false</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>3032</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.580</avg>
+                <max>4.397</max>
+                <sd>0.703</sd>
+                <p90th>1.600</p90th>
+                <passed>false</passed>
+                <p99th>&gt; 2.475</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.542</targetedAvg>
+                <actualAvg>1.740</actualAvg>
+                <min>0.004</min>
+                <max>9.983</max>
+                <passed>false</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://2988e908a846:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 2988e908a846:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 10:10:35 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:11:46 GMT 2019</endTime>
+        <metric unit="ops/sec">89.500</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">89.500</metric>
+        <startTime>Thu Apr 18 10:10:35 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:11:46 GMT 2019</endTime>
+        <totalOps unit="operations">1790</totalOps>
+        <users>790</users>
+        <rtXtps>79.6572</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>1790</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.098</avg>
+                <max>1.541</max>
+                <sd>0.190</sd>
+                <p90th>0.210</p90th>
+                <passed>true</passed>
+                <p99th>1.150</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.255</targetedAvg>
+                <actualAvg>1.278</actualAvg>
+                <min>0.001</min>
+                <max>9.984</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://8215ca3523ec:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 5 seconds
+Print= 8215ca3523ec:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 10:12:12 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:13:23 GMT 2019</endTime>
+        <metric unit="ops/sec">94.000</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">94.000</metric>
+        <startTime>Thu Apr 18 10:12:12 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:13:23 GMT 2019</endTime>
+        <totalOps unit="operations">1880</totalOps>
+        <users>820</users>
+        <rtXtps>92.8405</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>1880</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.102</avg>
+                <max>4.555</max>
+                <sd>0.251</sd>
+                <p90th>0.233</p90th>
+                <passed>true</passed>
+                <p99th>1.000</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.349</targetedAvg>
+                <actualAvg>1.371</actualAvg>
+                <min>0.002</min>
+                <max>9.982</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://54a10ad4a257:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 54a10ad4a257:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 10:13:51 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:15:02 GMT 2019</endTime>
+        <metric unit="ops/sec">68.900</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">68.900</metric>
+        <startTime>Thu Apr 18 10:13:51 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:15:02 GMT 2019</endTime>
+        <totalOps unit="operations">1378</totalOps>
+        <users>850</users>
+        <rtXtps>68.3021</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>1378</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.077</avg>
+                <max>1.667</max>
+                <sd>0.214</sd>
+                <p90th>0.135</p90th>
+                <passed>true</passed>
+                <p99th>1.375</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.382</targetedAvg>
+                <actualAvg>1.391</actualAvg>
+                <min>0.001</min>
+                <max>9.977</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
+Starting Faban Server
+Please point your browser to http://ff03b9fbd6c0:9980/
+Buildfile: /usr/src/faban/search/build.xml
+
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+    [javac] 
+    [javac]           WARNING
+    [javac] 
+    [javac] The -source switch defaults to 1.8 in JDK 1.8.
+    [javac] If you specify -target 1.5 you now must also specify -source 1.5.
+    [javac] Ant will implicitly add -source 1.5 for you.  Please change your build file.
+    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
+    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
+    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+    [javac] 4 warnings
+
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+
+deploy:
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= ff03b9fbd6c0:1
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Thu Apr 18 10:15:30 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:16:41 GMT 2019</endTime>
+        <metric unit="ops/sec">59.250</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">59.250</metric>
+        <startTime>Thu Apr 18 10:15:30 GMT 2019</startTime>
+        <endTime>Thu Apr 18 10:16:41 GMT 2019</endTime>
+        <totalOps unit="operations">1185</totalOps>
+        <users>880</users>
+        <rtXtps>55.2969</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>1185</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.063</avg>
+                <max>3.690</max>
+                <sd>0.174</sd>
+                <p90th>0.120</p90th>
+                <passed>true</passed>
+                <p99th>0.690</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>1.344</targetedAvg>
+                <actualAvg>1.360</actualAvg>
+                <min>0.002</min>
+                <max>9.978</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>
