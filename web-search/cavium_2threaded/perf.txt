@@ -1,0 +1,194 @@
+Error:
+The sys_perf_event_open() syscall returned with 3 (No such process) for event (instructions:u).
+/bin/dmesg may provide additional information.
+No CONFIG_PERF_EVENTS=y kernel support configured?
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+    56,217,335,681      instructions:u                                              
+        80,403,323      instructions:k                                              
+    31,173,145,623      cycles                                                      
+
+      20.004942581 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+    91,518,337,073      instructions:u                                              
+       121,120,598      instructions:k                                                (99.96%)
+    52,134,200,743      cycles                                                        (99.96%)
+
+      19.998258405 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   155,552,695,384      instructions:u                                              
+       202,192,247      instructions:k                                              
+    93,244,291,448      cycles                                                      
+
+      19.987960032 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   169,335,540,816      instructions:u                                              
+       197,395,478      instructions:k                                              
+    96,046,455,748      cycles                                                      
+
+      19.960948893 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   208,780,462,753      instructions:u                                              
+       238,064,294      instructions:k                                              
+   119,805,321,372      cycles                                                      
+
+      21.011780152 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   282,956,886,689      instructions:u                                              
+       287,247,807      instructions:k                                              
+   151,090,789,980      cycles                                                      
+
+      19.973041428 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   315,535,476,850      instructions:u                                              
+       342,688,557      instructions:k                                              
+   170,908,214,172      cycles                                                      
+
+      19.987085648 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   360,749,051,625      instructions:u                                              
+       390,848,756      instructions:k                                              
+   201,978,900,536      cycles                                                      
+
+      20.002700354 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   391,013,525,770      instructions:u                                              
+       432,958,328      instructions:k                                              
+   225,047,696,462      cycles                                                        (99.95%)
+
+      19.976578546 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   450,285,963,219      instructions:u                                              
+       515,657,306      instructions:k                                              
+   267,751,048,221      cycles                                                      
+
+      19.971508065 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   481,913,648,872      instructions:u                                              
+       933,689,002      instructions:k                                              
+   295,433,482,227      cycles                                                        (99.96%)
+
+      19.947973397 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   510,564,773,727      instructions:u                                              
+     1,303,788,033      instructions:k                                                (99.92%)
+   333,706,548,305      cycles                                                        (99.92%)
+
+      19.972844423 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   443,165,699,541      instructions:u                                              
+     1,634,388,548      instructions:k                                              
+   289,205,133,457      cycles                                                      
+
+      19.997269363 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   547,366,670,699      instructions:u                                              
+     1,416,587,941      instructions:k                                              
+   380,649,951,878      cycles                                                      
+
+      20.022253110 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   559,425,336,030      instructions:u                                              
+     1,608,115,653      instructions:k                                              
+   407,773,703,618      cycles                                                      
+
+      20.011141790 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   279,598,435,299      instructions:u                                              
+     1,618,019,584      instructions:k                                              
+   176,562,375,399      cycles                                                      
+
+      19.981262191 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   408,136,551,793      instructions:u                                              
+     1,617,588,392      instructions:k                                                (99.99%)
+   282,627,117,707      cycles                                                        (99.92%)
+
+      20.025775401 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   104,369,282,723      instructions:u                                              
+       786,109,300      instructions:k                                                (99.80%)
+    54,695,856,856      cycles                                                        (99.80%)
+
+      19.989852632 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '74908':
+
+   104,405,831,736      instructions:u                                              
+       860,075,837      instructions:k                                              
+    54,494,017,866      cycles                                                      
+
+      19.942399196 seconds time elapsed
+
