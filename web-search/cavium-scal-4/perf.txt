@@ -1,0 +1,658 @@
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+    16,740,928,061      instructions:u                                              
+       136,678,915      instructions:k                                              
+     9,583,683,632      cycles                                                      
+                52      workqueue:workqueue_queue_work                                   
+                52      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.975091015 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+    61,306,720,810      instructions:u                                              
+       121,841,732      instructions:k                                              
+    31,082,725,642      cycles                                                      
+               100      workqueue:workqueue_queue_work                                   
+               100      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      21.020129742 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   100,819,413,310      instructions:u                                              
+       128,338,618      instructions:k                                              
+    49,694,244,956      cycles                                                      
+               118      workqueue:workqueue_queue_work                                   
+               118      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.956165283 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   130,813,376,135      instructions:u                                              
+       207,303,136      instructions:k                                              
+    66,606,889,071      cycles                                                      
+               107      workqueue:workqueue_queue_work                                   
+               107      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (99.98%)
+
+      20.989428160 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   181,530,874,284      instructions:u                                              
+       198,563,877      instructions:k                                              
+    88,698,548,330      cycles                                                      
+                78      workqueue:workqueue_queue_work                                   
+                78      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (99.92%)
+
+      19.906859658 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   224,344,130,518      instructions:u                                              
+       247,807,492      instructions:k                                              
+   111,064,676,212      cycles                                                      
+                72      workqueue:workqueue_queue_work                                   
+                72      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.971926169 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   265,684,925,904      instructions:u                                              
+       322,319,256      instructions:k                                              
+   134,154,310,814      cycles                                                      
+                73      workqueue:workqueue_queue_work                                   
+                73      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.896820382 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   296,174,103,848      instructions:u                                              
+       327,445,935      instructions:k                                              
+   148,308,808,734      cycles                                                        (99.39%)
+                81      workqueue:workqueue_queue_work                                   
+                81      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                     (99.94%)
+                 0      workqueue:workqueue_execute_end                                     (99.84%)
+
+      19.947449271 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   330,126,086,950      instructions:u                                              
+       360,763,758      instructions:k                                              
+   167,403,974,207      cycles                                                      
+                80      workqueue:workqueue_queue_work                                   
+                80      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.871625332 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   367,979,669,590      instructions:u                                              
+       428,728,679      instructions:k                                              
+   183,600,976,319      cycles                                                      
+                59      workqueue:workqueue_queue_work                                   
+                59      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.982106426 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   405,046,641,919      instructions:u                                              
+       467,437,883      instructions:k                                              
+   205,988,499,278      cycles                                                        (99.95%)
+                61      workqueue:workqueue_queue_work                                   
+                61      workqueue:workqueue_activate_work                                     (99.53%)
+                 0      workqueue:workqueue_execute_start                                     (99.53%)
+                 0      workqueue:workqueue_execute_end                                     (99.53%)
+
+      19.890753510 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   489,358,911,246      instructions:u                                              
+       514,766,845      instructions:k                                                (99.90%)
+   248,324,925,568      cycles                                                        (99.60%)
+                54      workqueue:workqueue_queue_work                                   
+                54      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (99.24%)
+
+      20.958403386 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   453,133,407,547      instructions:u                                              
+       507,606,188      instructions:k                                              
+   229,655,812,402      cycles                                                        (99.97%)
+                49      workqueue:workqueue_queue_work                                   
+                49      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (99.99%)
+
+      19.935095236 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   535,989,771,165      instructions:u                                              
+       606,461,747      instructions:k                                                (99.96%)
+   275,091,683,249      cycles                                                        (99.53%)
+                66      workqueue:workqueue_queue_work                                   
+                66      workqueue:workqueue_activate_work                                     (99.93%)
+                 0      workqueue:workqueue_execute_start                                     (99.44%)
+                 0      workqueue:workqueue_execute_end                                     (99.44%)
+
+      19.885814456 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   581,492,179,035      instructions:u                                              
+       626,908,973      instructions:k                                              
+   297,775,549,502      cycles                                                        (99.76%)
+                65      workqueue:workqueue_queue_work                                   
+                65      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.943044421 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   614,559,709,670      instructions:u                                              
+       658,074,403      instructions:k                                              
+   315,731,559,868      cycles                                                      
+                67      workqueue:workqueue_queue_work                                   
+                67      workqueue:workqueue_activate_work                                     (99.99%)
+                 0      workqueue:workqueue_execute_start                                     (99.94%)
+                 0      workqueue:workqueue_execute_end                                     (99.94%)
+
+      19.886328284 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   679,422,674,842      instructions:u                                              
+       710,142,235      instructions:k                                              
+   348,246,870,505      cycles                                                      
+                62      workqueue:workqueue_queue_work                                   
+                62      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.908704132 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   702,551,457,981      instructions:u                                              
+       774,076,716      instructions:k                                              
+   360,207,459,149      cycles                                                        (99.98%)
+                49      workqueue:workqueue_queue_work                                   
+                49      workqueue:workqueue_activate_work                                     (99.77%)
+                 0      workqueue:workqueue_execute_start                                     (99.77%)
+                 0      workqueue:workqueue_execute_end                                     (99.63%)
+
+      19.929284696 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   701,917,317,849      instructions:u                                              
+       801,338,525      instructions:k                                              
+   363,720,639,273      cycles                                                        (99.88%)
+                70      workqueue:workqueue_queue_work                                   
+                70      workqueue:workqueue_activate_work                                     (100.00%)
+                 0      workqueue:workqueue_execute_start                                     (100.00%)
+                 0      workqueue:workqueue_execute_end                                     (99.99%)
+
+      19.905918038 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   791,517,703,174      instructions:u                                              
+       874,637,893      instructions:k                                              
+   414,019,921,652      cycles                                                      
+                55      workqueue:workqueue_queue_work                                   
+                55      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (99.85%)
+
+      19.895808230 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   801,344,658,959      instructions:u                                              
+       871,179,582      instructions:k                                              
+   414,714,883,716      cycles                                                      
+                58      workqueue:workqueue_queue_work                                   
+                58      workqueue:workqueue_activate_work                                     (99.99%)
+                 0      workqueue:workqueue_execute_start                                     (99.71%)
+                 0      workqueue:workqueue_execute_end                                     (99.56%)
+
+      19.921640080 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   850,343,683,959      instructions:u                                              
+       903,027,916      instructions:k                                              
+   444,786,112,190      cycles                                                      
+                85      workqueue:workqueue_queue_work                                   
+                85      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.934833356 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   969,025,891,248      instructions:u                                              
+     1,024,721,203      instructions:k                                              
+   505,643,568,588      cycles                                                      
+                55      workqueue:workqueue_queue_work                                   
+                55      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                     (99.99%)
+                 0      workqueue:workqueue_execute_end                                     (99.99%)
+
+      20.955704561 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   903,991,263,691      instructions:u                                              
+     1,008,720,124      instructions:k                                                (99.84%)
+   472,212,627,939      cycles                                                        (99.80%)
+                72      workqueue:workqueue_queue_work                                   
+                72      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (99.91%)
+
+      19.938432067 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   981,187,180,754      instructions:u                                              
+     1,082,819,738      instructions:k                                                (100.00%)
+   518,518,624,638      cycles                                                        (99.96%)
+                84      workqueue:workqueue_queue_work                                   
+                84      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.910017886 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,062,081,397,594      instructions:u                                              
+     1,146,336,700      instructions:k                                                (100.00%)
+   569,442,159,769      cycles                                                        (99.97%)
+                81      workqueue:workqueue_queue_work                                   
+                81      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                     (99.99%)
+                 0      workqueue:workqueue_execute_end                                     (99.98%)
+
+      20.966333468 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,057,151,005,039      instructions:u                                              
+     1,141,134,459      instructions:k                                                (99.89%)
+   565,932,174,963      cycles                                                        (99.88%)
+                84      workqueue:workqueue_queue_work                                   
+                84      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                     (100.00%)
+                 0      workqueue:workqueue_execute_end                                     (100.00%)
+
+      19.946897076 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,108,258,615,230      instructions:u                                              
+     1,184,646,901      instructions:k                                                (99.94%)
+   599,207,303,344      cycles                                                        (99.68%)
+                90      workqueue:workqueue_queue_work                                   
+                90      workqueue:workqueue_activate_work                                     (99.99%)
+                 0      workqueue:workqueue_execute_start                                     (99.97%)
+                 0      workqueue:workqueue_execute_end                                     (99.96%)
+
+      19.937103755 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,122,410,862,629      instructions:u                                              
+     1,225,042,391      instructions:k                                              
+   610,668,044,267      cycles                                                      
+                78      workqueue:workqueue_queue_work                                   
+                78      workqueue:workqueue_activate_work                                     (99.98%)
+                 0      workqueue:workqueue_execute_start                                     (99.96%)
+                 0      workqueue:workqueue_execute_end                                     (99.94%)
+
+      19.915416575 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,171,268,518,935      instructions:u                                              
+     1,273,316,883      instructions:k                                                (100.00%)
+   641,397,518,634      cycles                                                        (100.00%)
+                69      workqueue:workqueue_queue_work                                   
+                69      workqueue:workqueue_activate_work                                     (99.95%)
+                 0      workqueue:workqueue_execute_start                                     (99.95%)
+                 0      workqueue:workqueue_execute_end                                     (99.95%)
+
+      19.890601671 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,200,658,333,811      instructions:u                                              
+     1,293,980,084      instructions:k                                                (99.99%)
+   658,340,038,524      cycles                                                        (99.93%)
+                79      workqueue:workqueue_queue_work                                   
+                79      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (100.00%)
+
+      19.934938124 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,239,368,754,274      instructions:u                                              
+     1,325,990,632      instructions:k                                              
+   689,803,783,926      cycles                                                        (100.00%)
+                76      workqueue:workqueue_queue_work                                   
+                76      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (99.98%)
+
+      19.909465887 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,274,572,035,869      instructions:u                                              
+     1,364,204,831      instructions:k                                                (100.00%)
+   710,556,506,187      cycles                                                        (100.00%)
+                85      workqueue:workqueue_queue_work                                   
+                85      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (100.00%)
+
+      19.934630893 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,299,458,460,751      instructions:u                                              
+     5,008,416,696      instructions:k                                                (99.96%)
+   758,128,450,701      cycles                                                        (99.81%)
+               135      workqueue:workqueue_queue_work                                   
+               135      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (100.00%)
+
+      19.998447936 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,398,783,210,624      instructions:u                                              
+     1,517,223,166      instructions:k                                              
+   804,985,136,357      cycles                                                      
+                78      workqueue:workqueue_queue_work                                   
+                78      workqueue:workqueue_activate_work                                     (100.00%)
+                 0      workqueue:workqueue_execute_start                                     (99.97%)
+                 0      workqueue:workqueue_execute_end                                     (99.94%)
+
+      19.898078417 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,425,209,161,819      instructions:u                                              
+     1,542,320,317      instructions:k                                              
+   836,088,966,706      cycles                                                      
+                93      workqueue:workqueue_queue_work                                   
+                93      workqueue:workqueue_activate_work                                     (99.84%)
+                 0      workqueue:workqueue_execute_start                                     (99.82%)
+                 0      workqueue:workqueue_execute_end                                     (99.81%)
+
+      19.935336711 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,442,839,759,993      instructions:u                                              
+     1,548,891,066      instructions:k                                              
+   844,222,616,114      cycles                                                        (100.00%)
+                92      workqueue:workqueue_queue_work                                   
+                92      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.879544395 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,480,377,053,382      instructions:u                                              
+     1,605,766,335      instructions:k                                              
+   872,664,002,716      cycles                                                      
+               114      workqueue:workqueue_queue_work                                   
+               114      workqueue:workqueue_activate_work                                     (100.00%)
+                 0      workqueue:workqueue_execute_start                                     (99.99%)
+                 0      workqueue:workqueue_execute_end                                     (99.99%)
+
+      19.921594863 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,547,036,684,639      instructions:u                                              
+     1,718,751,939      instructions:k                                              
+   946,629,621,536      cycles                                                        (100.00%)
+               120      workqueue:workqueue_queue_work                                   
+               120      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (99.99%)
+
+      19.922685585 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,543,927,344,218      instructions:u                                              
+     1,677,226,121      instructions:k                                                (99.93%)
+   926,318,163,489      cycles                                                        (99.92%)
+               101      workqueue:workqueue_queue_work                                   
+               101      workqueue:workqueue_activate_work                                     (99.95%)
+                 0      workqueue:workqueue_execute_start                                     (99.95%)
+                 0      workqueue:workqueue_execute_end                                     (99.95%)
+
+      19.920882189 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   972,849,607,338      instructions:u                                              
+     7,488,702,462      instructions:k                                              
+   594,757,993,146      cycles                                                      
+               153      workqueue:workqueue_queue_work                                   
+               153      workqueue:workqueue_activate_work                                     (99.98%)
+                 0      workqueue:workqueue_execute_start                                     (99.98%)
+                 0      workqueue:workqueue_execute_end                                     (99.97%)
+
+      20.068889857 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,656,761,799,108      instructions:u                                              
+     2,505,461,099      instructions:k                                                (99.99%)
+ 1,052,517,927,408      cycles                                                        (99.99%)
+               131      workqueue:workqueue_queue_work                                   
+               131      workqueue:workqueue_activate_work                                     (100.00%)
+                 0      workqueue:workqueue_execute_start                                     (100.00%)
+                 0      workqueue:workqueue_execute_end                                     (100.00%)
+
+      19.897368202 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,677,573,104,444      instructions:u                                              
+     1,877,349,044      instructions:k                                                (99.93%)
+ 1,062,992,028,907      cycles                                                        (99.93%)
+               126      workqueue:workqueue_queue_work                                   
+               126      workqueue:workqueue_activate_work                                     (99.96%)
+                 0      workqueue:workqueue_execute_start                                     (99.95%)
+                 0      workqueue:workqueue_execute_end                                     (99.90%)
+
+      19.875063290 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,298,549,495,052      instructions:u                                              
+     7,681,287,296      instructions:k                                                (99.98%)
+   822,527,579,583      cycles                                                        (99.98%)
+               161      workqueue:workqueue_queue_work                                   
+               161      workqueue:workqueue_activate_work                                     (99.97%)
+                 0      workqueue:workqueue_execute_start                                     (99.97%)
+                 0      workqueue:workqueue_execute_end                                     (99.97%)
+
+      20.064423251 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,731,515,570,823      instructions:u                                              
+     4,312,062,270      instructions:k                                                (99.99%)
+ 1,123,483,287,751      cycles                                                        (99.96%)
+               155      workqueue:workqueue_queue_work                                   
+               155      workqueue:workqueue_activate_work                                     (100.00%)
+                 0      workqueue:workqueue_execute_start                                     (100.00%)
+                 0      workqueue:workqueue_execute_end                                     (99.97%)
+
+      19.907051106 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+ 1,835,191,393,339      instructions:u                                              
+     2,008,903,976      instructions:k                                              
+ 1,201,604,583,321      cycles                                                        (99.99%)
+               143      workqueue:workqueue_queue_work                                   
+               143      workqueue:workqueue_activate_work                                     (100.00%)
+                 0      workqueue:workqueue_execute_start                                     (100.00%)
+                 0      workqueue:workqueue_execute_end                                     (99.98%)
+
+      19.915573591 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '88288':
+
+   293,105,557,923      instructions:u                                              
+     6,851,541,587      instructions:k                                                (99.98%)
+   164,467,873,497      cycles                                                        (99.92%)
+                84      workqueue:workqueue_queue_work                                   
+                84      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.138713680 seconds time elapsed
+
