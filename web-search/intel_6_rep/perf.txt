@@ -1,0 +1,336 @@
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+    13,912,566,463      instructions:u                                                                                 
+       120,900,584      instructions:k                                                                                 
+     8,681,025,475      cycles                                                      
+               482      workqueue:workqueue_queue_work                                   
+               481      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.159546052 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+    39,002,091,871      instructions:u                                                                                 
+       147,568,460      instructions:k                                                                                 
+    21,192,653,528      cycles                                                      
+               918      workqueue:workqueue_queue_work                                   
+               917      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.199496334 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+    67,244,812,957      instructions:u                                                                                 
+       211,141,317      instructions:k                                                                                 
+    35,271,680,886      cycles                                                      
+             1,393      workqueue:workqueue_queue_work                                   
+             1,393      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.093073650 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   111,813,402,230      instructions:u                                                                                 
+       269,389,485      instructions:k                                                                                 
+    60,050,148,879      cycles                                                      
+             1,970      workqueue:workqueue_queue_work                                   
+             1,964      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.200186983 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   136,002,884,199      instructions:u                                                                                 
+       295,729,093      instructions:k                                                                                 
+    70,834,604,081      cycles                                                        (99.94%)
+             2,151      workqueue:workqueue_queue_work                                   
+             2,146      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.170601126 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   181,323,042,923      instructions:u                                                                                 
+       362,540,753      instructions:k                                                                                 
+    94,399,916,332      cycles                                                      
+             2,653      workqueue:workqueue_queue_work                                   
+             2,641      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.324685202 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   193,486,760,418      instructions:u                                                                                 
+       374,028,212      instructions:k                                                                                 
+   100,744,656,379      cycles                                                      
+             2,658      workqueue:workqueue_queue_work                                   
+             2,658      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.070296597 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   227,940,018,750      instructions:u                                                                                 
+       458,532,820      instructions:k                                                                                 
+   120,037,476,259      cycles                                                        (99.76%)
+             2,876      workqueue:workqueue_queue_work                                   
+             2,876      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.181588817 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   292,316,007,108      instructions:u                                                                                 
+       515,506,814      instructions:k                                                                                 
+   153,274,859,068      cycles                                                      
+             3,304      workqueue:workqueue_queue_work                                   
+             3,316      workqueue:workqueue_activate_work                                     (99.65%)
+                 0      workqueue:workqueue_execute_start                                     (99.65%)
+                 0      workqueue:workqueue_execute_end                                     (99.65%)
+
+      20.151876912 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   301,140,415,275      instructions:u                                                                                 
+       552,202,233      instructions:k                                                                                 
+   158,006,916,713      cycles                                                      
+             3,399      workqueue:workqueue_queue_work                                   
+             3,399      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.234790433 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   340,942,279,917      instructions:u                                                                                 
+       615,493,246      instructions:k                                                                                   (99.94%)
+   179,349,864,582      cycles                                                        (99.89%)
+             3,601      workqueue:workqueue_queue_work                                   
+             3,881      workqueue:workqueue_activate_work                                     (92.79%)
+                 0      workqueue:workqueue_execute_start                                     (90.22%)
+                 0      workqueue:workqueue_execute_end                                     (90.22%)
+
+      20.180242299 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   381,670,979,619      instructions:u                                                                                 
+       664,955,545      instructions:k                                                                                 
+   200,383,103,598      cycles                                                      
+             3,826      workqueue:workqueue_queue_work                                   
+             3,827      workqueue:workqueue_activate_work                                     (99.96%)
+                 0      workqueue:workqueue_execute_start                                     (99.94%)
+                 0      workqueue:workqueue_execute_end                                     (99.85%)
+
+      20.170635181 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   404,517,217,121      instructions:u                                                                                 
+       705,700,788      instructions:k                                                                                 
+   212,901,780,429      cycles                                                      
+             4,028      workqueue:workqueue_queue_work                                   
+             4,028      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.123571758 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+         7,595,176      instructions:u                                                                                 
+        14,427,991      instructions:k                                                                                 
+        62,120,397      cycles                                                      
+                26      workqueue:workqueue_queue_work                                   
+                26      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.272733920 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   468,840,968,937      instructions:u                                                                                 
+       829,780,258      instructions:k                                                                                 
+   246,843,287,445      cycles                                                      
+             4,522      workqueue:workqueue_queue_work                                   
+             4,513      workqueue:workqueue_activate_work                                     (99.99%)
+                 0      workqueue:workqueue_execute_start                                     (99.99%)
+                 0      workqueue:workqueue_execute_end                                     (99.99%)
+
+      20.083110986 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   476,478,849,543      instructions:u                                                                                 
+       838,564,856      instructions:k                                                                                 
+   250,947,622,684      cycles                                                      
+             4,563      workqueue:workqueue_queue_work                                   
+             4,557      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.084252238 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   509,528,377,310      instructions:u                                                                                 
+       949,225,120      instructions:k                                                                                 
+   268,654,414,065      cycles                                                      
+             4,929      workqueue:workqueue_queue_work                                   
+             4,923      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (99.97%)
+
+      20.173708608 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+     3,604,931,203      instructions:u                                                                                 
+        50,205,753      instructions:k                                                                                   (52.44%)
+     3,698,570,761      cycles                                                        (52.45%)
+               110      workqueue:workqueue_queue_work                                   
+               110      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                     (95.67%)
+                 0      workqueue:workqueue_execute_end                                     (91.71%)
+
+      19.158972284 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   547,378,444,311      instructions:u                                                                                 
+     1,023,448,173      instructions:k                                                                                 
+   290,300,236,422      cycles                                                      
+             5,283      workqueue:workqueue_queue_work                                   
+             5,283      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.319858715 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   485,215,100,521      instructions:u                                                                                 
+       932,389,979      instructions:k                                                                                 
+   260,218,414,523      cycles                                                      
+             4,762      workqueue:workqueue_queue_work                                   
+             4,762      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.214230837 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   407,066,499,234      instructions:u                                                                                 
+       776,496,569      instructions:k                                                                                 
+   215,993,953,061      cycles                                                      
+             3,996      workqueue:workqueue_queue_work                                   
+             3,996      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                     (98.51%)
+
+      20.274317380 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   449,676,000,293      instructions:u                                                                                 
+       805,759,001      instructions:k                                                                                   (99.65%)
+   240,550,604,613      cycles                                                        (99.65%)
+             4,355      workqueue:workqueue_queue_work                                   
+             4,355      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.136637250 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   336,647,037,377      instructions:u                                                                                 
+       674,739,872      instructions:k                                                                                   (99.90%)
+   179,462,162,016      cycles                                                        (99.90%)
+             3,440      workqueue:workqueue_queue_work                                   
+             3,446      workqueue:workqueue_activate_work                                     (99.83%)
+                 0      workqueue:workqueue_execute_start                                     (99.83%)
+                 0      workqueue:workqueue_execute_end                                     (99.41%)
+
+      20.164223978 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '2039':
+
+   473,713,389,147      instructions:u                                                                                 
+       909,884,785      instructions:k                                                                                 
+   251,468,398,195      cycles                                                        (99.98%)
+             4,683      workqueue:workqueue_queue_work                                   
+             4,722      workqueue:workqueue_activate_work                                     (99.25%)
+                 0      workqueue:workqueue_execute_start                                     (97.83%)
+                 0      workqueue:workqueue_execute_end                                     (97.57%)
+
+      20.238776642 seconds time elapsed
+
