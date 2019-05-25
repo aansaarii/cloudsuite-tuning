@@ -1,0 +1,336 @@
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+    14,376,712,846      instructions:u                                                                                 
+       147,369,299      instructions:k                                                                                 
+     9,429,890,612      cycles                                                      
+               300      workqueue:workqueue_queue_work                                   
+               300      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.276355246 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+    22,820,468,972      instructions:u                                                                                 
+       299,647,055      instructions:k                                                                                 
+    13,544,642,734      cycles                                                      
+               292      workqueue:workqueue_queue_work                                   
+               292      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.052881709 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+   102,314,925,976      instructions:u                                                                                 
+       358,385,937      instructions:k                                                                                 
+    60,482,633,992      cycles                                                      
+               943      workqueue:workqueue_queue_work                                   
+               943      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      19.055525262 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+    79,606,228,014      instructions:u                                                                                 
+       257,719,270      instructions:k                                                                                 
+    44,792,083,819      cycles                                                      
+               716      workqueue:workqueue_queue_work                                   
+               716      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.007339277 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+    23,210,439,346      instructions:u                                                                                 
+        92,698,407      instructions:k                                                                                 
+    13,076,876,916      cycles                                                      
+               255      workqueue:workqueue_queue_work                                   
+               255      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.013663606 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+       110,065,400      instructions:u                                                                                 
+        24,263,530      instructions:k                                                                                 
+       178,909,360      cycles                                                      
+                40      workqueue:workqueue_queue_work                                   
+                40      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.149468026 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+        68,855,802      instructions:u                                                                                 
+        21,310,080      instructions:k                                                                                 
+       128,258,139      cycles                                                      
+                36      workqueue:workqueue_queue_work                                   
+                36      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.114651062 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+         4,324,673      instructions:u                                                                                 
+        14,029,695      instructions:k                                                                                 
+        50,520,404      cycles                                                      
+                32      workqueue:workqueue_queue_work                                   
+                32      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.154181723 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+         4,444,682      instructions:u                                                                                 
+        13,855,882      instructions:k                                                                                 
+        51,528,432      cycles                                                      
+                34      workqueue:workqueue_queue_work                                   
+                34      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.227686465 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+        92,685,528      instructions:u                                                                                 
+        23,022,422      instructions:k                                                                                 
+       146,404,824      cycles                                                      
+                34      workqueue:workqueue_queue_work                                   
+                34      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      18.978645000 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+         4,301,698      instructions:u                                                                                 
+        14,753,957      instructions:k                                                                                 
+        51,632,357      cycles                                                      
+                25      workqueue:workqueue_queue_work                                   
+                25      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.206448541 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+         4,288,817      instructions:u                                                                                 
+        10,589,579      instructions:k                                                                                 
+        43,439,361      cycles                                                      
+                26      workqueue:workqueue_queue_work                                   
+                26      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.084298394 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+         9,406,531      instructions:u                                                                                 
+        14,866,255      instructions:k                                                                                 
+        60,392,522      cycles                                                      
+                32      workqueue:workqueue_queue_work                                   
+                32      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.151818813 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+        10,734,070      instructions:u                                                                                 
+        10,661,714      instructions:k                                                                                 
+        50,098,525      cycles                                                      
+                30      workqueue:workqueue_queue_work                                   
+                30      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.173826320 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+         4,027,015      instructions:u                                                                                 
+        13,473,754      instructions:k                                                                                 
+        47,764,714      cycles                                                      
+                28      workqueue:workqueue_queue_work                                   
+                28      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.058592358 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+        60,016,224      instructions:u                                                                                 
+        13,881,167      instructions:k                                                                                 
+       102,588,741      cycles                                                      
+                31      workqueue:workqueue_queue_work                                   
+                31      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.135919065 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+        36,768,930      instructions:u                                                                                 
+        23,247,096      instructions:k                                                                                 
+        93,223,878      cycles                                                      
+                36      workqueue:workqueue_queue_work                                   
+                35      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.205418607 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+       550,258,618      instructions:u                                                                                 
+        12,963,738      instructions:k                                                                                 
+       522,548,862      cycles                                                      
+                48      workqueue:workqueue_queue_work                                   
+                48      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.210506839 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+         3,631,492      instructions:u                                                                                 
+        10,934,424      instructions:k                                                                                 
+        40,078,788      cycles                                                      
+                23      workqueue:workqueue_queue_work                                   
+                23      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.219619014 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+         3,675,985      instructions:u                                                                                 
+        14,386,662      instructions:k                                                                                 
+        47,721,773      cycles                                                      
+                22      workqueue:workqueue_queue_work                                   
+                22      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.064267831 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+         3,640,531      instructions:u                                                                                 
+        35,226,207      instructions:k                                                                                   (40.59%)
+       116,353,309      cycles                                                        (40.59%)
+                28      workqueue:workqueue_queue_work                                   
+                28      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.181182500 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+         3,653,381      instructions:u                                                                                 
+        10,584,580      instructions:k                                                                                 
+        40,223,724      cycles                                                      
+                27      workqueue:workqueue_queue_work                                   
+                27      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.105367608 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+       107,735,573      instructions:u                                                                                 
+        15,245,960      instructions:k                                                                                 
+       144,803,367      cycles                                                      
+                37      workqueue:workqueue_queue_work                                   
+                37      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.055916442 seconds time elapsed
+
+sleep: Terminated
+
+ Performance counter stats for process id '20750':
+
+         3,600,558      instructions:u                                                                                 
+        14,058,285      instructions:k                                                                                 
+        46,208,280      cycles                                                      
+                35      workqueue:workqueue_queue_work                                   
+                35      workqueue:workqueue_activate_work                                   
+                 0      workqueue:workqueue_execute_start                                   
+                 0      workqueue:workqueue_execute_end                                   
+
+      20.116617238 seconds time elapsed
+
