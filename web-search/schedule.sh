@@ -1,22 +1,21 @@
 #!/bin/bash 
 
 LOGFILE=log 
-LOGFOLDER=log_18g
+LOGFOLDER=cavium/multithreads
 
 echo "Run started" > $LOGFILE 
-echo "$LOGFOLDER" >> $LOGFILE
-
 date -u >> $LOGFILE
 ./benchmark_run.sh load.txt 
-mv output ${LOGFOLDER}0 
+mv output ${LOGFOLDER}/single-thread
+
 echo "Run completed" >> $LOGFILE
 date -u >> $LOGFILE
 
-MOD=( 's/SERVER_MEMORY=25g/SERVER_MEMORY=40g/g;s/SOLR_MEM=19g/SOLR_MEM=30g/g'\
-	's/LOAD=true/LOAD=false/g'\
-	's/RAMPTIME=20/RAMPTIME=15/g'\
-	's/RAMPTIME=15/RAMPTIME=20/g;s/STEADYTIME=20/STEADYTIME=15/g'\
-	's/STEADYTIME=15/STEADYTIME=20/g;s/STOPTIME=10/STOPTIME=5/g' )
+MOD=( 's/CLIENT_CPUS=0/CLIENT_CPUS=0,1/g;s/SERVER_CPUS=28/SERVER_CPUS=28,29/g'\
+'s/CLIENT_CPUS=0,1/CLIENT_CPUS=0,1,2/g;s/SERVER_CPUS=28,29/SERVER_CPUS=28,29,30/g'\
+'s/CLIENT_CPUS=0,1,2/CLIENT_CPUS=0,1,2,3/g;s/SERVER_CPUS=28,29,30/SERVER_CPUS=28,29,30,31/g'
+)
+
 CNT=0
 MAX=${#MOD[@]}
 
@@ -24,14 +23,14 @@ while [[ ${CNT} -le ${MAX} ]]; do
 	echo "Run ${CNT} started" >> $LOGFILE
 	
 	FOO=MOD[${CNT}]
-	sed -ri ${!FOO} benchmark_run.sh
+	sed -ri ${!FOO} cpu_assign.sh
 	./benchmark_run.sh load.txt
 
 	echo "Run completed" >> $LOGFILE
 	date -u >> $LOGFILE
 	
 	CNT=$((CNT + 1))
-	
-	mv output ${LOGFOLDER}${CNT}
+    OUTCNT=$((CNT+1))	
+	mv output ${LOGFOLDER}/${OUTCNT}-thread
 done
 
