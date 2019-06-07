@@ -10,12 +10,14 @@ if [ "$#" -ne 2 ]; then
 fi
 THREADS=64
 THREADS_LOAD=10
-TARGET=100000
-CLIENT_CPUS=32-47
-SERVER_CPUS=16-31
+CLIENT_CPUS=0
+SERVER_CPUS=1
 SERVER_MEMORY=20g
 CLIENT_CONTAINER=cassandra-client
 SERVER_CONTAINER=cassandra-server
+CLIENT_IMAGE=zilutian/data-serving-client-v2
+SERVER_IMAGE=zilutian/data-serving:server-amd64
+
 RECORDS=$1
 OPERATIONS_FILE=$2
 LOAD=true 
@@ -24,14 +26,14 @@ UTILFILE=$OUTPUTFOLDER/util.txt
 OPERATIONSFILE=$OUTPUTFOLDER/operations.txt
 DISPLAYFILE=$OUTPUTFOLDER/display.txt
 BENCHMARKFILE=$OUTPUTFOLDER/benchmark.txt
-BENCHMARKFILE2=$OUTPUTFOLDER/benchmark2.txt
+PERFFILE=$OUTPUTFOLDER/perf.txt
 ENVIRONMENTFILE=$OUTPUTFOLDER/env.txt
 MULTIPLIER=100
 
 rm -f $UTILFILE && touch $UTILFILE
 rm -f $OPERATIONSFILE && touch $OPERATIONSFILE
 rm -f $BENCHMARKFILE && touch $BENCHMARKFILE
-rm -f $BENCHMARKFILE2 && touch $BENCHMARKFILE2
+rm -f $PERFFILE && touch $PERFFILE
 rm -f $ENVRONMENTFILE && touch $ENVRONMENTFILE
 set > $ENVIRONMENTFILE
 
@@ -48,9 +50,10 @@ docker network rm serving_network
 docker network create serving_network
 if [ "$LOAD" = true ]
 then
-    docker run -d --name $SERVER_CONTAINER --cpuset-cpus=$SERVER_CPUS --net serving_network --memory=$SERVER_MEMORY server
+    docker run -d --name $SERVER_CONTAINER --cpuset-cpus=$SERVER_CPUS --net serving_network --memory=$SERVER_MEMORY $SERVER_IMAGE
 fi
 
+SERVER_PROC=$(docker inspect -f '{{.State.Pid}}' $SERVER_CONTAINER)
 
 while [ 1 ]; do
     docker logs $SERVER_CONTAINER | grep 'Created default superuser role' &> /dev/null
@@ -63,7 +66,7 @@ while [ 1 ]; do
     sleep 5
 done
 
-docker run -it -d --cpuset-cpus=$CLIENT_CPUS --name $CLIENT_CONTAINER --net serving_network client "cassandra-server" 
+docker run -it -d --cpuset-cpus=$CLIENT_CPUS --name $CLIENT_CONTAINER --net serving_network $CLIENT_IMAGE "cassandra-server" 
 
 
 while [ 1 ]; do
@@ -86,14 +89,14 @@ echo -e "${RED}Total record count $RECORDS ${NC}"
 #read -p "BEFORE LOAD"
 if [ "$LOAD" = true ]
 then
-    docker exec -it $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb load cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target $TARGET -threads $THREADS_LOAD -p recordcount=$RECORDS"
+    docker exec -it $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb load cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloadb -s -threads $THREADS_LOAD -p recordcount=$RECORDS"
 fi
 
 #read -p "AFTER LOAD"
 # mpstat -P ALL 1 &
 echo -e "${RED}WARMING UP ${NC}"
 
-docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target $TARGET -threads $THREADS -p operationcount=10000 -p recordcount=$RECORDS"
+docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloadb -s -threads $THREADS -p operationcount=10000 -p recordcount=$RECORDS"
 # pkill mpstat
 
 while read OPERATIONS; do
@@ -115,11 +118,13 @@ while read OPERATIONS; do
     # 	sleep 5
     # done
     #docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target 1000 -threads $THREADS -p operationcount=$TARGET"
-    mpstat -P ALL 1 >> $UTILFILE &
-    (docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target $OPERATIONS -threads $THREADS -p operationcount=$TARGET -p recordcount=$RECORDS")>>$BENCHMARKFILE &
+    # mpstat -P ALL 1 >> $UTILFILE &
+    sudo perf stat -e instructions:u,instructions:k,cycles,idle-cycles-frontend,idle-cycles-backend --cpu $SERVER_CPUS -p ${SERVER_PROC} sleep infinity 2>>$PERFFILE &  
+    (docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloadb -s -threads $THREADS -p operationcount=$TARGET -p recordcount=$RECORDS")>>$BENCHMARKFILE &
     pid1=$!
 #    (docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target $TARGET -threads $THREADS -p operationcount=$OPERATIONS")>>$BENCHMARKFILE2 &
  #   pid2=$!
     wait $pid1 
-    pkill mpstat
+    sudo pkill -fx "sleep infinity"
+    # pkill mpstat
 done < $OPERATIONS_FILE 
