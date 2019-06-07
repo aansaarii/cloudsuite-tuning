@@ -30,6 +30,7 @@ PERFFILE=$OUTPUTFOLDER/perf.txt
 ENVIRONMENTFILE=$OUTPUTFOLDER/env.txt
 MULTIPLIER=100
 
+mkdir $OUTPUTFOLDER
 rm -f $UTILFILE && touch $UTILFILE
 rm -f $OPERATIONSFILE && touch $OPERATIONSFILE
 rm -f $BENCHMARKFILE && touch $BENCHMARKFILE
@@ -119,7 +120,7 @@ while read OPERATIONS; do
     # done
     #docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target 1000 -threads $THREADS -p operationcount=$TARGET"
     # mpstat -P ALL 1 >> $UTILFILE &
-    sudo perf stat -e instructions:u,instructions:k,cycles,idle-cycles-frontend,idle-cycles-backend --cpu $SERVER_CPUS -p ${SERVER_PROC} sleep infinity 2>>$PERFFILE &  
+    sudo perf stat -e instructions:u,cycles:u,cpu/event=0xc2,umask=0x01,name=uops_retired/,cpu/event=0xc2,umask=0x01,name=uops_retired:u/u,cpu/event=0xc2,umask=0x01,inv=1,cmask=1,name=uops_stalled/ --cpu $SERVER_CPUS -p ${SERVER_PROC} sleep infinity 2>>$PERFFILE &  
     (docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloadb -s -threads $THREADS -p operationcount=$TARGET -p recordcount=$RECORDS")>>$BENCHMARKFILE &
     pid1=$!
 #    (docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloada -s -target $TARGET -threads $THREADS -p operationcount=$OPERATIONS")>>$BENCHMARKFILE2 &
