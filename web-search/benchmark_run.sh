@@ -80,7 +80,8 @@ detect_stage server index
 USR=polkitd
 # USR=systemd
 
-server_proc=`ps aux | grep solr-7.7.1 | grep $USR |tr ' ' '\n' | grep '[^[:blank:]]' | sed -n "2 p"`
+# server_proc=`ps aux | grep solr-7.7.1 | grep $USR |tr ' ' '\n' | grep '[^[:blank:]]' | sed -n "2 p"`
+server_proc=$(docker inspect -f '{{.State.Pid}}' $SERVER_CONTAINER)
 
 if [ -z "$server_proc" ]; then 
   echo "Server process not found!"
@@ -88,43 +89,35 @@ if [ -z "$server_proc" ]; then
   exit 2 
 fi
 
-echo "docker prepares client container: ramp-up $RAMPTIME stop $STOPTIME steady state $STEADYTIME"
-
 # Read in thread counts from the operations file
 while read OPERATIONS; do
     THREADS=$OPERATIONS
 
     echo "NUM OPERATIONS = $OPERATIONS"
     echo $OPERATIONS>>$OPERATIONSFILE
-    echo "@">>$UTILFILE
 
     docker rm -f $CLIENT_CONTAINER
 
-    echo "docker starts client container $THREADS threads"
-    docker run --net=$NETWORK -e JAVA_HOME=$JAVA_HOME --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $RAMPTIME $STOPTIME $STEADYTIME >> $BENCHMARKFILE &
+    docker run --net=$NETWORK -e JAVA_HOME=$JAVA_HOME --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $THREADS $OPERATIONS $STOPTIME $OPERATIONS >> $BENCHMARKFILE &
     client_proc=$!
 
     detect_stage client ramp-up &
     wait $!
 
-    echo "Measurement starts $(date +"%T")"
-    mpstat -P ALL 1 >> $UTILFILE &
+    # echo "Measurement starts $(date +"%T")"
+    # mpstat -P ALL 1 >> $UTILFILE &
     # perf record -F 99 -e instructions:u,instructions:k,cycles --call-graph dwarf -p $server_proc sleep $STEADYTIME
-    perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS -p $server_proc sleep infinity 2>>$PERFFILE &
+    perf stat -e instructions:u,instructions:k,cycles,idle-cycles-frontend,idle-cycles-backend,cache-misses,branch-misses,cache-references --cpu $SERVER_CPUS -p $server_proc sleep infinity 2>>$PERFFILE &
     # sudo perf stat -e instructions:u,instructions:k,cycles --cpu $SERVER_CPUS sleep infinity 2>>$PERFFILE &
 
     detect_stage client steady-state &
     wait $!
 
-    pkill mpstat
+    # pkill mpstat
     sudo pkill -fx "sleep infinity"
 
-    after_measure=$(date +"%T")
     detect_stage client detail
 
-    echo "Time before measure: $after_measure"
-    # mv perf.data perf.data.$OPERATIONS
-    
     wait $client_proc
 
 done < $OPERATIONS_FILE
