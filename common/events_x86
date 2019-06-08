@@ -1,0 +1,7 @@
+#!/bin/bash 
+
+INST=instructions:u
+CYCLES=cycles:u
+UOPS_RETIRED_U=cpu/event=0xc2,umask=0x01,name=uops_retired:u/u
+UOPS_RETIRED=cpu/event=0xc2,umask=0x01,name=uops_retired/
+UOPS_STALLED=cpu/event=0xc2,umask=0x01,inv=1,cmask=1,name=uops_stalled/
