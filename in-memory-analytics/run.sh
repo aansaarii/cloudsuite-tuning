@@ -7,7 +7,7 @@
 source safeguard
 source main_func
 
-[[ "$DEV" ]] && echo $NUM_WORKERS
+(($DEV)) && echo $NUM_WORKERS
 
 rm -rf $LOCKDIR
 
@@ -26,4 +26,6 @@ perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS_STR -p $WORKER_PIDS sleep infinity 
 detect_stage finished 
 echo "Finished"
 sudo pkill -fx "sleep infinity"
+
+cp user.cfg $OUT/user.cfg 
 docker logs $CLIENT_CONTAINER > $CLIENT_LOG
