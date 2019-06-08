@@ -4,6 +4,7 @@ function start_master(){
     echo "start master"
     [ "$(docker ps -a | grep ${MASTER_CONTAINER})" ] && docker rm -f ${MASTER_CONTAINER}
     docker run -dP --net ${NET} --hostname ${HOSTNAME} --name ${MASTER_CONTAINER} --cpuset-cpus=${MASTER_CPUS} ${SPARK} master
+    MASTER_PID=$(docker inspect -f '{{.State.Pid}}' ${MASTER_CONTAINER})
 }
 
 function start_workers(){
