@@ -3,19 +3,10 @@
 source user.cfg
 source default.cfg
 
-function docker_permission(){
-    if [ "$(docker images 2>&1 | grep -q "permission denied")" ]; then 
-        echo "unable to run docker without sudo" 
-        exit
-    else
-        echo "passed docker's permission check"
-    fi
-}
-
 function platform_check(){
     if [[ "$(grep amd64 default.cfg)" ]]; then 
         echo "x86_64 dependent settings used"
-        if [[ "$(lscpu | grep x86)" ]]; then 
+        if [[ $PLAT = "x86" ]]; then 
             echo "passed platform check"
         else
             echo "failed platform check"
@@ -23,7 +14,7 @@ function platform_check(){
         fi 
     elif [[ "$(grep arm64 default.cfg)" ]]; then 
         echo "aarch64 dependent settings used"
-        if [[ "$(lscpu | grep aarch64)" ]]; then
+        if [[ $PLAT = "aarch64" ]]; then
             echo "passed platform check"
         else
             echo "failed platform check"
@@ -64,7 +55,8 @@ function log_folder () {
     fi  
 }
 
-(($DEV)) && docker_permission
-(($DEV)) && platform_check 
-(($DEV)) && valid_core  
-log_folder
+platform_check
+#(($DEV)) && docker_permission
+#(($DEV)) && platform_check 
+#(($DEV)) && valid_core  
+#log_folder

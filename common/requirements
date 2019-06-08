@@ -1,0 +1,24 @@
+#!/bin/bash 
+
+function docker_permission(){
+    if [ "$(docker images 2>&1 | grep -q "permission denied")" ]; then 
+        echo "unable to run docker without sudo" 
+        exit
+    else
+        echo "passed docker's permission check"
+    fi
+}
+
+function get_platform(){
+    local target_platform=""    
+    if [[ "$(lscpu | grep x86)" ]]; then 
+        target_platform=x86
+    elif [[ "$(lscpu | grep aarch64)" ]]; then
+        target_platform=aarch64
+    else
+        echo "target platform unsupported"
+        exit 
+    fi
+    echo $target_platform 
+} 
+
