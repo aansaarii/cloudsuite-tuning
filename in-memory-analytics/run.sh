@@ -8,13 +8,14 @@ source safeguard
 source main_func
 
 (($DEV)) && echo $NUM_WORKERS
-
-rm -rf $LOCKDIR
+(($DEV)) && echo "Server cpus are $SERVER_CPUS"
 
 create_dataset  
 create_network 
 
 start_master
+(($DEV)) && echo $MASTER_PID
+
 start_workers
 detect_stage master-ready 
 detect_stage workers-ready  
@@ -22,7 +23,9 @@ detect_stage workers-ready
 start_client ${DATASET_SEL} 
 detect_stage ramp-up
 echo "Rampup completed"
-perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS_STR -p $WORKER_PIDS sleep infinity 2>>$PERF_LOG &
+# perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS_STR -p $WORKER_PIDS sleep infinity 2>>$PERF_LOG &
+# perf stat -e $PERF_EVENTS --cpu $MASTER_CPUS -p $MASTER_PID sleep infinity 2>>$PERF_LOG &
+perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $MASTER_PID,$WORKER_PIDS sleep infinity 2>>$PERF_LOG &
 detect_stage finished 
 echo "Finished"
 sudo pkill -fx "sleep infinity"

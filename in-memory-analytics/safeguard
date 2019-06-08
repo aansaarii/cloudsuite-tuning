@@ -3,6 +3,8 @@
 source user.cfg
 source default.cfg
 
+rm -rf $LOCKDIR
+
 function platform_check(){
     if [[ "$(grep amd64 default.cfg)" ]]; then 
         echo "x86_64 dependent settings used"
@@ -56,7 +58,7 @@ function log_folder () {
 }
 
 platform_check
-#(($DEV)) && docker_permission
-#(($DEV)) && platform_check 
-#(($DEV)) && valid_core  
-#log_folder
+(($DEV)) && docker_permission
+(($DEV)) && platform_check 
+(($DEV)) && valid_core  
+log_folder
