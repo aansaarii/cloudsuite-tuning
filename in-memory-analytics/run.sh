@@ -23,9 +23,17 @@ detect_stage workers-ready
 start_client ${DATASET_SEL} 
 detect_stage ramp-up
 echo "Rampup completed"
-# perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS_STR -p $WORKER_PIDS sleep infinity 2>>$PERF_LOG &
-# perf stat -e $PERF_EVENTS --cpu $MASTER_CPUS -p $MASTER_PID sleep infinity 2>>$PERF_LOG &
-perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $MASTER_PID,$WORKER_PIDS sleep infinity 2>>$PERF_LOG &
+
+if [[ ${MEASURE} = "worker" ]]; then  
+    perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS_STR -p $WORKER_PIDS sleep infinity 2>>$PERF_LOG &
+elif [[ ${MEASURE} = "master" ]]; then 
+    perf stat -e $PERF_EVENTS --cpu $MASTER_CPUS -p $MASTER_PID sleep infinity 2>>$PERF_LOG &
+elif [[ ${MEASURE} = "combine" ]]; then 
+    perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $MASTER_PID,$WORKER_PIDS sleep infinity 2>>$PERF_LOG &
+else
+    echo "invalid option $MEASURE"
+fi 
+
 detect_stage finished 
 echo "Finished"
 sudo pkill -fx "sleep infinity"
