@@ -29,3 +29,4 @@ sudo pkill -fx "sleep infinity"
 
 cp user.cfg $OUT/user.cfg 
 docker logs $CLIENT_CONTAINER > $CLIENT_LOG
+log_folder
