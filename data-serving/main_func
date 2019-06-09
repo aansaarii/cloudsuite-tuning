@@ -1,0 +1,43 @@
+#!/bin/bash 
+
+function start_server(){
+    (($DEV)) && echo "start server"
+    clean_containers $SERVER_CONTAINER
+    docker run -dP --net ${NET} --name ${SERVER_CONTAINER} --cpuset-cpus=${SERVER_CPUS} --memory=$SERVER_MEMORY $SERVER_IMAGE 
+    SERVER_PID=$(docker inspect -f '{{.State.Pid}}' $SERVER_CONTAINER)
+}
+
+function start_client(){
+    (($DEV)) && echo "start client"
+    clean_containers $CLIENT_CONTAINER
+    docker run -it -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} ${CLIENT_IMAGE} ${HOSTNAME}
+}
+
+function load_server(){
+    (($DEV)) && echo "load server"
+    docker exec -it $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb load cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloadb -s -threads $THREADS_LOAD -p recordcount=$RECORDS"
+}
+
+function warmup_server(){
+    (($DEV)) && echo "warmup server with $WARMUP operations"
+    docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloadb -s -threads $THREADS -p operationcount=$WARMUP -p recordcount=$RECORDS"
+}
+
+function detect_stage (){
+    case "$1" in
+    server-ready)
+        KEYWORDS="Created default superuser role"
+        log_helper_stdout ${SERVER_CONTAINER} "${KEYWORDS}" 5
+        ;;
+    usertable-ready) 
+        KEYWORDS="Keyspace usertable was created"
+        log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 5
+        ;;
+    *) 
+        printf "Unrecognized option for stage $1:\n \
+            server-ready, usertable-ready"
+        exit 1 
+    esac
+}
+
+
