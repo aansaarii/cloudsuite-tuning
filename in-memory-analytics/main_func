@@ -1,14 +1,14 @@
 #!/bin/bash 
 
 function start_master(){
-    (($DEBUG)) && echo "start master"
+    (($DEV)) && echo "start master"
     clean_containers $MASTER_CONTAINER
     docker run -dP --net ${NET} --hostname ${HOSTNAME} --name ${MASTER_CONTAINER} --cpuset-cpus=${MASTER_CPUS} ${SPARK} master
     MASTER_PID=$(docker inspect -f '{{.State.Pid}}' ${MASTER_CONTAINER})
 }
 
 function start_workers(){
-    (($DEBUG)) && echo "start workers"
+    (($DEV)) && echo "start workers"
     clean_containers $WORKER_CONTAINER
     CNT=0
     while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do 
