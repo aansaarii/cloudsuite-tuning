@@ -6,7 +6,6 @@
 
 source ../common/safeguard
 source main_func
-
 (($DEV)) && echo $NUM_WORKERS
 (($DEV)) && echo "Server cpus are $SERVER_CPUS"
 
@@ -20,24 +19,28 @@ start_workers
 detect_stage master-ready 
 detect_stage workers-ready  
 
-start_client 
-detect_stage ramp-up
-echo "Rampup completed"
+CNT=0
+while [[ $CNT -lt $REPEAT ]]; do
+    start_client 
+    detect_stage ramp-up
+    echo "Rampup completed"
 
-if [[ ${MEASURE} = "worker" ]]; then  
-    sudo perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS_STR -p $WORKER_PIDS sleep infinity 2>>$PERF_LOG &
-elif [[ ${MEASURE} = "master" ]]; then 
-    sudo perf stat -e $PERF_EVENTS --cpu $MASTER_CPUS -p $MASTER_PID sleep infinity 2>>$PERF_LOG &
-elif [[ ${MEASURE} = "combine" ]]; then 
-    sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $MASTER_PID,$WORKER_PIDS sleep infinity 2>>$PERF_LOG &
-else
-    echo "invalid option $MEASURE"
-fi 
+    if [[ ${MEASURE} = "worker" ]]; then  
+        sudo perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS_STR -p $WORKER_PIDS sleep infinity 2>>$PERF_LOG &
+    elif [[ ${MEASURE} = "master" ]]; then 
+        sudo perf stat -e $PERF_EVENTS --cpu $MASTER_CPUS -p $MASTER_PID sleep infinity 2>>$PERF_LOG &
+    elif [[ ${MEASURE} = "combine" ]]; then 
+        sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $MASTER_PID,$WORKER_PIDS sleep infinity 2>>$PERF_LOG &
+    else
+        echo "invalid option $MEASURE"
+    fi 
 
-detect_stage finished 
-echo "Finished"
-sudo pkill -fx "sleep infinity"
+    detect_stage finished 
+    echo "Finished"
+    sudo pkill -fx "sleep infinity"
+    docker logs $CLIENT_CONTAINER > $CLIENT_LOG
+    CNT=$(( CNT+1 ))
+done
 
 cp user.cfg $OUT/user.cfg 
-docker logs $CLIENT_CONTAINER > $CLIENT_LOG
 log_folder
