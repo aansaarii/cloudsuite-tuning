@@ -23,13 +23,12 @@ function create_network(){
 
 function clean_containers(){
     # remove all containers whose name contains the keyword 
-    [ "$(docker ps -a | grep $1)" ] && echo "containers matching $1 found for removal" && docker ps --filter name="$1" -aq | xargs docker stop | xargs docker rm
+    [ "$(docker ps -a | grep $1)" ] && echo "containers match $1 are found for removal" && docker ps --filter name="$1" -aq | xargs docker stop | xargs docker rm
 }
 
 function log_helper_stderr () {
     # Look for the key words in stderr (2) of docker logs output 
     # $1: container_name, $2: keyword, $3: delay (default=1)
-    # echo "second arg is \"$2\""
     while true; do
         if docker logs "$1" 2>&1 | grep -q "$2"; then
             echo "$1 is ready"
