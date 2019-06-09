@@ -4,7 +4,7 @@
 
 # trap 'kill ${dataset_ready} ${master_ready} ${worker_ready} ${rampup_ready} ${measurement_ready}; exit' SIGINT
 
-source safeguard
+source ../common/safeguard
 source main_func
 
 (($DEV)) && echo $NUM_WORKERS
@@ -25,11 +25,11 @@ detect_stage ramp-up
 echo "Rampup completed"
 
 if [[ ${MEASURE} = "worker" ]]; then  
-    perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS_STR -p $WORKER_PIDS sleep infinity 2>>$PERF_LOG &
+    sudo perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS_STR -p $WORKER_PIDS sleep infinity 2>>$PERF_LOG &
 elif [[ ${MEASURE} = "master" ]]; then 
-    perf stat -e $PERF_EVENTS --cpu $MASTER_CPUS -p $MASTER_PID sleep infinity 2>>$PERF_LOG &
+    sudo perf stat -e $PERF_EVENTS --cpu $MASTER_CPUS -p $MASTER_PID sleep infinity 2>>$PERF_LOG &
 elif [[ ${MEASURE} = "combine" ]]; then 
-    perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $MASTER_PID,$WORKER_PIDS sleep infinity 2>>$PERF_LOG &
+    sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $MASTER_PID,$WORKER_PIDS sleep infinity 2>>$PERF_LOG &
 else
     echo "invalid option $MEASURE"
 fi 
