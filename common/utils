@@ -21,6 +21,11 @@ function create_network(){
     [ ! "$(docker network ls | grep ${NET})" ] && docker network create ${NET}
 }
 
+function clean_containers(){
+    # remove all containers whose name contains the keyword 
+    [ "$(docker ps -a | grep $1)" ] && echo "target found" && docker ps --filter name="$1" -aq | xargs docker stop | xargs docker rm
+}
+
 function log_helper_stderr () {
     # Look for the key words in stderr (2) of docker logs output 
     # $1: container_name, $2: keyword, $3: delay (default=1)

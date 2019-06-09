@@ -2,15 +2,14 @@
 
 function start_master(){
     echo "start master"
-    [ "$(docker ps -a | grep ${MASTER_CONTAINER})" ] && docker rm -f ${MASTER_CONTAINER}
+    clean_containers $MASTER_CONTAINER
     docker run -dP --net ${NET} --hostname ${HOSTNAME} --name ${MASTER_CONTAINER} --cpuset-cpus=${MASTER_CPUS} ${SPARK} master
     MASTER_PID=$(docker inspect -f '{{.State.Pid}}' ${MASTER_CONTAINER})
 }
 
 function start_workers(){
     echo ${WORKER_CONTAINER}
-    [ "$(docker ps -a | grep ${WORKER_CONTAINER}-0)" ] && docker ps --filter name=${WORKER_CONTAINER} -aq | xargs docker stop | xargs docker rm
-
+    clean_containers $WORKER_CONTAINER
     CNT=0
     while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do 
         docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://spark-master:7077
@@ -28,7 +27,7 @@ function start_workers(){
 }
 
 function start_client(){
-    [ "$(docker ps -a | grep ${CLIENT_CONTAINER})" ] && docker ps --filter name=${CLIENT_CONTAINER} -aq | xargs docker stop | xargs docker rm 
+    clean_containers $CLIENT_CONTAINER
     docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} --driver-memory ${DRIVER_MEM} --executor-memory ${EXECUTOR_MEM} --master spark://spark-master:7077
 }
 
