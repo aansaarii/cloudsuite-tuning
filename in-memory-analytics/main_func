@@ -65,8 +65,8 @@ function detect_stage () {
         ;;
     ramp-up) 
         # Got 100004 ratings from 671 users on 9066 movies.
-        KEYWORDS="Total input paths to process"
-        log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}"
+        KEYWORDS="ratings from"
+        log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}"
         ;;
     finished) 
         KEYWORDS="Benchmark execution time"
