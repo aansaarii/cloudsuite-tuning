@@ -40,7 +40,11 @@ while [[ $CNT -lt $REPEAT ]]; do
     echo "Finished"
     sudo pkill -fx "sleep infinity"
     docker logs $CLIENT_CONTAINER >> $CLIENT_LOG
-    CNT=$(( CNT+1 ))
+    
+    if mkdir $LOCKDIR; then 
+	CNT=$(( CNT+1 ))
+	rm -rf $LOCKDIR
+    fi 
 done 
 
 cp user.cfg $OUT/user.cfg 

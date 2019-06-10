@@ -6,18 +6,21 @@ function cvt_cpu() {
     CNT=1
     while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
         str_cpus="$str_cpus,${WORKER_CPUS[${CNT}]}"
-        CNT=$((CNT + 1))
+	if mkdir $LOCKDIR; then 
+	    CNT=$((CNT + 1))
+	    rm -rf $LOCKDIR 
+	fi 
     done
     echo $str_cpus
 }
 
 function create_dataset(){
-    echo "create dataset"
+    (($DEV)) && echo "create dataset"
     [ ! "$(docker ps -a | grep ${DATASET_CONTAINER})" ] && docker create --name ${DATASET_CONTAINER} ${DATASET_IMAGE}
 }
 
 function create_network(){
-    echo "create network"
+    (($DEV)) && echo "create network"
     [ ! "$(docker network ls | grep ${NET})" ] && docker network create ${NET}
 }
 
@@ -43,7 +46,6 @@ function log_helper_stderr () {
 function log_helper_stdout () {
     # Look for the key words in stdout (1) of docker logs output 
     # $1: container_name, $2: keyword, $3: delay (default=1)
-    # echo "second arg is \"$2\""
     while true; do
         if docker logs "$1" 2>/dev/null | grep -q "$2"; then
             echo "$1 is ready"
