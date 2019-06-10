@@ -9,11 +9,13 @@ source main_func
 
 create_network 
 start_server 
+
+clean_containers $CLIENT_CONTAINER
 start_client &  
 
 detect_stage warmup
 
-(($DEV)) && echo "warmup ready. Starts measurement" 
+(($DEV)) && echo "warmup ready" 
 sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $SERVER_PIDS sleep $MEASURE_TIME 2>>$PERF_LOG
 docker stop $CLIENT_CONTAINER
 
