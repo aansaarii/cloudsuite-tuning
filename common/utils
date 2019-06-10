@@ -5,8 +5,8 @@ function cvt_cpu() {
     local str_cpus=`echo $WORKER_CPUS`
     CNT=1
     while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
-        str_cpus="$str_cpus,${WORKER_CPUS[${CNT}]}"
-	if mkdir $LOCKDIR; then 
+	if mkdir $LOCKDIR; then
+	    str_cpus="$str_cpus,${WORKER_CPUS[${CNT}]}"
 	    CNT=$((CNT + 1))
 	    rm -rf $LOCKDIR 
 	fi 

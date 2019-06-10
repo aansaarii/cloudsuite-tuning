@@ -22,26 +22,26 @@ detect_stage workers-ready
 
 CNT=0
 while [[ $CNT -lt $REPEAT ]]; do 
-    start_client ${DATASET_SEL} 
-    detect_stage ramp-up
-    echo "Rampup completed"
+    if mkdir $LOCKDIR; then
+	start_client ${DATASET_SEL} 
+	detect_stage ramp-up
+	echo "Rampup completed"
 
-    if [[ ${MEASURE} = "worker" ]]; then  
-        sudo perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS_STR -p $WORKER_PIDS sleep infinity 2>>$PERF_LOG &
-    elif [[ ${MEASURE} = "master" ]]; then 
-        sudo perf stat -e $PERF_EVENTS --cpu $MASTER_CPUS -p $MASTER_PID sleep infinity 2>>$PERF_LOG &
-    elif [[ ${MEASURE} = "combine" ]]; then 
-        sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $MASTER_PID,$WORKER_PIDS sleep infinity 2>>$PERF_LOG &
-    else
-        echo "invalid option $MEASURE"
-    fi 
+	if [[ ${MEASURE} = "worker" ]]; then  
+	    sudo perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS_STR -p $WORKER_PIDS sleep infinity 2>>$PERF_LOG &
+	elif [[ ${MEASURE} = "master" ]]; then 
+	    sudo perf stat -e $PERF_EVENTS --cpu $MASTER_CPUS -p $MASTER_PID sleep infinity 2>>$PERF_LOG &
+	elif [[ ${MEASURE} = "combine" ]]; then 
+	    sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $MASTER_PID,$WORKER_PIDS sleep infinity 2>>$PERF_LOG &
+	else
+	    echo "invalid option $MEASURE"
+	fi 
 
-    detect_stage finished 
-    echo "Finished"
-    sudo pkill -fx "sleep infinity"
-    docker logs $CLIENT_CONTAINER >> $CLIENT_LOG
-    
-    if mkdir $LOCKDIR; then 
+	detect_stage finished 
+	echo "Finished"
+	sudo pkill -fx "sleep infinity"
+	docker logs $CLIENT_CONTAINER >> $CLIENT_LOG
+	
 	CNT=$(( CNT+1 ))
 	rm -rf $LOCKDIR
     fi 
