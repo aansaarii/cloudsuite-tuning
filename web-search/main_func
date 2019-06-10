@@ -1,0 +1,46 @@
+#!/bin/bash 
+
+function generate_index(){
+    (($DEV)) && echo "generate index" 
+    clean_containers $SERVER_CONTAINER 
+    docker run -d --name $SERVER_CONTAINER -v $LOCAL_INDEX_VOL:/home/solr -p 8983:8983 --cpuset-cpus=$SERVER_CPUS --net $NET --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 generate
+}
+
+function start_server(){
+    (($DEV)) && echo "start server" 
+    clean_containers $SERVER_CONTAINER
+    docker run -d --name $SERVER_CONTAINER -v $LOCAL_INDEX_VOL:/home/solr -p 8983:8983 --cpuset-cpus=$SERVER_CPUS --net $NET --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 
+}
+
+function start_client(){
+    (($DEV)) && echo "start client"
+    # clean_containers $CLIENT_CONTAINER
+    docker run --net=$NETWORK -e JAVA_HOME=$JAVA_HOME --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $OPERATIONS $OPERATIONS $STOPTIME $OPERATIONS
+}
+
+function detect_stage () {
+    case "$1" in
+    index-node-ready) 
+	KEYWORDS="Index Node IP Address"
+        log_helper_stdout ${SERVER_CONTAINER} "${KEYWORDS}" 5 
+	SERVER_IP=`docker logs $SERVER_CONTAINER 2>/dev/null | grep "$KEYWORDS" | sed 's/.*\:\s//'` 
+	(($DEV)) && echo "Index node IP $SERVER_IP"
+	;;
+    rampup) 
+	KEYWORDS="Ramp up completed"
+	log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 2
+        (($DEV)) && echo "Rampup completed"
+	;;
+    steady-state) 
+	KEYWORDS="Steady state completed"
+	log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 2
+        (($DEV)) && echo "Steady state completed"
+	;;
+    detail) 
+	KEYWORDS="Detail finished"
+	log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 2
+	(($DEV)) && echo "Detail measurement finished"
+        ;;
+    esac
+}
+
