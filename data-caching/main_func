@@ -23,7 +23,7 @@ function start_server(){
 
 function start_client(){
     (($DEV)) && echo "start client"
-    docker run -v ${CWD}/files/docker-entrypoint.sh:/entrypoint.sh -v ${CWD}/files/servers.txt:/usr/src/memcached/memcached_client/servers.txt --net $NET --name $CLIENT_CONTAINER $CLIENT_IMAGE $DATASET_SCALE 4
+    docker run -v ${CWD}/files/docker-entrypoint.sh:/entrypoint.sh -v ${CWD}/files/servers.txt:/usr/src/memcached/memcached_client/servers.txt --net $NET --name $CLIENT_CONTAINER $CLIENT_IMAGE $DATASET_SCALE 4 $TARGET_RPS
 }
 
 function detect_stage () {
