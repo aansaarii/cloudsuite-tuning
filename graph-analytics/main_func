@@ -12,9 +12,9 @@ function start_workers()
     clean_containers $WORKER_CONTAINER
     CNT=0
     while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do 
-        docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://spark-master:7077
-        local worker_id=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER}-${CNT})    
-        if mkdir ${LOCKDIR}; then 
+	if mkdir ${LOCKDIR}; then
+	    docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://spark-master:7077
+	    local worker_id=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER}-${CNT})    
             CNT=$((CNT + 1))
             if [ -z "$WORKER_PIDS" ]; then 
                 WORKER_PIDS=$worker_id
