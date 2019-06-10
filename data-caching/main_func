@@ -1,0 +1,42 @@
+#!/bin/bash 
+
+function start_server(){
+    (($DEV)) && echo "start server"
+    clean_containers $SERVER_CONTAINER
+    CNT=0
+    while [[ $CNT -lt ${NUM_SERVERS} ]]; do 
+        if mkdir ${LOCKDIR}; then
+            docker run -d --name ${SERVER_CONTAINER}-${CNT} --cpuset-cpus=${SERVER_CPUS[${CNT}]} --net $NET $SERVER_IMAGE -t 4 -m 4096 -n 550
+	    local server_pid=$(docker inspect -f '{{.State.Pid}}' ${SERVER_CONTAINER}-${CNT})
+            CNT=$((CNT + 1))
+            if [ -z "$SERVER_PIDS" ]; then
+                SERVER_PIDS=$server_pid
+            else
+                SERVER_PIDS="$SERVER_PIDS,$server_pid"
+            fi
+	    CNT=$((CNT + 1))
+            rm -rf ${LOCKDIR}
+        fi
+    done 
+    (($DEV)) && echo "server pids are $SERVER_PIDS"
+}
+
+function start_client(){
+    (($DEV)) && echo "start client"
+    clean_containers $CLIENT_CONTAINER
+    docker run -v ${CWD}/files/docker-entrypoint.sh:/entrypoint.sh -v ${CWD}/files/servers.txt:/usr/src/memcached/memcached_client/servers.txt --net $NET --name $CLIENT_CONTAINER $CLIENT_IMAGE $DATASET_SCALE 4
+}
+
+function detect_stage () {
+    case "$1" in
+    warmup)
+        KEYWORDS="You are warmed up"
+        log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}"
+        ;;
+    *)
+        printf "Unrecognized option for stage $1:\n \
+            master-ready, workers-ready, ramp-up, finished"
+        exit 1
+    esac
+}
+
