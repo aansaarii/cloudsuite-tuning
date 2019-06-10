@@ -1,0 +1,48 @@
+#!/usr/bin/expect
+
+set QFLEX_DIR [lindex $argv 0];
+
+set timeout 3000
+
+#exp_internal 1
+
+spawn $QFLEX_DIR/scripts/run_instance.sh
+
+expect "*cloudsuite3-blank login:*"
+
+send "cloudsuite\r"
+
+expect "*Password:*"
+
+send "cloudsuite\r"
+
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "sudo bash -c 'echo Defaults:cloudsuite      !authenticate >> /etc/sudoers'\r"
+
+expect "*password for cloudsuite:*"
+
+send "cloudsuite\r"
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "sudo apt-get update; sudo apt-get install -y sysstat wget unzip\r"
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "wget https://github.com/parsa-epfl/cloudsuite-tuning/archive/master.zip\r"
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "unzip master.zip\r"
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "docker pull cloudsuite/data-caching:client-aarch64\r"
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "docker pull cloudsuite/data-caching:server-aarch64\r"
+expect "*cloudsuite@cloudsuite3-blank:~$*"
+
+send "sudo sed -i 's/timeout .*/timeout 15/g' /etc/dhcp/dhclient.conf\r"
+
+
+send "sudo shutdown now\r"
+
+expect eof
