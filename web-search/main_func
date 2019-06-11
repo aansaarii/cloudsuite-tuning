@@ -15,7 +15,7 @@ function start_server(){
 function start_client(){
     (($DEV)) && echo "start client"
     # clean_containers $CLIENT_CONTAINER
-    docker run --net=$NETWORK -e JAVA_HOME=$JAVA_HOME --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $OPERATIONS $OPERATIONS $STOPTIME $OPERATIONS
+    docker run --net=$NET -e JAVA_HOME=$JAVA_HOME --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $OPERATIONS $OPERATIONS $STOPTIME $OPERATIONS
 }
 
 function detect_stage () {
@@ -26,17 +26,17 @@ function detect_stage () {
 	SERVER_IP=`docker logs $SERVER_CONTAINER 2>/dev/null | grep "$KEYWORDS" | sed 's/.*\:\s//'` 
 	(($DEV)) && echo "Index node IP $SERVER_IP"
 	;;
-    rampup) 
+    rampup-completed) 
 	KEYWORDS="Ramp up completed"
 	log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 2
         (($DEV)) && echo "Rampup completed"
 	;;
-    steady-state) 
+    steady-state-completed) 
 	KEYWORDS="Steady state completed"
 	log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 2
         (($DEV)) && echo "Steady state completed"
 	;;
-    detail) 
+    detail-completed) 
 	KEYWORDS="Detail finished"
 	log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 2
 	(($DEV)) && echo "Detail measurement finished"
