@@ -63,7 +63,7 @@ function detect_stage () {
             fi 
         done
         ;;
-    ramp-up) 
+    warmup) 
         # Got 100004 ratings from 671 users on 9066 movies.
         KEYWORDS="ratings from"
         log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}"

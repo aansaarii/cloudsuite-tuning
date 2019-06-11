@@ -24,8 +24,8 @@ CNT=0
 while [[ $CNT -lt $REPEAT ]]; do 
     if mkdir $LOCKDIR; then
 	start_client ${DATASET_SEL} 
-	detect_stage ramp-up
-	(($DEV)) && echo "Rampup completed"
+	detect_stage warmup 
+	(($DEV)) && echo "Warm up completed"
 
 	sudo perf stat -e $PERF_EVENTS --cpu $MASTER_CPUS -p $MASTER_PID sleep $MEASURE_TIME 2>>$PERF_LOG &
 
