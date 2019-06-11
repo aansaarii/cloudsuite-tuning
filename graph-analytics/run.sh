@@ -39,7 +39,7 @@ while [[ $CNT -lt $REPEAT ]]; do
 	detect_stage finished 
 	echo "Finished"
 	sudo pkill -fx "sleep infinity"
-	docker logs $CLIENT_CONTAINER > $CLIENT_LOG
+	log_client
 	CNT=$(( CNT+1 ))
 	rm -rf $LOCKDIR
     fi 

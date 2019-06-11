@@ -79,4 +79,6 @@ function detect_stage () {
     esac
 }
 
-
+function log_client(){
+    docker logs $CLIENT_CONTAINER >> $CLIENT_LOG
+}

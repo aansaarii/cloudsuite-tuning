@@ -19,15 +19,14 @@ while read OPERATIONS; do
     start_client &
     CLIENT_PID=$!
 
-    detect_stage rampup
-
+    detect_stage rampup-completed
     sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $SERVER_PID sleep infinity 2>>$PERF_LOG &
-    detect_stage steady-state
+    detect_stage steady-state-completed
     sudo pkill -fx "sleep infinity"
     
-    detect_stage detail
+    detect_stage detail-completed
     wait $CLIENT_PID
-    docker logs $CLIENT_CONTAINER 2>/dev/null >> $CLIENT_LOG
+    log_client 
 
 done < $OPERATIONS_FILE
 
