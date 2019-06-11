@@ -22,7 +22,8 @@ while read OPERATIONS; do
 
     docker stop $CLIENT_CONTAINER
     log_client 
-    # _summary 
-    cp user.cfg $OUT/user.cfg 
-    log_folder
 done < $OPERATIONS_FILE
+
+client_summary 
+cp user.cfg $OUT/user.cfg
+log_folder

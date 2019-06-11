@@ -17,11 +17,16 @@ function detect_stage(){
     warmup)
         KEYWORDS=""
         # log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 2
-        (($DEV)) && echo "Rampup completed"
+        (($DEV)) && echo "Warm up completed"
         ;;
     esac
 }
 
 function log_client(){
     docker logs $CLIENT_CONTAINER >> $CLIENT_LOG 
+}
+
+function client_summary(){
+    # grep "" $CLIENT_LOG >> $CLIENT_SUMMARY
+    cat $PERF_LOG | awk '{printf "%15s\n",$1}' >> $CLIENT_SUMMARY
 }
