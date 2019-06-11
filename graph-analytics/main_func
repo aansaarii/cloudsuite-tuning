@@ -7,14 +7,14 @@ function start_master(){
     MASTER_PID=$(docker inspect -f '{{.State.Pid}}' ${MASTER_CONTAINER})
 }
 
-function start_workers()
-    ($DEV)) && echo ${WORKER_CONTAINER}
+function start_workers(){
+    (($DEV)) && echo ${WORKER_CONTAINER}
     clean_containers $WORKER_CONTAINER
     CNT=0
     while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do 
-	if mkdir ${LOCKDIR}; then
-	    docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://spark-master:7077
-	    local worker_id=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER}-${CNT})    
+        if mkdir ${LOCKDIR}; then
+            docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://spark-master:7077
+            local worker_id=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER}-${CNT})    
             CNT=$((CNT + 1))
             if [ -z "$WORKER_PIDS" ]; then 
                 WORKER_PIDS=$worker_id
@@ -27,7 +27,7 @@ function start_workers()
 }
 
 function start_client(){
-    ($DEV)) && echo "start client"
+    (($DEV)) && echo "start client"
     clean_containers $CLIENT_CONTAINER
     docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} --driver-memory ${DRIVER_MEM} --executor-memory ${EXECUTOR_MEM} --master spark://spark-master:7077
 }
