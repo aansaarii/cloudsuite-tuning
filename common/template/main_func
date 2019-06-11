@@ -1,0 +1,27 @@
+#!/bin/bash 
+
+function start_server(){
+    (($DEV)) && echo "start server" 
+    clean_containers $SERVER_CONTAINER
+    docker run -d --name $SERVER_CONTAINER --cpuset-cpus=$SERVER_CPUS --net $NET $SERVER_IMAGE 
+}
+
+function start_client(){
+    (($DEV)) && echo "start client"
+    # clean_containers $CLIENT_CONTAINER
+    docker run -d --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS --net $NET $CLIENT_IMAGE 
+}
+
+function detect_stage(){
+    case "$1" in
+    warmup)
+        KEYWORDS=""
+        # log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 2
+        (($DEV)) && echo "Rampup completed"
+        ;;
+    esac
+}
+
+function log_client(){
+    docker logs $CLIENT_CONTAINER >> $CLIENT_LOG 
+}
