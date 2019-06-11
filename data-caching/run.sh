@@ -9,13 +9,24 @@ source main_func
 create_network 
 start_server 
 
-clean_containers $CLIENT_CONTAINER
-start_client &  
+while read TARGET_RPS; do 
 
-detect_stage warmup
+    clean_containers $CLIENT_CONTAINER
+    start_client &  
 
-(($DEV)) && echo "warmup ready" 
-sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $SERVER_PIDS sleep $MEASURE_TIME 2>>$PERF_LOG
-docker stop $CLIENT_CONTAINER
-docker logs $CLIENT_CONTAINER 2>/dev/null | sed -n -e '/warm/,$p' > $CLIENT_LOG 
+    detect_stage warmup
 
+    (($DEV)) && echo "warmup ready" 
+    sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $SERVER_PIDS sleep $MEASURE_TIME 2>$PERF_LOG
+    
+    docker stop $CLIENT_CONTAINER
+    log_client 
+    
+    latency_summary 
+    rps_summary 
+    cp user.cfg $OUT/user.cfg
+
+    log_folder
+ 
+done < $RPS_FILE
+ 
