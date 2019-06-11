@@ -55,7 +55,7 @@ function detect_stage () {
             fi 
         done
         ;;
-    ramp-up) 
+    warmup) 
         # Got 100004 ratings from 671 users on 9066 movies.
         KEYWORDS="Total input paths to process"
         log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}"
@@ -73,4 +73,9 @@ function detect_stage () {
 
 function log_client(){
     docker logs $CLIENT_CONTAINER >> $CLIENT_LOG
+}
+
+function client_summary(){
+    grep "Running time" $CLIENT_LOG >> $CLIENT_SUMMARY
+    cat $PERF_LOG | awk '{printf "%15s\n",$1}' >> $CLIENT_SUMMARY
 }
