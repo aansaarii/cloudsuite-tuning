@@ -45,12 +45,12 @@ function log_client(){
 
 function latency_summary(){
     echo "median 95th latency" >> $CLIENT_SUMMARY
-    cat out/client-result.txt | grep -A1 95th | grep -v 95th | awk '{print $10}'| sed '/^$/d' | sort | sed -n "$((MEASURE/2))p" >> $CLIENT_SUMMARY
+    cat out/client-result.txt | grep -A1 95th | grep -v 95th | awk '{print $10}'| sed '/^$/d' | sort | sed -n "$((MEASURE_TIME/2))p" >> $CLIENT_SUMMARY
 }
 
 function rps_summary(){
     echo "median achieved rps" >> $CLIENT_SUMMARY
-    cat out/client-result.txt | grep -A1 95th | grep -v 95th | awk '{print $2}'| sed '/^$/d' | sort | sed -n "$((MEASURE/2))p" >> $CLIENT_SUMMARY
-    echo "min achieved rps" >> $CLIENT_SUMMARY
-    cat out/client-result.txt | grep -A1 95th | grep -v 95th | awk '{print $2}'| sed '/^$/d' | sort | sed -n '1p' >> $CLIENT_SUMMARY
+    cat out/client-result.txt | grep -A1 95th | grep -v 95th | awk '{print $2}'| sed '/^$/d' | sort | sed -n "$((MEASURE_TIME/2))p" >> $CLIENT_SUMMARY
+    #echo "min achieved rps" >> $CLIENT_SUMMARY
+    #cat out/client-result.txt | grep -A1 95th | grep -v 95th | awk '{print $2}'| sed '/^$/d' | sort | sed -n '1p' >> $CLIENT_SUMMARY
 }
