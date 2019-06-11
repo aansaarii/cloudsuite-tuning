@@ -41,6 +41,7 @@ function detect_stage () {
 
 function log_client(){
     docker logs $CLIENT_CONTAINER 2>/dev/null | sed -n -e '/warm/,$p' > $CLIENT_LOG
+    cat out/perf.txt | awk '{printf "%15s\n",$1}' >> $CLIENT_SUMMARY 
 }
 
 function latency_summary(){
