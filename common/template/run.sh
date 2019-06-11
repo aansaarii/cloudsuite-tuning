@@ -10,13 +10,15 @@ source main_func
 create_network 
 start_server
 
+#SERVER_PID=$(docker inspect -f '{{.State.Pid}}' ${SERVER_CONTAINER})
+
 while read OPERATIONS; do 
     clean_containers $CLIENT_CONTAINER
     start_client &  
 
     detect_stage warmup
     (($DEV)) && echo "warmup ready"
-    sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $SERVER_PIDS sleep $MEASURE_TIME 2>$PERF_LOG
+    sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $SERVER_PID sleep $MEASURE_TIME 2>$PERF_LOG
 
     docker stop $CLIENT_CONTAINER
     log_client 
