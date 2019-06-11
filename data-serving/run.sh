@@ -3,6 +3,7 @@
 source ../common/safeguard 
 source main_func 
 
+create_network
 (($LOAD)) && start_server
 (($LOAD)) && detect_stage server-ready 
 start_client 
