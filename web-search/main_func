@@ -52,7 +52,7 @@ function client_summary(){
     metrics=(metric avg p90th p99th totalOps)
     for metric in ${metrics[@]}; do
         echo "$metric" >> $CLIENT_SUMMARY 
-        grep ${metric} experiments/1/client-result.txt | grep -o '>.*<' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY 
+        grep ${metric} $CLIENT_LOG | grep -o '>.*<' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY 
     done
-    awk '{printf "%15s\n",$1 }' experiments/1/perf.txt >> $CLIENT_SUMMARY
+    awk '{printf "%15s\n",$1 }' $PERF_LOG >> $CLIENT_SUMMARY
 }
