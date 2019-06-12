@@ -19,20 +19,25 @@ start_workers
 detect_stage master-ready 
 detect_stage workers-ready  
 
+rm -rf $LOCKDIR_RUN
 CNT=0
 while [[ $CNT -lt $REPEAT ]]; do
-    if mkdir $LOCKDIR; then
+    if mkdir $LOCKDIR_RUN; then
 	start_client 
-	detect_stage warmup
-	(($DEV)) && echo "Warm up completed"
+	detect_stage executor-ready
+	(($DEV)) && echo "executors ready"
+	
+	EXEC_ID=`docker container top ${WORKER_CONTAINER}-0  | grep executor | tr ' ' '\n' | grep '[^[:blank:]]' | sed -n "2 p"`
+	sudo perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS -p $WORKER_PIDS,$EXEC_ID sleep infinity 2>>$PERF_LOG &
 
-	sudo perf stat -e $PERF_EVENTS --cpu $MASTER_CPUS -p $MASTER_PID sleep $MEASURE_TIME 2>>$PERF_LOG &
-
+	detect_stage executor-killed 
+	pkill -fx "sleep infinity"
+	(($DEV)) && echo "executor killed"
 	detect_stage finished 
 	(($DEV)) && echo "Finished"
 	log_client
 	CNT=$(( CNT+1 ))
-	rm -rf $LOCKDIR
+	rm -rf $LOCKDIR_RUN
     fi 
 done
 
