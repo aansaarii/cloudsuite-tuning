@@ -3,7 +3,7 @@
 function start_master(){
     (($DEV)) && echo "start master"
     clean_containers $MASTER_CONTAINER
-    docker run -dP --net ${NET} --hostname ${HOSTNAME} --name ${MASTER_CONTAINER} --cpuset-cpus=${MASTER_CPUS} ${SPARK} master
+    docker run -dP --net ${NET} --hostname ${MASTER_CONTAINER} --name ${MASTER_CONTAINER} --cpuset-cpus=${MASTER_CPUS} ${SPARK} master
     MASTER_PID=$(docker inspect -f '{{.State.Pid}}' ${MASTER_CONTAINER})
 }
 
@@ -12,16 +12,17 @@ function start_workers(){
     clean_containers $WORKER_CONTAINER
     CNT=0
     while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do 
-	if mkdir ${LOCKDIR}; then
-	    docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://spark-master:7077
-	    local worker_id=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER}-${CNT})    
+        if mkdir ${LOCKDIR}; then
+            docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
+            local worker_id=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER}-${CNT})  
+            (($DEV)) && echo "worker_id $worker_id"
             CNT=$((CNT + 1))
             if [ -z "$WORKER_PIDS" ]; then 
                 WORKER_PIDS=$worker_id
             else
-                WORKER_PIDS="$WORKER_PIDS,$worker_id"
+               WORKER_PIDS="$WORKER_PIDS,$worker_id"
             fi  
-            rm -rf ${LOCKDIR}
+            rm -rf ${LOCKDIR} 
         fi 
     done
 }
@@ -37,7 +38,7 @@ function start_client(){
         exit 1
     esac
     clean_containers $CLIENT_CONTAINER
-    docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} /data/${DATA_SIZE} /data/myratings.csv --master spark://spark-master:7077
+    docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} /data/${DATA_SIZE} /data/myratings.csv --master spark://${MASTER_CONTAINER}:7077
 }
 
 function detect_stage () {
@@ -63,18 +64,52 @@ function detect_stage () {
             fi 
         done
         ;;
+    executor-ready)
+        KEYWORDS="ExecutorRunner: Launch command"
+        READY=0
+        CNT=0
+        while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
+            log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}"
+            if mkdir $LOCKDIR; then
+                READY=$((READY+1))
+                CNT=$((CNT + 1))
+                if [[ ${READY} -eq ${NUM_WORKERS} ]]; then
+                    rm -rf ${LOCKDIR}
+                    return
+                fi
+                rm -rf ${LOCKDIR}
+            fi
+        done
+        ;;
     warmup) 
         # Got 100004 ratings from 671 users on 9066 movies.
         KEYWORDS="ratings from"
         log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}"
         ;;
+    executor-killed)
+        KEYWORDS="ExecutorRunner: Killing process"
+        FINISHED=0
+        CNT=0
+        while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
+            log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}"
+            if mkdir $LOCKDIR; then
+                READY=$((READY+1))
+                CNT=$((CNT + 1))
+                if [[ ${FINISHED} -eq ${NUM_WORKERS} ]]; then
+                    rm -rf ${LOCKDIR}
+                    return
+                fi
+                rm -rf ${LOCKDIR}
+            fi
+        done
+        ;; 
     finished) 
         KEYWORDS="Benchmark execution time"
         log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 2 
         ;;
     *) 
         printf "Unrecognized option for stage $1:\n \
-            master-ready, workers-ready, ramp-up, finished"
+            master-ready, workers-ready, executor-ready, warmup, finished"
         exit 1 
     esac
 }
