@@ -47,3 +47,12 @@ function detect_stage () {
 function log_client(){
     docker logs $CLIENT_CONTAINER 2>/dev/null >> $CLIENT_LOG 
 }
+
+function client_summary(){
+    metrics=(metric avg p90th p99th totalOps)
+    for metric in ${metrics[@]}; do
+        echo "$metric" >> $CLIENT_SUMMARY 
+        grep ${metric} $CLIENT_LOG | grep -o '>.*<' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY 
+    done
+    awk '{printf "%15s\n",$1 }' $PERF_LOG >> $CLIENT_SUMMARY
+}
