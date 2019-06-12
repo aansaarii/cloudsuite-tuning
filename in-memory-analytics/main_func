@@ -93,7 +93,7 @@ function detect_stage () {
         while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
             log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}"
             if mkdir $LOCKDIR; then
-                READY=$((READY+1))
+                FINISHED=$((FINISHED+1))
                 CNT=$((CNT + 1))
                 if [[ ${FINISHED} -eq ${NUM_WORKERS} ]]; then
                     rm -rf ${LOCKDIR}

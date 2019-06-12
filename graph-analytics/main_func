@@ -55,11 +55,46 @@ function detect_stage () {
             fi 
         done
         ;;
+    executor-ready)
+        KEYWORDS="ExecutorRunner: Launch command"
+        READY=0
+        CNT=0
+        while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
+            log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}"
+            if mkdir $LOCKDIR; then
+                READY=$((READY+1))
+                CNT=$((CNT + 1))
+                if [[ ${READY} -eq ${NUM_WORKERS} ]]; then
+                    rm -rf ${LOCKDIR}
+                    return
+                fi
+                rm -rf ${LOCKDIR}
+            fi
+        done
+        ;;
     warmup) 
         # Got 100004 ratings from 671 users on 9066 movies.
         KEYWORDS="Total input paths to process"
         log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}"
         ;;
+    executor-killed)
+        KEYWORDS="ExecutorRunner: Killing process"
+        FINISHED=0
+        CNT=0
+        while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
+            log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}"
+            if mkdir $LOCKDIR; then
+                FINISHED=$((FINISHED+1))
+                CNT=$((CNT + 1))
+                if [[ ${FINISHED} -eq ${NUM_WORKERS} ]]; then
+                    rm -rf ${LOCKDIR}
+                    return
+                fi
+                rm -rf ${LOCKDIR}
+            fi
+        done
+        ;;
+  
     finished) 
         KEYWORDS="Running time ="
         log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 2 
