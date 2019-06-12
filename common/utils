@@ -4,11 +4,12 @@ function cvt_cpu() {
 # convert an array of cpus (1,2 3) into a string 1,2,3
     local str_cpus=`echo $WORKER_CPUS`
     CNT=1
+    TMP_LOCK=/tmp/cvt-cpu.lock 
     while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
-	if mkdir $LOCKDIR; then
+	if mkdir $TMP_LOCK; then
 	    str_cpus="$str_cpus,${WORKER_CPUS[${CNT}]}"
 	    CNT=$((CNT + 1))
-	    rm -rf $LOCKDIR 
+	    rm -rf $TMP_LOCK  
 	fi 
     done
     echo $str_cpus
