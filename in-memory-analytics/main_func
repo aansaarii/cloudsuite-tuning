@@ -38,7 +38,7 @@ function start_client(){
         exit 1
     esac
     clean_containers $CLIENT_CONTAINER
-    docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} /data/${DATA_SIZE} /data/myratings.csv --master spark://${MASTER_CONTAINER}:7077
+    docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} /data/${DATA_SIZE} /data/myratings.csv --driver-memory ${DRIVER_MEM} --executor-memory ${EXECUTOR_MEM} --master spark://${MASTER_CONTAINER}:7077
 }
 
 function detect_stage () {
