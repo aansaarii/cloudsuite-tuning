@@ -40,10 +40,11 @@ function detect_stage(){
 }
 
 function client_summary(){
-    metrics=(metric avg p90th p99th totalOps)
-    for metric in ${metrics[@]}; do
-        echo "$metric" >> $CLIENT_SUMMARY
-        grep ${metric} $CLIENT_LOG | grep -o '>.*<' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY
-    done
     awk '{printf "%15s\n",$1 }' $PERF_LOG >> $CLIENT_SUMMARY
+    metrics=(BrowsetoElgg DoLogin PostSelfWall AddFriend Register Logout UpdateActivity)
+
+    for metric in ${metrics[@]}; do 
+	grep "$metric" -A5 $OUT/client-results/summary.xml | grep "successes" | grep -o '>.*<' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY
+	grep "$metric" -A5 $OUT/client-results/summary.xml | grep "percentile" | grep -o '>.*<' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY
+    done 
 }
