@@ -6,12 +6,23 @@ source main_func
 
 (($DEV)) && echo "server cpus $SERVER_CPUS"
 
-# create_dataset 
 create_network 
 start_db
 start_caching_layer
 start_server
-start_client 
+
+clean_containers $CLIENT_CONTAINER
+start_client &
+
+detect_stage warmup
+SERVER_CGROUP_ID=`docker ps --no-trunc -aqf "name=$SERVER_CONTAINER"`
+perf stat -e $INST,$CYCLES,$UOPS_RETIRED_U --cpu $SERVER_CPUS -G docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID sleep infinity 2>>$PERF_LOG & 
+detect_stage rampdown && echo "benchmark finished"
+
+pkill -fx "sleep infinity"
+log_client
+cp user.cfg $OUT/user.cfg 
+log_folder
 
 #SERVER_PID=$(docker inspect -f '{{.State.Pid}}' ${SERVER_CONTAINER})
 if [ 0 -eq 1 ] ; then 

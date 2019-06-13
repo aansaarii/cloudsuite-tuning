@@ -27,9 +27,14 @@ function start_client(){
 function detect_stage(){
     case "$1" in
     warmup)
-        KEYWORDS="Buildfile"
+        KEYWORDS="Ramp up completed"
         log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 1 
         (($DEV)) && echo "Rampup completed"
+        ;;
+    rampdown)
+        KEYWORDS="Ramp down completed"
+        log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 1
+        (($DEV)) && echo "Rampdown completed"
         ;;
     esac
 }
