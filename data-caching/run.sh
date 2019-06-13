@@ -17,8 +17,9 @@ while read TARGET_RPS; do
     detect_stage warmup
 
     (($DEV)) && echo "warmup ready" 
-    sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $SERVER_PIDS sleep $MEASURE_TIME 2>$PERF_LOG
-    
+    SERVER_CGROUP_ID=`docker ps --no-trunc -aqf "name=$SERVER_CONTAINER"`
+    sleep 10
+    perf stat -e $INST,$CYCLES,$UOPS_RETIRED_U --cpu $SERVER_CPUS -G docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID sleep $MEASURE_TIME 2>>$PERF_LOG 
     docker stop $CLIENT_CONTAINER
     log_client 
     

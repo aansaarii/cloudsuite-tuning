@@ -6,7 +6,7 @@ function start_server(){
     CNT=0
     while [[ $CNT -lt ${NUM_SERVERS} ]]; do 
         if mkdir ${LOCKDIR}; then
-            docker run -d --name ${SERVER_CONTAINER}-${CNT} --cpuset-cpus=${SERVER_CPUS[${CNT}]} --net $NET $SERVER_IMAGE -t 4 -m 4096 -n 550
+            docker run -d --name ${SERVER_CONTAINER}-${CNT} --cpuset-cpus=${SERVER_CPUS[${CNT}]} --net $NET $SERVER_IMAGE -t 1 -m 4096 -n 550
 	    local server_pid=$(docker inspect -f '{{.State.Pid}}' ${SERVER_CONTAINER}-${CNT})
             CNT=$((CNT + 1))
             if [ -z "$SERVER_PIDS" ]; then
@@ -23,7 +23,7 @@ function start_server(){
 
 function start_client(){
     (($DEV)) && echo "start client"
-    docker run -v ${CWD}/files/docker-entrypoint.sh:/entrypoint.sh -v ${CWD}/files/servers.txt:/usr/src/memcached/memcached_client/servers.txt --net $NET --name $CLIENT_CONTAINER $CLIENT_IMAGE $DATASET_SCALE 4 $TARGET_RPS
+    docker run -v ${CWD}/files/docker-entrypoint.sh:/entrypoint.sh -v ${CWD}/files/servers.txt:/usr/src/memcached/memcached_client/servers.txt --net $NET --name $CLIENT_CONTAINER --cpuset-cpus=${CLIENT_CPUS} $CLIENT_IMAGE $DATASET_SCALE $WORKER_NUM $TARGET_RPS
 }
 
 function detect_stage () {
