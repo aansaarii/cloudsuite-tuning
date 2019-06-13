@@ -58,6 +58,11 @@ function log_folder () {
     fi  
 }
 
+function rm_all_containers(){
+    docker stop $(docker ps -aq)
+    docker rm $(docker ps -aq)
+}
+
 platform_check
 (($DEV)) && docker_permission
 (($DEV)) && valid_core  
