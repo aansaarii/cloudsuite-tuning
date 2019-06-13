@@ -21,7 +21,7 @@ while read OPERATIONS; do
 
     detect_stage warmup
     (($DEV)) && echo "warmup ready"
-    perf stat -e $INST,$CYCLES,$UOPS_RETIRED_U --cpu $SERVER_CPUS -G docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID sleep infinity 2>>$PERF_LOG 
+    perf stat -e $INST,$CYCLES,$UOPS_RETIRED_U --cpu $SERVER_CPUS -G docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID sleep infinity 2>>$PERF_LOG &
     detect_stage finished 
     pkill -fx "sleep infinity"
     # docker stop $CLIENT_CONTAINER
