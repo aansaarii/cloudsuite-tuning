@@ -1,0 +1,48 @@
+#!/bin/bash 
+
+function start_server(){
+    (($DEV)) && echo "start server" 
+    clean_containers $SERVER_CONTAINER
+    docker run -dt --name $SERVER_CONTAINER --cpuset-cpus=$SERVER_CPUS --net $NET $SERVER_IMAGE /etc/bootstrap.sh 
+}
+
+function start_db(){
+    (($DEV)) && echo "start database"
+    clean_containers $DB_CONTAINER
+    docker run -dt --net=$NET --name=$DB_CONTAINER --cpuset-cpus=$DB_CPUS $DB_IMAGE $HOST_IP
+}
+
+function start_caching_layer(){
+    (($DEV)) && echo "start caching layer"
+    clean_containers $CACHING_CONTAINER
+    docker run -dt --net=$NET --name=$CACHING_CONTAINER --cpuset-cpus=$CACHING_CPUS $CACHING_IMAGE memcached -u root -m 65535 -t 4 
+}
+
+function start_client(){
+    (($DEV)) && echo "start client"
+    # clean_containers $CLIENT_CONTAINER
+    docker run -d --name=$CLIENT_CONTAINER -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=$CLIENT_CPUS --net $NET $CLIENT_IMAGE localhost $USER_NUM 
+}
+
+function detect_stage(){
+    case "$1" in
+    warmup)
+        KEYWORDS="Buildfile"
+        log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 1 
+        (($DEV)) && echo "Rampup completed"
+        ;;
+    esac
+}
+
+function log_client(){
+    docker logs $CLIENT_CONTAINER >> $CLIENT_LOG 
+}
+
+function client_summary(){
+    metrics=(metric avg p90th p99th totalOps)
+    for metric in ${metrics[@]}; do
+        echo "$metric" >> $CLIENT_SUMMARY
+        grep ${metric} $CLIENT_LOG | grep -o '>.*<' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY
+    done
+    awk '{printf "%15s\n",$1 }' $PERF_LOG >> $CLIENT_SUMMARY
+}
