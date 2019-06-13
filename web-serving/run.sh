@@ -20,7 +20,8 @@ perf stat -e $INST,$CYCLES,$UOPS_RETIRED_U --cpu $SERVER_CPUS -G docker/$SERVER_
 detect_stage rampdown && echo "benchmark finished"
 
 pkill -fx "sleep infinity"
-log_client
+# log_client
+docker cp $CLIENT_CONTAINER:/usr/src/faban/output/1/ $OUT/client-results
 cp user.cfg $OUT/user.cfg 
 log_folder
 

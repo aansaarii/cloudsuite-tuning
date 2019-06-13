@@ -39,10 +39,6 @@ function detect_stage(){
     esac
 }
 
-function log_client(){
-    docker logs $CLIENT_CONTAINER >> $CLIENT_LOG 
-}
-
 function client_summary(){
     metrics=(metric avg p90th p99th totalOps)
     for metric in ${metrics[@]}; do
