@@ -1,0 +1,31 @@
+#!/bin/bash 
+
+function start_server(){
+    (($DEV)) && echo "start server" 
+    clean_containers $SERVER_CONTAINER
+    docker run -d --name $SERVER_CONTAINER --cpuset-cpus=$SERVER_CPUS --volumes-from $DATASET_CONTAINER --net $NET $SERVER_IMAGE 
+}
+
+function start_client(){
+    (($DEV)) && echo "start client"
+    # clean_containers $CLIENT_CONTAINER
+    docker run -t --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /tmp/media-streaming-client-results:/output --volumes-from $DATASET_CONTAINER --net $NET $CLIENT_IMAGE $SERVER_CONTAINER
+}
+
+function detect_stage(){
+    case "$1" in
+    warmup)
+        KEYWORDS="Benchmark stats"
+        log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 2
+        (($DEV)) && echo "Rampup completed"
+        ;;
+    finished)
+	KEYWORDS="Benchmark succeeded for 500 sessions"
+	log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 5
+	;; 
+    esac
+}
+
+function log_client(){
+    docker logs $CLIENT_CONTAINER >> $CLIENT_LOG 
+}
