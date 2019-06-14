@@ -3,7 +3,7 @@
 function start_master(){
     (($DEV)) && echo "start master" 
     clean_containers $MASTER_CONTAINER
-    docker run -dP --name $MASTER_CONTAINER --cpuset-cpus=$MASTER_CPUS --net $NET --hostname $MASTER_CONTAINER $MASTER_IMAGE master 
+    docker run -dP --name $MASTER_CONTAINER --cpuset-cpus=$MASTER_CPUS --net $NET -e JAVA_HOME=$JAVA_HOME --hostname $MASTER_CONTAINER $MASTER_IMAGE master 
 }
 
 function start_slave(){
