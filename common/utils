@@ -16,13 +16,11 @@ function cvt_cpu() {
 }
 
 function create_dataset(){
-    (($DEV)) && echo "create dataset"
-    [ ! "$(docker ps -a | grep ${DATASET_CONTAINER})" ] && docker create --name ${DATASET_CONTAINER} ${DATASET_IMAGE}
+    [ ! "$(docker ps -a | grep ${DATASET_CONTAINER})" ] && docker create --name ${DATASET_CONTAINER} ${DATASET_IMAGE} && echo "dataset $DATASET_CONTAINER created"
 }
 
 function create_network(){
-    (($DEV)) && echo "create network"
-    [ ! "$(docker network ls | grep ${NET})" ] && docker network create ${NET}
+    [ ! "$(docker network ls | grep ${NET})" ] && docker network create ${NET} && echo "network $NET created"
 }
 
 function clean_containers(){
