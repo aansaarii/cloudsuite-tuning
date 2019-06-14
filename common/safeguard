@@ -59,7 +59,7 @@ function log_folder () {
 }
 
 function rm_all_containers(){
-    [ "$(docker ps -aq)" ] && docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
+    [ "$(docker ps -aq)" ] && docker stop $(docker ps -aq) | xargs docker rm 
 }
 
 platform_check
