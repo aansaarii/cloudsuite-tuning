@@ -3,26 +3,19 @@
 function start_master(){
     (($DEV)) && echo "start master" 
     clean_containers $MASTER_CONTAINER
-    docker run -dP --name $MASTER_CONTAINER --cpuset-cpus=$MASTER_CPUS --net $NET -e JAVA_HOME=$JAVA_HOME --hostname $MASTER_CONTAINER $MASTER_IMAGE master 
+    docker run -dP -t --name $MASTER_CONTAINER --cpuset-cpus=$MASTER_CPUS --net $NET -e JAVA_HOME=$JAVA_HOME --hostname $MASTER_CONTAINER $MASTER_IMAGE master 
 }
 
-function start_slave(){
-    (($DEV)) && echo "start slave"
-    clean_containers $SLAVE_CONTAINER
+function start_worker(){
+    (($DEV)) && echo "start worker"
+    clean_containers $WORKER_CONTAINER
     CNT=0
-    while [[ ${CNT} -lt ${NUM_SLAVES} ]]; do
+    while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
         if mkdir ${LOCKDIR}; then
-            docker run -dP --net ${NET} --name ${SLAVE_CONTAINER}-${CNT} -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=${SLAVE_CPUS[${CNT}]} --hostname ${SLAVE_CONTAINER}-${CNT} ${HADOOP} slave
-            local slave_id=$(docker inspect -f '{{.State.Pid}}' ${SLAVE_CONTAINER}-${CNT})
-            (($DEV)) && echo "slave_id $slave_id"
-            CNT=$((CNT + 1))
-            if [ -z "$SLAVE_PIDS" ]; then
-               SLAVE_PIDS=$slave_id
-            else
-               SLAVE_PIDS="$SLAVE_PIDS,$slave_id"
-            fi
+            docker run -dP -t --net ${NET} --name ${WORKER_CONTAINER}-${CNT} -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=${WORKER_CPUS[${CNT}]} --hostname ${WORKER_CONTAINER}-${CNT} ${HADOOP} slave
             rm -rf ${LOCKDIR}
         fi
+	CNT=$((CNT+1))
     done
 }
 

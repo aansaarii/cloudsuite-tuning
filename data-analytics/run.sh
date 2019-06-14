@@ -7,23 +7,14 @@ source main_func
 # create_dataset 
 create_network 
 start_master
+clean_containers $WORKER_CONTAINER
+start_worker
+docker exec $MASTER_CONTAINER benchmark & 
+sleep 60
+WORKER_CGROUP_ID=`docker ps --no-trunc -aqf "name=slave-0"`
+sudo perf stat -e $INST,$CYCLES,$UOPS_RETIRED_U --cpu $WORKER_CPUS -G docker/$WORKER_CGROUP_ID,docker/$WORKER_CGROUP_ID,docker/$WORKER_CGROUP_ID sleep $MEASURE_TIME 2>>$PERF_LOG
 
 #SERVER_PID=$(docker inspect -f '{{.State.Pid}}' ${SERVER_CONTAINER})
-
-while read OPERATIONS; do 
-    clean_containers $SLAVE_CONTAINER
-    start_slave   
-    docker exec $MASTER_CONTAINER benchmark 
-if [ 0 -eq 1 ]; then 
-    detect_stage warmup
-    (($DEV)) && echo "warmup ready"
-    sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $SERVER_PID sleep $MEASURE_TIME 2>$PERF_LOG
-
-    docker stop $CLIENT_CONTAINER
-    log_client 
-fi 
-
-done < $OPERATIONS_FILE
 
 #client_summary 
 #cp user.cfg $OUT/user.cfg
