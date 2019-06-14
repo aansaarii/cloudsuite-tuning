@@ -12,7 +12,7 @@ function start_slave(){
     CNT=0
     while [[ ${CNT} -lt ${NUM_SLAVES} ]]; do
         if mkdir ${LOCKDIR}; then
-            docker run -dP --net ${NET} --name ${SLAVE_CONTAINER}-${CNT} -e $JAVA_HOME=$JAVA_HOME --cpuset-cpus=${SLAVE_CPUS[${CNT}]} --hostname ${SLAVE_CONTAINER}-${CNT} ${HADOOP} slave
+            docker run -dP --net ${NET} --name ${SLAVE_CONTAINER}-${CNT} -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=${SLAVE_CPUS[${CNT}]} --hostname ${SLAVE_CONTAINER}-${CNT} ${HADOOP} slave
             local slave_id=$(docker inspect -f '{{.State.Pid}}' ${SLAVE_CONTAINER}-${CNT})
             (($DEV)) && echo "slave_id $slave_id"
             CNT=$((CNT + 1))
