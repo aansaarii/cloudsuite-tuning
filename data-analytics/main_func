@@ -1,0 +1,51 @@
+#!/bin/bash 
+
+function start_master(){
+    (($DEV)) && echo "start master" 
+    clean_containers $MASTER_CONTAINER
+    docker run -dP --name $MASTER_CONTAINER --cpuset-cpus=$MASTER_CPUS --net $NET --hostname $MASTER_CONTAINER $MASTER_IMAGE master 
+}
+
+function start_slave(){
+    (($DEV)) && echo "start slave"
+    clean_containers $SLAVE_CONTAINER
+    CNT=0
+    while [[ ${CNT} -lt ${NUM_SLAVES} ]]; do
+        if mkdir ${LOCKDIR}; then
+            docker run -dP --net ${NET} --name ${SLAVE_CONTAINER}-${CNT} -e $JAVA_HOME=$JAVA_HOME --cpuset-cpus=${SLAVE_CPUS[${CNT}]} --hostname ${SLAVE_CONTAINER}-${CNT} ${HADOOP} slave
+            local slave_id=$(docker inspect -f '{{.State.Pid}}' ${SLAVE_CONTAINER}-${CNT})
+            (($DEV)) && echo "slave_id $slave_id"
+            CNT=$((CNT + 1))
+            if [ -z "$SLAVE_PIDS" ]; then
+               SLAVE_PIDS=$slave_id
+            else
+               SLAVE_PIDS="$SLAVE_PIDS,$slave_id"
+            fi
+            rm -rf ${LOCKDIR}
+        fi
+    done
+}
+
+function detect_stage(){
+    case "$1" in
+    warmup)
+        KEYWORDS="Mahout: seqwiki"
+        log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 2
+        (($DEV)) && echo "Warm up completed"
+        ;;
+    finished)
+	KEYWORDS="completed successfully"
+        log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 2
+        (($DEV)) && echo "Finished"
+        ;;
+    esac
+}
+
+function log_client(){
+    docker logs $CLIENT_CONTAINER >> $CLIENT_LOG 
+}
+
+function client_summary(){
+    # grep "" $CLIENT_LOG >> $CLIENT_SUMMARY
+    cat $PERF_LOG | awk '{printf "%15s\n",$1}' >> $CLIENT_SUMMARY
+}
