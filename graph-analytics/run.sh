@@ -25,13 +25,14 @@ while [[ $CNT -lt $REPEAT ]]; do
     if mkdir $LOCKDIR_RUN; then
 	start_client 
 	detect_stage executor-ready
-	(($DEV)) && echo "executors ready"
-	
+	(($DEV)) && echo "executors ready" >> $UTIL_LOG
+    docker stats container ${WORKER_CONTAINER}-0 >> $UTIL_LOG & 
 	EXEC_ID=`docker container top ${WORKER_CONTAINER}-0  | grep executor | tr ' ' '\n' | grep '[^[:blank:]]' | sed -n "2 p"`
 	sudo perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS -p $WORKER_PIDS,$EXEC_ID sleep infinity 2>>$PERF_LOG &
 
 	detect_stage executor-killed 
 	pkill -fx "sleep infinity"
+    pkill -fx "docker stats"
 	(($DEV)) && echo "executor killed"
 	detect_stage finished 
 	(($DEV)) && echo "Finished"
