@@ -41,6 +41,9 @@ function detect_stage(){
 
 function client_summary(){
     awk '{printf "%15s\n",$1 }' $PERF_LOG >> $CLIENT_SUMMARY
+
+    grep "ops/sec" $OUT/client-results/summary.xml | awk ' NR%2' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY
+ 
     metrics=(BrowsetoElgg DoLogin PostSelfWall AddFriend Register Logout UpdateActivity)
 
     for metric in ${metrics[@]}; do 
