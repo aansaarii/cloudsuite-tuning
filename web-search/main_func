@@ -49,7 +49,9 @@ function log_client(){
 }
 
 function client_summary(){
-    metrics=(metric avg p90th p99th totalOps)
+    echo "throughput" >> $CLIENT_SUMMARY 
+    grep "metric" $CLIENT_LOG | awk 'NR%2==0' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY    
+    metrics=(avg p90th p99th totalOps)
     for metric in ${metrics[@]}; do
         echo "$metric" >> $CLIENT_SUMMARY 
         grep ${metric} $CLIENT_LOG | grep -o '>.*<' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY 
