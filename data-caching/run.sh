@@ -6,6 +6,7 @@ source main_func
 
 (($DEV)) && echo $NUM_SERVERS
 
+rm_all_containers
 create_network 
 start_server 
 
@@ -19,7 +20,7 @@ while read TARGET_RPS; do
     (($DEV)) && echo "warmup ready" 
     SERVER_CGROUP_ID=`docker ps --no-trunc -aqf "name=$SERVER_CONTAINER"`
     sleep 10
-    perf stat -e $INST,$CYCLES,$UOPS_RETIRED_U --cpu $SERVER_CPUS -G docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID sleep $MEASURE_TIME 2>>$PERF_LOG 
+    perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -G docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID sleep $MEASURE_TIME 2>>$PERF_LOG 
     docker stop $CLIENT_CONTAINER
     log_client 
     
