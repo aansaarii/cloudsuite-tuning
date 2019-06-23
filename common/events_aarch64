@@ -6,3 +6,11 @@ UOPS_RETIRED_U=r00e8:u
 UOPS_RETIRED=r00e8
 UOPS_STALLED_FRONTEND=r0023
 UOPS_STALLED_BACKEND=r0024
+UOPS_LD=r00e9:u
+UOPS_ST=r00ea:u
+UOPS_FUSED=r00eb:u
+
+INST_BR=r0021:u # branch retired 
+INST_BR_MISP=r0022:u # branch retired, mispredicted 
+INST_FP=r0075:u # speculatively exec FP ops
+INST_SPEC=r001b:u # speculatively exec inst 
