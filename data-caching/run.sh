@@ -1,5 +1,5 @@
 #!/bin/bash 
-# set -x
+#set -x
 
 source ../common/safeguard
 source main_func
@@ -11,10 +11,8 @@ create_network
 start_server 
 
 while read TARGET_RPS; do 
-
     clean_containers $CLIENT_CONTAINER
-    start_client &  
-
+    start_client &   
     detect_stage warmup
 
     (($DEV)) && echo "warmup ready" 
@@ -29,6 +27,6 @@ while read TARGET_RPS; do
     cp user.cfg $OUT/user.cfg
 
     log_folder
- 
+
 done < $RPS_FILE
  
