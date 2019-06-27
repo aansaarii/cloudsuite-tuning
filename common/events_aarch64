@@ -14,3 +14,6 @@ INST_BR=r0021:u # branch retired
 INST_BR_MISP=r0022:u # branch retired, mispredicted 
 INST_FP=r0075:u # speculatively exec FP ops
 INST_SPEC=r001b:u # speculatively exec inst 
+
+ICACHE_MISS=r0001:u # L1 i-cache refill 
+ITLB_MISS=r0002:u # L1 iTLB refill 
