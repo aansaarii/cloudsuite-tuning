@@ -5,3 +5,42 @@ CYCLES=cycles:u
 UOPS_RETIRED_U=cpu/event=0xc2,umask=0x01,name=uops_retired:u/u
 UOPS_RETIRED=cpu/event=0xc2,umask=0x01,name=uops_retired/
 UOPS_STALLED=cpu/event=0xc2,umask=0x01,inv=1,cmask=1,name=uops_stalled/
+
+# BR_INST_RETIRED.ALL_BRANCHES, architectural
+INST_BRANCH=cpu/event=0xc4,umask=0x00,name=inst_br:u/u
+
+# BR_MISP_RETIRED.ALL_BRANCHES, architectural 
+INST_BRANCH_MISP=cpu/event=0xc5,umask=0x00,name=inst_br_misp:u/u
+
+# BR_INST_RETIRED.CONDITIONAL, number of conditional branch inst retired 
+INST_CONDITIONAL_BRANCH=cpu/event=0xc4,umask=0x01,name=inst_br_cond/u
+
+# BR_MISP_RETIRED.CONDITIONAL, mispredicted conditional branch inst retired
+INST_CONDITIONAL_BRANCH_MIST=cpu/event=0xc5,umask=0x01,name=inst_br_cond_misp:u/u
+ 
+INST_FP=cpu/event=0xc0,umask=0x02,name=inst_fp/u
+
+# MEM_UOPS_RETIRED.ALL_LOADS
+UOPS_LD=cpu/event=0xd0,umask=0x81,name=uops_ld:u/u
+
+# MEM_UOPS_RETIRED.ALL_STORES
+UOPS_ST=cpu/event=0xd0,umask=0x82,name=uops_st:u/u
+
+# ARITH.DIVIDER_UOPS
+UOPS_DIV=cpu/event=0x14,umask=0x02,name=uops_div/
+
+# UOPS_RETIRED.MACRO_FUSED
+UOPS_FUSED=cpu/event=0xc2,umask=0x04,name=uops_fused:u/u
+
+# LOAD_HIT_PREF.HW_PF
+PREF_LD_HW=cpu/event=0x4c,umask=0x02,name=pref_ld_hit_hw/
+PREF_LD_SW=cpu/event=0x4c,umask=0x01,name=pref_ld_hit_sw/
+
+# L2_RQSTS.ALL_PF
+PREF_L2=cpu/event=0x24,umask=0xf8,name=pref_l2/
+
+# ICACHE MISSES
+ICACHE_MISS=cpu/event=0x80,umask=0x02,name=icache_miss/u
+ITLB_MISS=cpu/event=0x85,umask=0x01,name=itlb_miss/u
+
+
