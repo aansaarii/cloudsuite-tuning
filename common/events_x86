@@ -2,9 +2,9 @@
 
 INST=instructions:u
 CYCLES=cycles:u
-UOPS_RETIRED_U=cpu/event=0xc2,umask=0x01,name=uops_retired:u/u
-UOPS_RETIRED=cpu/event=0xc2,umask=0x01,name=uops_retired/
-UOPS_STALLED=cpu/event=0xc2,umask=0x01,inv=1,cmask=1,name=uops_stalled/
+UOPS_RETIRED=cpu/event=0xc2,umask=0x01,name=uops_retired:u/u
+UOPS_RETIRED_CYC=cpu/event=0xc2,umask=0x01,cmask=1,name=uops_retired_cycles:u/u
+UOPS_STALLED=cpu/event=0xc2,umask=0x01,inv=1,cmask=1,name=uops_stalled_cycles:u/u
 
 # BR_INST_RETIRED.ALL_BRANCHES, architectural
 INST_BRANCH=cpu/event=0xc4,umask=0x00,name=inst_br:u/u
@@ -40,7 +40,45 @@ PREF_LD_SW=cpu/event=0x4c,umask=0x01,name=pref_ld_hit_sw/
 PREF_L2=cpu/event=0x24,umask=0xf8,name=pref_l2/
 
 # ICACHE MISSES
-ICACHE_MISS=cpu/event=0x80,umask=0x02,name=icache_miss/u
-ITLB_MISS=cpu/event=0x85,umask=0x01,name=itlb_miss/u
+ICACHE_HIT=cpu/event=0x80,umask=0x01,name=icache_hit:u/u
+ICACHE_MISS=cpu/event=0x80,umask=0x02,name=icache_miss:u/u
+ICACHE_STALL=cpu/event=0x80,umask=0x04,name=icache_stall:u/u
 
+# ITLB_MISSES.MISS_CAUSES_A_WALK
+ITLB_MISS=cpu/event=0x85,umask=0x01,name=itlb_miss:u/u
+# ITLB_MISSES.STLB_HIT
+ITLB_MISS_STLB_HIT=cpu/event=0x85,umask=0x60,name=itlb_miss_stlb_hit:u/u
+ITLB_MISS_WALK_DURATION=cpu/event=0x85,umask=0x10,name=itlb_miss_walk_duration:u/u
+
+DTLB_MISS=cpu/event=0x08,umask=0x01,name=dtlb_miss:u/u
+
+# IDQ_UOPS_NOT_DELIVERED.CORE, number of undelivered uops from frontend to Resource Allocation Table while backend is not stalled  
+RS_EMPTY=cpu/event=0x5e,umask=0x01,name=rs_empty/
+IDQ_EMPTY=cpu/event=0x79,umask=0x02,name=idq_empty:u/u
+BACKEND_STALL=cpu/event=0xa2,umask=0x01,name=backend_stall:u/u
+ROB_FULL=cpu/event=0xa2,umask=0x10,name=rob_full/
+SB_FULL=cpu/event=0xa2,umask=0x08,name=sb_full/
+RS_FULL=cpu/event=0xa2,umask=0x04,name=rs_full/
+
+CACHE_ACCESS_L2=cpu/event=0x24,umask=0xff,name=all_l2_req:u/u
+CACHE_MISS_L2=cpu/event=0x24,umask=0x3f,name=all_l2_miss:u/u
+ICACHE_MISS_L2_CNT=cpu/event=0x24,umask=0x24,name=code_l2_miss:u/u
+ICACHE_ACCESS_L2=cpu/event=0x24,umask=0xe4,name=code_l2_req:u/u
+ICACHE_HIT_L2_CNT=cpu/event=0x24,umask=0x44,name=code_l2_hit:u/u
+
+L2_DEMAND_MISS=cpu/event=0x24,umask=0x27,name=l2_demand_miss:u/u
+L2_PF_MISS=cpu/event=0x24,umask=0x30,name=l2_pref_miss:u/u
+L2_ALL_MISS=cpu/event=0x24,umask=0x3f,name=l2_all_miss:u/u
+
+# cycles when offcore outstanding demand data read tx are present in superqueue to uncore
+DCACHE_MISS_UNCORE_CYC=cpu/event=0x60,umask=0x01,cmask=1,name=uncore_demand_data_cyc:u/u
+ICACHE_MISS_UNCORE_CYC=cpu/event=0x60,umask=0x02,cmask=1,name=uncore_demand_code_cyc:u/u
+DCACHE_MISS_UNCORE_CNT=cpu/event=0x60,umask=0x01,name=uncore_demand_data_cnt:u/u
+ICACHE_MISS_UNCORE_CNT=cpu/event=0x60,umask=0x02,name=uncore_demand_code_cnt:u/u
+
+FE_STALL_LCP=cpu/event=0x87,umask=0x01,name=stall_cycles_lcp:u/u
+FE_STALL_IQ=cpu/event=0x87,umask=0x04,name=stall_cycles_iq:u/u
+
+NUKE_CYC=cpu/event=0xc3,umask=0x01,name=machine_clear_cycles:u/u
+NUKE_CNT=cpu/event=0xc3,umask=0x01,edgedetect=1,cmask=1,name=machine_clear_cnt:u/u
 
