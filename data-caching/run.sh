@@ -6,6 +6,7 @@ source main_func
 
 (($DEV)) && echo $NUM_SERVERS
 
+rm_all_containers
 create_network 
 start_server 
 
