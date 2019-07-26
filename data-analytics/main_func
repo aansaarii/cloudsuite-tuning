@@ -3,20 +3,13 @@
 function start_master(){
     (($DEV)) && echo "start master" 
     clean_containers $MASTER_CONTAINER
-    docker run -dP -t --name $MASTER_CONTAINER --cpuset-cpus=$MASTER_CPUS --net $NET -e JAVA_HOME=$JAVA_HOME --hostname $MASTER_CONTAINER $MASTER_IMAGE master 
+    docker run -dP -t --name $MASTER_CONTAINER -v $WIKI_FILE:/root/wiki --cpuset-cpus=$MASTER_CPUS --net $NET -e JAVA_HOME=$JAVA_HOME --hostname $MASTER_CONTAINER $MASTER_IMAGE master 
 }
 
 function start_worker(){
     (($DEV)) && echo "start worker"
     clean_containers $WORKER_CONTAINER
-    CNT=0
-    while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
-        if mkdir ${LOCKDIR}; then
-            docker run -dP -t --net ${NET} --name ${WORKER_CONTAINER}-${CNT} -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=${WORKER_CPUS[${CNT}]} --hostname ${WORKER_CONTAINER}-${CNT} ${HADOOP} slave
-            rm -rf ${LOCKDIR}
-        fi
-	CNT=$((CNT+1))
-    done
+    docker run -dP -t --net ${NET} --name ${WORKER_CONTAINER}-0 -v $CWD/files/yarn-site.xml:/opt/hadoop-2.9.1/etc/hadoop/yarn-site.xml -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=${WORKER_CPUS[0]} --hostname ${WORKER_CONTAINER}-0 ${HADOOP} slave
 }
 
 function detect_stage(){
@@ -39,7 +32,6 @@ function log_client(){
 }
 
 function client_summary(){
-    # grep "" $CLIENT_LOG >> $CLIENT_SUMMARY
     grep took $CLIENT_LOG >> $CLIENT_SUMMARY
     # cat $PERF_LOG | awk '{printf "%15s\n",$1}' >> $CLIENT_SUMMARY
 }
