@@ -3,7 +3,7 @@
 function start_master(){
     (($DEV)) && echo "start master" 
     clean_containers $MASTER_CONTAINER
-    docker run -dP -t --name $MASTER_CONTAINER -v $WIKI_FILE:/root/wiki --cpuset-cpus=$MASTER_CPUS --net $NET -e JAVA_HOME=$JAVA_HOME --hostname $MASTER_CONTAINER $MASTER_IMAGE master 
+    docker run -dP -t --name $MASTER_CONTAINER -v $WIKI_FILE:/root/wiki -v $CWD/files/mapred-site.xml:/opt/hadoop-2.9.1/etc/hadoop/mapred-site.xml --cpuset-cpus=$MASTER_CPUS --net $NET -e JAVA_HOME=$JAVA_HOME --hostname $MASTER_CONTAINER $MASTER_IMAGE master 
 }
 
 function start_worker(){
