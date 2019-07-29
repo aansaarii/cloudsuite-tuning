@@ -6,7 +6,7 @@ function start_server(){
     CNT=0
     while [[ $CNT -lt ${NUM_SERVERS} ]]; do 
         if mkdir ${LOCKDIR}; then
-            docker run -d --name ${SERVER_CONTAINER}-${CNT} --cpuset-cpus=${SERVER_CPUS[${CNT}]} --net $NET $SERVER_IMAGE -t 1 -m 4096 -n 550
+            docker run -d --name ${SERVER_CONTAINER}-${CNT} --cpuset-cpus=${SERVER_CPUS[${CNT}]} --net $NET $SERVER_IMAGE -t $SERVER_NUM -m 40960 -n 550
 	    local server_pid=$(docker inspect -f '{{.State.Pid}}' ${SERVER_CONTAINER}-${CNT})
             CNT=$((CNT + 1))
             if [ -z "$SERVER_PIDS" ]; then
