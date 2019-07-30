@@ -42,26 +42,6 @@ function valid_core () {
     fi
 }
 
-function log_folder () {
-    if [[ ! -d $RESULTS ]]; then 
-        (($DEV)) && echo "create experimental folder $RESULTS"
-	mkdir $RESULTS 
-    fi 
-
-    if [[ ! -d $OUT ]]; then 
-        (($DEV)) && echo "create tmp folder $OUT"
-        mkdir $OUT
-    else
-        exp_cnt=`ls $RESULTS | grep -Eo [0-9]+ | sort -rn | head -n 1`
-        (($DEV)) && echo "max exp count is $exp_cnt"
-        [ "$(ls -A $OUT)" ] && mv $OUT $RESULTS/$((exp_cnt + 1)) && mkdir $OUT 
-    fi  
-}
-
-function rm_all_containers(){
-    [ "$(docker ps -aq)" ] && docker stop $(docker ps -aq) | xargs docker rm 
-}
-
 platform_check
 (($DEV)) && docker_permission
 (($DEV)) && valid_core  
