@@ -9,7 +9,7 @@ function start_server(){
 function start_client(){
     (($DEV)) && echo "start client"
     # clean_containers $CLIENT_CONTAINER
-    docker run -t --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /tmp/media-streaming-client-results:/output --volumes-from $DATASET_CONTAINER --net $NET $CLIENT_IMAGE $SERVER_CONTAINER
+    docker run -t --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /home/cloudsuite-tuning/media-streaming/files/benchmark.sh:/root/run/benchmark.sh --volumes-from $DATASET_CONTAINER --net $NET $CLIENT_IMAGE $SERVER_CONTAINER
 }
 
 function detect_stage(){
@@ -19,8 +19,8 @@ function detect_stage(){
         log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 2
         (($DEV)) && echo "Rampup completed"
         ;;
-    finished)
-	KEYWORDS="Benchmark succeeded for 500 sessions"
+    finished) # Net I/O: 
+	KEYWORDS="Net"
 	log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 5
 	;; 
     esac
