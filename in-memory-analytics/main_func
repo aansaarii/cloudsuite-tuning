@@ -11,20 +11,9 @@ function start_workers(){
     (($DEV)) && echo "start workers"
     clean_containers $WORKER_CONTAINER
     CNT=0
-    while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do 
-        if mkdir ${LOCKDIR}; then
-            docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
-            local worker_id=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER}-${CNT})  
-            (($DEV)) && echo "worker_id $worker_id"
-            CNT=$((CNT + 1))
-            if [ -z "$WORKER_PIDS" ]; then 
-                WORKER_PIDS=$worker_id
-            else
-               WORKER_PIDS="$WORKER_PIDS,$worker_id"
-            fi  
-            rm -rf ${LOCKDIR} 
-        fi 
-    done
+    docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
+    local worker_id=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER}-${CNT})  
+    (($DEV)) && echo "worker_id $worker_id"
 }
 
 function start_client(){
@@ -38,7 +27,9 @@ function start_client(){
         exit 1
     esac
     clean_containers $CLIENT_CONTAINER
-    docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} /data/${DATA_SIZE} /data/myratings.csv --driver-memory ${DRIVER_MEM} --executor-memory ${EXECUTOR_MEM} --master spark://${MASTER_CONTAINER}:7077
+   
+    # echo "$NET,$CLIENT_CPUS,$DRIVER_MEM,$DATASET_CONTAINER,$EXECUTOR_MEM,$TOTAL_EXECUTOR_CNT" 
+    docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} --driver-memory $DRIVER_MEM --executor-memory $EXECUTOR_MEM --executor-cores=$TOTAL_EXECUTOR_CNT --master spark://${MASTER_CONTAINER}:7077 
 }
 
 function detect_stage () {
@@ -49,37 +40,11 @@ function detect_stage () {
         ;;
     workers-ready) 
         KEYWORDS="Successfully registered with master"
-        READY=0
-        CNT=0
-        while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
-            log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}" 
-            if mkdir $LOCKDIR; then 
-                READY=$((READY+1))
-                CNT=$((CNT + 1))
-                if [[ ${READY} -eq ${NUM_WORKERS} ]]; then
-                    rm -rf ${LOCKDIR} 
-                    return
-                fi
-                rm -rf ${LOCKDIR}
-            fi 
-        done
+        log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}" 
         ;;
     executor-ready)
         KEYWORDS="ExecutorRunner: Launch command"
-        READY=0
-        CNT=0
-        while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
-            log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}"
-            if mkdir $LOCKDIR; then
-                READY=$((READY+1))
-                CNT=$((CNT + 1))
-                if [[ ${READY} -eq ${NUM_WORKERS} ]]; then
-                    rm -rf ${LOCKDIR}
-                    return
-                fi
-                rm -rf ${LOCKDIR}
-            fi
-        done
+        log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}"
         ;;
     warmup) 
         # Got 100004 ratings from 671 users on 9066 movies.
@@ -88,20 +53,7 @@ function detect_stage () {
         ;;
     executor-killed)
         KEYWORDS="ExecutorRunner: Killing process"
-        FINISHED=0
-        CNT=0
-        while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
-            log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}"
-            if mkdir $LOCKDIR; then
-                FINISHED=$((FINISHED+1))
-                CNT=$((CNT + 1))
-                if [[ ${FINISHED} -eq ${NUM_WORKERS} ]]; then
-                    rm -rf ${LOCKDIR}
-                    return
-                fi
-                rm -rf ${LOCKDIR}
-            fi
-        done
+        log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}" 2
         ;; 
     finished) 
         KEYWORDS="Benchmark execution time"
@@ -116,6 +68,7 @@ function detect_stage () {
 
 function log_client(){
     docker logs $CLIENT_CONTAINER >> $CLIENT_LOG
+    docker logs $CLIENT_CONTAINER 2>> $CLIENT_LOG2
 }
 
 function client_summary(){
