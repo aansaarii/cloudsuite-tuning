@@ -1,0 +1,46 @@
+#!/bin/bash 
+
+# Performance monitoring events for ClearTheCloud on Haswell 
+
+# Execution time breakdown  
+committing_cycles_u=cpu/event=0xc2,umask=0x01,cmask=1,name=uops_committing_cycles:u/u
+committing_cycles_k=cpu/event=0xc2,umask=0x01,cmask=1,name=uops_committing_cycles:k/k
+committing_cycles=cpu/event=0xc2,umask=0x01,cmask=1,name=uops_committing_cycles/
+stalled_cycles_u=cpu/event=0xc2,umask=0x01,inv=1,cmask=1,name=uops_stalled_cycles:u/u
+stalled_cycles_k=cpu/event=0xc2,umask=0x01,inv=1,cmask=1,name=uops_stalled_cycles:k/k
+stalled_cycles=cpu/event=0xc2,umask=0x01,inv=1,cmask=1,name=uops_stalled_cycles/
+#EXEC_TIME=$committing_cycles_u,$committing_cycles_k,$stalled_cycles_u,$stalled_cycles_k
+EXEC_TIME=$committing_cycles,$stalled_cycles,cycles
+
+# Memory cycles breakdown 
+# LLC+Mem stall
+llc_mem_stall_cycles_any=cpu/event=0x60,umask=0x08,cmask=1,name=llc_mem_stall_any/
+llc_mem_stall_cycles_demand=cpu/event=0x60,umask=0x08,cmask=1,name=llc_mem_stall_demand/
+l2_ifetch_hit=cpu/event=0x24,umask=0x44,name=l2_ifetch_hit/
+l2_ifetch_miss=cpu/event=0x24,umask=0x24,name=l2_ifetch_miss/
+llc_mem_inst_cycles=cpu/event=0x60,umask=0x02,cmask=1,name=llc_mem_inst_cycles/
+dtlb_load_miss_cycles=cpu/event=0x08,umask=0x10,name=dtlb_load_miss_cycles/
+itlb_miss_cycles=cpu/event=0x85,umask=0x10,name=itlb_miss_cycles/
+itlb_miss_stlb_hit=cpu/event=0x85,umask=0x60,name=itlb_miss_stlb_hit/
+MEM=$llc_mem_stall_cycles_any,$l2_ifetch_hit,$l2_ifetch_miss,$llc_mem_inst_cycles,$dtlb_load_miss_cycles,$itlb_miss_cycles,$itlb_miss_stlb_hit
+
+# Instruction miss rate
+l1_imiss=cpu/event=0x80,umask=0x02,name=l1_imiss/
+IMISS=$l1_imiss,instructions,$l2_ifetch_hit,$l2_ifetch_miss
+
+# Application IPC and MLP 
+l2_dmiss_req=cpu/event=0x60,umask=0x01,name=l2_dmiss_req/
+l2_dmiss_cycles=cpu/event=0x60,umask=0x01,cmask=1,name=l2_dmiss_cycles/
+MLP=$l2_dmiss_req,$l2_dmiss_cycles
+UIPC=instructions:u,cycles
+
+# L2 hit ratio 
+ld_l2_hit=cpu/event=0xd1,umask=0x02,name=ld_l2_hit/
+ld_l2_miss=cpu/event=0xd1,umask=0x10,name=ld_l2_miss/
+L2_HIT=$ld_l2_hit,$ld_l2_miss 
+
+# Memory bandwidth 
+ld_llc_miss=cpu/event=0xd1,umask=0x20,name=ld_llc_miss/
+BW=$ld_llc_miss,cycles
+
+
