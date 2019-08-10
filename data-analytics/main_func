@@ -10,8 +10,8 @@ function start_master(){
 function start_worker(){
     (($DEV)) && echo "start worker"
     clean_containers $WORKER_CONTAINER
-    # docker run -dP -t --net ${NET} --name ${WORKER_CONTAINER}-0 -v $CWD/files/yarn-site.xml:/opt/hadoop-2.9.1/etc/hadoop/yarn-site.xml -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=${WORKER_CPUS[0]} --hostname ${WORKER_CONTAINER}-0 ${HADOOP} slave
-    docker run -dP -t --net ${NET} --name ${WORKER_CONTAINER}-0 -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=${WORKER_CPUS[0]} --hostname ${WORKER_CONTAINER}-0 ${HADOOP} slave
+    # docker run -dP -t --net ${NET} --name ${WORKER_CONTAINER} -v $CWD/files/yarn-site.xml:/opt/hadoop-2.9.1/etc/hadoop/yarn-site.xml -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=${WORKER_CPUS} --hostname ${WORKER_CONTAINER} ${HADOOP} slave
+    docker run -dP -t --net ${NET} --name ${WORKER_CONTAINER} -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=${WORKER_CPUS} --hostname ${WORKER_CONTAINER}-0 ${HADOOP} slave
 }
 
 function detect_stage(){
