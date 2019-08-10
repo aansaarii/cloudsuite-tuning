@@ -34,5 +34,6 @@ function log_client(){
 }
 
 function client_summary(){
-    grep took $CLIENT_LOG >> $CLIENT_SUMMARY
+    grep "Benchmark time" ${CLIENT_LOG2} >> $CLIENT_SUMMARY
+    grep "took " $CLIENT_LOG | awk '{print $7}' >> $CLIENT_SUMMARY
 }
