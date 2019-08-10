@@ -5,6 +5,15 @@ source default.cfg
 
 rm -rf $LOCKDIR
 
+function input_file_check(){
+    # check if the required operation file presents
+    if [ -f $INPUT_FILE ]; then 
+	echo "Input file $INPUT_FILE found"
+    else
+	echo "WARNING,$INPUT_FILE not found!"
+    fi 
+}
+
 function platform_check(){
     if [[ "$(grep amd64 default.cfg)" ]]; then 
         echo "x86_64 dependent settings used"
@@ -42,7 +51,8 @@ function valid_core () {
     fi
 }
 
+input_file_check
 platform_check
-(($DEV)) && docker_permission
-(($DEV)) && valid_core  
+docker_permission
+valid_core  
 log_folder
