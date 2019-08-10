@@ -56,6 +56,20 @@ function log_helper_stdout () {
     done
 }
 
+function log_helper_extern (){
+    # Look for the key words in external log file 
+    # $1: external_log_name, $2: keyword, $3: delay (default=1)
+    while true; do
+        if grep -q "$2" "$1"; then
+            echo "$2 is found"
+            return
+        else
+            echo "$2 is not found"
+            sleep ${3-1}
+        fi
+    done
+}
+
 function log_folder () {
     if [[ ! -d $RESULTS ]]; then
         (($DEV)) && echo "create experimental folder $RESULTS"
