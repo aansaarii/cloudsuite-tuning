@@ -14,7 +14,6 @@ function start_server(){
 
 function start_client(){
     (($DEV)) && echo "start client"
-    # clean_containers $CLIENT_CONTAINER
     docker run --net=$NET -e JAVA_HOME=$JAVA_HOME --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $OPERATIONS $OPERATIONS $STOPTIME $OPERATIONS
 }
 
@@ -22,7 +21,7 @@ function detect_stage () {
     case "$1" in
     index-node-ready) 
 	KEYWORDS="Index Node IP Address"
-        log_helper_stdout ${SERVER_CONTAINER} "${KEYWORDS}" 5 
+        log_helper_stdout ${SERVER_CONTAINER} "${KEYWORDS}" 2 
 	SERVER_IP=`docker logs $SERVER_CONTAINER 2>/dev/null | grep "$KEYWORDS" | sed 's/.*\:\s//'` 
 	(($DEV)) && echo "Index node IP $SERVER_IP"
 	;;

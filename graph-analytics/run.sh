@@ -2,12 +2,9 @@
 
 # set -x
 
-# trap 'kill ${dataset_ready} ${master_ready} ${worker_ready} ${rampup_ready} ${measurement_ready}; exit' SIGINT
-
 source ../common/safeguard
 source main_func
 (($DEV)) && echo $NUM_WORKERS
-(($DEV)) && echo "Server cpus are $SERVER_CPUS"
 
 create_dataset  
 create_network 
@@ -26,8 +23,8 @@ while [[ $CNT -lt $REPEAT ]]; do
 	start_client 
 	detect_stage executor-ready
 	(($DEV)) && echo "executors ready" >> $UTIL_LOG
-    docker stats container ${WORKER_CONTAINER}-0 >> $UTIL_LOG & 
-	EXEC_ID=`docker container top ${WORKER_CONTAINER}-0  | grep executor | tr ' ' '\n' | grep '[^[:blank:]]' | sed -n "2 p"`
+    docker stats container ${WORKER_CONTAINER} >> $UTIL_LOG & 
+	EXEC_ID=`docker container top ${WORKER_CONTAINER}  | grep executor | tr ' ' '\n' | grep '[^[:blank:]]' | sed -n "2 p"`
 	sudo perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS -p $WORKER_PIDS,$EXEC_ID sleep infinity 2>>$PERF_LOG &
 
 	detect_stage executor-killed 

@@ -10,10 +10,7 @@ function start_master(){
 function start_workers(){
     (($DEV)) && echo "start workers"
     clean_containers $WORKER_CONTAINER
-    CNT=0
-    docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
-    local worker_id=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER}-${CNT})  
-    (($DEV)) && echo "worker_id $worker_id"
+    docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER} --cpuset-cpus=${WORKER_CPUS} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
 }
 
 function start_client(){
@@ -40,11 +37,11 @@ function detect_stage () {
         ;;
     workers-ready) 
         KEYWORDS="Successfully registered with master"
-        log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}" 
+        log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}" 
         ;;
     executor-ready)
         KEYWORDS="ExecutorRunner: Launch command"
-        log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}"
+        log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}"
         ;;
     warmup) 
         # Got 100004 ratings from 671 users on 9066 movies.
@@ -53,7 +50,7 @@ function detect_stage () {
         ;;
     executor-killed)
         KEYWORDS="ExecutorRunner: Killing process"
-        log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}" 2
+        log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}" 2
         ;; 
     finished) 
         KEYWORDS="Benchmark execution time"
@@ -69,6 +66,7 @@ function detect_stage () {
 function log_client(){
     docker logs $CLIENT_CONTAINER >> $CLIENT_LOG
     docker logs $CLIENT_CONTAINER 2>> $CLIENT_LOG2
+    docker logs $WORKER_CONTAINER 2>> $WORKER_LOG
 }
 
 function client_summary(){

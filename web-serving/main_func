@@ -15,12 +15,11 @@ function start_db(){
 function start_caching_layer(){
     (($DEV)) && echo "start caching layer"
     clean_containers $CACHING_CONTAINER
-    docker run -dt --net=$NET --name=$CACHING_CONTAINER --cpuset-cpus=$CACHING_CPUS $CACHING_IMAGE memcached -u root -m 65535 -t 4 
+    docker run -dt --net=$NET --name=$CACHING_CONTAINER --cpuset-cpus=$CACHING_CPUS $CACHING_IMAGE memcached -u root -m 128 -t 1 -vvv 
 }
 
 function start_client(){
     (($DEV)) && echo "start client"
-    # clean_containers $CLIENT_CONTAINER
     docker run -d --name=$CLIENT_CONTAINER -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=$CLIENT_CPUS --net $NET $CLIENT_IMAGE localhost $USER_NUM 
 }
 

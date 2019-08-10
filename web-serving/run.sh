@@ -4,8 +4,6 @@
 source ../common/safeguard
 source main_func
 
-(($DEV)) && echo "server cpus $SERVER_CPUS"
-
 create_network 
 start_db
 start_caching_layer
@@ -16,11 +14,13 @@ while read USER_NUM; do
     start_client &
 
     detect_stage warmup
-    SERVER_CGROUP_ID=`docker ps --no-trunc -aqf "name=$SERVER_CONTAINER"`
-    perf stat -e $INST,$CYCLES,$UOPS_RETIRED_U --cpu $SERVER_CPUS -G docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID,docker/$SERVER_CGROUP_ID sleep infinity 2>>$PERF_LOG &
+    echo "Warmup ready" >> $UTIL_LOG 
+    docker stats >> $UTIL_LOG & 
+    sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS sleep infinity 2>>$PERF_LOG &
     detect_stage rampdown && echo "benchmark finished"
 
-    pkill -fx "sleep infinity"
+    sudo pkill -fx "sleep infinity"
+    sudo pkill -f "docker stats"
     docker cp $CLIENT_CONTAINER:/usr/src/faban/output/1/ $OUT/client-results
     cp user.cfg $OUT/user.cfg
     client_summary 

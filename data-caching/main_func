@@ -3,22 +3,7 @@
 function start_server(){
     (($DEV)) && echo "start server"
     clean_containers $SERVER_CONTAINER
-    CNT=0
-    while [[ $CNT -lt ${NUM_SERVERS} ]]; do 
-        if mkdir ${LOCKDIR}; then
-            docker run -d --name ${SERVER_CONTAINER}-${CNT} --cpuset-cpus=${SERVER_CPUS[${CNT}]} --net $NET $SERVER_IMAGE -t $SERVER_NUM -m 40960 -n 550
-	    local server_pid=$(docker inspect -f '{{.State.Pid}}' ${SERVER_CONTAINER}-${CNT})
-            CNT=$((CNT + 1))
-            if [ -z "$SERVER_PIDS" ]; then
-                SERVER_PIDS=$server_pid
-            else
-                SERVER_PIDS="$SERVER_PIDS,$server_pid"
-            fi
-	    CNT=$((CNT + 1))
-            rm -rf ${LOCKDIR}
-        fi
-    done 
-    (($DEV)) && echo "server pids are $SERVER_PIDS"
+    docker run -d --name ${SERVER_CONTAINER} --cpuset-cpus=${SERVER_CPUS} --net $NET $SERVER_IMAGE -t $SERVER_NUM -m $SERVER_MEM -n 550
 }
 
 function start_client(){

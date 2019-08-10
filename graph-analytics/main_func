@@ -9,22 +9,9 @@ function start_master(){
 
 function start_workers(){
     clean_containers $WORKER_CONTAINER
-    CNT=0
-    (($DEV)) && echo "Worker cnt is ${NUM_WORKERS}"
-    while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do 
-        if mkdir ${LOCKDIR}; then
-            # docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
-            docker run -dP --net ${NET} -v $DATASET_VOL:/data --name ${WORKER_CONTAINER}-${CNT} --cpuset-cpus=${WORKER_CPUS[${CNT}]} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
-            local worker_id=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER}-${CNT})    
-            CNT=$((CNT + 1))
-            if [ -z "$WORKER_PIDS" ]; then 
-                WORKER_PIDS=$worker_id
-            else
-                WORKER_PIDS="$WORKER_PIDS,$worker_id"
-            fi  
-            rm -rf ${LOCKDIR}
-        fi 
-    done
+    # docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER} --cpuset-cpus=${WORKER_CPUS} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
+    docker run -dP --net ${NET} -v $DATASET_VOL:/data --name ${WORKER_CONTAINER} --cpuset-cpus=${WORKER_CPUS} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
+    WORKER_PIDS=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER})    
 }
 
 function start_client(){
@@ -43,59 +30,20 @@ function detect_stage () {
         ;;
     workers-ready) 
         KEYWORDS="Successfully registered with master"
-        READY=0
-        CNT=0
-        while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
-            log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}" 
-            if mkdir $LOCKDIR; then 
-                READY=$((READY+1))
-                CNT=$((CNT + 1))
-                if [[ ${READY} -eq ${NUM_WORKERS} ]]; then
-                    rm -rf ${LOCKDIR} 
-                    return
-                fi
-                rm -rf ${LOCKDIR}
-            fi 
-        done
+	log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}" 
         ;;
     executor-ready)
         KEYWORDS="ExecutorRunner: Launch command"
-        READY=0
-        CNT=0
-        while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
-            log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}"
-            if mkdir $LOCKDIR; then
-                READY=$((READY+1))
-                CNT=$((CNT + 1))
-                if [[ ${READY} -eq ${NUM_WORKERS} ]]; then
-                    rm -rf ${LOCKDIR}
-                    return
-                fi
-                rm -rf ${LOCKDIR}
-            fi
-        done
+	log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}"
         ;;
     warmup) 
-        # Got 100004 ratings from 671 users on 9066 movies.
+        # Got * ratings from * users on * movies.
         KEYWORDS="Total input paths to process"
         log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}"
         ;;
     executor-killed)
         KEYWORDS="ExecutorRunner: Killing process"
-        FINISHED=0
-        CNT=0
-        while [[ ${CNT} -lt ${NUM_WORKERS} ]]; do
-            log_helper_stderr ${WORKER_CONTAINER}-${CNT} "${KEYWORDS}"
-            if mkdir $LOCKDIR; then
-                FINISHED=$((FINISHED+1))
-                CNT=$((CNT + 1))
-                if [[ ${FINISHED} -eq ${NUM_WORKERS} ]]; then
-                    rm -rf ${LOCKDIR}
-                    return
-                fi
-                rm -rf ${LOCKDIR}
-            fi
-        done
+	log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}"
         ;;
   
     finished) 

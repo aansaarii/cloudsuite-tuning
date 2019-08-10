@@ -8,7 +8,6 @@ function start_server(){
 
 function start_client(){
     (($DEV)) && echo "start client"
-    # clean_containers $CLIENT_CONTAINER
     docker run -t --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /home/cloudsuite-tuning/media-streaming/files/benchmark.sh:/root/run/benchmark.sh --volumes-from $DATASET_CONTAINER --net $NET $CLIENT_IMAGE $SERVER_CONTAINER
 }
 
