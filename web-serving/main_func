@@ -20,7 +20,7 @@ function start_caching_layer(){
 
 function start_client(){
     (($DEV)) && echo "start client"
-    docker run -d --name=$CLIENT_CONTAINER -e JAVA_HOME=$JAVA_HOME --cpuset-cpus=$CLIENT_CPUS --net $NET $CLIENT_IMAGE localhost $USER_NUM 
+    docker run -d --name=$CLIENT_CONTAINER -e JAVA_HOME=$JAVA_HOME -v /home/ztian/cloudsuite-tuning/web-serving/files/bootstrap.sh:/etc/bootstrap.sh --cpuset-cpus=$CLIENT_CPUS --net $NET $CLIENT_IMAGE localhost $USER_NUM $RAMPTIME $STEADYTIME $STOPTIME 
 }
 
 function detect_stage(){

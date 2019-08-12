@@ -7,6 +7,7 @@ source main_func
 create_network 
 start_db
 start_caching_layer
+
 start_server
 
 while read USER_NUM; do 
@@ -25,5 +26,5 @@ while read USER_NUM; do
     cp user.cfg $OUT/user.cfg
     client_summary 
     log_folder
-done < $OPERATIONS_FILE
+done < $INPUT_FILE
 
