@@ -21,6 +21,7 @@ sed -i "s/<fa:scale.*/<fa:scale>${LOAD_SCALE}<\\/fa:scale>/" /web20_benchmark/de
 sed -i "s/<fa:rampUp.*/<fa:rampUp>${RAMPUP}<\\/fa:rampUp>/" /web20_benchmark/deploy/run.xml
 sed -i "s/<fa:rampDown.*/<fa:rampDown>${RAMPDOWN}<\\/fa:rampDown>/" /web20_benchmark/deploy/run.xml
 sed -i "s/<fa:steadyState.*/<fa:steadyState>${STEADYSTATE}<\\/fa:steadyState>/" /web20_benchmark/deploy/run.xml
+sed -i "s/<parallel.*/<parallel>true<\\/parallel>/" /web20_benchmark/deploy/run.xml
 sed -i "s/<host.*/<host>${WEB_SERVER_IP}<\\/host>/" /web20_benchmark/deploy/run.xml
 sed -i "s/<port.*/<port>8080<\\/port>/" /web20_benchmark/deploy/run.xml
 sed -i "s@<outputDir.*@<outputDir>${FABAN_HOME}\/output<\\/outputDir>@" /web20_benchmark/deploy/run.xml
