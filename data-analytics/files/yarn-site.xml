@@ -10,7 +10,16 @@
     <value>mapreduce_shuffle</value>
   </property>
   <property>
-    <name>yarn.nodemanager.resource.memory-mb</name>
-    <value>204800</value>
+    <name>yarn.app.mapreduce.am.resource.cpu-vcores</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.resource.cpu-vcores</name>
+    <value>1</value>
+  </property>
+  <property>
+    <name>yarn.scheduler.maximum-allocation-vcores</name>
+    <value>1</value>
   </property>
 </configuration>
+

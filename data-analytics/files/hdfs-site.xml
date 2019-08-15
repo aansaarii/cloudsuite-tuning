@@ -6,6 +6,10 @@
     <value>1</value>
   </property>
   <property>
+    <name>dfs.block.size</name>
+    <value>67108864</value>
+  </property>
+  <property>
     <name>dfs.namenode.name.dir</name>
     <value>file:/root/hdfs/namenode</value>
   </property>
