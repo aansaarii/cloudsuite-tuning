@@ -4,16 +4,23 @@ set -x
 # worker number: $1 
 
 echo "args are $1 $2 $3"
-# $1: dataset scale factor, $2: number of workers, $3: target rps 
+# $1: dataset scale factor
+# $2: number of workers
+# $3: target server memory
+# $4: target rps 
  
+# 1. expand the dataset by a factor of $1
 /usr/src/memcached/memcached_client/loader \
     -a /usr/src/memcached/twitter_dataset/twitter_dataset_unscaled \
     -o /usr/src/memcached/twitter_dataset/twitter_dataset_{$1}x \
     -s /usr/src/memcached/memcached_client/servers.txt \
-    -w "$2" -S "$1" -D 2048 -j
+    -w "$2" -S "$1" -D "$3" -j
+
+# 2. determine the maximum throughput
+
 
 /usr/src/memcached/memcached_client/loader \
     -a /usr/src/memcached/twitter_dataset/twitter_dataset_{$1}x \
     -s /usr/src/memcached/memcached_client/servers.txt \
-    -g 0.8 -c 200 -w "$2" -e -r "$3" -T 1
+    -g 0.8 -c 200 -w "$2" -e -r "$4" -T 1
 

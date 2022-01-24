@@ -8,7 +8,7 @@ function start_server(){
 
 function start_client(){
     (($DEV)) && echo "start client"
-    docker run -v ${CWD}/files/docker-entrypoint.sh:/entrypoint.sh -v ${CWD}/files/servers.txt:/usr/src/memcached/memcached_client/servers.txt --net $NET --name $CLIENT_CONTAINER --cpuset-cpus=${CLIENT_CPUS} $CLIENT_IMAGE $DATASET_SCALE $WORKER_NUM $TARGET_RPS
+    docker run -v ${CWD}/files/docker-entrypoint.sh:/entrypoint.sh -v ${CWD}/files/servers.txt:/usr/src/memcached/memcached_client/servers.txt --net $NET --name $CLIENT_CONTAINER --cpuset-cpus=${CLIENT_CPUS} $CLIENT_IMAGE $DATASET_SCALE $WORKER_NUM $SERVER_MEM $TARGET_RPS
 }
 
 function detect_stage () {
@@ -31,6 +31,7 @@ function log_client(){
 
 function latency_summary(){
     echo "median 95th latency" >> $CLIENT_SUMMARY
+    # here $((measure_time/2)) means the center position. (median)
     cat out/client-result.txt | grep -A1 95th | grep -v 95th | awk '{print $10}'| sed '/^$/d' | sort | sed -n "$((MEASURE_TIME/2))p" >> $CLIENT_SUMMARY
 }
 

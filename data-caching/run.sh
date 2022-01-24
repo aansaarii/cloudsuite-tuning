@@ -5,7 +5,6 @@ source ../common/safeguard
 source main_func
 
 rm_all_containers
-create_network 
 start_server 
 
 while read TARGET_RPS; do 
@@ -16,9 +15,10 @@ while read TARGET_RPS; do
     (($DEV)) && echo "warmup ready" 
     sleep 10
     docker stats >> $UTIL_LOG & 
-    sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS sleep $MEASURE_TIME 2>>$PERF_LOG 
+    #perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS sleep $MEASURE_TIME 2>>$PERF_LOG 
+    sleep $MEASURE_TIME
     docker stop $CLIENT_CONTAINER
-    sudo pkill -f "docker stats"
+    pkill -f "docker stats"
     log_client 
     
     latency_summary 
