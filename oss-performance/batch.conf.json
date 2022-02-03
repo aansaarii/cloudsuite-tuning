@@ -1,0 +1,44 @@
+{
+  "runtimes": {
+    "HHVM Client 20": {
+      "type": "hhvm",
+      "bin": "/usr/local/bin/hhvm",
+      "args": [
+        "--client-threads=20"
+      ]
+    },
+    "HHVM Client 40": {
+      "type": "hhvm",
+      "bin": "/usr/local/bin/hhvm",
+      "args": [
+        "--client-threads=40"
+      ]
+    },
+    "HHVM Client 60": {
+      "type": "hhvm",
+      "bin": "/usr/local/bin/hhvm",
+      "args": [
+        "--client-threads=60"
+      ]
+    },
+    "HHVM Client 80": {
+      "type": "hhvm",
+      "bin": "/usr/local/bin/hhvm",
+      "args": [
+        "--client-threads=80"
+      ]
+    }
+  },
+  "targets": [
+    "wordpress" 
+  ],
+  "runtime-overrides": {
+  },
+  "settings": {
+    "username": "root",
+    "password": "root",
+    "options": [
+      "i-am-not-benchmarking"
+    ]
+  }
+}
