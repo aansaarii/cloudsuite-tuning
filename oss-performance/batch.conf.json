@@ -38,7 +38,8 @@
     "username": "root",
     "password": "root",
     "options": [
-      "i-am-not-benchmarking"
+      "i-am-not-benchmarking",
+      "server-threads=10"
     ]
   }
 }
