@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 '''
   This file will parse argv[1] and run each configuration inside.
 '''
@@ -27,7 +29,7 @@ for name, conf_body in conf.items():
     user_cfg.write("\n".join([
       "source ../common/requirements",
       "SERVER_CPUS={}".format(",".join(map(str, conf_body["server_cpus"]))),
-      "CLIENT_CPUS={}".format(",".join(map(conf_body["client_cpus"]))),
+      "CLIENT_CPUS={}".format(",".join(map(str, conf_body["client_cpus"]))),
       "MEASURE_TIME={}".format(conf_body["measure_time"]),
       "SERVER_NUM={}".format(len(conf_body["server_cpus"])),
       "SERVER_MEM={}".format(conf_body["server_memory"]),
