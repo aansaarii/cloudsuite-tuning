@@ -53,11 +53,14 @@ for name, conf_body in conf.items():
     rps.write("\n".join(map(lambda x: str(int(x)), range(*conf_body["load"]["range"]))))
   
   # 4. run the script
-  os.system("./run.sh")
+  if os.system("./run.sh") != 0:
+    break
 
   # 5. synthesize data
-  os.system("./synthesis.py")
+  if os.system("./synthesis.py") != 0:
+    break
 
   # 6. move the result to folder
-  os.system("mv experiments out data.csv user.cfg rps.txt {}/".format(name))
+  if os.system("mv experiments out data.csv user.cfg rps.txt {}/".format(name)) != 0:
+    break
 
