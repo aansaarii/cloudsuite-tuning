@@ -1,0 +1,154 @@
+{
+  "1core": {
+    "server_cpus": [
+      0
+    ],
+    "client_cpus": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+    ],
+    "measure_time": 100,
+    "server_memory": 4096,
+    "dataset_scaling_factor": 30,
+    "load": {
+      "type": "range",
+      "range": [4000, 164000, 4000]
+    }
+  },
+  "2cores": {
+    "server_cpus": [
+      0,
+      2
+    ],
+    "client_cpus": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+    ],
+    "measure_time": 100,
+    "server_memory": 4096,
+    "dataset_scaling_factor": 30,
+    "load": {
+      "type": "range",
+      "range": [10000, 420000, 10000]
+    }
+  },
+  "4cores": {
+    "server_cpus": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "client_cpus": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+    ],
+    "measure_time": 100,
+    "server_memory": 4096,
+    "dataset_scaling_factor": 30,
+    "load": {
+      "type": "range",
+      "range": [12500, 500000, 12500]
+    }
+  },
+  "8cores": {
+    "server_cpus": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14
+    ],
+    "client_cpus": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+    ],
+    "measure_time": 100,
+    "server_memory": 4096,
+    "dataset_scaling_factor": 30,
+    "load": {
+      "type": "range",
+      "range": [12500, 550000, 12500]
+    }
+  },
+  "12cores": {
+    "server_cpus": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20,
+      22
+    ],
+    "client_cpus": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+    ],
+    "measure_time": 100,
+    "server_memory": 4096,
+    "dataset_scaling_factor": 30,
+    "load": {
+      "type": "range",
+      "range": [12500, 600000, 12500]
+    }
+  }
+}
