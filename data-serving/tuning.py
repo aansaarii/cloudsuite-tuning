@@ -8,8 +8,8 @@ import json
 # The template for the configuration. Will be loaded from a JSON file.
 conf = {
   "RecordCount": 1000,
-  "ServerCPUs": "1,3,5,7",
-  "ClientCPUs": "2,4,6,8",
+  "ServerCPUs": "0",
+  "ClientCPUs": "1,3,5,7,9,11",
   # It's all about the client request
   "ClientConf": [
     {
@@ -72,8 +72,13 @@ server = d.containers.run(
 
 print("Wait for the server to start up...")
 # Wait for the server to fully startup
-sleep(15)
+import socket
+def is_port_in_use(port: int) -> bool:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        return s.connect_ex(('localhost', port)) == 0
 
+while not is_port_in_use(9042):
+    sleep(1)
 
 # 2. extract the IP from the log. It's always in the second line. 
 l = server.logs().decode()
