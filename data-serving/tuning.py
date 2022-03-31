@@ -3,26 +3,57 @@
 from time import sleep
 import docker
 
-# The template for the configuration. Will be loaded from a JSON file.
-conf = [
-  {
-    "RecordCount": 100,
-    "ServerCPUs": "1,3,5,7",
-    "ClientCPUs": "2,4,6,8",
-    # It's all about the client request
-    "ClientConf": [
-      {
-        "Thread": 1,
-        "TargetLoad": 1000,
-      },
-      {
-        "Thread": 1,
-        "TargetLoad": 1000,
-      }
-    ]
-  }
-]
+import json
 
+# The template for the configuration. Will be loaded from a JSON file.
+conf = {
+  "RecordCount": 1000,
+  "ServerCPUs": "1,3,5,7",
+  "ClientCPUs": "2,4,6,8",
+  # It's all about the client request
+  "ClientConf": [
+    {
+      "ThreadNumber": 1,
+      "TargetLoad": 200,
+    },
+    {
+      "ThreadNumber": 1,
+      "TargetLoad": 400,
+    },
+    {
+      "ThreadNumber": 1,
+      "TargetLoad": 600,
+    },
+    {
+      "ThreadNumber": 1,
+      "TargetLoad": 800,
+    },
+    {
+      "ThreadNumber": 1,
+      "TargetLoad": 1000,
+    },
+    {
+      "ThreadNumber": 1,
+      "TargetLoad": 2000,
+    },
+    {
+      "ThreadNumber": 1,
+      "TargetLoad": 3000,
+    },
+    {
+      "ThreadNumber": 1,
+      "TargetLoad": 4000,
+    },
+    {
+      "ThreadNumber": 1,
+      "TargetLoad": 5000,
+    },
+    {
+      "ThreadNumber": 1,
+      "TargetLoad": 6000,
+    },
+  ]
+}
 
 # 1. Start up the server.
 d = docker.from_env()
@@ -31,14 +62,13 @@ server = d.containers.run(
   "cloudsuite/data-serving:server",
   name = "cassandra-server",
   auto_remove= True,
-  cpuset_cpus=conf[0]["ServerCPUs"],
+  cpuset_cpus=conf["ServerCPUs"],
   detach=True,
   privileged=True,
   remove=True,
   stdin_open=True,
   network_mode="host"
 )
-
 
 print("Wait for the server to start up...")
 # Wait for the server to fully startup
@@ -55,7 +85,7 @@ ycsb = d.containers.run(
   "bash",
   name = "cassandra-client",
   auto_remove= True,
-  cpuset_cpus=conf[0]["ClientCPUs"],
+  cpuset_cpus=conf["ClientCPUs"],
   detach=True,
   privileged=True,
   remove=True,
@@ -67,7 +97,7 @@ ycsb = d.containers.run(
 
 # Run command in the client.
 ## 1. Load the table
-print("Warm up the server")
+print("Generate Table in Server")
 
 (ok, out_log) = ycsb.exec_run([
   "cqlsh",
@@ -76,8 +106,14 @@ print("Warm up the server")
   IP
 ])
 
-print(out_log.decode())
+if ok != 0:
+  print(out_log.decode())
+  server.kill()
+  ycsb.kill()
+  print("Error!")
+  exit(-1)
 
+print("Warn up...")
 ## 2. Warm up
 (ok, out_log) = ycsb.exec_run([
   "/ycsb/bin/ycsb",
@@ -88,31 +124,82 @@ print(out_log.decode())
   "-P",
   "/ycsb/workloads/workloada",
   "-p",
-  "recordcount={}".format(conf[0]["RecordCount"])
+  "recordcount={}".format(conf["RecordCount"])
 ])
 
-print(out_log.decode())
+if ok != 0:
+  print(out_log.decode())
+  server.kill()
+  ycsb.kill()
+  print("Error!")
+  exit(-1)
+  
+
+results = []
 
 ## 3. Run the test
-(exit_code, out_log) = ycsb.exec_run([
-  "/ycsb/bin/ycsb",
-  "run",
-  "cassandra-cql",
-  "-p",
-  "hosts={}".format(IP),
-  "-P",
-  "/ycsb/workloads/workloada",
-  "-p",
-  "recordcount={}".format(conf[0]["RecordCount"]),
-  "-p",
-  "operationcount={}".format(conf[0]["RecordCount"] * 100),
-  "-threads",
-  "10",
-  "-target",
-  "100000"
-])
+for i, test in enumerate(conf["ClientConf"]):
+  print("Running test {}".format(i))
+  (exit_code, out_log) = ycsb.exec_run([
+    "/ycsb/bin/ycsb",
+    "run",
+    "cassandra-cql",
+    "-p",
+    "hosts={}".format(IP),
+    "-P",
+    "/ycsb/workloads/workloada",
+    "-p",
+    "recordcount={}".format(conf["RecordCount"]),
+    "-p",
+    "operationcount={}".format(conf["RecordCount"] * 100),
+    "-threads",
+    "{}".format(test["ThreadNumber"]),
+    "-target",
+    "{}".format(test["TargetLoad"])
+  ])
 
-print(out_log.decode())
+  if exit_code == 0:
+    # parse the log and generate the data
+    res = {
+      "ThreadNumber": test["ThreadNumber"],
+      "TargetLoad": test["TargetLoad"]
+    }
+    # it's time to parse the log
+    for line in out_log.decode().split("\n"):
+      if line.startswith("["):
+        # 1. get the tag
+        tag = ""
+        if "[OVERALL]" in line:
+          tag = "Overall"
+        elif "[READ]" in line:
+          tag = "Read"
+        elif "[CLEANUP]" in line:
+          tag = "Cleanup"
+        elif "[UPDATE]" in line:
+          tag = "Update"
+        
+        if len(tag) == 0:
+          continue
+
+        if not (tag in res.keys()):
+          res[tag] = {}
+
+        terms = line.split(", ")
+        if len(terms) != 3:
+          print("Warning: cannot parse {}.".format(line))
+        if "Return" in terms[1]:
+          res[tag]["Return"] = terms[1].split("=")[1]
+        else:
+          res[tag][terms[1]] = float(terms[2])
+    results.append(res)
+  else:
+    print(out_log.decode())
+    server.kill()
+    ycsb.kill()
+    print("Error!")
+    exit(-1)
 
 server.kill()
 ycsb.kill()
+with open("result.json", "w") as o:
+  json.dump(results, o, indent=4, sort_keys=True)
