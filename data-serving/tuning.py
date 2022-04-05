@@ -10,49 +10,13 @@ conf = {
   "RecordCount": 1000,
   "ServerCPUs": "0",
   "ClientCPUs": "1,3,5,7,9,11",
+  "ClientThreadPerCore": 4,
   # It's all about the client request
-  "ClientConf": [
-    {
-      "ThreadNumber": 1,
-      "TargetLoad": 200,
-    },
-    {
-      "ThreadNumber": 1,
-      "TargetLoad": 400,
-    },
-    {
-      "ThreadNumber": 1,
-      "TargetLoad": 600,
-    },
-    {
-      "ThreadNumber": 1,
-      "TargetLoad": 800,
-    },
-    {
-      "ThreadNumber": 1,
-      "TargetLoad": 1000,
-    },
-    {
-      "ThreadNumber": 1,
-      "TargetLoad": 2000,
-    },
-    {
-      "ThreadNumber": 1,
-      "TargetLoad": 3000,
-    },
-    {
-      "ThreadNumber": 1,
-      "TargetLoad": 4000,
-    },
-    {
-      "ThreadNumber": 1,
-      "TargetLoad": 5000,
-    },
-    {
-      "ThreadNumber": 1,
-      "TargetLoad": 6000,
-    },
-  ]
+  "ClientTargetLoads": [
+    200, 400, 600, 800, 1000, 2000, 3000, 4000, 5000, 6000
+  ],
+  # 3600 second to finish a test.
+  "TestTime": 30
 }
 
 # 1. Start up the server.
@@ -140,11 +104,21 @@ if ok != 0:
   exit(-1)
   
 
+core_count = len(conf["ClientCPUs"].split(","))
+peakthroughput = -1
 results = []
 
 ## 3. Run the test
-for i, test in enumerate(conf["ClientConf"]):
-  print("Running test {}".format(i))
+for i, target in enumerate(conf["ClientTargetLoads"]):
+  print("Running test {}, and the load is {}.".format(i, target))
+
+  # Running time control.
+  op_count = 0
+  if peakthroughput == -1:
+    op_count = target * conf["TestTime"]
+  else:
+    op_count = peakthroughput * conf["TestTime"]
+
   (exit_code, out_log) = ycsb.exec_run([
     "/ycsb/bin/ycsb",
     "run",
@@ -156,18 +130,17 @@ for i, test in enumerate(conf["ClientConf"]):
     "-p",
     "recordcount={}".format(conf["RecordCount"]),
     "-p",
-    "operationcount={}".format(conf["RecordCount"] * 100),
+    "operationcount={}".format(op_count),
     "-threads",
-    "{}".format(test["ThreadNumber"]),
+    "{}".format(core_count * conf["ClientThreadPerCore"]),
     "-target",
-    "{}".format(test["TargetLoad"])
+    "{}".format(target)
   ])
 
   if exit_code == 0:
     # parse the log and generate the data
     res = {
-      "ThreadNumber": test["ThreadNumber"],
-      "TargetLoad": test["TargetLoad"]
+      "TargetLoad": target
     }
     # it's time to parse the log
     for line in out_log.decode().split("\n"):
@@ -197,6 +170,11 @@ for i, test in enumerate(conf["ClientConf"]):
         else:
           res[tag][terms[1]] = float(terms[2])
     results.append(res)
+
+    # determine the peak load. In this case, further test will not try more, and time can be saved.
+    if res["Overall"]["Throughput(ops/sec)"] < target * 0.7 and res["Overall"]["Throughput(ops/sec)"] > peakthroughput:
+      peakthroughput = res["Overall"]["Throughput(ops/sec)"]
+
   else:
     print(out_log.decode())
     server.kill()
