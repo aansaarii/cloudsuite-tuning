@@ -7,16 +7,16 @@ import json
 
 # The template for the configuration. Will be loaded from a JSON file.
 conf = {
-  "RecordCount": 1000,
+  "RecordCount": 10000000,
   "ServerCPUs": "0",
   "ClientCPUs": "1,3,5,7,9,11",
   "ClientThreadPerCore": 4,
   # It's all about the client request
   "ClientTargetLoads": [
-    200, 400, 600, 800, 1000, 2000, 3000, 4000, 5000, 6000
+    200, 400, 600, 800, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 12000, 14000
   ],
-  # 3600 second to finish a test.
-  "TestTime": 30
+  # 1800 second to finish a test.
+  "TestTime": 360
 }
 
 # 1. Start up the server.
@@ -173,7 +173,7 @@ for i, target in enumerate(conf["ClientTargetLoads"]):
 
     # determine the peak load. In this case, further test will not try more, and time can be saved.
     if res["Overall"]["Throughput(ops/sec)"] < target * 0.7 and res["Overall"]["Throughput(ops/sec)"] > peakthroughput:
-      peakthroughput = res["Overall"]["Throughput(ops/sec)"]
+      peakthroughput = int(res["Overall"]["Throughput(ops/sec)"])
 
   else:
     print(out_log.decode())
