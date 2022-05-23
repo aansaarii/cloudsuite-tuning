@@ -7,7 +7,7 @@ class DataPoint:
   latency_95th: float = 0
   latency_99th: float = 0
   cpu_usage: float = 0
-  def parseFromFoler(self, path: str):
+  def parseFromFolder(self, path: str):
     # 1. parse the client-result.txt file
     rps = []
     t95 = []
@@ -38,6 +38,7 @@ class DataPoint:
     cpu_usages = []
     with open("{}/util.txt".format(path)) as f:
       for l in f:
+        print ("line is: " + l)
         if "dc-server" in l:
           line_info = l.split()
           cpu_usages.append(float(line_info[2][:-2]))
@@ -51,7 +52,7 @@ files = os.listdir("experiments")
 data: list[(int, DataPoint)] = []
 for folder in files:
   data_point = DataPoint()
-  data_point.parseFromFoler("experiments/{}".format(folder))
+  data_point.parseFromFolder("experiments/{}".format(folder))
   data.append([int(folder), data_point])
 
 

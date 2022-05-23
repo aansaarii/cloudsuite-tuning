@@ -4,6 +4,7 @@ function start_master(){
     (($DEV)) && echo "start master"
     clean_containers $MASTER_CONTAINER
     docker run -dP --net ${NET} --hostname ${MASTER_CONTAINER} --name ${MASTER_CONTAINER} --cpuset-cpus=${MASTER_CPUS} ${SPARK} master
+    echo "cmd master: docker run -dP --net ${NET} --hostname ${MASTER_CONTAINER} --name ${MASTER_CONTAINER} --cpuset-cpus=${MASTER_CPUS} ${SPARK} master"
     MASTER_PID=$(docker inspect -f '{{.State.Pid}}' ${MASTER_CONTAINER})
 }
 
@@ -11,6 +12,7 @@ function start_workers(){
     (($DEV)) && echo "start workers"
     clean_containers $WORKER_CONTAINER
     docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER} --cpuset-cpus=${WORKER_CPUS} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
+    echo "cmd worker: docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER} --cpuset-cpus=${WORKER_CPUS} ${SPARK} worker spark://${MASTER_CONTAINER}:7077"
 }
 
 function start_client(){
@@ -26,7 +28,8 @@ function start_client(){
     clean_containers $CLIENT_CONTAINER
    
     # echo "$NET,$CLIENT_CPUS,$DRIVER_MEM,$DATASET_CONTAINER,$EXECUTOR_MEM,$TOTAL_EXECUTOR_CNT" 
-    docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} /data/${DATA_SIZE} /data/myratings.csv --driver-memory $DRIVER_MEM --executor-memory $EXECUTOR_MEM --executor-cores=$TOTAL_EXECUTOR_CNT --master spark://${MASTER_CONTAINER}:7077 
+    docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} /data/${DATA_SIZE} /data/myratings.csv --driver-memory $DRIVER_MEM --executor-memory $EXECUTOR_MEM --master spark://${MASTER_CONTAINER}:7077 
+    echo "cmd client: docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} /data/${DATA_SIZE} /data/myratings.csv --driver-memory $DRIVER_MEM --executor-memory $EXECUTOR_MEM --executor-cores=$TOTAL_EXECUTOR_CNT --master spark://${MASTER_CONTAINER}:7077"
 }
 
 function detect_stage () {

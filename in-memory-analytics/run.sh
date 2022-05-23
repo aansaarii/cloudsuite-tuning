@@ -36,7 +36,6 @@ while [[ $CNT -lt $REPEAT ]]; do
     sudo pkill -f "docker stats"
     detect_stage finished 
     log_client 
-
 	CNT=$(( CNT+1 ))
 	rm -rf $LOCKDIR
     fi 

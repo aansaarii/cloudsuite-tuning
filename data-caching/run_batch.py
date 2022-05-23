@@ -51,7 +51,7 @@ for name, conf_body in conf.items():
   # 3. generate rps.txt
   with open("rps.txt", "w") as rps:
     rps.write("\n".join(map(lambda x: str(int(x)), range(*conf_body["load"]["range"]))))
-  
+ 
   # 4. run the script
   if os.system("./run.sh") != 0:
     break

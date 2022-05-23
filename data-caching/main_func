@@ -4,11 +4,13 @@ function start_server(){
     (($DEV)) && echo "start server"
     clean_containers $SERVER_CONTAINER
     docker run -d --name ${SERVER_CONTAINER} --cpuset-cpus=${SERVER_CPUS} --net $NET $SERVER_IMAGE -t $SERVER_NUM -m $SERVER_MEM -n 550
+    echo "cmd= docker run -d --name ${SERVER_CONTAINER} --cpuset-cpus=${SERVER_CPUS} --net $NET $SERVER_IMAGE -t $SERVER_NUM -m $SERVER_MEM -n 550"
 }
 
 function start_client(){
     (($DEV)) && echo "start client"
     docker run -v ${CWD}/files/docker-entrypoint.sh:/entrypoint.sh -v ${CWD}/files/servers.txt:/usr/src/memcached/memcached_client/servers.txt --net $NET --name $CLIENT_CONTAINER --cpuset-cpus=${CLIENT_CPUS} $CLIENT_IMAGE $DATASET_SCALE $WORKER_NUM $SERVER_MEM $TARGET_RPS
+    echo "cmd = docker run -v ${CWD}/files/docker-entrypoint.sh:/entrypoint.sh -v ${CWD}/files/servers.txt:/usr/src/memcached/memcached_client/servers.txt --net $NET --name $CLIENT_CONTAINER --cpuset-cpus=${CLIENT_CPUS} $CLIENT_IMAGE $DATASET_SCALE $WORKER_NUM $SERVER_MEM $TARGET_RPS"
 }
 
 function detect_stage () {

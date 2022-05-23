@@ -6,8 +6,10 @@ source main_func
 
 create_network 
 start_master
+sleep 5
 clean_containers $WORKER_CONTAINER
 start_worker
+sleep 5
 docker exec $MASTER_CONTAINER benchmark >>$CLIENT_LOG2 2>$CLIENT_LOG &
 detect_stage warmup
 docker stats > $UTIL_LOG &

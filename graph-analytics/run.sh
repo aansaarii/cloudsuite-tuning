@@ -4,13 +4,13 @@
 
 source ../common/safeguard
 source main_func
-(($DEV)) && echo $NUM_WORKERS
+(($DEV)) && echo "workers: $NUM_WORKERS"
 
 create_dataset  
 create_network 
 
 start_master
-(($DEV)) && echo $MASTER_PID
+(($DEV)) && echo "master: $MASTER_PID"
 
 start_workers
 detect_stage master-ready 

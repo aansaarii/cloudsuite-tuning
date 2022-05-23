@@ -1,30 +1,63 @@
 #!/bin/bash 
 
+function start_dataset(){
+  docker volume prune -f
+    clean_containers $DATASET_CONTAINER
+    docker run --name $DATASET_CONTAINER $DATASET_IMAGE > $DATASET_LOG
+    docker cp $DATASET_CONTAINER:/videos/logs /home/aansari/cloudsuite-tuning/media-streaming/
+    echo "logs copied"
+}
+
 function start_server(){
-    (($DEV)) && echo "start server" 
+  (($DEV)) && echo "start server" 
     clean_containers $SERVER_CONTAINER
-    docker run -d --name $SERVER_CONTAINER --cpuset-cpus=$SERVER_CPUS --volumes-from $DATASET_CONTAINER --net $NET $SERVER_IMAGE 
+    docker run -d --name $SERVER_CONTAINER --cpuset-cpus=$SERVER_CPUS --volumes-from $DATASET_CONTAINER --net $NET $SERVER_IMAGE $NUM_WORKERS
+    echo "cmd: docker run -d --name $SERVER_CONTAINER --cpuset-cpus=$SERVER_CPUS --volumes-from $DATASET_CONTAINER --net $NET $SERVER_IMAGE $NUM_WORKERS" 
 }
 
 function start_client(){
+  clean_containers $CLIENT_CONTAINER
     (($DEV)) && echo "start client"
-    docker run -t --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /home/cloudsuite-tuning/media-streaming/files/benchmark.sh:/root/run/benchmark.sh --volumes-from $DATASET_CONTAINER --net $NET $CLIENT_IMAGE $SERVER_CONTAINER
+#docker run -t --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /home/aansari/cloudsuite-tuning/media-streaming/files/benchmark.sh:/root/run/benchmark.sh -v /home/aansari/cloudsuite-tuning/media-streaming/logs:/videos/logs -v /home/aansari/cloudsuite-tuning/media-streaming/output:/output --net $NET $CLIENT_IMAGE $SERVER_CONTAINER 4 1000 10 > log.txt
+    docker run -t --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /home/aansari/cloudsuite-tuning/media-streaming/logs:/videos/logs -v /home/aansari/cloudsuite-tuning/media-streaming/output:/output --net $NET $CLIENT_IMAGE $SERVER_CONTAINER $NUM_HTTPERF_CLIENTS $NUM_SESSIONS $RATE > $CLIENT_LOG
+
+    echo "cmd: docker run -t --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /home/aansari/cloudsuite-tuning/media-streaming/files/benchmark.sh:/root/run/benchmark.sh -v /home/aansari/cloudsuite-tuning/media-streaming/logs:/videos/logs -v /home/aansari/cloudsuite-tuning/media-streaming/output:/output --net $NET $CLIENT_IMAGE $SERVER_CONTAINER"
 }
 
 function detect_stage(){
-    case "$1" in
+  case "$1" in
     warmup)
-        KEYWORDS="Benchmark stats"
-        log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 2
-        (($DEV)) && echo "Rampup completed"
-        ;;
+      KEYWORDS="Benchmark stats"
+      log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 2
+      (($DEV)) && echo "Rampup completed"
+      ;;
     finished) # Net I/O: 
-	KEYWORDS="Net"
-	log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 5
-	;; 
+      KEYWORDS="Net"
+      log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 5
+      (($DEV)) && echo "Benchmark finished"
+      ;; 
+    esac
+}
+
+function detect_stage2(){
+  case "$1" in
+    warmup)
+      while true; do
+        current_rate=`docker logs ${CLIENT_CONTAINER}  2>&1 | grep "session-rate" | tail -1 | awk '{print $3}'`
+          echo "current rate is $current_rate"
+# if the session-reply rate reaches 80% of the injection rate, we consider the server as wamred up"
+          if (( $(echo "$current_rate > $RATE * 0.8" | bc -l) )); then
+            echo "reached the steady-state"
+              return
+          else
+            echo "still in the warmup"
+              sleep 5
+              fi
+              done
+              ;;
     esac
 }
 
 function log_client(){
-    docker logs $CLIENT_CONTAINER >> $CLIENT_LOG 
+  docker logs $CLIENT_CONTAINER >> $CLIENT_LOG 
 }
