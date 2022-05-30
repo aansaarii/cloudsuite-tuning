@@ -82,7 +82,7 @@ if ok != 0:
   print("Error!")
   exit(-1)
 
-print("Warn up...")
+print("Warm up...")
 ## 2. Warm up
 (ok, out_log) = ycsb.exec_run([
   "/ycsb/bin/ycsb",

@@ -12,11 +12,12 @@ start_worker
 sleep 5
 docker exec $MASTER_CONTAINER benchmark >>$CLIENT_LOG2 2>$CLIENT_LOG &
 detect_stage warmup
-docker stats > $UTIL_LOG &
+docker stats $(docker ps --format '{{.Names}}') > $UTIL_LOG &
 sudo perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS sleep infinity 2>>$PERF_LOG & 
 detect_stage finished
-pkill -f "docker stats"
+pkill -f "docker-current"
 pkill -fx "sleep infinity"
+sed -i "s,\x1B\[[0-9;]*[a-zA-Z],,g" $UTIL_LOG # remove escape characters
 client_summary 
 cp user.cfg $OUT/user.cfg
 log_folder

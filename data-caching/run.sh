@@ -14,13 +14,14 @@ while read TARGET_RPS; do
 
     (($DEV)) && echo "warmup ready" 
     sleep 10
-    docker stats >> $UTIL_LOG & 
+    docker stats $(docker ps --format '{{.Names}}') > $UTIL_LOG &
     #perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS sleep $MEASURE_TIME 2>>$PERF_LOG 
     sleep $MEASURE_TIME
     docker stop $CLIENT_CONTAINER
-    pkill -f "docker stats"
-    log_client 
-    
+    pkill -f "docker-current"
+    sed -i "s,\x1B\[[0-9;]*[a-zA-Z],,g" $UTIL_LOG # remove escape characters
+
+    log_client     
     latency_summary 
     rps_summary 
     cp user.cfg $OUT/user.cfg

@@ -25,7 +25,8 @@ docker stats $(docker ps --format '{{.Names}}') > $UTIL_LOG &
 #sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p $SERVER_PID sleep infinity 2>>$PERF_LOG &
 detect_stage steady-state-completed
 pkill -fx "sleep infinity"
-pkill -f "docker stats"
+pkill -f "docker-current"
+sed -i "s,\x1B\[[0-9;]*[a-zA-Z],,g" $UTIL_LOG # remove escape characters
 detect_stage detail-completed
 wait $CLIENT_PID
 log_client 

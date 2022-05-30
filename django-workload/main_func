@@ -1,0 +1,57 @@
+#!/bin/bash 
+
+function start_memcached(){
+    clean_containers ${MEMCACHED_CONTAINER}
+    docker run -tid --cpuset-cpus=${MEMCACHED_CPUS} --name ${MEMCACHED_CONTAINER} --network=${NET} ${MEMCACHED_IMAGE}
+    ./check_containers.sh ${MEMCACHED_ENDPOINT} 11211 ${MEMCACHED_CONTAINER}
+    echo "memcached started successfully"
+}
+
+function start_cassandra(){
+    clean_containers ${CASSANDRA_CONTAINER}
+    docker run -tid --cpuset-cpus=${CASSANDRA_CPUS} --name ${CASSANDRA_CONTAINER} -e SYSTEM_MEMORY=${SYSTEM_MEMORY} -e ENDPOINT=${CASSANDRA_ENDPOINT} --network=${NET} ${CASSANDRA_IMAGE}
+    ./check_containers.sh ${CASSANDRA_ENDPOINT} 9042 ${CASSANDRA_CONTAINER}
+    echo "cassandra started successfully"
+}
+
+function start_graphite(){
+    clean_containers ${GRAPHITE_CONTAINER}
+    docker run -tid --cpuset-cpus=${GRAPHITE_CPUS} --name ${GRAPHITE_CONTAINER} --network=${NET} ${GRAPHITE_IMAGE}
+    ./check_containers.sh ${GRAPHITE_ENDPOINT} 80 ${GRAPHITE_CONTAINER}
+    echo "graphite started successfully"
+}
+
+function start_uwsgi(){
+    clean_containers ${UWSGI_CONTAINER}
+    docker run -tid --cpuset-cpus=${UWSGI_CPUS} --name ${UWSGI_CONTAINER} --network=${NET} -e GRAPHITE_ENDPOINT=${GRAPHITE_ENDPOINT} -e CASSANDRA_ENDPOINT=${CASSANDRA_ENDPOINT} -e MEMCACHED_ENDPOINT="${MEMCACHED_ENDPOINT2}" -e SIEGE_ENDPOINT=${SIEGE_ENDPOINT} -e UWSGI_ENDPOINT=${UWSGI_ENDPOINT} ${UWSGI_IMAGE}
+    ./check_containers.sh ${UWSGI_ENDPOINT} 8000 ${UWSGI_CONTAINER}
+    echo "uwsgi started successfully"
+}
+
+function start_siege(){
+    clean_containers ${SIEGE_CONTAINER}
+    docker run -t --name ${SIEGE_CONTAINER} --volume=${TMP}:/tmp --network=${NET} -e TARGET_ENDPOINT=${UWSGI_ENDPOINT} -e SIEGE_WORKERS=${SIEGE_WORKERS} ${SIEGE_IMAGE}
+}
+
+function detect_stage(){
+  case "$1" in
+    started) 
+      KEYWORDS="Running interation"
+      log_helper_stdout ${SIEGE_CONTAINER} "${KEYWORDS}" 5
+      (($DEV)) && echo "Benchmark Started"
+      ;; 
+    finished) 
+      KEYWORDS="Full Siege output is available"
+      log_helper_stdout ${SIEGE_CONTAINER} "${KEYWORDS}" 5
+      (($DEV)) && echo "Benchmark finished"
+      ;; 
+    esac
+}
+
+function log_containers(){
+  docker logs $MEMCACHED_CONTAINER >> $MEMCACHED_LOG 
+  docker logs $CASSANDRA_CONTAINER >> $CASSANDRA_LOG 
+  docker logs $GRAPHITE_CONTAINER >> $GRAPHITE_LOG 
+  docker logs $UWSGI_CONTAINER >> $UWSGI_LOG 
+  docker logs $SEIGE_CONTAINER >> $SIEGE_LOG 
+}

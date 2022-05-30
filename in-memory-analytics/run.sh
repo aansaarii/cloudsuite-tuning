@@ -21,24 +21,26 @@ detect_stage workers-ready
 CNT=0
 rm -rf $LOCKDIR
 while [[ $CNT -lt $REPEAT ]]; do 
-    if mkdir $LOCKDIR; then
-	start_client ${DATASET_SEL} 
-	detect_stage executor-ready  
-	(($DEV)) && echo "executors ready" >> $UTIL_LOG
+  if mkdir $LOCKDIR; then
+    start_client ${DATASET_SEL} 
+    detect_stage executor-ready  
+    (($DEV)) && echo "executors ready" >> $UTIL_LOG
 
     EXEC_ID=`docker container top ${WORKER_CONTAINER}  | grep executor | tr ' ' '\n' | grep '[^[:blank:]]' | sed -n "2 p"`
-    docker stats >> $UTIL_LOG &
-	sudo perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS -p ${EXEC_ID},${WORKER_PIDS} sleep infinity 2>>$PERF_LOG &
+
+    docker stats container ${WORKER_CONTAINER} >> $UTIL_LOG & 
+    sudo perf stat -e $PERF_EVENTS --cpu $WORKER_CPUS -p ${EXEC_ID},${WORKER_PIDS} sleep infinity 2>>$PERF_LOG &
 
     detect_stage executor-killed
     (($DEV)) && echo "executor killed"
     sudo pkill -fx "sleep infinity"
-    sudo pkill -f "docker stats"
+    sudo pkill -f "docker-current"
+    sed -i "s,\x1B\[[0-9;]*[a-zA-Z],,g" $UTIL_LOG # remove escape characters
     detect_stage finished 
     log_client 
-	CNT=$(( CNT+1 ))
-	rm -rf $LOCKDIR
-    fi 
+    CNT=$(( CNT+1 ))
+    rm -rf $LOCKDIR
+  fi 
 done 
 
 client_summary 

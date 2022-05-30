@@ -1,69 +1,69 @@
 #!/bin/bash 
 
 function start_master(){
-    (($DEV)) && echo "start master"
-    clean_containers $MASTER_CONTAINER
-    docker run -dP --net ${NET} --hostname ${HOSTNAME} --name ${MASTER_CONTAINER} --cpuset-cpus=${MASTER_CPUS} ${SPARK} master
-    echo "cmd master: docker run -dP --net ${NET} --hostname ${HOSTNAME} --name ${MASTER_CONTAINER} --cpuset-cpus=${MASTER_CPUS} ${SPARK} master"
-    MASTER_PID=$(docker inspect -f '{{.State.Pid}}' ${MASTER_CONTAINER})
+(($DEV)) && echo "start master"
+clean_containers $MASTER_CONTAINER
+docker run -dP --net ${NET} --hostname ${HOSTNAME} --name ${MASTER_CONTAINER} --cpuset-cpus=${MASTER_CPUS} ${SPARK} master
+echo "cmd master: docker run -dP --net ${NET} --hostname ${HOSTNAME} --name ${MASTER_CONTAINER} --cpuset-cpus=${MASTER_CPUS} ${SPARK} master"
+MASTER_PID=$(docker inspect -f '{{.State.Pid}}' ${MASTER_CONTAINER})
 }
 
 function start_workers(){
-    clean_containers $WORKER_CONTAINER
-    docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER} --cpuset-cpus=${WORKER_CPUS} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
-    #docker run -dP --net ${NET} -v $DATASET_VOL:/data --name ${WORKER_CONTAINER} --cpuset-cpus=${WORKER_CPUS} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
-    echo "cmd worker: docker run -dP --net ${NET} -v $DATASET_VOL:/data --name ${WORKER_CONTAINER} --cpuset-cpus=${WORKER_CPUS} ${SPARK} worker spark://${MASTER_CONTAINER}:7077"
-    WORKER_PIDS=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER})    
+clean_containers $WORKER_CONTAINER
+docker run -dP --net ${NET} --volumes-from ${DATASET_CONTAINER} --name ${WORKER_CONTAINER} --cpuset-cpus=${WORKER_CPUS} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
+#docker run -dP --net ${NET} -v $DATASET_VOL:/data --name ${WORKER_CONTAINER} --cpuset-cpus=${WORKER_CPUS} ${SPARK} worker spark://${MASTER_CONTAINER}:7077
+echo "cmd worker: docker run -dP --net ${NET} -v $DATASET_VOL:/data --name ${WORKER_CONTAINER} --cpuset-cpus=${WORKER_CPUS} ${SPARK} worker spark://${MASTER_CONTAINER}:7077"
+WORKER_PIDS=$(docker inspect -f '{{.State.Pid}}' ${WORKER_CONTAINER})    
 }
 
 function start_client(){
-    (($DEV)) && echo "start client"
-    clean_containers $CLIENT_CONTAINER
-    docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} --driver-memory ${DRIVER_MEM} --executor-memory ${EXECUTOR_MEM} --master spark://${MASTER_CONTAINER}:7077
-    #docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} -v $DATASET_VOL:/data ${CLIENT_IMAGE} --driver-memory ${DRIVER_MEM} --executor-memory ${EXECUTOR_MEM} --master spark://${MASTER_CONTAINER}:7077
-    echo "cmd= docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} --driver-memory ${DRIVER_MEM} --executor-memory ${EXECUTOR_MEM} --master spark://${MASTER_CONTAINER}:7077"
+(($DEV)) && echo "start client"
+clean_containers $CLIENT_CONTAINER
+docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} --driver-memory ${DRIVER_MEM} --executor-memory ${EXECUTOR_MEM} --master spark://${MASTER_CONTAINER}:7077
+#docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} -v $DATASET_VOL:/data ${CLIENT_IMAGE} --driver-memory ${DRIVER_MEM} --executor-memory ${EXECUTOR_MEM} --master spark://${MASTER_CONTAINER}:7077
+echo "cmd= docker run -d --net ${NET} --name ${CLIENT_CONTAINER} --cpuset-cpus=${CLIENT_CPUS} --volumes-from ${DATASET_CONTAINER} ${CLIENT_IMAGE} --driver-memory ${DRIVER_MEM} --executor-memory ${EXECUTOR_MEM} --master spark://${MASTER_CONTAINER}:7077"
 }
 
 function detect_stage () {
-    case "$1" in
-    master-ready)
-        KEYWORDS="I have been elected leader"
-        log_helper_stderr ${MASTER_CONTAINER} "${KEYWORDS}" 
-        ;;
-    workers-ready) 
-        KEYWORDS="Successfully registered with master"
-	log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}" 
-        ;;
-    executor-ready)
-        KEYWORDS="ExecutorRunner: Launch command"
-	log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}"
-        ;;
-    warmup) 
-        # Got * ratings from * users on * movies.
-        KEYWORDS="Total input paths to process"
-        log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}"
-        ;;
-    executor-killed)
-        KEYWORDS="ExecutorRunner: Killing process"
-	log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}"
-        ;;
-  
-    finished) 
-        KEYWORDS="Running time ="
-        log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 2 
-        ;;
-    *) 
-        printf "Unrecognized option for stage $1:\n \
-            master-ready, workers-ready, ramp-up, finished"
-        exit 1 
-    esac
+case "$1" in
+  master-ready)
+    KEYWORDS="I have been elected leader"
+    log_helper_stderr ${MASTER_CONTAINER} "${KEYWORDS}" 
+    ;;
+  workers-ready) 
+    KEYWORDS="Successfully registered with master"
+    log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}" 
+    ;;
+  executor-ready)
+    KEYWORDS="ExecutorRunner: Launch command"
+    log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}"
+    ;;
+  warmup) 
+    # Got * ratings from * users on * movies.
+    KEYWORDS="Total input paths to process"
+    log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}"
+    ;;
+  executor-killed)
+    KEYWORDS="ExecutorRunner: Killing process"
+    log_helper_stderr ${WORKER_CONTAINER} "${KEYWORDS}"
+    ;;
+
+  finished) 
+    KEYWORDS="Running time ="
+    log_helper_stdout ${CLIENT_CONTAINER} "${KEYWORDS}" 2 
+    ;;
+  *) 
+    printf "Unrecognized option for stage $1:\n \
+      master-ready, workers-ready, ramp-up, finished"
+    exit 1 
+esac
 }
 
 function log_client(){
-    docker logs $CLIENT_CONTAINER >> $CLIENT_LOG
+docker logs $CLIENT_CONTAINER >> $CLIENT_LOG
 }
 
 function client_summary(){
-    grep "Running time" $CLIENT_LOG >> $CLIENT_SUMMARY
-    cat $PERF_LOG | awk '{printf "%15s\n",$1}' >> $CLIENT_SUMMARY
+grep "Running time" $CLIENT_LOG >> $CLIENT_SUMMARY
+cat $PERF_LOG | awk '{printf "%15s\n",$1}' >> $CLIENT_SUMMARY
 }

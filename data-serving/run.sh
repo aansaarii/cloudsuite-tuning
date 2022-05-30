@@ -13,15 +13,16 @@ warmup_server
 
 while read OPERATIONS; do
     TARGET="$((OPERATIONS * MULTIPLIER))"
-    docker stats >> $UTIL_LOG & 
+    docker stats $(docker ps --format '{{.Names}}') > $UTIL_LOG &
     sudo perf stat -e $PERF_EVENTS --cpu $SERVER_CPUS -p ${SERVER_PID} sleep infinity 2>>$PERF_LOG &  
     (docker exec $CLIENT_CONTAINER bash -c "/ycsb/bin/ycsb run cassandra-cql -p hosts=$SERVER_CONTAINER -P /ycsb/workloads/workloadb -s -threads $THREADS -p operationcount=$TARGET -p recordcount=$RECORDS")>>$CLIENT_LOG &
     CLIENT_PID=$!
     wait $CLIENT_PID 
-    sudo pkill -f "docker stats" 
+    sudo pkill -f "docker-current" 
     sudo pkill -fx "sleep infinity"
-done < $OPERATIONS_FILE
+    sed -i "s,\x1B\[[0-9;]*[a-zA-Z],,g" $UTIL_LOG # remove escape characters
 
-mv $OPERATIONS_FILE $OUT/operations.txt
-cp user.cfg $OUT/user.cfg
-log_folder
+    echo "operations: $OPERATIONS" > $OUT/operations.txt
+    cp user.cfg $OUT/user.cfg
+    log_folder
+done < $OPERATIONS_FILE
