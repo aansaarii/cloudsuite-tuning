@@ -6,14 +6,14 @@ source main_func
 
 create_network 
 #(($GENERATE_INDEX)) && generate_index
-#(($MOUNT_DATASET)) && start_dataset
+(($MOUNT_DATASET)) && start_dataset
 (($START_SERVER)) && start_server 
 
 detect_stage index-node-ready
-#SERVER_IP=172.18.0.2
-#sleep 10
+
 #while read OPERATIONS; do
-exit
+#exit
+
 clean_containers $CLIENT_CONTAINER
 start_client &
 CLIENT_PID=$!

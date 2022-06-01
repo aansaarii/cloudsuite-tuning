@@ -1,44 +1,57 @@
 #!/bin/bash 
 
 function start_dataset(){
-  docker volume prune -f
-    clean_containers $DATASET_CONTAINER
-    docker run --name $DATASET_CONTAINER $DATASET_IMAGE > $DATASET_LOG
-    docker cp $DATASET_CONTAINER:/videos/logs /home/aansari/cloudsuite-tuning/media-streaming/
-    echo "logs copied"
+docker volume prune -f
+clean_containers $DATASET_CONTAINER
+docker run --name $DATASET_CONTAINER $DATASET_IMAGE > $DATASET_LOG
+docker cp $DATASET_CONTAINER:/videos/logs /home/aansari/cloudsuite-tuning/media-streaming/
+echo "logs copied"
 }
 
 function start_server(){
-  (($DEV)) && echo "start server" 
-    clean_containers $SERVER_CONTAINER
-    docker run -d --name $SERVER_CONTAINER --cpuset-cpus=$SERVER_CPUS --volumes-from $DATASET_CONTAINER --net $NET $SERVER_IMAGE $NUM_WORKERS
+(($DEV)) && echo "start server" 
+clean_containers $SERVER_CONTAINER
+docker run -d --name $SERVER_CONTAINER --cpuset-cpus=$SERVER_CPUS --volumes-from $DATASET_CONTAINER --net $NET $SERVER_IMAGE $NUM_WORKERS
 }
 
 function start_client(){
-  clean_containers $CLIENT_CONTAINER
-    (($DEV)) && echo "start client"
-    docker run -t --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /home/aansari/cloudsuite-tuning/media-streaming/logs:/videos/logs -v /home/aansari/cloudsuite-tuning/media-streaming/output:/output --net $NET $CLIENT_IMAGE $SERVER_CONTAINER $NUM_HTTPERF_CLIENTS $NUM_SESSIONS $RATE > $CLIENT_LOG
+clean_containers $CLIENT_CONTAINER
+(($DEV)) && echo "start client"
+#docker run -t --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /home/aansari/cloudsuite-tuning/media-streaming/logs:/videos/logs -v /home/aansari/cloudsuite-tuning/media-streaming/output:/output --net $NET $CLIENT_IMAGE $SERVER_CONTAINER $NUM_HTTPERF_CLIENTS $NUM_SESSIONS $RATE > $CLIENT_LOG
+docker run -t --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /home/aansari/cloudsuite-tuning/media-streaming/logs:/videos/logs -v /home/aansari/cloudsuite-tuning/media-streaming/output:/output --net $NET $CLIENT_IMAGE $SERVER_IP $NUM_HTTPERF_CLIENTS $NUM_SESSIONS $RATE > $CLIENT_LOG
+
 }
 
 function detect_stage(){
-  case "$1" in
-    warmup)
-      while true; do
-        current_rate=`docker logs ${CLIENT_CONTAINER}  2>&1 | grep "session-rate" | tail -1 | awk '{print $3}'`
-          echo "current rate is $current_rate"
-# if the session-reply rate reaches 80% of the injection rate, we consider the server as warmed up"
-          if (( $(echo "$current_rate > $RATE * 0.8" | bc -l) )); then
-            echo "reached the steady-state"
-              return
-          else
-            echo "still in the warmup"
-            sleep 5
-          fi
-      done
-      ;;
-    esac
+case "$1" in
+  warmup)
+    CNT=0
+    while true; do
+      current_rate=`docker logs ${CLIENT_CONTAINER}  2>&1 | grep "session-rate" | tail -1 | awk '{print $3}'`
+      ERROR=`docker logs ${CLIENT_CONTAINER}  2>&1 | grep "Errors: total" | tail -1 | awk '{print $3}'`
+
+      echo "checking the loop, current_rate: $current_rate, error: $ERROR, cnt: $CNT"
+
+      # if the session-reply rate reaches 95% of the injection rate, we consider the server as warmed up"
+      if (( $(echo "$current_rate > $RATE * 0.95" | bc -l) )); then
+        echo "reached the steady-state"
+        return
+      fi
+      if (( $ERROR != 0 )); then
+        (($DEV)) && echo "error occurred"
+        return
+      elif (( $CNT >= $RAMPUP_TIME )); then
+        (($DEV)) && echo "ramp_up time exceeded"
+        return
+      fi
+
+      CNT=$((CNT+5))
+      sleep 5
+    done
+    ;;
+esac
 }
 
 function log_client(){
-  docker logs $CLIENT_CONTAINER >> $CLIENT_LOG 
+docker logs $CLIENT_CONTAINER >> $CLIENT_LOG 
 }

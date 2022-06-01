@@ -16,12 +16,13 @@ function start_server(){
   (($DEV)) && echo "start server" 
     clean_containers $SERVER_CONTAINER
 #docker run -d --name $SERVER_CONTAINER -v $LOCAL_INDEX_VOL:/home/solr -p 8983:8983 --cpuset-cpus=$SERVER_CPUS --net $NET --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 
-    docker run -dt --name $SERVER_CONTAINER --volumes-from ${DATASET_CONTAINER} --net $NET $SERVER_IMAGE 12g 1
+    docker run -d --name $SERVER_CONTAINER --volumes-from ${DATASET_CONTAINER} --net $NET $SERVER_IMAGE 12g 1
+    echo "cmd: docker run -d --name $SERVER_CONTAINER --volumes-from ${DATASET_CONTAINER} --net $NET $SERVER_IMAGE 12g 1"
 }
 
 function start_client(){
   (($DEV)) && echo "start client"
-    docker run -d --net=$NET --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $SCALE $RAMP_UP $RAMP_DOWN $STEADY_STATE
+    docker run -i --net=$NET --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $SCALE $RAMP_UP $RAMP_DOWN $STEADY_STATE
 }
 
 function detect_stage () {
@@ -30,7 +31,8 @@ function detect_stage () {
       KEYWORDS="Index Node IP Address"
       log_helper_stdout ${SERVER_CONTAINER} "${KEYWORDS}" 2 
       SERVER_IP=`docker logs $SERVER_CONTAINER 2>/dev/null | grep "$KEYWORDS" | sed 's/.*\:\s//'`
-      SERVER_IP=${SERVER_IP::-1} # There is a whitespace character that must be removed!
+      echo "Extracted Server IP is: $SERVER_IP"
+      #$SERVER_IP=${SERVER_IP::-1} # There is a whitespace character that must be removed!
       (($DEV)) && echo "Index node IP $SERVER_IP"
       ;;
     rampup-completed) 
