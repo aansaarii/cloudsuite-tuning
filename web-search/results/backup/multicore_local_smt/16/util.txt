@@ -1,0 +1,180 @@
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   0.00%     1.93GiB / 94.41GiB    2.04%     6.65MB / 943kB   0B / 0B     484
+6e486a0e1d88   web_search_server   0.00%     17.16GiB / 94.41GiB   18.18%    943kB / 6.65MB   0B / 0B     103
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   0.00%     1.93GiB / 94.41GiB    2.04%     6.65MB / 943kB   0B / 0B     484
+6e486a0e1d88   web_search_server   0.00%     17.16GiB / 94.41GiB   18.18%    943kB / 6.65MB   0B / 0B     103
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   19.88%    1.93GiB / 94.41GiB    2.04%     7.07MB / 987kB   0B / 0B     484
+6e486a0e1d88   web_search_server   589.21%   17.24GiB / 94.41GiB   18.26%    988kB / 7.07MB   0B / 0B     102
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   19.88%    1.93GiB / 94.41GiB    2.04%     7.07MB / 987kB   0B / 0B     484
+6e486a0e1d88   web_search_server   589.21%   17.24GiB / 94.41GiB   18.26%    988kB / 7.07MB   0B / 0B     102
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   46.13%    1.93GiB / 94.41GiB    2.04%     7.63MB / 1.07MB   0B / 0B     484
+6e486a0e1d88   web_search_server   729.02%   17.24GiB / 94.41GiB   18.26%    1.07MB / 7.63MB   0B / 0B     102
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   46.13%    1.93GiB / 94.41GiB    2.04%     7.63MB / 1.07MB   0B / 0B     484
+6e486a0e1d88   web_search_server   729.02%   17.24GiB / 94.41GiB   18.26%    1.07MB / 7.63MB   0B / 0B     102
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   20.04%    1.93GiB / 94.41GiB    2.04%     8.02MB / 1.12MB   0B / 0B     483
+6e486a0e1d88   web_search_server   552.71%   17.24GiB / 94.41GiB   18.26%    1.12MB / 8.02MB   0B / 0B     102
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   20.04%    1.93GiB / 94.41GiB    2.04%     8.02MB / 1.12MB   0B / 0B     483
+6e486a0e1d88   web_search_server   552.71%   17.24GiB / 94.41GiB   18.26%    1.12MB / 8.02MB   0B / 0B     102
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   18.53%    1.93GiB / 94.41GiB    2.04%     8.62MB / 1.2MB   0B / 0B     483
+6e486a0e1d88   web_search_server   819.49%   17.24GiB / 94.41GiB   18.26%    1.2MB / 8.61MB   0B / 0B     102
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   18.53%    1.93GiB / 94.41GiB    2.04%     8.62MB / 1.2MB   0B / 0B     483
+6e486a0e1d88   web_search_server   819.49%   17.24GiB / 94.41GiB   18.26%    1.2MB / 8.61MB   0B / 0B     102
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   30.54%    1.93GiB / 94.41GiB    2.04%     8.97MB / 1.24MB   0B / 0B     483
+6e486a0e1d88   web_search_server   488.98%   17.24GiB / 94.41GiB   18.26%    1.24MB / 8.97MB   0B / 0B     102
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   30.54%    1.93GiB / 94.41GiB    2.04%     8.97MB / 1.24MB   0B / 0B     483
+6e486a0e1d88   web_search_server   488.98%   17.24GiB / 94.41GiB   18.26%    1.24MB / 8.97MB   0B / 0B     102
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   26.66%    1.93GiB / 94.41GiB    2.04%     9.6MB / 1.33MB   0B / 0B     483
+6e486a0e1d88   web_search_server   785.14%   17.24GiB / 94.41GiB   18.26%    1.33MB / 9.6MB   0B / 0B     101
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   26.66%    1.93GiB / 94.41GiB    2.04%     9.6MB / 1.33MB   0B / 0B     483
+6e486a0e1d88   web_search_server   785.14%   17.24GiB / 94.41GiB   18.26%    1.33MB / 9.6MB   0B / 0B     101
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   5.46%     1.93GiB / 94.41GiB    2.04%     9.92MB / 1.37MB   0B / 0B     483
+6e486a0e1d88   web_search_server   408.37%   17.25GiB / 94.41GiB   18.27%    1.37MB / 9.92MB   0B / 0B     101
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   5.46%     1.93GiB / 94.41GiB    2.04%     9.92MB / 1.37MB   0B / 0B     483
+6e486a0e1d88   web_search_server   408.37%   17.25GiB / 94.41GiB   18.27%    1.37MB / 9.92MB   0B / 0B     101
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   9.87%     1.93GiB / 94.41GiB    2.04%     10.5MB / 1.46MB   0B / 0B     483
+6e486a0e1d88   web_search_server   776.79%   17.26GiB / 94.41GiB   18.28%    1.46MB / 10.5MB   0B / 0B     101
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   9.87%     1.93GiB / 94.41GiB    2.04%     10.5MB / 1.46MB   0B / 0B     483
+6e486a0e1d88   web_search_server   776.79%   17.26GiB / 94.41GiB   18.28%    1.46MB / 10.5MB   0B / 0B     101
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   12.45%    1.93GiB / 94.41GiB    2.04%     10.9MB / 1.5MB   0B / 0B     483
+6e486a0e1d88   web_search_server   507.20%   17.26GiB / 94.41GiB   18.28%    1.5MB / 10.9MB   0B / 0B     101
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   12.45%    1.93GiB / 94.41GiB    2.04%     10.9MB / 1.5MB   0B / 0B     483
+6e486a0e1d88   web_search_server   507.20%   17.26GiB / 94.41GiB   18.28%    1.5MB / 10.9MB   0B / 0B     101
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   11.83%    1.93GiB / 94.41GiB    2.04%     11.5MB / 1.59MB   0B / 0B     483
+6e486a0e1d88   web_search_server   873.68%   17.26GiB / 94.41GiB   18.28%    1.59MB / 11.5MB   0B / 0B     100
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   11.83%    1.93GiB / 94.41GiB    2.04%     11.5MB / 1.59MB   0B / 0B     483
+6e486a0e1d88   web_search_server   873.68%   17.26GiB / 94.41GiB   18.28%    1.59MB / 11.5MB   0B / 0B     100
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   6.15%     1.93GiB / 94.41GiB    2.04%     11.8MB / 1.63MB   0B / 0B     483
+6e486a0e1d88   web_search_server   424.01%   17.26GiB / 94.41GiB   18.28%    1.63MB / 11.8MB   0B / 0B     95
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   6.15%     1.93GiB / 94.41GiB    2.04%     11.8MB / 1.63MB   0B / 0B     483
+6e486a0e1d88   web_search_server   424.01%   17.26GiB / 94.41GiB   18.28%    1.63MB / 11.8MB   0B / 0B     95
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   10.07%    1.93GiB / 94.41GiB    2.04%     12.4MB / 1.72MB   0B / 0B     483
+6e486a0e1d88   web_search_server   847.24%   17.26GiB / 94.41GiB   18.28%    1.72MB / 12.4MB   0B / 0B     95
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   10.07%    1.93GiB / 94.41GiB    2.04%     12.4MB / 1.72MB   0B / 0B     483
+6e486a0e1d88   web_search_server   847.24%   17.26GiB / 94.41GiB   18.28%    1.72MB / 12.4MB   0B / 0B     95
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   19.77%    1.93GiB / 94.41GiB    2.04%     12.8MB / 1.75MB   0B / 0B     483
+6e486a0e1d88   web_search_server   418.49%   17.26GiB / 94.41GiB   18.28%    1.75MB / 12.8MB   0B / 0B     95
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   19.77%    1.93GiB / 94.41GiB    2.04%     12.8MB / 1.75MB   0B / 0B     483
+6e486a0e1d88   web_search_server   418.49%   17.26GiB / 94.41GiB   18.28%    1.75MB / 12.8MB   0B / 0B     95
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   24.86%    1.931GiB / 94.41GiB   2.04%     13.4MB / 1.84MB   0B / 0B     483
+6e486a0e1d88   web_search_server   824.37%   17.26GiB / 94.41GiB   18.28%    1.84MB / 13.4MB   0B / 0B     95
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   24.86%    1.931GiB / 94.41GiB   2.04%     13.4MB / 1.84MB   0B / 0B     483
+6e486a0e1d88   web_search_server   824.37%   17.26GiB / 94.41GiB   18.28%    1.84MB / 13.4MB   0B / 0B     95
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   5.68%     1.93GiB / 94.41GiB    2.04%     13.7MB / 1.88MB   0B / 0B     483
+6e486a0e1d88   web_search_server   434.57%   17.26GiB / 94.41GiB   18.28%    1.88MB / 13.7MB   0B / 0B     95
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   5.68%     1.93GiB / 94.41GiB    2.04%     13.7MB / 1.88MB   0B / 0B     483
+6e486a0e1d88   web_search_server   434.57%   17.26GiB / 94.41GiB   18.28%    1.88MB / 13.7MB   0B / 0B     95
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   10.73%    1.93GiB / 94.41GiB    2.04%     14.3MB / 1.97MB   0B / 0B     483
+6e486a0e1d88   web_search_server   859.63%   17.26GiB / 94.41GiB   18.29%    1.97MB / 14.3MB   0B / 0B     94
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   10.73%    1.93GiB / 94.41GiB    2.04%     14.3MB / 1.97MB   0B / 0B     483
+6e486a0e1d88   web_search_server   859.63%   17.26GiB / 94.41GiB   18.29%    1.97MB / 14.3MB   0B / 0B     94
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   7.88%     1.93GiB / 94.41GiB    2.04%     14.7MB / 2.01MB   0B / 0B     483
+6e486a0e1d88   web_search_server   435.47%   17.26GiB / 94.41GiB   18.29%    2.01MB / 14.7MB   0B / 0B     94
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   7.88%     1.93GiB / 94.41GiB    2.04%     14.7MB / 2.01MB   0B / 0B     483
+6e486a0e1d88   web_search_server   435.47%   17.26GiB / 94.41GiB   18.29%    2.01MB / 14.7MB   0B / 0B     94
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   50.75%    1.93GiB / 94.41GiB    2.04%     15.3MB / 2.1MB   0B / 0B     483
+6e486a0e1d88   web_search_server   891.99%   17.26GiB / 94.41GiB   18.29%    2.1MB / 15.3MB   0B / 0B     94
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   50.75%    1.93GiB / 94.41GiB    2.04%     15.3MB / 2.1MB   0B / 0B     483
+6e486a0e1d88   web_search_server   891.99%   17.26GiB / 94.41GiB   18.29%    2.1MB / 15.3MB   0B / 0B     94
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   18.93%    1.93GiB / 94.41GiB    2.04%     15.7MB / 2.13MB   0B / 0B     483
+6e486a0e1d88   web_search_server   424.03%   17.26GiB / 94.41GiB   18.29%    2.13MB / 15.6MB   0B / 0B     94
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   18.93%    1.93GiB / 94.41GiB    2.04%     15.7MB / 2.13MB   0B / 0B     483
+6e486a0e1d88   web_search_server   424.03%   17.26GiB / 94.41GiB   18.29%    2.13MB / 15.6MB   0B / 0B     94
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   59.78%    1.931GiB / 94.41GiB   2.05%     16.2MB / 2.22MB   0B / 0B     483
+6e486a0e1d88   web_search_server   985.21%   17.26GiB / 94.41GiB   18.29%    2.22MB / 16.2MB   0B / 0B     94
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   59.78%    1.931GiB / 94.41GiB   2.05%     16.2MB / 2.22MB   0B / 0B     483
+6e486a0e1d88   web_search_server   985.21%   17.26GiB / 94.41GiB   18.29%    2.22MB / 16.2MB   0B / 0B     94
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   9.05%     1.931GiB / 94.41GiB   2.05%     16.6MB / 2.26MB   0B / 0B     483
+6e486a0e1d88   web_search_server   488.35%   17.26GiB / 94.41GiB   18.29%    2.26MB / 16.6MB   0B / 0B     93
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   9.05%     1.931GiB / 94.41GiB   2.05%     16.6MB / 2.26MB   0B / 0B     483
+6e486a0e1d88   web_search_server   488.35%   17.26GiB / 94.41GiB   18.29%    2.26MB / 16.6MB   0B / 0B     93
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   11.73%    1.931GiB / 94.41GiB   2.05%     17.2MB / 2.35MB   0B / 0B     483
+6e486a0e1d88   web_search_server   823.77%   17.26GiB / 94.41GiB   18.29%    2.35MB / 17.2MB   0B / 0B     93
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   11.73%    1.931GiB / 94.41GiB   2.05%     17.2MB / 2.35MB   0B / 0B     483
+6e486a0e1d88   web_search_server   823.77%   17.26GiB / 94.41GiB   18.29%    2.35MB / 17.2MB   0B / 0B     93
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   5.13%     1.931GiB / 94.41GiB   2.05%     17.6MB / 2.39MB   0B / 0B     483
+6e486a0e1d88   web_search_server   379.07%   17.26GiB / 94.41GiB   18.29%    2.39MB / 17.6MB   0B / 0B     93
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   5.13%     1.931GiB / 94.41GiB   2.05%     17.6MB / 2.39MB   0B / 0B     483
+6e486a0e1d88   web_search_server   379.07%   17.26GiB / 94.41GiB   18.29%    2.39MB / 17.6MB   0B / 0B     93
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   16.73%    1.931GiB / 94.41GiB   2.05%     18.2MB / 2.48MB   0B / 0B     483
+6e486a0e1d88   web_search_server   766.24%   17.27GiB / 94.41GiB   18.29%    2.48MB / 18.2MB   0B / 0B     93
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   16.73%    1.931GiB / 94.41GiB   2.05%     18.2MB / 2.48MB   0B / 0B     483
+6e486a0e1d88   web_search_server   766.24%   17.27GiB / 94.41GiB   18.29%    2.48MB / 18.2MB   0B / 0B     93
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   5.50%     1.931GiB / 94.41GiB   2.05%     18.5MB / 2.52MB   0B / 0B     483
+6e486a0e1d88   web_search_server   455.08%   17.27GiB / 94.41GiB   18.29%    2.52MB / 18.5MB   0B / 0B     93
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   5.50%     1.931GiB / 94.41GiB   2.05%     18.5MB / 2.52MB   0B / 0B     483
+6e486a0e1d88   web_search_server   455.08%   17.27GiB / 94.41GiB   18.29%    2.52MB / 18.5MB   0B / 0B     93
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   21.97%    1.931GiB / 94.41GiB   2.05%     19.2MB / 2.61MB   0B / 0B     483
+6e486a0e1d88   web_search_server   970.61%   17.27GiB / 94.41GiB   18.29%    2.61MB / 19.2MB   0B / 0B     92
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   21.97%    1.931GiB / 94.41GiB   2.05%     19.2MB / 2.61MB   0B / 0B     483
+6e486a0e1d88   web_search_server   970.61%   17.27GiB / 94.41GiB   18.29%    2.61MB / 19.2MB   0B / 0B     92
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   4.78%     1.931GiB / 94.41GiB   2.05%     19.5MB / 2.65MB   0B / 0B     483
+6e486a0e1d88   web_search_server   309.09%   17.27GiB / 94.41GiB   18.29%    2.65MB / 19.5MB   0B / 0B     92
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   4.78%     1.931GiB / 94.41GiB   2.05%     19.5MB / 2.65MB   0B / 0B     483
+6e486a0e1d88   web_search_server   309.09%   17.27GiB / 94.41GiB   18.29%    2.65MB / 19.5MB   0B / 0B     92
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   9.82%     1.931GiB / 94.41GiB   2.05%     20.1MB / 2.73MB   0B / 0B     483
+6e486a0e1d88   web_search_server   890.14%   17.27GiB / 94.41GiB   18.29%    2.73MB / 20.1MB   0B / 0B     92
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   9.82%     1.931GiB / 94.41GiB   2.05%     20.1MB / 2.73MB   0B / 0B     483
+6e486a0e1d88   web_search_server   890.14%   17.27GiB / 94.41GiB   18.29%    2.73MB / 20.1MB   0B / 0B     92
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   5.66%     1.931GiB / 94.41GiB   2.05%     20.4MB / 2.77MB   0B / 0B     483
+6e486a0e1d88   web_search_server   316.43%   17.27GiB / 94.41GiB   18.29%    2.77MB / 20.4MB   0B / 0B     92
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+40a05c9fe1a6   web_search_client   5.66%     1.931GiB / 94.41GiB   2.05%     20.4MB / 2.77MB   0B / 0B     483
+6e486a0e1d88   web_search_server   316.43%   17.27GiB / 94.41GiB   18.29%    2.77MB / 20.4MB   0B / 0B     92

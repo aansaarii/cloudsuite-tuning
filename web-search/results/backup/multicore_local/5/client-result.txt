@@ -1,0 +1,65 @@
+Starting Faban Server
+Please point your browser to http://3b58de3c74e6:9980/
+Buildfile: /usr/src/faban/search/build.xml
+init:
+    [mkdir] Created dir: /usr/src/faban/search/build/classes
+compile:
+    [javac] /usr/src/faban/search/build.xml:35: warning: 'includeantruntime' was not set, defaulting to build.sysclasspath=last; set to false for repeatable builds
+    [javac] Compiling 1 source file to /usr/src/faban/search/build/classes
+bench.jar:
+    [mkdir] Created dir: /usr/src/faban/search/build/lib
+      [jar] Building jar: /usr/src/faban/search/build/lib/search.jar
+deploy.jar:
+      [jar] Building jar: /usr/src/faban/search/build/search.jar
+deploy:
+BUILD SUCCESSFUL
+Total time: 6 seconds
+Print= 3b58de3c74e6:1
+...<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/summary_report.xsl"?>
+<benchResults>
+    <benchSummary name="Sample Search Workload" version="0.3">
+        <runId>1</runId>
+        <startTime>Tue Jun 07 13:17:35 UTC 2022</startTime>
+        <endTime>Tue Jun 07 13:23:35 UTC 2022</endTime>
+        <metric unit="ops/sec">24.847</metric>
+        <passed>true</passed>
+    </benchSummary>
+    <driverSummary name="SearchDriver">
+        <metric unit="ops/sec">24.847</metric>
+        <startTime>Tue Jun 07 13:17:35 UTC 2022</startTime>
+        <endTime>Tue Jun 07 13:23:35 UTC 2022</endTime>
+        <totalOps unit="operations">7454</totalOps>
+        <users>50</users>
+        <rtXtps>49.5485</rtXtps>
+        <passed>true</passed>
+        <mix allowedDeviation="0.0000">
+            <operation name="GET">
+                <successes>7454</successes>
+                <failures>0</failures>
+                <mix>1.0000</mix>
+                <requiredMix>1.0000</requiredMix>
+                <passed>true</passed>
+            </operation>
+        </mix>
+        <responseTimes unit="seconds">
+            <operation name="GET" r90th="0.500">
+                <avg>0.030</avg>
+                <max>0.198</max>
+                <sd>0.031</sd>
+                <p90th>0.073</p90th>
+                <passed>true</passed>
+                <p99th>0.135</p99th>
+            </operation>
+        </responseTimes>
+        <delayTimes>
+            <operation name="GET" type="cycleTime">
+                <targetedAvg>2.000</targetedAvg>
+                <actualAvg>2.008</actualAvg>
+                <min>1.999</min>
+                <max>3.675</max>
+                <passed>true</passed>
+            </operation>
+        </delayTimes>
+    </driverSummary>
+</benchResults>

@@ -1,69 +1,75 @@
 #!/bin/bash 
 
 function generate_index(){
-  (($DEV)) && echo "generate index" 
-    clean_containers $SERVER_CONTAINER 
-    docker run -d --name $SERVER_CONTAINER -v $LOCAL_INDEX_VOL:/home/solr -p 8983:8983 --cpuset-cpus=$SERVER_CPUS --net $NET --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 generate
+(($DEV)) && echo "generate index" 
+clean_containers $SERVER_CONTAINER 
+docker run -d --name $SERVER_CONTAINER -v $LOCAL_INDEX_VOL:/home/solr -p 8983:8983 --cpuset-cpus=$SERVER_CPUS --net $NET --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 generate
 }
 
 function start_dataset(){
-  (($DEV)) && echo "start dataset"
-    clean_containers $DATASET_CONTAINER
-    docker run --name $DATASET_CONTAINER $DATASET_IMAGE 
+(($DEV)) && echo "start dataset"
+clean_containers $DATASET_CONTAINER
+docker run --name $DATASET_CONTAINER $DATASET_IMAGE 
 }
 
 function start_server(){
-  (($DEV)) && echo "start server" 
-    clean_containers $SERVER_CONTAINER
+(($DEV)) && echo "start server" 
+clean_containers $SERVER_CONTAINER
 #docker run -d --name $SERVER_CONTAINER -v $LOCAL_INDEX_VOL:/home/solr -p 8983:8983 --cpuset-cpus=$SERVER_CPUS --net $NET --memory=$SERVER_MEMORY $SERVER_IMAGE $SOLR_MEM 1 
-    docker run -d --name $SERVER_CONTAINER --volumes-from ${DATASET_CONTAINER} --net $NET $SERVER_IMAGE 12g 1
-    echo "cmd: docker run -d --name $SERVER_CONTAINER --volumes-from ${DATASET_CONTAINER} --net $NET $SERVER_IMAGE 12g 1"
+docker run -d --name $SERVER_CONTAINER --cpuset-cpus=$SERVER_CPUS --volumes-from ${DATASET_CONTAINER} --net $NET $SERVER_IMAGE 12g 1
+#echo "cmd: docker run -d --name $SERVER_CONTAINER --volumes-from ${DATASET_CONTAINER} --net $NET $SERVER_IMAGE 12g 1"
 }
 
 function start_client(){
-  (($DEV)) && echo "start client"
-    docker run -i --net=$NET --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS $CLIENT_IMAGE $SERVER_IP $SCALE $RAMP_UP $RAMP_DOWN $STEADY_STATE
+(($DEV)) && echo "start client"
+echo "SCALE is $SCALE"
+docker run -i --net=$NET --name=$CLIENT_CONTAINER --cpuset-cpus=$CLIENT_CPUS -v /home/aansari/cloudsuite-tuning/web-search/files/Ziphian.java:/usr/src/faban/search/distributions/Ziphian.java $CLIENT_IMAGE $SERVER_IP $SCALE $RAMP_UP $RAMP_DOWN $STEADY_STATE
 }
 
 function detect_stage () {
-  case "$1" in
-    index-node-ready) 
-      KEYWORDS="Index Node IP Address"
-      log_helper_stdout ${SERVER_CONTAINER} "${KEYWORDS}" 2 
-      SERVER_IP=`docker logs $SERVER_CONTAINER 2>/dev/null | grep "$KEYWORDS" | sed 's/.*\:\s//'`
-      echo "Extracted Server IP is: $SERVER_IP"
-      #$SERVER_IP=${SERVER_IP::-1} # There is a whitespace character that must be removed!
-      (($DEV)) && echo "Index node IP $SERVER_IP"
-      ;;
-    rampup-completed) 
-      KEYWORDS="Ramp up completed"
-      log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 2
-      (($DEV)) && echo "Rampup completed"
-      ;;
-    steady-state-completed) 
-      KEYWORDS="Steady state completed"
-      log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 2
-      (($DEV)) && echo "Steady state completed"
-      ;;
-    detail-completed) 
-      KEYWORDS="Detail finished"
-      log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 2
-      (($DEV)) && echo "Detail measurement finished"
-      ;;
-    esac
+case "$1" in
+  index-node-ready) 
+    KEYWORDS="Index Node IP Address"
+    log_helper_stdout ${SERVER_CONTAINER} "${KEYWORDS}" 5 
+    SERVER_IP=`docker logs $SERVER_CONTAINER 2>/dev/null | grep "$KEYWORDS" | sed 's/.*\:\s//'`
+    echo "Extracted Server IP is: $SERVER_IP"
+    #$SERVER_IP=${SERVER_IP::-1} # There is a whitespace character that must be removed!
+    (($DEV)) && echo "Index node IP $SERVER_IP"
+    ;;
+  rampup-completed) 
+    KEYWORDS="Ramp up completed"
+    log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 5
+    (($DEV)) && echo "Rampup completed"
+    ;;
+  steady-state-completed) 
+    KEYWORDS="Steady state completed"
+    log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 5
+    (($DEV)) && echo "Steady state completed"
+    ;;
+  detail-completed) 
+    KEYWORDS="Detail finished"
+    log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 5
+    (($DEV)) && echo "Detail measurement finished"
+    ;;
+  results-written) 
+    KEYWORDS="</benchResults>"
+    log_helper_stderr ${CLIENT_CONTAINER} "${KEYWORDS}" 5
+    (($DEV)) && echo "Results are written"
+    ;;
+esac
 }
 
 function log_client(){
-  docker logs $CLIENT_CONTAINER 2>/dev/null >> $CLIENT_LOG 
+docker logs $CLIENT_CONTAINER 2>/dev/null >> $CLIENT_LOG 
 }
 
 function client_summary(){
-  echo "throughput" >> $CLIENT_SUMMARY 
-    grep "metric" $CLIENT_LOG | awk 'NR%2==0' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY    
-    metrics=(avg p90th p99th totalOps)
-    for metric in ${metrics[@]}; do
-      echo "$metric" >> $CLIENT_SUMMARY 
-      grep ${metric} $CLIENT_LOG | grep -o '>.*<' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY 
-    done
-    awk '{printf "%15s\n",$1 }' $PERF_LOG >> $CLIENT_SUMMARY
+echo "throughput" >> $CLIENT_SUMMARY 
+grep "metric" $CLIENT_LOG | awk 'NR%2==0' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY    
+metrics=(avg p90th p99th totalOps)
+for metric in ${metrics[@]}; do
+  echo "$metric" >> $CLIENT_SUMMARY 
+  grep ${metric} $CLIENT_LOG | grep -o '>.*<' | grep -Eo [0-9.]+ >> $CLIENT_SUMMARY 
+done
+#awk '{printf "%15s\n",$1 }' $PERF_LOG >> $CLIENT_SUMMARY
 }

@@ -30,17 +30,18 @@ case "$1" in
       current_rate=`docker logs ${CLIENT_CONTAINER}  2>&1 | grep "session-rate" | tail -1 | awk '{print $3}'`
       ERROR=`docker logs ${CLIENT_CONTAINER}  2>&1 | grep "Errors: total" | tail -1 | awk '{print $3}'`
 
-      echo "checking the loop, current_rate: $current_rate, error: $ERROR, cnt: $CNT"
+      echo "checking the loop, current_rate: $current_rate, error: $ERROR, cnt: $CNT, rate: $RATE"
 
       # if the session-reply rate reaches 95% of the injection rate, we consider the server as warmed up"
       if (( $(echo "$current_rate > $RATE * 0.95" | bc -l) )); then
         echo "reached the steady-state"
-        return
+        #return
       fi
       if (( $ERROR != 0 )); then
         (($DEV)) && echo "error occurred"
-        return
-      elif (( $CNT >= $RAMPUP_TIME )); then
+        #return
+      fi
+      if (( $CNT >= $RAMPUP_TIME )); then
         (($DEV)) && echo "ramp_up time exceeded"
         return
       fi

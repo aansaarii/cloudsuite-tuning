@@ -1,0 +1,24 @@
+before experiment
+Total: 322 (kernel 0)
+TCP:   24 (estab 8, closed 2, orphaned 0, synrecv 0, timewait 0/0), ports 0
+
+Transport Total     IP        IPv6
+*	  0         -         -        
+RAW	  0         0         0        
+UDP	  29        18        11       
+TCP	  22        16        6        
+INET	  51        34        17       
+FRAG	  0         0         0        
+
+after experiment
+Total: 37847 (kernel 0)
+TCP:   53319 (estab 37472, closed 15831, orphaned 0, synrecv 0, timewait 15829/0), ports 0
+
+Transport Total     IP        IPv6
+*	  0         -         -        
+RAW	  0         0         0        
+UDP	  28        18        10       
+TCP	  37488     37481     7        
+INET	  37516     37499     17       
+FRAG	  0         0         0        
+
