@@ -13,7 +13,7 @@ while read RATE; do
   start_dataset
 #  create_network 
 
-  #exit 0
+  exit 0
   # SERVER_PID=$(docker inspect -f '{{.State.Pid}}' ${SERVER_CONTAINER})
 
   echo "starting rate $RATE"

@@ -41,6 +41,9 @@ while read RATE; do
 
   kill -9 $PID
   echo "pkill -f docker-current" | ssh n135 /bin/bash
+
+  sleep 5
+
   #pkill -fx "sleep infinity"
   sed -i "s,\x1B\[[0-9;]*[a-zA-Z],,g" $UTIL_LOG # remove escape characters
   sed -i "s,\x1B\[[0-9;]*[a-zA-Z],,g" $OUT/client_util.txt # remove escape characters
@@ -52,6 +55,7 @@ while read RATE; do
   #echo "docker cp $SERVER_CONTAINER:/var/log/nginx/ /home/aansari/cloudsuite-tuning/media-streaming/$OUT/." | ssh n135 /bin/bash
   log_folder
   rm_all_containers
+  sleep 5
   echo "docker stop $SERVER_CONTAINER; docker rm $SERVER_CONTAINER;" | ssh n135 /bin/bash
   sleep 120
 done < $RATES_FILE

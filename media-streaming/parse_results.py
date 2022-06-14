@@ -110,7 +110,7 @@ class DataPoint:
     print("sessions_failed: {}, sessions_total: {}".format(self.sessions_failed, self.sessions_total))
     print("Errors, total: {}, client_timeout: {}, other: {}".format(self.errors_total, self.errors_client_timeout, self.errors_other))
 
-experiments_folder="results/multicore_local_smt_2cores_portFixed/"
+experiments_folder="results/singlecore_remote_smt_portFixed/"
 experiments=[ name for name in os.listdir(experiments_folder) if os.path.isdir(os.path.join(experiments_folder, name)) ]
 
 print(str(experiments))
