@@ -73,7 +73,7 @@ class DataPoint:
 
     return
 
-experiments_folder="results/singlecore_local"
+experiments_folder="results/singlecore_local_qflex"
 experiments=[ name for name in os.listdir(experiments_folder) if os.path.isdir(os.path.join(experiments_folder, name)) ]
 
 print(str(experiments))
